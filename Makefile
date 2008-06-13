@@ -42,11 +42,10 @@ DEST = /home/downey/public_html/greent/thinkpython
 distrib:
 	ps2pdf $(PDFFLAGS) thinkpython.ps
 	rm -rf dist
-	mkdir dist dist/tex
+	mkdir dist dist/tex dist/tex/figs
 	rsync -a thinkpython.pdf thinkpython.ps html dist
-	rsync -a Makefile book.tex latexonly htmlonly figs dist/tex
-	rm dist/tex/figs/*.bak
-	cd dist/tex; make clean
+	rsync -a Makefile book.tex latexonly htmlonly dist/tex
+	rsync -a figs/*.fig figs/*.eps dist/figs
 	cd dist; zip -r thinkpython.tex.zip tex
 	cd dist; zip -r thinkpython.html.zip html
 	rsync -a dist/* $(DEST)

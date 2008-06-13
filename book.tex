@@ -25,7 +25,7 @@
 \usepackage{upquote}
 
 \newcommand{\thetitle}{Think Python: An Introduction to Software Design}
-\newcommand{\theversion}{1.0.16}
+\newcommand{\theversion}{1.1.0}
 
 \makeindex
 
@@ -219,7 +219,7 @@ and define each term at first use.
 topics and split them into a series of small steps. 
 
 \item Focus on programming, not the programming language.  I included
-the minumum useful subset of Java and left out the rest.
+the minimum useful subset of Java and left out the rest.
 
 \end{itemize}
 
@@ -404,7 +404,7 @@ run and helped us set up a versioning scheme.
 \item Man-Yong Lee sent in a correction to the example code in
 Section 2.4.  
 
-%He can be reaced at: {\tt yong@linuxkorea.co.kr}
+%He can be reached at: {\tt yong@linuxkorea.co.kr}
 
 \item David Mayo pointed out that the word ``unconsciously"
 in Chapter 1 needed
@@ -644,7 +644,7 @@ of Debugging and a typo in Chapter 4.
 
 %<douglas277@gmail.com>
 
-\item Jared Spindor found some jetsom at the end of a sentence.
+\item Jared Spindor found some jetsam at the end of a sentence.
 
 %<jspindor@ruckerperformance.com>
 
@@ -769,6 +769,7 @@ which you might want to read when you are done with this book.
 
 % START THE BOOK
 \mainmatter
+
 
 \chapter{The way of the program}
 
@@ -943,7 +944,7 @@ Python can only execute a program if the syntax is
 correct; otherwise, the interpreter displays an error message.
 {\bf Syntax} refers to the structure of a program and the rules about
 that structure. \index{syntax} 
-For example, paretheses have to come in matching pairs, so
+For example, parentheses have to come in matching pairs, so
 {\tt (1 + 2)} is legal, but {\tt 8)} is a {\bf syntax error}.
 
 In English readers can tolerate most syntax errors, which is why we
@@ -2083,7 +2084,7 @@ Use the Python interpreter to check your answers.
 \begin{ex}
 Practice using the Python interpreter as a calculator: 
 
-\begin{itemize}
+\begin{enumerate}
 
 \item The volume of a sphere with radius $r$ is $\frac{4}{3} \pi r^3$.
   What is the volume of a sphere with radius 5?  Hint: 392.6 is wrong!
@@ -2097,7 +2098,7 @@ Practice using the Python interpreter as a calculator:
   (8:15 per mile), then 3 miles at tempo (7:12 per mile) and 1 mile at
   easy pace again, what time do I get home for breakfast?
 
-\end{itemize}
+\end{enumerate}
 \end{ex}
 
 
@@ -2973,11 +2974,11 @@ do_twice(print_spam)
 \end{verbatim}
 \afterverb
 
-\begin{itemize}
+\begin{enumerate}
 
 \item Type this example into a script and test it.
 
-\item Modify \verb"do_twice" so that it takes two argments, a
+\item Modify \verb"do_twice" so that it takes two arguments, a
 function object and a value, and calls the function twice,
 passing the value as an argument.
 
@@ -2993,14 +2994,14 @@ You can see my solution at \url{thinkpython.com/code/do_four.py}.
 
 % Solution in do_four.py
 
-\end{itemize}
+\end{enumerate}
 
 \end{ex}
 
 
 
 \begin{ex}
-\begin{itemize}
+\begin{enumerate}
 
 \item Write a function that draws a grid like the
   following\footnote{Based on an exercise in Oualline, {\em Practical
@@ -3049,7 +3050,7 @@ goes to the next line.
 \item Use the previous function to draw a similar grid
 with four rows and four columns.
 
-\end{itemize}
+\end{enumerate}
 
 You can see my solution at \url{thinkpython.com/code/grid.py}.
 
@@ -4459,7 +4460,7 @@ $a$, $b$, and $c$ such that
 %
 for any values of $n$ greater than 2.
 
-\begin{itemize}
+\begin{enumerate}
 
 \item Write a function named \verb"check_fermat" that takes four
 parameters---{\tt a}, {\tt b}, {\tt c} and {\tt n}---and
@@ -4476,14 +4477,12 @@ for {\tt a}, {\tt b}, {\tt c} and {\tt n}, converts them to
 integers, and uses \verb"check_fermat" to check whether they
 violate Fermat's theorem.
 
-\end{itemize}
+\end{enumerate}
 
 \end{ex}
 
 
 \begin{ex}
-
-\begin{itemize}
 
 If you are given three sticks, you may or may not be able to arrange
 them in a triangle.  For example, if one of the sticks is 12 inches
@@ -4497,6 +4496,8 @@ a triangle:
 then you cannot form a triangle.  Otherwise, you can.''
 \end{quotation}
 
+\begin{enumerate}
+
 \item Write a function named \verb"is_triangle" that takes three
   integers as arguments, and that prints either ``Yes'' or ``No,'' depending
   on whether you can or cannot form a triangle from sticks with the
@@ -4506,7 +4507,7 @@ then you cannot form a triangle.  Otherwise, you can.''
   lengths and uses \verb"is_triangle" to check whether sticks
   with the given lengths can form a triangle.
 
-\end{itemize}
+\end{enumerate}
 
 \end{ex}
 
@@ -4567,21 +4568,22 @@ To draw a Koch curve with length $x$, all you have to do is
 The only exception is if $x$ is less than 2.  In that case,
 you can just draw a straight line with length $x$.
 
-Write a function called {\tt koch} that takes a turtle and
+\begin{enumerate}
+
+\item Write a function called {\tt koch} that takes a turtle and
 a length as parameters, and that uses the turtle to draw a Koch
 curve with the given length.
 
-Then write a function called {\tt snowflake} that draws three
+\item Write a function called {\tt snowflake} that draws three
 Koch curves to make the outline of a snowflake.
 
 You can see my solution at \url{thinkpython.com/code/koch.py}.
 
-\end{ex}
-
-\begin{ex}
-The Koch curve can be generalized in several ways.  See
+\item The Koch curve can be generalized in several ways.  See
 \url{wikipedia.org/wiki/Koch_snowflake} for examples and
 implement your favorite.
+
+\end{enumerate}
 \end{ex}
 
 
@@ -4792,7 +4794,6 @@ def distance(x1, y1, x2, y2):
 %
 Again, you would run the program at this stage and check the output
 (which should be 25).
-
 Finally, you can use {\tt math.sqrt} to compute and return the result:
 
 \beforeverb
@@ -5476,7 +5477,7 @@ def middle(word):
 %
 We'll see how they work in Chapter~\ref{strings}.
 
-\begin{itemize}
+\begin{enumerate}
 
 \item Type these functions into a file named {\tt palindrome.py}
 and test them out.  What happens if you call {\tt middle} with
@@ -5488,7 +5489,7 @@ a string argument and returns {\tt True} if it is a palindrome
 and {\tt False} otherwise.  Remember that you can use the
 built-in function {\tt len} to check the length of a string.
 
-\end{itemize}
+\end{enumerate}
 
 \end{ex}
 
@@ -6415,7 +6416,7 @@ the original string.
 \index{concatenation}
 
 
-\section{A {\tt find} function}
+\section{Searching}
 \label{find}
 \index{traversal}
 \index{search}
@@ -7286,7 +7287,7 @@ what we want.
 
 Here is a version of \verb"is_palindrome" (see
 Exercise~\ref{palindrome}) that uses two indices; one starts at the
-begining and goes up; the other starts at the end and goes down.
+beginning and goes up; the other starts at the end and goes down.
 
 \beforeverb
 \begin{verbatim}
@@ -8539,7 +8540,7 @@ that takes two strings and returns True if they are anagrams.
 
 \begin{ex}
 
-\begin{itemize}
+\begin{enumerate}
 
 \item Write a function called \verb"has_duplicates" that takes
 a list an returns {\tt True} if there is any element that
@@ -8552,7 +8553,7 @@ probability by generating random samples of twelve birthdays
 and checking for matches.  Hint: you can generate random birthdays
 with the {\tt randint} function in the {\tt random} module.
 
-\end{itemize}
+\end{enumerate}
 
 You can see my solution at \url{thinkpython.com/code/birthday.py}.
 
@@ -8617,7 +8618,7 @@ a new word\footnote{This exercise is inspired by an example at
   \url{puzzlers.org}.}.  For example, ``shoe'' and ``cold''
 interlock to form ``schooled.''
 
-\begin{itemize}
+\begin{enumerate}
 
 \item Write a program that finds all pairs of words that interlock.
   Hint: don't enumerate all pairs!
@@ -8626,7 +8627,7 @@ interlock to form ``schooled.''
   every third letter forms a word, starting from the first, second or
   third?
 
-\end{itemize}
+\end{enumerate}
 \end{ex}
 
 
@@ -9516,7 +9517,7 @@ Use a dictionary to write a faster, simpler version of
 \begin{ex}
 \label{exrotatepairs}
 Two words are ``rotate pairs'' if you can rotate one of them
-and get the other (see \verb"rotate_word" in Exercise~\ref{exrotate}.
+and get the other (see \verb"rotate_word" in Exercise~\ref{exrotate}).
 
 Write a program that reads a wordlist and finds all the rotate
 pairs.
@@ -9551,17 +9552,17 @@ letters to make two, new four-letter words. The question is, what's
 the word?
 \end{quote}
 
-You can use the dictionary from Exercise{wordlist2} to check
+You can use the dictionary from Exercise~\ref{wordlist2} to check
 whether a string is in the word list.
 
 To check whether two words are homophones, you can use the CMU
-Pronouncing Dictionary You can download it from
+Pronouncing Dictionary.  You can download it from
 \url{www.speech.cs.cmu.edu/cgi-bin/cmudict} or from
 \url{thinkpython.com/code/c06d} and you can also download
 \url{thinkpython.com/code/pronounce.py}, which provides a function
 named \verb"read_dictionary" that reads the pronouncing dictionary and
 returns a Python dictionary that maps from each word to a string that
-describes its primary pronunication.
+describes its primary pronunciation.
 
 Write a program that lists all the words that solve the Puzzler.
 
@@ -10226,7 +10227,7 @@ want to use a list of characters instead.
 Lists are more common than tuples, mostly because they are mutable.
 But there are a few cases where you might prefer tuples:
 
-\begin{itemize}
+\begin{enumerate}
 
 \item In some contexts, like a {\tt return} statement, it is
 syntactically simpler to create a tuple than a list.  In other
@@ -10239,7 +10240,7 @@ have to use an immutable type like a tuple or string.
 using tuples reduces the potential for unexpected behavior
 due to aliasing.
 
-\end{itemize}
+\end{enumerate}
 
 Because tuples are immutable, they don't provide methods
 like {\tt sort} and {\tt reverse}, which modify existing lists.
@@ -10376,7 +10377,9 @@ varies between languages.  Compare your results with the tables at
 \begin{ex}
 \label{anagrams}
 
-\begin{itemize}
+More anagrams!
+
+\begin{enumerate}
 
 \item Write a program
 that reads a word list from a file (see Section~\ref{wordlist}) and
@@ -10418,7 +10421,7 @@ Hint: there are seven.
 
 You can download a solution from \url{thinkpython.com/code/anagram_sets.py}.
 
-\end{itemize}
+\end{enumerate}
 \end{ex}
 
 
@@ -10453,7 +10456,7 @@ and then find the longest one.
 This exercise is a little more challenging than most, so here are
 some suggestions:
 
-\begin{itemize}
+\begin{enumerate}
 
 \item You might want to write a function that takes a word and
   computes a list of all the words that can be formed by removing one
@@ -10470,7 +10473,7 @@ contain single letter words.  So you might want to add
 \item To improve the performance of your program, you might want
 to memoize the words that are known to be reducible.
 
-\end{itemize}
+\end{enumerate}
 
 You can see my solution at \url{thinkpython.com/code/reducible.py}.
 
@@ -10995,7 +10998,9 @@ you can do Markov analysis with any prefix length.  The length
 of the prefix is called the ``order'' of the analysis.
 
 \begin{ex}
-\begin{itemize}
+Markov analysis:
+
+\begin{enumerate}
 
 \item Write a program to read a text from a file and perform Markov
 analysis.  The result should be a dictionary that maps from
@@ -11028,7 +11033,7 @@ if you analyze text from two or more books, the random
 text you generate will blend the vocabulary and phrases from
 the sources in interesting ways.
 
-\end{itemize}
+\end{enumerate}
 \end{ex}
 
 
@@ -11846,7 +11851,6 @@ print linecount('wc.py')
 %
 If you run this program, it reads itself and prints the number
 of lines in the file, which is 7.
-
 You can also import it like this:
 
 \beforeverb
@@ -11945,9 +11949,9 @@ This can be helpful for debugging.
 
 One other problem you might run into is that different systems
 use different characters to indicate the end of a line.  Some
-sytems use a newline, represented \verb"\n".  Others use
+systems use a newline, represented \verb"\n".  Others use
 a return character, represented \verb"\r".  Some use both.
-If you move file between different systems, these inconsistencies
+If you move files between different systems, these inconsistencies
 might cause problems.
 
 For most systems, there are applications to convert from one
@@ -12093,7 +12097,7 @@ imdb.process_file('actors.list.gz', print_info)
 \afterverb
 
 When you call \verb"process_file", it opens {\tt filename}, reads the
-contents, and calls \verb"print_info" onces for each line in the file.
+contents, and calls \verb"print_info" once for each line in the file.
 \verb"print_info" takes an actor, date, movie title and role as
 arguments and prints them.
 
@@ -12704,7 +12708,7 @@ canvas.rectangle(bbox, outline='black', width=2, fill='green4')
 
 You should see a green rectangle with a black outline.
 The first line creates a Canvas, which appears in the window
-as a white square.  The Canvas object provides methods, like
+as a white square.  The Canvas object provides methods like
 {\tt rectangle} for drawing various shapes.
 
 {\tt bbox} is a list of lists that represents the ``bounding box''
@@ -12977,7 +12981,7 @@ a new Time object rather than modifying the parameter.
 \label{prototype}
 \index{prototype development}
 
-The development plan I am demonstracting is called ``prototype and
+The development plan I am demonstrating is called ``prototype and
 patch.''  For each function, I wrote a prototype that performed the
 basic calculation and then tested it, patching errors along the
 way.
@@ -13490,11 +13494,11 @@ One nice thing about this syntax is that it almost reads
 like English: ``end is after start.''
 
 
-\section{The {\tt init} method}
-\index{{\tt init} method}
-\index{method!{\tt init}}
+\section{The init method}
+\index{init method}
+\index{method!init}
 
-The {\tt init} method (short for ``initialization'') is
+The init method (short for ``initialization'') is
 a special method that gets invoked when an object is instantiated.  
 Its full name is \verb"__init__" (two underscore characters,
 followed by {\tt init}, and then two more underscores).  An
@@ -13822,7 +13826,7 @@ In general, if all of the operations inside a function
 work with a given type, then the function works with that type.
 
 The best kind of polymorphism is the unintentional kind, where
-you discover that a function you have already written can be
+you discover that a function you already wrote can be
 applied to a type you never planned for.
 
 
@@ -13832,7 +13836,7 @@ It is legal to add attributes to objects at any point in the execution
 of a program, but if you are a stickler for type theory, it is a
 dubious practice to have objects of the same type with different
 attribute sets.  It is usually a good idea to
-initialize all of an objects attributes in the {\tt init} method.
+initialize all of an objects attributes in the init method.
 
 If you are not sure whether an object has a particular attribute, you
 can use the built-in function {\tt hasattr} (see Section~\ref{hasattr}).
@@ -13861,7 +13865,7 @@ def print_attributes(obj):
 \afterverb
 %
 \verb"print_attributes" traverses the items in the object's dictionary
-and prints each attrbute name and its corresponding value.
+and prints each attribute name and its corresponding value.
 
 The built-in function {\tt getattr} takes an object and an attribute
 name (as a string) and returns the attribute's value.
@@ -13913,7 +13917,7 @@ common, and difficult to find, errors in Python.
 
 \begin{enumerate}
 
-Write a definition for a class named {\tt Kangaroo} with the following
+\item Write a definition for a class named {\tt Kangaroo} with the following
 methods:
 
 \begin{enumerate}
@@ -14104,7 +14108,7 @@ class Card:
 \end{verbatim}
 \afterverb
 %
-As usual, the {\tt init} method takes an optional
+As usual, the init method takes an optional
 parameter for each attribute.  The default card is
 the 2 of Clubs.
 
@@ -14297,11 +14301,11 @@ Now that we have Cards, the next step is to define Decks.  Since a
 deck is made up of cards, it is natural for each Deck to contain a
 list of cards as an attribute.
 
-\index{initialization method}
-\index{method!initialization}
+\index{init method}
+\index{method!init}
 
 The following is a class definition for {\tt Deck}.  The
-\verb"__init__" method creates the attribute {\tt cards} and generates
+init method creates the attribute {\tt cards} and generates
 the standard set of fifty-two cards:
 
 \index{composition}
@@ -14624,7 +14628,7 @@ relationship; in this case it indicates that Hand inherits
 from Deck.
 
 The standard arrow head represents a HAS-A
-relationshop; in this case a Deck has references to Card
+relationship; in this case a Deck has references to Card
 objects.
 
 The star ({\tt *}) near the arrow head is a 
@@ -14830,7 +14834,7 @@ the highest-value classification for a hand and sets the
 might contain a flush and a pair; it should be labeled ``flush''.
 
 \item When you are convinced that your classification methods are
-working, the next step is to estimate the probablities of the various
+working, the next step is to estimate the probabilities of the various
 hands.  Write a function in {\tt PokerHand.py} that shuffles a deck of
 cards, divides it into hands, classifies the hands, and counts the
 number of times various classifications appear.
@@ -15008,7 +15012,7 @@ values for the rest.
 
 When you add a widget to the Frame, it gets ``shrink-wrapped;''
 that is, the Frame shrinks to the size of the Button.  If you
-add more widgets, the Frame grows to accomodate them.
+add more widgets, the Frame grows to accommodate them.
 
 The method {\tt la} creates a Label widget:
 
@@ -15626,7 +15630,7 @@ class Draggable(Item):
 \end{verbatim}
 \afterverb
 %
-The {\tt init} method takes an Item as a parameter.  It copies
+The init method takes an Item as a parameter.  It copies
 the attributes of the Item and then creates bindings for
 three events: a button press, button motion, and button release.
 
