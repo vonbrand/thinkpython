@@ -25,14 +25,13 @@
 \usepackage{upquote}
 
 \newcommand{\thetitle}{Think Python: An Introduction to Software Design}
-\newcommand{\theversion}{1.1.1}
+\newcommand{\theversion}{1.1.2}
 
 \makeindex
 
 \begin{document}
 
 \frontmatter
-
 
 % LATEXONLY
 
@@ -245,6 +244,8 @@ Invention of ours, and this we should do freely and generously.''
 So I released the book under the GNU Free Documentation License,
 which allows users to copy, modify, and distribute the book.
 
+\index{GNU Free Documentation License}
+
 What happened next is the cool part.  Jeff Elkner, a high school
 teacher in Virginia, adopted my book and translated it into
 Python.  He sent me a copy of his translation, and I had the
@@ -320,6 +321,9 @@ beer.  It came about because of a collaboration that would not have
 been possible without the GNU Free Documentation License.  So we
 thank the Free Software Foundation for developing this license
 and, of course, making it available to us.
+
+\index{GNU Free Documentation License}
+\index{contributors}
 
 We also thank the more than 100 sharp-eyed and
 thoughtful readers who have sent us suggestions and corrections over
@@ -787,6 +791,8 @@ into systems and evaluating tradeoffs among alternatives.  Like scientists,
 they observe the behavior of complex systems, form hypotheses, and test
 predictions.
 
+\index{problem solving}
+
 The single most important skill for a computer scientist is {\bf
 problem solving}.  Problem solving means the ability to formulate
 problems, think creatively about solutions, and express a solution clearly
@@ -814,7 +820,7 @@ programs written in a high-level language have to be processed before
 they can run.  This extra processing takes some time, which is a small
 disadvantage of high-level languages.
 
-\index{portable}
+\index{portable language}
 \index{high-level language}
 \index{low-level language}
 \index{language!high-level}
@@ -845,6 +851,10 @@ alternately reading lines and performing computations.
 \centerline{\includegraphics[height=0.77in]{figs/interpret.eps}}
 \afterfig
 
+\index{source code}
+\index{object code}
+\index{executable}
+
 A compiler reads the program and translates it completely before the
 program starts running.  In this context, the high-level program is
 called the {\bf source code}, and the translated program is called the
@@ -861,6 +871,9 @@ interpreter: {\bf interactive mode} and {\bf script mode}. In
 interactive mode, you type Python programs and the interpreter prints
 the result:
 
+\index{interactive mode}
+\index{script mode}
+
 \beforeverb
 \begin{verbatim}
 >>> 1 + 1
@@ -872,9 +885,13 @@ The chevron, {\tt >>>}, is the
 {\bf prompt} the interpreter uses to indicate that it is ready.  If
 you type {\tt 1 + 1}, the interpreter replies {\tt 2}.
 
+\index{prompt}
+
 Alternatively, you can store code in a file and use the interpreter to
 execute the contents of the file, which is called a {\bf script}.  By
 convention, Python scripts have names that end with {\tt .py}.
+
+\index{script}
 
 To execute the script, you have to tell the interpreter the name of
 the file.  In a UNIX command window, you would type {\tt python
@@ -896,6 +913,8 @@ mathematical, such as solving a system of equations or finding the
 roots of a polynomial, but it can also be a symbolic computation, such
 as searching and replacing text in a document or (strangely enough)
 compiling a program.
+
+\index{program}
 
 The details look different in different languages, but a few basic
 instructions appear in just about every language:
@@ -926,6 +945,8 @@ programming as the process of breaking a large, complex task
 into smaller and smaller subtasks until the subtasks are
 simple enough to be performed with one of these basic instructions.
 
+\index{algorithm}
+
 That may be a little vague, but we will come back to this topic
 when we talk about {\bf algorithms}.
 
@@ -936,6 +957,9 @@ when we talk about {\bf algorithms}.
 Programming is error-prone.  For whimsical reasons, programming errors
 are called {\bf bugs} and the process of tracking them down is called
 {\bf debugging}.
+
+\index{debugging}
+\index{bug}
 
 Three kinds of errors can occur in a program: syntax errors, runtime 
 errors, and semantic errors. It is useful
@@ -951,6 +975,9 @@ correct; otherwise, the interpreter displays an error message.
 that structure. \index{syntax} 
 For example, parentheses have to come in matching pairs, so
 {\tt (1 + 2)} is legal, but {\tt 8)} is a {\bf syntax error}.
+
+\index{syntax}
+\index{cummings, e. e.}
 
 In English readers can tolerate most syntax errors, which is why we
 can read the poetry of e. e. cummings without spewing error messages.
@@ -1001,6 +1028,9 @@ One of the most important skills you will acquire is debugging.
 Although it can be frustrating, debugging is one of the most
 intellectually rich, challenging, and interesting parts of
 programming.
+
+\index{experimental debugging}
+\index{debugging!experimental}
 
 In some ways, debugging is like detective work.  You are confronted
 with clues, and you have to infer the processes and events that led
@@ -1070,6 +1100,9 @@ words, numbers, and chemical elements.  One of the problems with $3 +
 = 3 \mbox{\$} 6$ is that \verb"$" is not a legal token in mathematics
 (at least as far as I know).  Similarly, $_2Zz$ is not legal because
 there is no element with the abbreviation $Zz$.
+
+\index{token}
+\index{structure}
 
 The second type of syntax error pertains to the structure of a
 statement; that is, the way the tokens are arranged.  The statement $3
@@ -1165,7 +1198,8 @@ language.
 
 \section{The first program}
 \label{hello}
-\index{hello world}
+
+\index{Hello, World!}
 
 Traditionally, the first program you write in a new language
 is called ``Hello, World!'' because all it does is display the
@@ -1201,6 +1235,7 @@ does about as well as possible.
 
 
 \section{Debugging}
+\index{debugging}
 
 It is a good idea to read this book in front of a computer so you can
 try out the examples as you go.  You can run most of the examples in
@@ -1229,6 +1264,8 @@ of them as teammates, and when they are obstinate or rude, we
 respond to them the same way we respond to rude,
 obstinate people.
 
+\index{debugging!emotions}
+
 Preparing for these reactions might help you deal with them.
 One approach is to think of the computer as an employee with
 certain strengths, like speed and precision, and
@@ -1253,108 +1290,110 @@ with my thoughts about debugging.  I hope they help!
 
 \item[problem solving:]  The process of formulating a problem, finding
 a solution, and expressing the solution.
+\index{problem solving}
 
 \item[high-level language:]  A programming language like Python that
 is designed to be easy for humans to read and write.
+\index{high-level language}
 
 \item[low-level language:]  A programming language that is designed
 to be easy for a computer to execute; also called ``machine language'' or
 ``assembly language.''
+\index{low-level language}
 
 \item[portability:]  A property of a program that can run on more
 than one kind of computer.
+\index{portability}
 
 \item[interpret:]  To execute a program in a high-level language
 by translating it one line at a time.
+\index{interpret}
 
 \item[compile:]  To translate a program written in a high-level language
 into a low-level language all at once, in preparation for later
 execution.
+\index{compile}
 
 \item[source code:]  A program in a high-level language before
 being compiled.
+\index{source code}
 
 \item[object code:]  The output of the compiler after it translates
 the program.
+\index{object code}
 
 \item[executable:]  Another name for object code that is ready
 to be executed.
+\index{executable}
 
 \item[prompt:] Characters displayed by the interpreter to indicate
 that it is ready to take input from the user.
+\index{prompt}
 
 \item[script:] A program stored in a file (usually one that will be
 interpreted).
+\index{script}
 
 \item[interactive mode:] A way of using the Python interpreter by
 typing commands and expressions at the prompt.
+\index{interactive mode}
 
 \item[script mode:] A way of using the Python interpreter to read
 and execute statements in a script.
+\index{script mode}
 
 \item[program:] A set of instructions that specifies a computation.
+\index{program}
 
 \item[algorithm:]  A general process for solving a category of
 problems.
+\index{algorithm}
 
 \item[bug:]  An error in a program.
+\index{bug}
 
 \item[debugging:]  The process of finding and removing any of the
 three kinds of programming errors.
+\index{debugging}
 
 \item[syntax:]  The structure of a program.
+\index{syntax}
 
 \item[syntax error:]  An error in a program that makes it impossible
 to parse (and therefore impossible to interpret).
+\index{syntax error}
 
 \item[exception:]  An error that is detected while the program is running.
+\index{exception}
 
 \item[semantics:]  The meaning of a program.
+\index{semantics}
 
 \item[semantic error:]   An error in a program that makes it do something
 other than what the programmer intended.
+\index{semantic error}
 
 \item[natural language:]  Any one of the languages that people speak that
 evolved naturally.
+\index{natural language}
 
 \item[formal language:]  Any one of the languages that people have designed
 for specific purposes, such as representing mathematical ideas or
 computer programs; all programming languages are formal languages.
+\index{formal language}
 
 \item[token:]  One of the basic elements of the syntactic structure of
 a program, analogous to a word in a natural language.
+\index{token}
 
 \item[parse:]  To examine a program and analyze the syntactic structure.
+\index{parse}
 
 \item[print statement:]  An instruction that causes the Python
 interpreter to display a value on the screen.
-
-\index{program}
-\index{problem-solving}
-\index{high-level language}
-\index{low-level language}
-\index{portability}
-\index{interpret}
-\index{compile}
-\index{source code}
-\index{object code}
-\index{executable}
-\index{algorithm}
-\index{bug}
-\index{debugging}
-\index{syntax}
-\index{semantics}
-\index{syntax error}
-\index{runtime error}
-\index{exception}
-\index{semantic error}
-\index{formal language}
-\index{natural language}
-\index{parse}
-\index{token}
-\index{script}
 \index{print statement}
 \index{statement!print}
+
 
 \end{description}
 
@@ -1371,6 +1410,9 @@ For example, if you enter {\tt print} in the search window, the
 first link that appears is the documentation of the {\tt print}
 statement.  At this point, not all of it will make sense to you,
 but it is good to know where it is!
+
+\index{documentation}
+\index{python.org}
 \end{ex}
 
 \begin{ex}
@@ -1381,6 +1423,8 @@ topic, in this case the {\tt print} statement.  If this example
 doesn't work, you may need to install additional Python documentation
 or set an environment variable; the details depend
 on your operating system and version of Python.
+
+\index{help utility}
 \end{ex}
 
 \begin{ex}
@@ -1394,6 +1438,10 @@ multiplication is {\tt *}.
 If you run a 10 kilometer race in 42 minutes 30 seconds, what is your
 average pace per mile?  What is your average speed in miles per hour?
 (Hint: there are 1.61 kilometers in a mile).
+
+\index{calculator}
+\index{race pace}
+
 \end{ex}
 
 
@@ -1489,6 +1537,9 @@ Well, that's not what we expected at all!  Python interprets {\tt
   1,000,000} as a comma-separated sequence of integers, which it
 prints with spaces between.
 
+\index{semantic error}
+\index{error!semantic}
+
 This is the first example we have seen of a semantic error: the code
 runs without producing an error message, but it doesn't do the
 ``right'' thing.
@@ -1496,7 +1547,7 @@ runs without producing an error message, but it doesn't do the
 
 \section{Variables}
 \index{variable}
-\index{assignment}
+\index{assignment statement}
 \index{statement!assignment}
 
 One of the most powerful features of a programming language is the
@@ -1556,7 +1607,6 @@ The type of a variable is the type of the value it refers to.
 \end{verbatim}
 \afterverb
 %
-
 \begin{ex}
 If you type an integer with a leading zero, you might get
 a confusing error:
@@ -1581,6 +1631,9 @@ Other number seem to work, but the results are bizarre:
 
 Can you figure out what is going on?  Hint: print the
 values {\tt 01}, {\tt 010}, {\tt 0100} and {\tt 01000}.
+
+\index{octal}
+
 \end{ex}
 
 
@@ -1602,10 +1655,10 @@ The underscore character (\verb"_") can appear in a name.
 It is often used in names with multiple words, such as
 \verb"my_name" or \verb"airspeed_of_unladen_swallow".
 
+\index{{\tt \_}, underscore}
 \index{underscore character}
 
 If you give a variable an illegal name, you get a syntax error:
-
 
 \beforeverb
 \begin{verbatim}
@@ -1652,6 +1705,10 @@ is on this list.
 A statement is a unit of code that the Python interpreter can
 execute.  We have seen two kinds of statements: print
 and assignment.
+
+\index{statement}
+\index{interactive mode}
+\index{script mode}
 
 When you type a statement in interactive mode, the interpreter
 executes it and displays the result, if there is one.
@@ -1706,6 +1763,9 @@ in Python it is a bitwise operator called XOR.  I won't cover
 bitwise operators in this book, but you can read about
 them at \url{wiki.python.org/moin/BitwiseOperators}.
 
+\index{bitwise operator}
+\index{operator!bitwise}
+
 %When a variable name appears in the place of an operand, it
 %is replaced with its value before the operation is
 %performed.
@@ -1753,6 +1813,9 @@ A value all by itself is considered an expression, and so is
 a variable, so the following are all legal expressions
 (assuming that the variable {\tt x} has been assigned a value):
 
+\index{expression}
+\index{evaluate}
+
 \beforeverb
 \begin{verbatim}
 17
@@ -1796,6 +1859,7 @@ expression into a print statement and then run it again.
 \section{Order of operations}
 \index{order of operations}
 \index{rules of precedence}
+\index{PEMDAS}
 
 When more than one operator appears in an expression, the order of
 evaluation depends on the {\bf rules of precedence}.  For
@@ -1830,6 +1894,7 @@ to divide by $2 \pi$, you should have used parentheses.
 
 \section{String operations}
 \index{string operation}
+\index{operator!string}
 
 In general, you cannot perform mathematical operations on strings, even
 if the strings look like numbers, so the following are illegal:
@@ -1869,6 +1934,8 @@ significant way in which string concatenation and repetition are
 different from integer addition and multiplication.
 Can you think of a property that addition has
 that string concatenation does not?
+
+\index{commutativity}
 
 
 \section{Comments}
@@ -1913,7 +1980,6 @@ v = 5     # assign 5 to v
 \end{verbatim}
 \afterverb
 %
-
 This comment contains useful information that is not in the code:
 
 \beforeverb
@@ -1927,11 +1993,15 @@ long names can make complex expressions hard to read, so there is
 a tradeoff.
 
 \section{Debugging}
+\index{debugging}
 
 At this point the syntax error you are most likely to make is
 an illegal variable name, like {\tt class} and {\tt yield} (which
 are keywords) or \verb"odd~job" and \verb"US$" which contain
 illegal characters.
+
+\index{syntax error}
+\index{error!syntax}
 
 If you put a space in a variable name, Python thinks it is two
 operands without an operator:
@@ -1947,7 +2017,12 @@ For syntax errors, the error messages don't help much.
 The most common messages are {\tt SyntaxError: invalid syntax} and
 {\tt SyntaxError: invalid token}, neither of which is very informative.
 
-The run-time error you are most likely to make is a ``use before
+\index{use before def}
+\index{exception}
+\index{runtime error}
+\index{error!runtime}
+
+The runtime error you are most likely to make is a ``use before
 def;'' that is, trying to use a variable before you have assigned
 a value.  This can happen if you spell a variable name wrong:
 
@@ -1961,6 +2036,10 @@ NameError: name 'principle' is not defined
 %
 Variables names are case sensitive, so {\tt LaTeX} is not the
 same as {\tt latex}.
+
+\index{case-sensitivity, variable names}
+\index{semantic error}
+\index{error!semantic}
 
 At this point the most likely cause of a semantic error is
 the order of operations.  For example, to evaluate $\frac{1}{2 \pi}$,
@@ -1977,6 +2056,7 @@ is not the same thing!  There is no way for Python
 to know what you meant to write, so in this case you don't
 get an error message; you just get the wrong answer.
 
+\index{order of operations}
 
 
 \section{Glossary}
@@ -2088,6 +2168,7 @@ Use the Python interpreter to check your answers.
 
 \begin{ex}
 Practice using the Python interpreter as a calculator: 
+\index{calculator}
 
 \begin{enumerate}
 
@@ -2102,6 +2183,8 @@ Practice using the Python interpreter as a calculator:
 \item If I leave my house at 6:52 am and run 1 mile at an easy pace
   (8:15 per mile), then 3 miles at tempo (7:12 per mile) and 1 mile at
   easy pace again, what time do I get home for breakfast?
+
+\index{race pace}
 
 \end{enumerate}
 \end{ex}
@@ -2167,6 +2250,8 @@ ValueError: invalid literal for int(): Hello
 {\tt int} can convert floating-point values to integers, but it
 doesn't round off; it chops off the fraction part:
 
+\index{int, type conversion}
+
 \beforeverb
 \begin{verbatim}
 >>> int(3.99999)
@@ -2179,6 +2264,8 @@ doesn't round off; it chops off the fraction part:
 {\tt float} converts integers and strings to floating-point
 numbers:
 
+\index{float, type conversion}
+
 \beforeverb
 \begin{verbatim}
 >>> float(32)
@@ -2189,6 +2276,8 @@ numbers:
 \afterverb
 %
 Finally, {\tt str} converts its argument to a string:
+
+\index{str, type conversion}
 
 \beforeverb
 \begin{verbatim}
@@ -2252,6 +2341,12 @@ The first example computes the logarithm base 10 of the
 signal-to-noise ratio.  The math module also provides a
 function called {\tt log} that computes logarithms base {\tt e}.
 
+\index{log}
+\index{sine}
+\index{radians}
+\index{trigonometric functions}
+\index{function!trigonometric}
+
 The second example finds the sine of {\tt radians}.  The name of the
 variable is a hint that {\tt sin} and the other trigonometric
 functions ({\tt cos}, {\tt tan}, etc.)  take arguments in radians. To
@@ -2271,9 +2366,13 @@ The expression {\tt math.pi} gets the variable {\tt pi} from the math
 module.  The value of this variable is an approximation
 of $\pi$, accurate to about 15 digits.
 
+\index{pi}
+
 If you know
 your trigonometry, you can check the previous result by comparing it to
 the square root of two divided by two:
+
+\index{sqrt}
 
 \beforeverb
 \begin{verbatim}
@@ -2356,8 +2455,16 @@ can't be a number.  You can't use a keyword as the name of a function,
 and you should avoid having a variable and a function with the same
 name.
 
+\index{def}
+\index{argument}
+
 The empty parentheses after the name indicate that this function
 doesn't take any arguments.
+
+\index{header}
+\index{body}
+\index{indentation}
+\index{colon}
 
 The first line of the function definition is called the {\bf header};
 the rest is called the {\bf body}.
@@ -2369,6 +2476,8 @@ The strings in the print statements are enclosed in double
 quotes.  Single quotes and double quotes do the same thing;
 most people use single quotes except in cases like this where
 a single quote (which is also an apostrophe) appears in the string.
+
+\index{ellipses}
 
 If you type a function definition in interactive mode, the interpreter
 prints ellipses ({\em ...}) to let you know that the definition
@@ -2399,6 +2508,9 @@ Defining a function creates a variable with the same name.
 %
 The value of \verb"print_lyrics" is a {\bf function object}, which
 has type \verb"'function'".
+
+\index{function object}
+\index{object!function}
 
 The syntax for calling the new function is the same as
 for built-in functions:
@@ -2439,6 +2551,7 @@ But that's not really how the song goes.
 
 
 \section{Definitions and uses}
+\index{function definition}
 
 Pulling together the code fragments from the previous section, the
 whole program looks like this:
@@ -2462,6 +2575,8 @@ This program contains two function definitions: \verb"print_lyrics" and
 statements, but the effect is to create function objects.  The statements
 inside the function do not get executed until the function is called, and
 the function definition generates no output.
+
+\index{use before def}
 
 As you might expect, you have to create a function before you can
 execute it.  In other words, the function definition has to be
@@ -2506,7 +2621,7 @@ have to execute the statements in another function. But while
 executing that new function, the program might have to execute yet
 another function!
 
-Fortunately, Python is adept at keeping track of where it is, so each
+Fortunately, Python is good at keeping track of where it is, so each
 time a function completes, the program picks up where it left off in
 the function that called it.  When it gets to the end of the program,
 it terminates.
@@ -2564,6 +2679,8 @@ The same rules of composition that apply to built-in functions also
 apply to user-defined functions, so we can use any kind of expression
 as an argument for \verb"print_twice":
 
+\index{composition}
+
 \beforeverb
 \begin{verbatim}
 >>> print_twice('Spam '*4)
@@ -2578,6 +2695,8 @@ Spam Spam Spam Spam
 The argument is evaluated before the function is called, so
 in the examples the expressions {\tt 'Spam '*4} and
 {\tt math.cos(math.pi)} are only evaluated once.
+
+\index{argument}
 
 You can also use a variable as an argument:
 
@@ -2615,6 +2734,8 @@ def cat_twice(part1, part2):
 This function takes two arguments, concatenates them, and prints
 the result twice.  Here is an example that uses it:
 
+\index{concatenation}
+
 \beforeverb
 \begin{verbatim}
 >>> line1 = 'Bing tiddle '
@@ -2641,6 +2762,8 @@ NameError: name 'cat' is not defined
 Parameters are also local.
 For example, outside \verb"print_twice", there is no
 such thing as {\tt bruce}.
+
+\index{parameter}
 
 
 \section{Stack diagrams}
@@ -2758,12 +2881,15 @@ math.sqrt(5)
 This script computes the square root of 5, but since it doesn't store
 or display the result, it is not very useful.
 
+\index{interactive mode}
+\index{script mode}
+
 Void functions might display something on the screen or have some
 other effect, but they don't have a return value.  If you try to
 assign the result to a variable, you get a special value called
 {\tt None}.
 
-\index{{\tt None}}
+\index{None}
 
 \beforeverb
 \begin{verbatim}
@@ -2790,6 +2916,7 @@ writing fruitful functions in a few chapters.
 
 
 \section{Why functions?}
+\index{functions}
 
 It may not be clear why it is worth the trouble to divide
 a program into functions.  There are several reasons:
@@ -2813,12 +2940,15 @@ Once you write and debug one, you can reuse it.
 
 
 \section{Debugging}
+\index{debugging}
 
 If you are using a text editor to write your scripts, you might
 run into problems with spaces and tabs.  The best way to avoid
 these problems is to use spaces exclusively (no tabs).  Most text
 editors that know about Python do this by default, but some
 don't.
+
+\index{whitespace}
 
 Tabs and spaces are usually invisible, which makes them
 hard to debug, so try to find an editor that manages indentation
@@ -2936,6 +3066,10 @@ printed when an exception occurs.
 \section{Exercises}
 
 \begin{ex}
+
+\index{len function}
+\index{function!len}
+
 Python provides a built-in function called {\tt len} that
 returns the length of a string, so the value of \verb"len('allen')" is 5.
 
@@ -2955,6 +3089,9 @@ of the display.
 
 
 \begin{ex}
+\index{function object}
+\index{object!function}
+
 A function object is a value you can assign to a variable
 or pass as an argument.  For example, \verb"do_twice" is a function
 that takes a function object as an argument and calls it twice:
@@ -3006,6 +3143,11 @@ You can see my solution at \url{thinkpython.com/code/do_four.py}.
 
 
 \begin{ex}
+This exercise can be done using only the statements
+and other features we have learned so far.
+
+\index{grid}
+
 \begin{enumerate}
 
 \item Write a function that draws a grid like the
@@ -3059,8 +3201,6 @@ with four rows and four columns.
 
 You can see my solution at \url{thinkpython.com/code/grid.py}.
 
-% Solution in grid.py
-
 \end{ex}
 
 
@@ -3071,6 +3211,8 @@ You can see my solution at \url{thinkpython.com/code/grid.py}.
 \label{turtlechap}
 
 \section{TurtleWorld}
+\index{TurtleWorld}
+\index{Swampy}
 
 To accompany this book, I have written a suite of modules called
 Swampy.  One of these modules is TurtleWorld, which provides
@@ -3101,6 +3243,9 @@ instead of creating a module object, it imports the functions
 from the module directly, so you can access them without using dot
 notation.
 
+\index{import statement}
+\index{statement!import}
+
 The next lines create a TurtleWorld assigned to {\tt world} and
 a Turtle assigned to {\tt bob}.  Printing {\tt bob} yields something
 like:
@@ -3116,6 +3261,8 @@ an {\bf instance} of a Turtle
 as defined in module {\tt TurtleWorld}.  In this context,
 ``instance'' means a member of a set;
 this TurtleWorld is one of the set of possible TurtleWorlds.
+
+\index{instance}
 
 \verb"wait_for_user" tells TurtleWorld to wait for the user
 to do something, although in this case there's not much for
@@ -3153,6 +3300,7 @@ you've got it working!
 
 \section{Simple repetition}
 \label{repetition}
+\index{repetition}
 
 Chances are you wrote something like this (leaving out the code
 that creates TurtleWorld and waits for the user):
@@ -3172,6 +3320,9 @@ fd(bob, 100)
 %
 We can do the same thing more concisely with a {\tt for} statement.
 Add this example to {\tt polygon.py} and run it again:
+
+\index{for statement}
+\index{statement!for}
 
 \beforeverb
 \begin{verbatim}
@@ -3210,6 +3361,8 @@ for i in range(4):
 The syntax of a {\tt for} statement is similar to a function
 definition.  It has a header that ends with a colon and an indented
 body.  The body can contain any number of statements.
+
+\index{loop}
 
 A {\tt for} statement is sometimes called a {\bf loop} because
 the flow of execution runs through the body and then loops back
@@ -3257,11 +3410,14 @@ another parameter named {\tt n} and modify the body so it draws an
 n-sided regular polygon.  Hint: The angles of an n-sided regular
 polygon are $360.0 / n$ degrees.
 
+\index{polygon}
 
 \item Write a function called {\tt circle} that takes a turtle, {\tt t},
 and radius, {\tt r}, as parameters and that draws an approximate circle
 by invoking {\tt polygon} with an appropriate length and number of
 sides.  Test your function with a range of values of {\tt r}.
+
+\index{circle}
 
 Hint: figure out the circumference of the circle and make sure that
 {\tt length * n = circumference}.
@@ -3275,6 +3431,8 @@ that takes an additional parameter {\tt angle}, which determines
 what fraction of a circle to draw.  {\tt angle} is in units of
 degrees, so when {\tt angle=360}, {\tt arc} should draw a complete
 circle.
+
+\index{arc}
 
 \end{enumerate}
 
@@ -3344,6 +3502,8 @@ because it makes the function more general: in the previous
 version, the square is always the same size; in this version
 it can be any size.
 
+\index{generalization}
+
 The next step is also a generalization.  Instead of drawing
 squares, {\tt polygon} draws regular polygons with any number of
 sides.  Here is a solution:
@@ -3387,7 +3547,7 @@ arguments are assigned to the parameters.
 \section{Interface design}
 
 The next step is to write {\tt circle}, which takes a radius,
-{\tt r} as a parameter.  Here is a simple solution that uses
+{\tt r}, as a parameter.  Here is a simple solution that uses
 {\tt polygon} to draw a 50-sided polygon:
 
 \beforeverb
@@ -3452,6 +3612,7 @@ and appropriate for any size circle.
 
 \section{Refactoring}
 \label{refactoring}
+\index{refactoring}
 
 When I wrote {\tt circle}, I was able to re-use {\tt polygon}
 because a many-sided polygon is a good approximation of a circle.
@@ -3532,6 +3693,7 @@ sign that you have learned something.
 
 
 \section{A development plan}
+\index{development plan!encapsulation and generalization}
 
 A {\bf development plan} is a process for writing programs.
 The process we used
@@ -3564,6 +3726,7 @@ along.
 
 \section{docstring}
 \label{docstring}
+\index{docstring}
 
 A {\bf docstring} is a string at the beginning of a function that
 explains the interface (``doc'' is short for ``documentation'').  Here
@@ -3599,6 +3762,8 @@ that might be a sign that the interface could be improved.
 
 
 \section{Debugging}
+\index{debugging}
+\index{interface}
 
 An interface is like a contract between a function and a caller.
 The caller agrees to provide certain parameters and the function
@@ -3621,8 +3786,8 @@ effect of the function (like drawing line segments) and any
 side effects (like moving the Turtle or making other changes
 in the World).
 
-\index{preconditions}
-\index{postconditions}
+\index{precondition}
+\index{postcondition}
 
 Preconditions are the responsibility of the caller.  If the caller
 violates a (properly documented!) precondition and the function
@@ -3691,6 +3856,8 @@ Write appropriate docstrings for {\tt polygon} and
 \end{ex}
 
 \begin{ex}
+\index{stack diagram}
+
 Draw a stack diagram that shows the state of the program
 while executing {\tt circle(bob, 100)}.  You can do the
 arithmetic by hand or add {\tt print} statements to the code.
@@ -3709,6 +3876,8 @@ You can see my solution at \url{thinkpython.com/code/polygon.py}.
 
 
 \begin{ex}
+\index{flowers}
+
 Write an appropriately general set of functions that
 can draw flowers like this:
 
@@ -3720,6 +3889,8 @@ You can download a solution from \url{thinkpython.com/code/flower.py}.
 
 
 \begin{ex}
+\index{pies}
+
 Write an appropriately general set of functions that
 can draw shapes like this:
 
@@ -3730,6 +3901,10 @@ You can download a solution from \url{thinkpython.com/code/pie.py}.
 \end{ex}
 
 \begin{ex}
+\index{alphabet}
+\index{turtle typewriter}
+\index{typewriter!turtle}
+
 The letters of the alphabet can be constructed from a moderate
 number of basic elements, like vertical and horizontal lines
 and a few curves.  Design a font that can be drawn with a
@@ -3780,6 +3955,8 @@ The modulus operator turns out to be surprisingly useful.  For
 example, you can check whether one number is divisible by another---if
 {\tt x \% y} is zero, then {\tt x} is divisible by {\tt y}.
 
+\index{divisibility}
+
 Also, you can extract the right-most digit
 or digits from a number.  For example, {\tt x \% 10} yields the
 right-most digit of {\tt x} (in base 10).  Similarly {\tt x \% 100}
@@ -3808,6 +3985,11 @@ False
 %
 {\tt True} and {\tt False} are special
 values that belong to the type {\tt bool}; they are not strings:
+
+\index{True}
+\index{False}
+\index{bool}
+\index{type!bool}
 
 \beforeverb
 \begin{verbatim}
@@ -3838,6 +4020,9 @@ is to use a single equal sign ({\tt =}) instead of a double equal sign
 {\tt ==} is a comparison operator.   There is no such thing as
 {\tt =<} or {\tt =>}.
 
+\index{comparison operator}
+\index{operator!comparison}
+
 
 \section {Logical operators}
 \index{logical operator}
@@ -3848,6 +4033,10 @@ or}, and {\tt not}.  The semantics (meaning) of these operators is
 similar to their meaning in English.  For example,
 {\tt x > 0 and x < 10} is true only if {\tt x} is greater than 0
 {\em and} less than 10.
+
+\index{and}
+\index{or}
+\index{not}
 
 {\tt n\%2 == 0 or n\%3 == 0} is true if {\em either} of the conditions
 is true, that is, if the number is divisible by 2 {\em or} 3.
@@ -3874,7 +4063,11 @@ you know what you are doing).
 
 \section{Conditional execution}
 \label{conditional execution}
-\index{conditional branching}
+
+\index{conditional statement}
+\index{statement!conditional}
+\index{if statement}
+\index{statement!if}
 \index{conditional execution}
 
 In order to write useful programs, we almost always need the ability
@@ -3920,6 +4113,9 @@ if x < 0:
 
 \section{Alternative execution}
 \label{alternative execution}
+
+\index{alternative execution}
+\index{else}
 
 A second form of the {\tt if} statement is {\bf alternative execution},
 in which there are two possibilities and the condition determines
@@ -3969,6 +4165,8 @@ branch will be executed.  There is no limit on the number of {\tt
 elif} statements.  If there is an {\tt else} clause, it has to be
 at the end, but there doesn't have to be one.
 
+\index{elif}
+
 \beforeverb
 \begin{verbatim}
 if choice == 'a':
@@ -3988,6 +4186,8 @@ first true branch executes.
 
 
 \section{Nested conditionals}
+\index{nested conditional}
+\index{conditional!nested}
 
 One conditional can also be nested within another.  We could have
 written the trichotomy example like this:
@@ -4173,6 +4373,9 @@ As usual, the top of the stack is the frame for \verb"__main__".
 It is empty because we did not create any variables in 
 \verb"__main__" or pass any arguments to it.
 
+\index{base case}
+\index{recursion!base case}
+
 The four {\tt countdown} frames have different values for the
 parameter {\tt n}.  The bottom of the stack, where {\tt n=0}, is
 called the {\bf base case}.  It does not make a recursive call, so
@@ -4189,8 +4392,6 @@ object and a number, {\tt n} as arguments, and that calls
 the given function {\tt n} times.
 \end{quote}
 
-\index{base case}
-\index{recursion!base case}
 
 
 \section{Infinite recursion}
@@ -4238,6 +4439,7 @@ previous chapter.  When the error occurs, there are 1000
 
 
 \section{Keyboard input}
+\index{keyboard input}
 
 The programs we have written so far are a bit rude in the sense that
 they accept no input from the user.  They just do the same thing every
@@ -4249,6 +4451,9 @@ input from the keyboard\footnote{In Python 3.0, this function is named
 waits for the user to type something.  When the user presses {\sf
   Return} or {\sf Enter}, the program resumes and \verb"raw_input"
 returns what the user typed as a string.
+
+\index{raw\_input function}
+\index{function!raw\_input}
 
 \beforeverb
 \begin{verbatim}
@@ -4310,8 +4515,13 @@ ValueError: invalid literal for int()
 %
 We will see how to handle this kind of error later.
 
+\index{ValueError}
+\index{exception!ValueError}
+
 
 \section{Debugging}
+\index{debugging}
+\index{traceback}
 
 The traceback Python displays when an error occurs contains
 a lot of information, but it can be overwhelming, especially
@@ -4330,6 +4540,8 @@ Syntax errors are usually easy to find, but there are a few
 gotchas.  Whitespace errors can be tricky because spaces and
 tabs are invisible and we are used to ignoring them.
 
+\index{whitespace}
+
 \beforeverb
 \begin{verbatim}
 >>> x = 5
@@ -4347,7 +4559,10 @@ misleading.  In general, error messages indicate where the error was
 discovered, but the actual error might be earlier in the code,
 sometimes on a previous line.
 
-The same is true of run time errors.  Suppose you are trying
+\index{error!runtime}
+\index{runtime error}
+
+The same is true of runtime errors.  Suppose you are trying
 to compute a signal-to-noise ratio in decibels.  The formula
 is $SNR_{db} = 10 \log10(P_{signal} / P_{noise})$.  In Python,
 you might write something like this:
@@ -4364,6 +4579,9 @@ print decibels
 \afterverb
 %
 But when you run it, you get an error message:
+
+\index{exception!OverflowError}
+\index{OverflowError}
 
 \beforeverb
 \begin{verbatim}
@@ -4458,6 +4676,8 @@ causes a runtime error.
 \section{Exercises}
 
 \begin{ex}
+\index{Fermat's Last Theorem}
+
 Fermat's Last Theorem says that there are no integers
 $a$, $b$, and $c$ such that
 
@@ -4488,6 +4708,7 @@ violate Fermat's theorem.
 
 
 \begin{ex}
+\index{triangle}
 
 If you are given three sticks, you may or may not be able to arrange
 them in a triangle.  For example, if one of the sticks is 12 inches
@@ -4509,14 +4730,16 @@ then you cannot form a triangle.  Otherwise, you can.''
   given lengths.
 
 \item Write a function that prompts the user to input three stick
-  lengths and uses \verb"is_triangle" to check whether sticks
-  with the given lengths can form a triangle.
+  lengths, converts them to integers, and uses \verb"is_triangle" to
+  check whether sticks with the given lengths can form a triangle.
 
 \end{enumerate}
 
 \end{ex}
 
 The following exercises use TurtleWorld from Chapter~\ref{turtlechap}:
+
+\index{TurtleWorld}
 
 \begin{ex}
 
@@ -4543,6 +4766,9 @@ def draw(t, length, n):
 
 
 \begin{ex}
+
+\index{Koch curve}
+
 The Koch curve is a fractal that looks something like
 this:
 
@@ -4633,6 +4859,9 @@ this function and use the following expression as a return value.''
 The expression can be arbitrarily complicated, so we could
 have written this function more concisely:
 
+\index{return statement}
+\index{statement!return}
+
 \beforeverb
 \begin{verbatim}
 def area(radius):
@@ -4700,6 +4929,10 @@ None
 %
 
 \begin{ex}
+
+\index{compare function}
+\index{function!compare}
+
 Write a {\tt compare} function
 that returns {\tt 1} if {\tt x > y},
 {\tt 0} if {\tt x == y}, and {\tt -1} if {\tt x < y}.
@@ -4719,6 +4952,8 @@ you might want to try a process called
 is to avoid long debugging sessions by adding and testing only
 a small amount of code at a time.
 
+\index{Pythagorean theorem}
+
 As an example, suppose you want to find the distance between two
 points, given by the coordinates $(x_1, y_1)$ and $(x_2, y_2)$.
 By the Pythagorean theorem, the distance is:
@@ -4728,7 +4963,7 @@ By the Pythagorean theorem, the distance is:
 \end{displaymath}
 %
 The first step is to consider what a {\tt distance} function should
-look like in Python. In other words, what are the inputs (parameters)
+look like in Python.  In other words, what are the inputs (parameters)
 and what is the output (return value)?
 
 In this case, the inputs are two points, which you can represent
@@ -4801,6 +5036,9 @@ Again, you would run the program at this stage and check the output
 (which should be 25).
 Finally, you can use {\tt math.sqrt} to compute and return the result:
 
+\index{sqrt}
+\index{function!sqrt}
+
 \beforeverb
 \begin{verbatim}
 def distance(x1, y1, x2, y2):
@@ -4849,6 +5087,9 @@ read.
 \end{enumerate}
 
 \begin{ex}
+
+\index{hypotenuse}
+
 Use incremental development to write a function
 called {\tt hypotenuse} that returns the length of the hypotenuse of a
 right triangle given the lengths of the two legs as arguments.
@@ -4857,6 +5098,7 @@ Record each stage of the development process as you go.
 
 
 \section{Composition}
+
 \index{composition}
 \index{function!composition}
 
@@ -4890,6 +5132,8 @@ result = area(radius)
 %
 Encapsulating these steps in a function, we get:
 
+\index{encapsulation}
+
 \beforeverb
 \begin{verbatim}
 def circle_area(xc, yc, xp, yp):
@@ -4913,6 +5157,7 @@ def circle_area(xc, yc, xp, yp):
 
 \section{Boolean functions}
 \label{boolean}
+
 \index{boolean function}
 \index{function!boolean}
 
@@ -4956,6 +5201,9 @@ def is_divisible(x, y):
 %
 Boolean functions are often used in conditional statements:
 
+\index{conditional statement}
+\index{statement!conditional}
+
 \beforeverb
 \begin{verbatim}
 if is_divisible(x, y):
@@ -4981,6 +5229,7 @@ returns {\tt True} if $x \le y \le z$ or {\tt False} otherwise.
 
 
 \section{More recursion}
+
 \index{recursion}
 \index{complete language}
 \index{language!complete}
@@ -5041,6 +5290,7 @@ which is 6.
 
 \index{factorial function}
 \index{function!factorial}
+\index{recursive definition}
 
 If you can write a recursive definition of something, you can usually
 write a Python program to evaluate it. The first step is to decide
@@ -5116,6 +5366,8 @@ The return value (2) is multiplied by $n$, which is 3, and the result, 6,
 becomes the return value of the function call that started the whole
 process.
 
+\index{stack diagram}
+
 Here is what the stack diagram looks like for this sequence of function
 calls:
 
@@ -5128,6 +5380,8 @@ calls:
 The return values are shown being passed back up the stack.  In each
 frame, the return value is the value of {\tt result}, which is the
 product of {\tt n} and {\tt recurse}.
+
+\index{frame}
 
 In the last frame, the local
 variables {\tt recurse} and {\tt result} do not exist, because
@@ -5174,7 +5428,8 @@ it's called a leap of faith!
 \section{One more example}
 \label{one more example}
 
-\index{Fibonacci function}
+\index{fibonacci function}
+\index{function!fibonacci}
 
 After {\tt factorial}, the most common example of a recursively
 defined mathematical function is {\tt fibonacci}, which has the
@@ -5207,6 +5462,8 @@ small values of $n$, your head explodes.  But according to the
 leap of faith, if you assume that the two recursive calls
 work correctly, then it is clear that you get
 the right result by adding them together.
+
+\index{flow of execution}
 
 
 \section{Checking types}
@@ -5249,7 +5506,7 @@ We can use the built-in function {\tt isinstance} to verify the type
 of the argument.  While we're at it, we can also make sure the
 argument is positive:
 
-\index{{\tt isinstance}}
+\index{isinstance}
 
 \beforeverb
 \begin{verbatim}
@@ -5286,6 +5543,9 @@ None
 If we get past both checks, then we know that $n$ is a positive
 integer, and we can prove that the recursion terminates.
 
+\index{guardian pattern}
+\index{pattern!guardian}
+
 This program demonstrates a pattern sometimes called a {\bf guardian}.
 The first two conditionals act as guardians, protecting the code that
 follows from values that might cause an error.  The guardians make it
@@ -5294,6 +5554,8 @@ possible to prove the correctness of the code.
 
 \section{Debugging}
 \label{factdebug}
+
+\index{debugging}
 
 Breaking a large program into smaller functions creates natural
 checkpoints for debugging.  If a function is not working, there are
@@ -5317,6 +5579,9 @@ at the beginning of the function and display the values of the
 parameters (and maybe their types).  Or you can write code
 that checks the preconditions explicitly.
 
+\index{precondition}
+\index{postcondition}
+
 If the parameters look good, add a {\tt print} statement before each
 {\tt return} statement that displays the return value.  If
 possible, check the result by hand.  Consider calling the
@@ -5326,6 +5591,8 @@ function with values that make it easy to check the result
 If the function seems to be working, look at the function call
 to make sure the return value is being used correctly (or used
 at all!).
+
+\index{flow of execution}
 
 Adding print statements at the beginning and end of a function
 can help make the flow of execution more visible.
@@ -5410,6 +5677,8 @@ might cause an error.
 \section{Exercises}
 
 \begin{ex}
+\index{stack diagram}
+
 Draw a stack diagram for the following
 program.  What does the program print?
 
@@ -5439,6 +5708,9 @@ print c(x, y+3, x+y)
 
 
 \begin{ex}
+\index{Ackerman function}
+\index{function!ack}
+
 The Ackermann function, $A(m, n)$ is defined\footnote{See
   \url{wikipedia.org/wiki/Ackermann_function}}:
 
@@ -5459,6 +5731,9 @@ What happens for larger values of {\tt m} and {\tt n}?
 
 \begin{ex}
 \label{palindrome}
+
+\index{palindrome}
+
 A palindrome is a word that is spelled the same backward and
 forward, like ``noon'' and ``redivider''.  Recursively, a word
 is a palindrome if the first and last letters are the same
@@ -5507,6 +5782,10 @@ and returns {\tt True} if {\tt a} is a power of {\tt b}.
 
 
 \begin{ex}
+
+\index{greatest common divisor (GCD)}
+\index{GDC (greatest common divisor)}
+
 The greatest common divisor (GCD) of $a$ and $b$ is the largest number
 that divides both of them with no remainder\footnote{This exercise is
   based on an example from Abelson and Sussman's {\em Structure and
@@ -5516,6 +5795,9 @@ One way to find the GCD of two numbers is Euclid's algorithm,
 which is based on the observation that if $r$ is the remainder
 when $a$ is divided by $b$, then $gcd(a, b) = gcd(b, r)$.
 As a base case, we can consider $gcd(a, 0) = a$.
+
+\index{Euclid's algorithm}
+\index{algorithm!Euclid}
 
 Write a function called
 \verb"gcd" that takes parameters {\tt a} and {\tt b}
@@ -5530,6 +5812,7 @@ help, see \url{wikipedia.org/wiki/Euclidean_algorithm}.
 
 
 \section{Multiple assignment}
+
 \index{assignment}
 \index{statement!assignment}
 \index{multiple assignment}
@@ -5572,6 +5855,8 @@ Python uses the equal sign ({\tt =}) for assignment, it is tempting to
 interpret a statement like {\tt a = b} as a statement of equality. It
 is not!
 
+\index{equality and assignment}
+
 First, equality is a symmetric relation and assignment is not.  For
 example, in mathematics, if $a = 7$ then $7 = a$.  But in Python, the
 statement {\tt a = 7} is legal and {\tt 7 = a} is not.
@@ -5598,8 +5883,10 @@ make the code difficult to read and debug.
 
 
 \section{Updating variables}
-\index{update}
 \label{update}
+
+\index{update}
+\index{variable!updating}
 
 One of the most common forms of multiple assignment is an {\bf update},
 where the new value of the variable depends on the old.
@@ -5646,8 +5933,10 @@ subtracting 1 is called a {\bf decrement}.
 
 
 \section{The {\tt while} statement}
+
 \index{while statement}
 \index{statement!while}
+\index{while loop}
 \index{loop!while}
 \index{iteration}
 
@@ -5678,6 +5967,8 @@ You can almost read the {\tt while} statement as if it were English.
 It means, ``While {\tt n} is greater than 0,
 display the value of {\tt n} and then reduce the value of
 {\tt n} by 1.  When you get to 0, display the word {\tt Blastoff!}''
+
+\index{flow of execution}
 
 More formally, here is the flow of execution for a {\tt while} statement:
 
@@ -5745,6 +6036,8 @@ then the value of {\tt n} will be even each time through the loop
 until it reaches 1. The previous example ends with such a sequence,
 starting with 16.
 
+\index{Collatz conjecture}
+
 The hard question is whether we can prove that this program terminates
 for {\em all positive values} of {\tt n}.  So far\footnote{See
   \url{wikipedia.org/wiki/Collatz_conjecture}.}, no one has
@@ -5757,6 +6050,8 @@ Section~\ref{recursion} using iteration instead of recursion.
 
 
 \section{{\tt break}}
+\index{break statement}
+\index{statement!break}
 
 Sometimes you don't know it's time to end a loop until you get half
 way through the body.  In that case you can use the {\tt break}
@@ -5803,9 +6098,13 @@ until that happens.'').
 
 \section{Square roots}
 
+\index{square root}
+
 Loops are often used in programs that compute
 numerical results by starting with an approximate answer and
 iteratively improving it.
+
+\index{Newton's method}
 
 For example, one way of computing square roots is Newton's method.
 Suppose that you want to know the square root of $a$.  If you start
@@ -5892,6 +6191,9 @@ Floating-point values are only approximately right:
 most rational numbers, like $1/3$, and irrational numbers, like
 $\sqrt{2}$, can't be represented exactly with a {\tt float}.
 
+\index{floating-point}
+\index{epsilon}
+
 Rather than checking whether {\tt x} and {\tt y} are exactly equal, it
 is safer to use the built-in function {\tt abs} to compute the
 absolute value, or magnitude, of the difference between them:
@@ -5908,6 +6210,8 @@ determines how close is close enough.
 
 \begin{ex}
 \label{square_root}
+\index{encapsulation}
+
 Encapsulate this loop in a function called \verb"square_root"
 that takes {\tt a} as a parameter, chooses a reasonable
 value of {\tt x}, and returns an estimate of the square root
@@ -5934,6 +6238,9 @@ write $n-1$ as the first digit and $10-n$ as the second
 digit.  This trick is a general solution for multiplying any
 single-digit number by 9.  That's an algorithm!
 
+\index{carrying, addition with}
+\index{borrowing, subtraction with}
+
 Similarly, the techniques you learned for addition with carrying,
 subtraction with borrowing, and long division are all algorithms.  One
 of the characteristics of algorithms is that they do not require any
@@ -5956,10 +6263,13 @@ not in the form of an algorithm.
 
 
 \section{Debugging}
+\index{debugging!by bisection}
 
 As you start writing bigger programs, you might find yourself
 spending more time debugging.  More code means more chances to
 make an error and more place for bugs to hide.
+
+\index{bisection!debugging by}
 
 One way to cut your debugging time is ``debugging by bisection.''
 For example, if there are 100 lines in your program and you
@@ -6027,6 +6337,9 @@ never satisfied.
 \section{Exercises}
 
 \begin{ex}
+
+\index{algorithm!square root}
+
 To test the square root algorithm in this chapter, you could compare
 it with {\tt math.sqrt}.  Write a function named \verb"test_square_root"
 that prints a table like this:
@@ -6056,6 +6369,9 @@ of the difference between the two estimates.
 
 \begin{ex}
 
+\index{eval function}
+\index{function!eval}
+
 The built-in function {\tt eval} takes a string and evaluates
 it using the Python interpreter.  For example:
 
@@ -6082,10 +6398,15 @@ return the value of the last expression it evaluated.
 
 
 \begin{ex}
+
+\index{Ramanujan, Srinivasa}
+
 The Indian mathematician Srinivasa Ramanujan found an
 infinite series\footnote{See \url{wikipedia.org/wiki/Pi}.}
 that can be used to generate a numerical
 approximation of $\pi$:
+
+\index{pi}
 
 \[\frac{1}{\pi} = \frac{2\sqrt{2}}{9801} 
 \sum^\infty_{k=0} \frac{(4k)!(1103+26390k)}{(k!)^4 396^{4k}} \]
@@ -6124,6 +6445,8 @@ bracket operator:
 The second statement selects character number 1 from {\tt
 fruit} and assigns it to {\tt letter}.  
 
+\index{index}
+
 The expression in brackets is called an {\bf index}.  
 The index indicates which character in the sequence you
 want (hence the name).
@@ -6153,6 +6476,9 @@ So {\tt b} is the 0th letter (``zero-eth'') of {\tt 'banana'}, {\tt a}
 is the 1th letter (``one-eth''), and {\tt n} is the 2th (``two-eth'')
 letter.
 
+\index{index!starting at zero}
+\index{zero!index starting at}
+
 You can use any expression, including variables and operators, as an
 index, but the value of the index has to be an integer.  Otherwise you
 get:
@@ -6170,8 +6496,9 @@ TypeError: string indices must be integers
 %
 
 \section{{\tt len}}
-\index{{\tt len}}
-\index{string!length}
+
+\index{len function}
+\index{function!len}
 
 {\tt len} is a built-in function that returns the number of characters
 in a string:
@@ -6187,6 +6514,9 @@ in a string:
 To get the last letter of a string, you might be tempted to try something
 like this:
 
+\index{exception!IndexError}
+\index{IndexError}
+
 \beforeverb
 \begin{verbatim}
 >>> length = len(fruit)
@@ -6199,9 +6529,6 @@ The reason for the {\tt IndexError} is that there is no letter in {\tt
 'banana'} with the index 6.  Since we started counting at zero, the
 six letters are numbered 0 to 5.  To get the last character, you have
 to subtract 1 from {\tt length}:
-
-\index{exception!IndexError}
-\index{IndexError}
 
 \beforeverb
 \begin{verbatim}
@@ -6216,6 +6543,7 @@ the end of the string.  The expression {\tt fruit[-1]} yields the last
 letter, {\tt fruit[-2]} yields the second to last, and so on.
 
 \index{index!negative}
+\index{negative index}
 
 
 \section{Traversal with a {\tt for} loop}
@@ -6225,6 +6553,9 @@ letter, {\tt fruit[-2]} yields the second to last, and so on.
 \index{loop!traversal}
 \index{for loop}
 \index{loop!for loop}
+\index{statement!for}
+\index{traverse pattern}
+\index{pattern!traverse}
 
 A lot of computations involve processing a string one character at a
 time.  Often they start at the beginning, select each character in
@@ -6270,7 +6601,6 @@ left.
 \index{concatenation}
 \index{abecedarian}
 \index{McCloskey, Robert}
-\index{{\em Make Way for Ducklings}}
 
 The following example shows how to use concatenation (string addition)
 and a {\tt for} loop to generate an abecedarian series (that is, in
@@ -6315,8 +6645,10 @@ Modify the program to fix this error.
 
 \section{String slices}
 \label{slice}
+
 \index{slice}
 \index{string!slice}
+\index{index!slide}
 
 A segment of a string is called a {\bf slice}.  Selecting a slice is
 similar to selecting a character:
@@ -6372,6 +6704,11 @@ than that, it is the same as any other string.
 \begin{ex}
 Given that {\tt fruit} is a string, what does
 {\tt fruit[:]} mean?
+
+\index{copy}
+\index{slice!copying with}
+
+
 \end{ex}
 
 
@@ -6400,6 +6737,11 @@ the character you tried to assign.  For now, an {\bf object} is
 the same thing as a value, but we will refine that definition
 later.  An {\bf item} is one of the values in a sequence.
 
+\index{object}
+\index{item assignment}
+\index{assignment!item}
+\index{immutable}
+
 The reason for the error is that
 strings are {\bf immutable}, which means you can't change an
 existing string.  The best you can do is create a new string
@@ -6423,12 +6765,11 @@ the original string.
 
 \section{Searching}
 \label{find}
-\index{traversal}
-\index{search}
-\index{pattern}
-\index{computational pattern}
 
 What does the following function do?
+
+\index{find function}
+\index{function!find}
 
 \beforeverb
 \begin{verbatim}
@@ -6458,6 +6799,10 @@ exits the loop normally and  returns {\tt -1}.
 This pattern of computation---traversing a sequence and returning
 when we find what we are looking for---is a called a {\bf search}.
 
+\index{traversal}
+\index{search pattern}
+\index{pattern!search}
+
 \begin{ex}
 Modify {\tt find} so that it has a
 third parameter, the index in {\tt word} where it should start
@@ -6467,8 +6812,10 @@ looking.
 
 \section{Looping and counting}
 \label{counter}
+
 \index{counter}
-\index{pattern}
+\index{counting pattern}
+\index{pattern!counting}
 
 The following program counts the number of times the letter {\tt a}
 appears in a string:
@@ -6491,6 +6838,8 @@ When the loop exits, {\tt count}
 contains the result---the total number of {\tt a}'s.
 
 \begin{ex}
+\index{encapsulation}
+
 Encapsulate this code in a function named {\tt
 count}, and generalize it so that it accepts the string and the
 letter as arguments.
@@ -6504,13 +6853,14 @@ find} from the previous section.
 
 
 \section{{\tt string} methods}
-\index{method}
-\index{string method}
 
 A {\bf method} is similar to a function---it takes arguments and
 returns a value---but the syntax is different.  For example, the
 method {\tt upper} takes a string and returns a new string with
 all uppercase letters:
+
+\index{method}
+\index{string method}
 
 Instead of the function syntax {\tt upper(word)}, it uses
 the method syntax {\tt word.upper()}.
@@ -6590,6 +6940,9 @@ appear in the index range from {\tt 1} to {\tt 2} (not including {\tt
 
 
 \begin{ex}
+\index{count method}
+\index{method!count}
+
 There is a string method called {\tt count} that is similar
 to the function in the previous exercise.  Read the documentation
 of this method
@@ -6600,6 +6953,11 @@ in {\tt 'banana'}.  Hint: there are three.
 
 \section{The {\tt in} operator}
 \label{inboth}
+
+\index{in operator}
+\index{operator!in}
+\index{boolean operator}
+\index{operator!boolean}
 
 The word {\tt in} is a boolean operator that takes two strings and
 returns {\tt True} if the first appears as a substring in the second:
@@ -6643,6 +7001,7 @@ s
 %
 
 \section{String comparison}
+
 \index{string comparison}
 \index{comparison!string}
 
@@ -6686,6 +7045,7 @@ against a man armed with a Pineapple.
 
 
 \section{Debugging}
+\index{debugging}
 
 When you use indices to traverse the values in a sequence,
 it is tricky to get the beginning and end of the traversal
@@ -6717,6 +7077,8 @@ same length.  If not, we can return {\tt False} immediately
 and then, for the rest of the function, we can assume that the words
 are the same length.  This is another example of a guardian.
 
+\index{index}
+
 {\tt i} and {\tt j} are indices: {\tt i} traverses {\tt word1}
 forward while {\tt j} traverses {\tt word2} backward.  If we find
 two letters that don't match, we can return {\tt False} immediately.
@@ -6725,6 +7087,9 @@ return {\tt True}.
 
 If we test this function with the words ``pots'' and ``stop'', we
 expect the return value {\tt True}, but we get an IndexError:
+
+\index{IndexError}
+\index{Exception:IndexError}
 
 \beforeverb
 \begin{verbatim}
@@ -6767,6 +7132,9 @@ The first time through the loop, the value of {\tt j} is 4,
 which is out of range for the string {\tt 'pots'}.
 The index of the last character is 3, so the
 initial value for {\tt j} should be {\tt len(word2)-1}.
+
+\index{semantic error}
+\index{error!semantic}
 
 If I fix that error and run the program again, I get:
 
@@ -6860,6 +7228,11 @@ using dot notation.
 \section{Exercises}
 
 \begin{ex}
+
+\index{step size}
+\index{slide operator}
+\index{operator!slice}
+
 A string slice can take a third index that specifies the ``step
 size;'' that is, the number of spaces between successive characters.
 A step size of 2 means every other character; 3 means every third,
@@ -6876,12 +7249,17 @@ etc.
 A step size of -1 goes through the word backwards, so
 the slice \verb"[::-1]" generates a reversed string.
 
+\index{palindrome}
+
 Use this idiom to write a one-line version of \verb"is_palindrome"
 from Exercise~\ref{palindrome}.
 \end{ex}
 
 
 \begin{ex}
+\index{string method}
+\index{method!string}
+
 Read the documentation of the string methods at
 \url{docs.python.org/lib/string-methods.html}.  You
 might want to experiment with some of them to make sure
@@ -6939,6 +7317,9 @@ def any_lowercase5(s):
 
 
 \begin{ex}
+\index{letter rotation}
+\index{rotation!letters}
+
 \label{exrotate}
 ROT13 is a weak form of encryption that involves ``rotating'' each
 letter in a word by 13 places\footnote{See
@@ -6974,19 +7355,25 @@ of them.
 
 For the exercises in this chapter we need a list of English words.
 There are lots of word lists available on the Web, but the one most
-suitable for our purpose is one of the word lists collected (and
-contributed to the public domain) by Grady Ward as part of the Moby
-lexicon project.  It is a list of 113,809 official crosswords;
-that is, words that are considered valid in crossword puzzles and
-other word games.  In the Moby collection, the filename is
-{\tt 113809of.fic}; I include a copy of this file, with the
-simpler name {\tt words.txt}, along with Swampy.
+suitable for our purpose is one of the word lists collected and
+contributed to the public domain by Grady Ward as part of the Moby
+lexicon project\footnote{\url{wikipedia.org/wiki/Moby_Project}}.  It
+is a list of 113,809 official crosswords; that is, words that are
+considered valid in crossword puzzles and other word games.  In the
+Moby collection, the filename is {\tt 113809of.fic}; I include a copy
+of this file, with the simpler name {\tt words.txt}, along with
+Swampy.
+
+\index{Swampy}
+\index{crosswords}
 
 This file is in plain text, so you can open it with a text
 editor, but you can also read it from Python.  The built-in
 function {\tt open} takes the name of the file as a parameter
 and returns a {\bf file object} you can use to read the file.
 
+\index{plain text}
+\index{text!plain}
 \index{object!file}
 \index{file object}
 
@@ -7001,6 +7388,9 @@ and returns a {\bf file object} you can use to read the file.
 {\tt fin} is a common name for a file object used for
 input.  Mode \verb"'r'" indicates that this file is open for
 reading (as opposed to \verb"'w'" for writing).
+
+\index{readline method}
+\index{method!readline}
 
 The file object provides several methods for reading, including
 {\tt readline}, which reads characters from the file
@@ -7034,6 +7424,9 @@ word, so stop looking at me like that.
 Or, if it's the whitespace that's bothering you,
 we can get rid of it with the string method {\tt strip}:
 
+\index{strip method}
+\index{method!strip}
+
 \beforeverb
 \begin{verbatim}
 >>> line = fin.readline()
@@ -7060,6 +7453,9 @@ for line in fin:
 \begin{ex}
 Write a program that reads {\tt words.txt} and prints only the
 words with more than 20 characters (not counting whitespace).
+
+\index{whitespace}
+
 \end{ex}
 
 
@@ -7085,6 +7481,9 @@ the given word doesn't have the letter ``e'' in it.
 Modify your program from the previous section to print only the words
 that have no ``e'' and compute the percentage of the words in the list
 have no ``e.''
+
+\index{lipogram}
+
 \end{ex}
 
 
@@ -7146,6 +7545,9 @@ How many abecedarian words are there?
 
 \section{Search}
 
+\index{search pattern}
+\index{pattern!search}
+
 All of the exercises in the previous section have something
 in common; they can be solved with the search pattern we saw
 in Section~\ref{find}.  The simplest example is:
@@ -7165,9 +7567,14 @@ the letter ``e'', we can immediately return {\tt False}; otherwise we
 have to go to the next letter.  If we exit the loop normally, that
 means we didn't find an ``e'', so we return {\tt True}.
 
+\index{in operator}
+\index{operator!in}
+
 You can write this function more concisely using the {\tt in}
 operator, but I started with this version because it 
 demonstrates the logic of the search pattern.
+
+\index{generalization}
 
 {\tt avoids} is a more general version of \verb"has_no_e" but it
 has the same structure:
@@ -7235,8 +7642,14 @@ recognition}, which means that you recognize the problem you are
 working on as an instance of a previously-solved problem, and apply a
 previously-developed solution.
 
+\index{problem recognition}
+\index{development plan!problem recognition}
+
 
 \section{Looping with indices}
+
+\index{looping with indices}
+\index{indices!looping with}
 
 I wrote the functions in the previous section with {\tt for}
 loops because I only needed the characters in the strings; I didn't
@@ -7289,6 +7702,8 @@ index of the second-to-last character.  On the last iteration,
 it compares the second-to-last character to the last, which is
 what we want.
 
+\index{palindrome}
+
 Here is a version of \verb"is_palindrome" (see
 Exercise~\ref{palindrome}) that uses two indices; one starts at the
 beginning and goes up; the other starts at the end and goes down.
@@ -7319,10 +7734,17 @@ def is_palindrome(word):
 \end{verbatim}
 \afterverb
 
+\index{problem recognition}
+\index{development plan!problem recognition}
+
 Assuming you did Exercise~\ref{is_reverse}.
 
 
 \section{Debugging}
+
+\index{debugging}
+\index{testing}
+\index{program testing}
 
 Testing programs is hard.  The functions in this chapter are
 relatively easy to test because you can check the results by hand.
@@ -7340,6 +7762,8 @@ beginning, the end, and somewhere in the middle.  You should test long
 words, short words, and very short words, like the empty string.  The
 empty string is an example of a {\bf special case}, which is one of
 the non-obvious cases where errors often lurk.
+
+\index{special case}
 
 In addition to the test cases you generate, you can also test
 your program with a word list like {\tt words.txt}.  By scanning
@@ -7386,6 +7810,11 @@ expressing it as an instance of a previously-solved problem.
 \section{Exercises}
 
 \begin{ex}
+
+\index{Car Talk}
+\index{Puzzler}
+\index{double letters}
+
 This question is based on a Puzzler that was broadcast on the radio
 program {\em Car
   Talk}\footnote{\url{www.cartalk.com/content/puzzler/transcripts/200725}}:
@@ -7411,6 +7840,11 @@ You can see my solution at \url{thinkpython.com/code/cartalk.py}.
 \begin{ex}
 Here's another {\em Car Talk}
 Puzzler\footnote{\url{www.cartalk.com/content/puzzler/transcripts/200803}}:
+
+\index{Car Talk}
+\index{Puzzler}
+\index{odometer}
+\index{palindrome}
 
 \begin{quote}
 ``I was driving on the highway the other day and I happened to
@@ -7443,6 +7877,10 @@ You can see my solution at \url{thinkpython.com/code/cartalk.py}.
 Here's another {\em Car Talk} Puzzler you can solve with a
 search\footnote{\url{www.cartalk.com/content/puzzler/transcripts/200813}}:
 
+\index{Car Talk}
+\index{Puzzler}
+\index{palindrome}
+
 \begin{quote}
 ``Recently I had a visit with my mom and we realized that
 the two digits that make up my age when reversed resulted in her
@@ -7468,6 +7906,7 @@ You can see my solution at \url{thinkpython.com/code/cartalk.py}.
 
 
 \chapter{Lists}
+
 \index{list}
 \index{type!list}
 
@@ -7528,13 +7967,16 @@ As you might expect, you can assign list values to variables:
 \afterverb
 %
 
+\index{assignment}
 
 % From Jeff: write sum for a nested list?
 
 
 \section{Lists are mutable}
+
 \index{list!element}
 \index{access}
+\index{index}
 
 The syntax for accessing the elements of a list is the same as for
 accessing the characters of a string---the bracket operator.  The
@@ -7552,6 +7994,8 @@ Unlike strings, lists are mutable.  When the bracket operator appears
 on the left side of an assignment, it identifies the element of the
 list that will be assigned.
 
+\index{mutable}
+
 \beforeverb
 \begin{verbatim}
 >>> numbers = [17, 123]
@@ -7563,6 +8007,9 @@ list that will be assigned.
 %
 The one-eth element of {\tt numbers}, which
 used to be 123, is now 5.
+
+\index{index!starting at zero}
+\index{zero!index starting at}
 
 You can think of a list as a relationship between indices and
 elements.  This relationship is called a {\bf mapping}; each index
@@ -7584,6 +8031,9 @@ a list with three elements indexed 0, 1 and 2.
 value of the second element has been reassigned from 123 to 5.
 {\tt empty} refers to a list with no elements.
 
+\index{item assignment}
+\index{assignment!item}
+
 List indices work the same way as string indices:
 
 \begin{itemize}
@@ -7601,8 +8051,11 @@ end of the list.
 
 \end{itemize}
 
+\index{list index}
+
 
 \index{list!membership}
+\index{membership!list}
 \index{in operator}
 \index{operator!in}
 
@@ -7624,6 +8077,7 @@ False
 \index{traversal!list}
 \index{for loop}
 \index{loop!for}
+\index{statement!for}
 
 The most common way to traverse the elements of a list is
 with a {\tt for} loop.  The syntax is the same as for strings:
@@ -7640,6 +8094,9 @@ list.  But if you want to write or update the elements, you
 need the indices.  A common way to do that is to combine
 the functions {\tt range} and {\tt len}:
 
+\index{looping with indices}
+\index{index!looping with}
+
 \beforeverb
 \begin{verbatim}
 for i in range(len(numbers)):
@@ -7655,6 +8112,9 @@ of the next element.  The assignment statement in the body uses
 {\tt i} to read the old value of the element and to assign the
 new value.
 
+\index{item update}
+\index{update!item}
+
 A {\tt for} loop over an empty list never executes the body:
 
 \beforeverb
@@ -7667,6 +8127,9 @@ for x in empty:
 Although a list can contain another list, the nested
 list still counts as a single element.  The length of this list is
 four:
+
+\index{nested list}
+\index{list!nested}
 
 \beforeverb
 \begin{verbatim}
@@ -7683,6 +8146,7 @@ four:
 The {\tt +} operator concatenates lists:
 
 \index{concatenation!list}
+\index{list concatenation}
 
 \beforeverb
 \begin{verbatim}
@@ -7697,6 +8161,7 @@ The {\tt +} operator concatenates lists:
 Similarly, the {\tt *} operator repeats a list a given number of times:
 
 \index{repetition!list}
+\index{list repetition}
 
 \beforeverb
 \begin{verbatim}
@@ -7712,7 +8177,9 @@ repeats the list {\tt [1, 2, 3]} three times.
 
 
 \section{List slices}
-\index{slice}
+
+\index{slice operator}
+\index{operator!slice}
 \index{list!slice}
 
 The slice operator also works on lists:
@@ -7733,6 +8200,10 @@ If you omit the first index, the slice starts at the beginning.
 If you omit the second, the slice goes to the end.  So if you
 omit both, the slice is a copy of the whole list.
 
+\index{list copy}
+\index{slice copy}
+\index{copy!slice}
+
 \beforeverb
 \begin{verbatim}
 >>> t[:]
@@ -7743,6 +8214,8 @@ omit both, the slice is a copy of the whole list.
 Since lists are mutable, it is often useful to make a copy
 before performing operations that fold, spindle or mutilate
 lists.
+
+\index{mutable}
 
 A slice operator on the left side of an assignment
 can update multiple elements:
@@ -7786,11 +8259,15 @@ can update multiple elements:
 
 
 \section{List methods}
-\index{list methods}
-\index{methods!list}
+
+\index{list method}
+\index{method!list}
 
 Python provides methods that operate on lists.  For example,
 {\tt append} adds a new element to the end of a list:
+
+\index{append method}
+\index{method!append}
 
 \beforeverb
 \begin{verbatim}
@@ -7803,6 +8280,9 @@ Python provides methods that operate on lists.  For example,
 %
 {\tt extend} takes a list as an argument and appends all of
 the elements:
+
+\index{extend method}
+\index{method!extend}
 
 \beforeverb
 \begin{verbatim}
@@ -7818,6 +8298,9 @@ This example leaves {\tt t2} unmodified.
 
 {\tt sort} arranges the elements of the list from low to high:
 
+\index{sort method}
+\index{method!sort}
+
 \beforeverb
 \begin{verbatim}
 >>> t = ['d', 'c', 'e', 'b', 'a']
@@ -7830,6 +8313,10 @@ This example leaves {\tt t2} unmodified.
 List methods are all void; they modify the list and return {\tt None}.
 If you accidentally write {\tt t = t.sort()}, you will be disappointed
 with the result.
+
+\index{void method}
+\index{method!void}
+\index{None}
 
 
 \section{Map, filter and reduce}
@@ -7852,7 +8339,7 @@ def add_all(t):
 {\tt x} gets one element from the list.  The {\tt +=} operator
 provides a short way to update a variable:
 
-\index{{\tt +=}}
+\index{{\tt +=}, update operator}
 \index{operator!{\tt +=}}
 
 \beforeverb
@@ -7889,7 +8376,8 @@ that Python provides it as a built-in function, {\tt sum}:
 An operation like this that combines a sequence of elements into
 a single value is sometimes called {\bf reduce}.
 
-\index{reduce}
+\index{reduce pattern}
+\index{pattern!reduce}
 
 Sometimes you want to traverse one list while building
 another.  For example, the following function takes a list of strings
@@ -7912,6 +8400,11 @@ kind of accumulator.
 An operation like \verb"capitalize_all" is sometimes called a {\bf
 map} because it ``maps'' a function (in this case the method {\tt
 capitalize}) onto each of the elements in a sequence.
+
+\index{map pattern}
+\index{pattern!map}
+\index{filter pattern}
+\index{pattern!filter}
 
 Another common operation is to select some of the elements from
 a list and return a sublist.  For example, the following
@@ -7943,9 +8436,12 @@ so common, Python provides language features to support them,
 including the built-in function {\tt map} and an operator
 called a ``list comprehension.''
 
+\index{list comprehension}
 
 \begin{ex}
 \label{cumulative}
+\index{cumulative sum}
+
 Write a function that takes a list of numbers and returns the
 cumulative sum; that is, a new list where the $i$th element
 is the sum of the first $i+1$ elements from the original list.
@@ -7955,12 +8451,16 @@ For example, the cumulative sum of {\tt [1, 2, 3]} is
 
 
 \section{Deleting elements}
+
 \index{deletion!list}
 \index{list deletion}
 
 There are several ways to delete elements from a list.  If you
 know the index of the element you want, you can use
 {\tt pop}:
+
+\index{pop method}
+\index{method!pop}
 
 \beforeverb
 \begin{verbatim}
@@ -7980,6 +8480,9 @@ last element.
 If you don't need the removed value, you can use the {\tt del}
 operator:
 
+\index{del operator}
+\index{operator!del}
+
 \beforeverb
 \begin{verbatim}
 >>> t = ['a', 'b', 'c']
@@ -7993,6 +8496,9 @@ operator:
 If you know the element you want to remove (but not the index), you
 can use {\tt remove}:
 
+\index{remove method}
+\index{method!remove}
+
 \beforeverb
 \begin{verbatim}
 >>> t = ['a', 'b', 'c']
@@ -8003,6 +8509,8 @@ can use {\tt remove}:
 \afterverb
 %
 The return value from {\tt remove} is {\tt None}.
+
+\index{None}
 
 To remove more than one element, you can use {\tt del} with
 a slice index:
@@ -8021,13 +8529,18 @@ including, the second index.
 
 
 \section{Lists and strings}
+
 \index{list}
 \index{string}
+\index{sequence}
 
 A string is a sequence of characters and a list is a sequence
 of values, but a list of characters is not the same as a
 string.  To convert from a string to a list of characters,
 you can use {\tt list}:
+
+\index{list function}
+\index{function!list}
 
 \beforeverb
 \begin{verbatim}
@@ -8045,6 +8558,9 @@ it looks too much like {\tt 1}.  So that's why I use {\tt t}.
 The {\tt list} function breaks a string into individual letters.  If
 you want to break a string into words, you can use the {\tt split}
 method:
+
+\index{split method}
+\index{method!split}
 
 \beforeverb
 \begin{verbatim}
@@ -8079,6 +8595,8 @@ concatenates the elements.  {\tt join} is a string method,
 so you have to invoke it on the delimiter and pass the
 list as a parameter:
 
+\index{join method}
+\index{method!join}
 \index{concatenate}
 
 \beforeverb
@@ -8095,8 +8613,12 @@ In this case the delimiter is a space character, so
 strings without spaces, you can use the empty string,
 {\tt ''} as a delimiter. 
 
+\index{empty string}
+\index{string!empty}
+
 
 \section{Objects and values}
+
 \index{object}
 \index{value}
 
@@ -8114,6 +8636,8 @@ string, but we don't
 know whether they refer to the {\em same} string.
 There are two possible states:
 
+\index{aliasing}
+
 \beforefig
 \centerline{\includegraphics{figs/list1.eps}}
 \afterfig
@@ -8122,8 +8646,8 @@ In one case, {\tt a} and {\tt b} refer to two different objects that
 have the same value.  In the second case, they refer to the same
 object.
 
-\index{{\tt is} operator}
-\index{operator!{\tt is}}
+\index{is operator}
+\index{operator!is}
 
 To check whether two variables refer to the same object, you can
 use the {\tt is} operator.
@@ -8180,6 +8704,7 @@ list has the same elements, we would say it has the same value.
 
 
 \section{Aliasing}
+
 \index{aliasing}
 \index{reference!aliasing}
 
@@ -8208,8 +8733,12 @@ The association of a variable with an object is called a {\bf
 reference}.  In this example, there are two references to the same
 object.
 
+\index{reference}
+
 An object with more than one reference has more
 than one name, so we say that the object is {\bf aliased}.
+
+\index{mutable}
 
 If the aliased object is mutable, 
 changes made with one alias affect
@@ -8227,6 +8756,8 @@ Although this behavior can be useful, it is error-prone.  In general,
 it is safer to avoid aliasing when you are working with mutable
 objects.
 
+\index{immutable}
+
 For immutable objects like strings, aliasing is not as much of a
 problem.  In this example:
 
@@ -8242,9 +8773,12 @@ to the same string or not.
 
 
 \section{List arguments}
+
 \index{list!as argument}
 \index{argument}
 \index{argument!list}
+\index{reference}
+\index{parameter}
 
 When you pass a list to a function, the function gets a reference
 to the list.
@@ -8288,6 +8822,11 @@ modify lists and operations that create new lists.  For
 example, the {\tt append} method modifies a list, but the
 {\tt +} operator creates a new list:
 
+\index{append method}
+\index{method append}
+\index{list concatenation}
+\index{concatenation!list}
+
 \beforeverb
 \begin{verbatim}
 >>> t1 = [1, 2]
@@ -8319,6 +8858,9 @@ def bad_delete_head(t):
 The slice operator creates a new list and the assignment
 makes {\tt t} refer to it, but none of that has any effect
 on the list that was passed as an argument.
+
+\index{slice operator}
+\index{operator!slice}
 
 An alternative is to write a function that creates and
 returns a new list.  For
@@ -8358,6 +8900,7 @@ elements.
 
 
 \section{Debugging}
+\index{debugging}
 
 Careless use of lists (and other mutable objects)
 can lead to long hours of debugging.  Here are some common
@@ -8387,6 +8930,9 @@ t = t.sort()           # WRONG!
 
 Because {\tt sort} returns {\tt None}, the
 next operation you perform with {\tt t} is likely to fail.
+
+\index{sort method}
+\index{method!sort}
 
 Before using list methods and operators, you should read the
 documentation carefully and then test them in interactive mode.  The
@@ -8433,6 +8979,9 @@ do the wrong thing.
 
 \item Make copies to avoid aliasing.
 
+\index{aliasing!copying to avoid}
+\index{copying!to avoid aliasing}
+
 If you want to use a method like {\tt sort} that modifies
 the argument, but you need to keep the original list as
 well, you can make a copy.
@@ -8450,8 +8999,6 @@ But in that case you should avoid using {\tt sorted} as a variable
 name!
 
 \end{enumerate}
-
-
 
 
 
@@ -8529,6 +9076,8 @@ order and {\tt False} otherwise.  You can assume (as a precondition)
 that the elements of the list can be compared with the comparison
 operators {\tt <}, {\tt >}, etc.
 
+\index{precondition}
+
 For example, \verb"is_sorted([1,2,2])" should return {\tt True}
 and \verb"is_sorted(['b','a'])" should return {\tt False}.
 \end{ex}
@@ -8536,6 +9085,9 @@ and \verb"is_sorted(['b','a'])" should return {\tt False}.
 
 \begin{ex}
 \label{anagram}
+
+\index{anagram}
+
 Two words are anagrams if you can rearrange the letters from one
 to spell the other.  Write a function called \verb"is_anagram".
 that takes two strings and returns True if they are anagrams.
@@ -8546,33 +9098,51 @@ that takes two strings and returns True if they are anagrams.
 
 \begin{enumerate}
 
+\index{birthday paradox}
+\index{duplicates}
+
 \item Write a function called \verb"has_duplicates" that takes
 a list an returns {\tt True} if there is any element that
 appears more than once.  It should not modify the original
 list.
 
-\item If there are 20 students in your class, what are the chances
+\item If there are 23 students in your class, what are the chances
 that two of you have the same birthday?  You can estimate this
 probability by generating random samples of twelve birthdays
 and checking for matches.  Hint: you can generate random birthdays
 with the {\tt randint} function in the {\tt random} module.
 
+\index{random module}
+\index{module!random}
+\index{randint function}
+\index{function!randint}
+
 \end{enumerate}
 
-You can see my solution at \url{thinkpython.com/code/birthday.py}.
+You can read about this problem at
+\url{wikipedia.org/wiki/Birthday_paradox}, and you can see my solution
+at \url{thinkpython.com/code/birthday.py}.
 
 \end{ex}
 
 
 \begin{ex}
 \label{duplicates}
+
+\index{uniqueness}
+
 Write a function called \verb"remove_duplicates" that takes
-a list an returns a new list with only the unique elements from
+a list and returns a new list with only the unique elements from
 the original.  Hint: they don't have to be in the same order.
 \end{ex}
 
 
 \begin{ex}
+\index{append method}
+\index{method append}
+\index{list concatenation}
+\index{concatenation!list}
+
 Write a function that reads the file {\tt words.txt} and builds
 a list with one element per word.  Write two versions of
 this function, one using the {\tt append} method and the
@@ -8586,6 +9156,9 @@ You can see my solution at \url{thinkpython.com/code/wordlist.py}.
 \begin{ex}
 \label{wordlist1}
 \label{bisection}
+
+\index{bisection search}
+\index{search!bisection}
 
 To check whether a word is in the word list, you could use
 the {\tt in} operator, but it would be slow because it searches
@@ -8606,17 +9179,24 @@ Write a function called {\tt bisect} that takes a sorted list
 and a target value and either returns the index of the value
 in the list, if it's there, or {\tt None} if it's not.
 
+\index{bisect module}
+\index{module!bisect}
+
 Or you could read the documentation of the {\tt bisect} module
 and use that!
 \end{ex}
 
 \begin{ex}
+\index{reverse word pair}
+
 Two words are a ``reverse pair'' if each is the reverse of the
 other.  Write a program that finds all the reverse pairs in the
 word list. 
 \end{ex}
 
 \begin{ex}
+\index{interlocking words}
+
 Two words ``interlock'' if taking alternating letters from each forms
 a new word\footnote{This exercise is inspired by an example at
   \url{puzzlers.org}.}.  For example, ``shoe'' and ``cold''
@@ -8639,7 +9219,7 @@ interlock to form ``schooled.''
 \index{dictionary}
 
 \index{dictionary}
-\index{data type!dictionary}
+\index{type!dictionary}
 \index{type!dict}
 \index{key}
 \index{key-value pair}
@@ -9137,7 +9717,9 @@ but they {\em can} be used as values.
 Read the documentation of the dictionary method {\tt setdefault}
 and use it to write a more concise version of \verb"invert_dict".
 
-\index{{\tt setdefault}}
+\index{setdefault method}
+\index{method!setdefault}
+
 \end{ex}
 
 
@@ -9330,7 +9912,7 @@ def example5():
 
 \section{Long integers}
 \index{long integer}
-\index{data type!long integer}
+\index{type!long integer}
 \index{type!long}
 \index{integer!long}
 
@@ -9402,7 +9984,7 @@ as you find and correct errors.
 entire dataset, consider printing summaries of the data: for example,
 the number of items in a dictionary or the total of a list of numbers.
 
-A common cause of run-time errors is a value that is not the right
+A common cause of runtime errors is a value that is not the right
 type.  For debugging this kind of error, it is often enough to print
 the type of a value.
 
@@ -9582,9 +10164,7 @@ You can see my solution at \url{thinkpython.com/code/homophone.py}.
 
 \section{Tuples are immutable}
 \index{tuple}
-\index{data type!tuple}
 \index{type!tuple}
-\index{data type!immutable}
 
 A tuple is a sequence of values.  The values can be any type, and
 they are indexed by integers, so in that respect tuples are a lot
@@ -11151,7 +11731,7 @@ in the program, the problem becomes obvious, but sometimes you have to
 spend some time to build scaffolding.
 
 \item[ruminating:] Take some time to think!  What kind of error
-is it: syntax, run-time, semantic?  What information can you get from
+is it: syntax, runtime, semantic?  What information can you get from
 the error messages, or from the output of the program?  What kind of
 error could cause the problem you're seeing?  What did you change
 last, before the problem appeared?
@@ -11595,7 +12175,8 @@ to check all the possibilities (if ``{\tt Errno 21}'' is any
 indication, there are at least 21 things that can go wrong).
 
 \index{exception!catching}
-\index{{\tt try} statement}
+\index{try statement}
+\index{statement!try}
 
 It is better to go ahead and try, and deal with problems if they
 happen, which is exactly what the {\tt try} statement does.  The
@@ -12890,6 +13471,8 @@ number of seconds or minutes adds up to more than sixty.  When that
 happens, we have to ``carry'' the extra seconds into the minute column
 or the extra minutes into the hour column.
 
+\index{carrying, addition with}
+
 Here's an improved version:
 
 \beforeverb
@@ -13077,6 +13660,7 @@ na\"{\i}ve approach would be to implement subtraction with borrowing.
 Using the conversion functions would be easier and more likely to be
 correct.
 
+\index{borrowing, subtraction with}
 \index{generalization}
 
 Ironically, sometimes making a problem harder (or more general) makes it
