@@ -25,7 +25,7 @@
 \usepackage{upquote}
 
 \newcommand{\thetitle}{Think Python: An Introduction to Software Design}
-\newcommand{\theversion}{1.1.0}
+\newcommand{\theversion}{1.1.1}
 
 \makeindex
 
@@ -742,13 +742,18 @@ which you might want to read when you are done with this book.
 
 %<Stanislaw.Antol@students.olin.edu>
 
-\item Eric Pashman sent a number of corrections for Chapters 4 and 5.
+\item Eric Pashman sent a number of corrections for Chapters 4, 5
+and 6.
 
 %<eric.pashman@gmail.com>
 
 \item Miguel Azevedo found some typos.
 
 %<miguel1626@gmail.com>
+
+\item Jianhua Liu sent in a long list of corrections.
+
+%<liu620@erau.edu>
 
 % ENDCONTRIB
 
@@ -4995,7 +5000,7 @@ Turing, one of the first computer scientists (some would argue that he
 was a mathematician, but a lot of early computer scientists started as
 mathematicians).  Accordingly, it is known as the Turing Thesis.
 For a more complete (and accurate) discussion of the Turing Thesis,
-I recommend Michael Sipser's book, {\em Introduction to the
+I recommend Michael Sipser's book {\em Introduction to the
 Theory of Computation}.
 
 To give you an idea of what you can do with the tools you have learned
@@ -5228,8 +5233,8 @@ we can {\em miss} the base case and recurse forever.
 \index{recursion!infinite}
 
 In the first recursive call, the value of {\tt n} is 0.5.
-In the next, it is -0.5.  From there, it gets smaller and
-smaller, but it will never be 0.
+In the next, it is -0.5.  From there, it gets smaller
+(more negative), but it will never be 0.
 
 We have two choices.  We can try to generalize the {\tt factorial}
 function to work with floating-point numbers, or we can make {\tt
@@ -5507,7 +5512,7 @@ that divides both of them with no remainder\footnote{This exercise is
   based on an example from Abelson and Sussman's {\em Structure and
     Interpretation of Computer Programs}.}.
 
-One way to find the GDC of two numbers is Euclid's algorithm,
+One way to find the GCD of two numbers is Euclid's algorithm,
 which is based on the observation that if $r$ is the remainder
 when $a$ is divided by $b$, then $gcd(a, b) = gcd(b, r)$.
 As a base case, we can consider $gcd(a, 0) = a$.
@@ -5650,7 +5655,7 @@ Computers are often used to automate repetitive tasks.  Repeating
 identical or similar tasks without making errors is something that
 computers do well and people do poorly.
 
-We have seen two programs, {\tt countdown} and \verb"print_", that
+We have seen two programs, {\tt countdown} and \verb"print_n", that
 use recursion to perform repetition, which is also called {\bf
 iteration}.  Because iteration is so common, Python provides several
 language features to make it easier.  One is the {\tt for} statement
@@ -6646,7 +6651,7 @@ The comparison operators work on strings.  To see if two strings are equal:
 \beforeverb
 \begin{verbatim}
 if word == 'banana':
-    print  'Yes, we have no bananas!'
+    print  'All right, bananas.'
 \end{verbatim}
 \afterverb
 %
@@ -6660,7 +6665,7 @@ if word < 'banana':
 elif word > 'banana':
     print 'Your word,' + word + ', comes after banana.'
 else:
-    print 'Yes, we have no bananas!'
+    print 'All right, bananas.'
 \end{verbatim}
 \afterverb
 %
@@ -6670,15 +6675,14 @@ lowercase letters, so:
 
 \beforeverb
 \begin{verbatim}
-Your word, Zebra, comes before banana.
+Your word, Pineapple, comes before banana.
 \end{verbatim}
 \afterverb
 %
 A common way to address this problem is to convert strings to a
 standard format, such as all lowercase, before performing the
-comparison.  The more difficult problem is making the program realize
-that zebras are not fruit.
-
+comparison.  Keep that in mind in case you have to defend yourself
+against a man armed with a Pineapple.
 
 
 \section{Debugging}
@@ -11766,7 +11770,7 @@ the contents in a human-readable format.
 Most operating systems provide a command-line interface,
 also known as a {\bf shell}.  Shells usually provide commands
 to navigate the file system and launch applications.  For
-example, in Unix, you can chance directories with {\tt cd},
+example, in Unix, you can change directories with {\tt cd},
 display the contents of a directory with {\tt ls}, and launch
 a web browser by typing (for example) {\tt firefox}.
 
@@ -12220,7 +12224,7 @@ the class.
 
 When you print an instance, Python tells you what class it
 belongs to and where it is stored in memory (the prefix
-{\tt 0x} means that the following number is in hexadecimal.
+{\tt 0x} means that the following number is in hexadecimal).
 
 
 \section{Attributes}
@@ -12643,7 +12647,7 @@ class object.
 \index{class}
 
 \item[class object:] An object that contains information about a
-user-defined time.  The class object can be used to create instances
+user-defined type.  The class object can be used to create instances
 of the type.
 \index{class object}
 
@@ -12851,8 +12855,9 @@ def add_time(t1, t2):
 The function creates a new {\tt Time} object, initializes its
 attributes, and returns a reference to the new object.  This is called
 a {\bf pure function} because it does not modify any of the objects
-passed to it as arguments and it has no side effects, such as
-displaying a value or getting user input.
+passed to it as arguments and it has no effect,
+like displaying a value or getting user input, 
+other than returning a value.
 
 To test this function, I'll create two Time objects: {\tt start}
 contains the start time of a movie, like {\em Monty Python and the
@@ -13099,7 +13104,7 @@ like \verb"valid_time" that takes a Time object and returns
 \beforeverb
 \begin{verbatim}
 def valid_time(time):
-    if time.hours < 0 time.minutes < 0 or time.seconds < 0:
+    if time.hours < 0 or time.minutes < 0 or time.seconds < 0:
         return False
     if time.minutes > 59 or time.seconds > 59:
         return False
@@ -15318,7 +15323,7 @@ Chapter~\ref{turtlechap}).
 
 \beforefig
 \centerline{
-\includegraphics[width=1.0\textwidth]{figs/screenshot.eps}
+\includegraphics[width=1.0\textwidth]{figs/TurtleWorld.eps}
 }
 \afterfig
 
