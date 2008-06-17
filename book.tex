@@ -25,7 +25,7 @@
 \usepackage{upquote}
 
 \newcommand{\thetitle}{Think Python: An Introduction to Software Design}
-\newcommand{\theversion}{1.1.2}
+\newcommand{\theversion}{1.1.3}
 
 \makeindex
 
@@ -1217,6 +1217,8 @@ This is an example of a {\bf print statement}\footnote{In Python 3.0,
 doesn't actually print anything on paper.  It displays a value on the
 screen.  In this case, the result is the words
 
+\index{Python 3.0}
+
 \beforeverb
 \begin{verbatim}
 Hello, World!
@@ -1786,6 +1788,7 @@ that Python is performing {\bf floor division}\footnote{In Python 3.0,
 the result of this division is a {\tt float}.  The new operator
 {\tt //} performs integer division.}.
 
+\index{Python 3.0}
 \index{floor division}
 \index{floating-point division}
 \index{division!floor}
@@ -4452,6 +4455,7 @@ waits for the user to type something.  When the user presses {\sf
   Return} or {\sf Enter}, the program resumes and \verb"raw_input"
 returns what the user typed as a string.
 
+\index{Python 3.0}
 \index{raw\_input function}
 \index{function!raw\_input}
 
@@ -6646,9 +6650,11 @@ Modify the program to fix this error.
 \section{String slices}
 \label{slice}
 
-\index{slice}
+\index{slice operator}
+\index{operator!slice}
+\index{index!slice}
 \index{string!slice}
-\index{index!slide}
+\index{slice!string}
 
 A segment of a string is called a {\bf slice}.  Selecting a slice is
 similar to selecting a character:
@@ -7230,7 +7236,7 @@ using dot notation.
 \begin{ex}
 
 \index{step size}
-\index{slide operator}
+\index{slice operator}
 \index{operator!slice}
 
 A string slice can take a third index that specifies the ``step
@@ -7372,6 +7378,8 @@ editor, but you can also read it from Python.  The built-in
 function {\tt open} takes the name of the file as a parameter
 and returns a {\bf file object} you can use to read the file.
 
+\index{open function}
+\index{function!open}
 \index{plain text}
 \index{text!plain}
 \index{object!file}
@@ -7439,6 +7447,9 @@ aahed
 You can also use a file object as part of a {\tt for} loop.
 This program reads {\tt words.txt} and prints each word, one
 per line:
+
+\index{open function}
+\index{function!open}
 
 \beforeverb
 \begin{verbatim}
@@ -7977,6 +7988,8 @@ As you might expect, you can assign list values to variables:
 \index{list!element}
 \index{access}
 \index{index}
+\index{bracket operator}
+\index{operator!bracket}
 
 The syntax for accessing the elements of a list is the same as for
 accessing the characters of a string---the bracket operator.  The
@@ -8180,7 +8193,9 @@ repeats the list {\tt [1, 2, 3]} three times.
 
 \index{slice operator}
 \index{operator!slice}
+\index{index!slice}
 \index{list!slice}
+\index{slice!list}
 
 The slice operator also works on lists:
 
@@ -9099,7 +9114,7 @@ that takes two strings and returns True if they are anagrams.
 \begin{enumerate}
 
 \index{birthday paradox}
-\index{duplicates}
+\index{duplicate}
 
 \item Write a function called \verb"has_duplicates" that takes
 a list an returns {\tt True} if there is any element that
@@ -9129,6 +9144,7 @@ at \url{thinkpython.com/code/birthday.py}.
 \begin{ex}
 \label{duplicates}
 
+\index{duplicate}
 \index{uniqueness}
 
 Write a function called \verb"remove_duplicates" that takes
@@ -9219,7 +9235,6 @@ interlock to form ``schooled.''
 \index{dictionary}
 
 \index{dictionary}
-\index{type!dictionary}
 \index{type!dict}
 \index{key}
 \index{key-value pair}
@@ -9251,6 +9266,9 @@ should avoid using it as a variable name.
 
 The squiggly-brackets, \verb"{}", represent an empty dictionary.
 To add items to the dictionary, you can use square brackets:
+
+\index{squiggly brackets}
+\index{brackets!squiggly}
 
 \beforeverb
 \begin{verbatim}
@@ -9322,6 +9340,9 @@ KeyError: 'four'
 The {\tt len} function works on dictionaries; it returns the
 number of key-value pairs:
 
+\index{len function}
+\index{function!len}
+
 \beforeverb
 \begin{verbatim}
 >>> len(eng2sp)
@@ -9332,6 +9353,9 @@ number of key-value pairs:
 The {\tt in} operator works on dictionaries; it tells you whether
 something appears as a {\em key} in the dictionary (appearing
 as a value is not good enough).
+
+\index{in operator}
+\index{operator!in}
 
 \beforeverb
 \begin{verbatim}
@@ -9345,6 +9369,9 @@ False
 To see whether something appears as a value in a dictionary, you
 can use the method {\tt values}, which returns the values as
 a list, and then use the {\tt in} operator:
+
+\index{values method}
+\index{method!values}
 
 \beforeverb
 \begin{verbatim}
@@ -9364,8 +9391,13 @@ many items there are in a dictionary.  I won't explain how that's
 possible, but you can read more about it at
 \url{wikipedia.org/wiki/Hash_table}.
 
+\index{hashtable}
+
 \begin{ex}
 \label{wordlist2}
+
+\index{set membership}
+
 Write a function that reads the words in {\tt words.txt} and
 stores them as keys in a dictionary.  It doesn't matter what the
 values are.  Then you can use the {\tt in} operator
@@ -9381,6 +9413,8 @@ bisection search.
 
 \section{Dictionary as a set of counters}
 \label{histogram}
+
+\index{counter}
 
 Suppose you are given a string and you want to count how many
 times each letter appears.  There are several ways you could do it:
@@ -9407,6 +9441,8 @@ that you would increment the value of an existing item.
 Each of these options performs the same computation, but each
 of them implements that computation in a different way.
 
+\index{implementation}
+
 An {\bf implementation} is a way of performing a computation;
 some implementations are better than others.  For example,
 an advantage of the dictionary implementation is that we don't
@@ -9431,6 +9467,9 @@ def histogram(s):
 The name of the function is {\bf histogram}, which is a statistical
 term for a set of counters (or frequencies).
 
+\index{histogram}
+\index{frequency}
+
 The first line of the
 function creates an empty dictionary.  The {\tt for} loop traverses
 the string.  Each time through the loop, if the character {\tt c} is
@@ -9454,6 +9493,10 @@ The histogram indicates that the letters {\tt 'a'} and {\tt 'b'}
 appear once; {\tt 'o'} appears twice, and so on.
 
 \begin{ex}
+
+\index{get method}
+\index{method!get}
+
 Dictionaries have a method called {\tt get} that takes a key
 and a default value.  If the key appears in the dictionary,
 {\tt get} returns the corresponding value; otherwise it returns
@@ -9477,7 +9520,9 @@ should be able to eliminate the {\tt if} statement.
 
 
 \section{Looping and dictionaries}
-\index{dictionary!looping}
+
+\index{dictionary!looping with}
+\index{looping!with dictionaries}
 
 If you use a dictionary in a {\tt for} statement, it traverses
 the keys of the dictionary.  For example, \verb"print_hist"
@@ -9508,6 +9553,10 @@ o 1
 Again, the keys are in no particular order.
 
 \begin{ex}
+
+\index{keys method}
+\index{method!keys}
+
 Dictionaries have a method called {\tt keys} that returns
 the keys of the dictionary, in no particular order, as a list.
 
@@ -9518,8 +9567,10 @@ in alphabetical order.
 
 
 \section{Reverse lookup}
-\index{lookup, dictionary}
-\index{reverse lookup, dictionary}
+
+\index{dictionary lookup}
+\index{lookup!dictionary}
+\index{reverse lookup!dictionary}
 
 Given a dictionary {\tt d} and a key {\tt k}, it is easy to
 find the corresponding value {\tt v = d[k]}.  This operation
@@ -9553,9 +9604,9 @@ with the value of a parameter.
 
 \index{search}
 \index{pattern!search}
-\index{raise}
-\index{statement!raising}
-\index{exception}
+\index{raise statement}
+\index{statement!raise}
+\index{exception!ValueError}
 \index{ValueError}
 
 If we get to the end of the loop, that means {\tt v}
@@ -9588,6 +9639,7 @@ ValueError
 The result when you raise an exception is the same as when
 Python raises one: it prints a traceback and an error message.
 
+\index{traceback}
 \index{optional argument}
 \index{argument!optional}
 
@@ -9623,6 +9675,9 @@ from frequencies to letters.  Since there might be several letters
 with the same frequency, each value in the inverted dictionary
 should be a list of letters.
 
+\index{invert dictionary}
+\index{dictionary!invert}
+
 Here is a function that inverts a dictionary:
 
 \beforeverb
@@ -9645,6 +9700,8 @@ that means we haven't seen it before, so we create a new item and
 initialize it with a {\bf singleton} (a list that contains a
 single element).  Otherwise we have seen this value before, so we
 append the corresponding key to the list.
+
+\index{singleton}
 
 Here is an example:
 
@@ -9676,6 +9733,10 @@ outside the box, just to keep the diagram simple.
 Lists can be values in a dictionary, as this example shows, but they
 cannot be keys.  Here's what happens if you try:
 
+\index{TypeError}
+\index{exception!TypeError}
+
+
 \beforeverb
 \begin{verbatim}
 >>> t = [1, 2, 3]
@@ -9696,6 +9757,8 @@ a hashtable and that means that the keys have to be {\bf hashable}.
 A {\bf hash} is a function that takes a value (of any kind)
 and returns an integer.  Dictionaries use these integers,
 called hash values, to store and look up key-value pairs.
+
+\index{immutable}
 
 This system works fine if the keys are immutable.  But if the
 keys are mutable, like lists, bad things happen.  For example,
@@ -9724,13 +9787,14 @@ and use it to write a more concise version of \verb"invert_dict".
 
 
 \section{Memos}
-\index{memos}
-\index{Fibonacci function}
 
 If you played with the {\tt fibonacci} function from
 Section~\ref{one more example}, you might have noticed that the bigger
 the argument you provide, the longer the function takes to run.
 Furthermore, the run time increases very quickly.
+
+\index{fibonacci function}
+\index{function!fibonacci}
 
 To understand why, consider this {\bf call graph} for
 {\tt fibonacci} with {\tt n=4}:
@@ -9752,6 +9816,8 @@ n=3} and {\tt n=2}.  In turn, {\tt fibonacci} with {\tt n=3} calls
 Count how many times {\tt fibonacci(0)} and {\tt fibonacci(1)} are
 called.  This is an inefficient solution to the problem, and it gets
 worse as the argument gets bigger.
+
+\index{memo}
 
 One solution is to keep track of values that have already been
 computed by storing them in a dictionary.  A previously computed value
@@ -9787,7 +9853,8 @@ Using this version of {\tt fibonacci}, you can compute
 
 
 \section{Global variables}
-\index{global variables}
+
+\index{global variable}
 \index{variable!global}
 
 In the previous example, {\tt known} is created outside the function,
@@ -9797,8 +9864,11 @@ because they can be accessed from any function.  Unlike local
 variables, which disappear when their function ends, global variables
 persist from one function call to the next.
 
-A common use of global variables is a flag that controls the
-behavior of several functions.  For example, some programs use
+\index{flag}
+
+It is common to use global variables for {\bf flags}; that is, 
+boolean variables that indicate (``flag'') whether a condition
+is true.  For example, some programs use
 a flag named {\tt verbose} to control the level of detail in the
 output:
 
@@ -9815,6 +9885,9 @@ def example1():
 If you try to reassign a global variable, you might be surprised.
 The following example is supposed to keep track of whether the
 function has been called:
+
+\index{multiple assignment}
+\index{assignment!multiple}
 
 \beforeverb
 \begin{verbatim}
@@ -9851,6 +9924,8 @@ The {\tt global} statement tells the interpreter
 something like, ``In this function, when I say \verb"been_called", I
 mean the global variable; don't create a local one.''
 
+\index{update}
+
 Here's an example that tries to update a global variable:
 
 \beforeverb
@@ -9877,6 +9952,8 @@ Python assumes that {\tt count} is local, which means
 that you are reading it before writing it.  The solution, again,
 is to declare {\tt count} global.
 
+\index{counter}
+
 \beforeverb
 \begin{verbatim}
 def example3():
@@ -9887,6 +9964,8 @@ def example3():
 %
 If the global value is mutable, you can modify it without
 declaring it:
+
+\index{mutable}
 
 \beforeverb
 \begin{verbatim}
@@ -9911,10 +9990,10 @@ def example5():
 %
 
 \section{Long integers}
+
 \index{long integer}
-\index{type!long integer}
-\index{type!long}
 \index{integer!long}
+\index{type!long}
 
 If you compute {\tt fibonacci(50)}, you get:
 
@@ -9928,6 +10007,8 @@ If you compute {\tt fibonacci(50)}, you get:
 The {\tt L} at the end indicates that the result is a long
 integer\footnote{In Python 3.0, type {\tt long} is gone; all integers,
   even really big ones, are type {\tt int}.}, or type {\tt long}.
+
+\index{Python 3.0}
 
 Values with type {\tt int} have a limited range;
 long integers can be arbitrarily big, but as they get bigger
@@ -9954,6 +10035,10 @@ second case it is {\tt long}.
 
 \begin{ex}
 
+\index{encryption}
+\index{RSA algorithm}
+\index{algorithm!RSA}
+
 Exponentiation of large integers is the basis of common
 algorithms for public-key encryption.  Read the Wikipedia
 page on the RSA algorithm\footnote{\url{wikipedia.org/wiki/RSA}}
@@ -9963,6 +10048,7 @@ and write functions to encode and decode messages.
 
 
 \section{Debugging}
+\index{debugging}
 
 As you work with bigger datasets it can become unwieldy to
 debug by printing and checking data by hand.  Here are some
@@ -9995,6 +10081,9 @@ not greater than the largest element in the list or less than
 the smallest.  This is called a ``sanity check'' because it detects
 results that are ``insane.''
 
+\index{sanity check}
+\index{consistency check}
+
 Another kind of check compares the results of two different
 computations to see if they are consistent.  This is called a
 ``consistency check.''
@@ -10005,11 +10094,16 @@ Section~\ref{factdebug}.  The {\tt pprint} module provides
 a {\tt pprint} function that displays built-in types in
 a more human-readable format.
 
+\index{pretty print}
+\index{pprint module}
+\index{module!pprint}
+
 \end{description}
 
 Again, time you spend building scaffolding can reduce
 the time you spend debugging.
 
+\index{scaffolding}
 
 \section{Glossary}
 
@@ -10080,6 +10174,10 @@ computation.
 variables can be accessed from any function.
 \index{global variable}
 
+\item[flag:] A boolean variable used to indicate whether a condition
+is true.
+\index{flag}
+
 \item[declaration:] A statement like {\tt global} that tells the
 interpreter something about a variable.
 \index{declaration}
@@ -10089,6 +10187,7 @@ interpreter something about a variable.
 \section{Exercises}
 
 \begin{ex}
+\index{duplicate}
 
 If you did Exercise~\ref{duplicates}, you already have a
 a function named \verb"has_duplicates" that takes a list
@@ -10102,6 +10201,10 @@ Use a dictionary to write a faster, simpler version of
 
 \begin{ex}
 \label{exrotatepairs}
+
+\index{letter rotation}
+\index{rotation!letters}
+
 Two words are ``rotate pairs'' if you can rotate one of them
 and get the other (see \verb"rotate_word" in Exercise~\ref{exrotate}).
 
@@ -10111,6 +10214,9 @@ pairs.
 
 
 \begin{ex}
+\index{Car Talk}
+\index{Puzzler}
+
 Here's another Puzzler from {\em Car
 Talk}\footnote{\url{www.cartalk.com/content/puzzler/transcripts/200717}}:
 
@@ -10138,6 +10244,10 @@ letters to make two, new four-letter words. The question is, what's
 the word?
 \end{quote}
 
+\index{homophone}
+\index{reducible word}
+\index{word!reducible}
+
 You can use the dictionary from Exercise~\ref{wordlist2} to check
 whether a string is in the word list.
 
@@ -10160,11 +10270,12 @@ You can see my solution at \url{thinkpython.com/code/homophone.py}.
 
 \chapter{Tuples}
 \label{tuplechap}
-\index{tuple}
 
 \section{Tuples are immutable}
+
 \index{tuple}
 \index{type!tuple}
+\index{sequence}
 
 A tuple is a sequence of values.  The values can be any type, and
 they are indexed by integers, so in that respect tuples are a lot
@@ -10184,6 +10295,8 @@ Syntactically, a tuple is a comma-separated list of values:
 Although it is not necessary, it is common to enclose tuples in
 parentheses:
 
+\index{parentheses!around tuples}
+
 \beforeverb
 \begin{verbatim}
 >>> t = ('a', 'b', 'c', 'd', 'e')
@@ -10192,6 +10305,9 @@ parentheses:
 %
 To create a tuple with a single element, you have to include the final
 comma:
+
+\index{singleton}
+\index{tuple!singleton}
 
 \beforeverb
 \begin{verbatim}
@@ -10214,6 +10330,9 @@ parentheses:
 %
 Another way to create a tuple is the built-in function {\tt tuple}.
 With no argument, it creates an empty tuple:
+
+\index{tuple function}
+\index{function!tuple}
 
 \beforeverb
 \begin{verbatim}
@@ -10240,6 +10359,9 @@ avoid using it as a variable name.
 Most list operators also work on tuples.  The bracket operator
 indexes an element:
 
+\index{bracket operator}
+\index{operator!bracket}
+
 \beforeverb
 \begin{verbatim}
 >>> t = ('a', 'b', 'c', 'd', 'e')
@@ -10249,6 +10371,11 @@ indexes an element:
 \afterverb
 %
 And the slice operator selects a range of elements.
+
+\index{slice operator}
+\index{operator!slice}
+\index{tuple!slice}
+\index{slice!tuple}
 
 \beforeverb
 \begin{verbatim}
@@ -10262,6 +10389,8 @@ an error:
 
 \index{exception!TypeError}
 \index{TypeError}
+\index{item assignment}
+\index{assignment!item}
 
 \beforeverb
 \begin{verbatim}
@@ -10284,8 +10413,11 @@ one tuple with another:
 
 \section{Tuple assignment}
 \label{tuple assignment}
+
 \index{tuple assignment}
 \index{assignment!tuple}
+\index{swap pattern}
+\index{pattern!swap}
 
 It is often useful to swap the values of two variables.
 With conventional assignments, you have to use a temporary
@@ -10329,6 +10461,10 @@ More generally, the right side can be any kind of sequence
 (string, list or tuple).  For example, to split an email address
 into a user name and a domain, you could write:
 
+\index{split method}
+\index{method!split}
+\index{email address}
+
 \beforeverb
 \begin{verbatim}
 >>> addr = 'monty@python.org'
@@ -10351,6 +10487,7 @@ python.org
 %
 
 \section{Tuples as return values}
+
 \index{tuple}
 \index{value!tuple}
 \index{return value!tuple}
@@ -10379,6 +10516,9 @@ You can store the result as a tuple:
 %
 Or use tuple assignment to store the elements separately:
 
+\index{tuple assignment}
+\index{assignment!tuple}
+
 \beforeverb
 \begin{verbatim}
 >>> quot, rem = divmod(7, 3)
@@ -10402,13 +10542,19 @@ def min_max(t):
 the largest and smallest elements of a sequence.  \verb"min_max"
 computes both and returns a tuple of two values.
 
-\index{max}
-\index{min}
+\index{max function}
+\index{function!max}
+\index{min function}
+\index{function!min}
 
 
 \section{Variable-length argument tuples}
+
 \index{variable-length argument tuples}
 \index{argument!variable-length tuples}
+\index{gather}
+\index{parameter!gather}
+\index{argument!gather}
 
 Functions can take a variable number of arguments.  A parameter
 name that begins with {\tt *} {\bf gathers} arguments into
@@ -10445,11 +10591,17 @@ def pointless(required, optional=0, *args):
 Run this function with 1, 2, 3 and 4 or more arguments and
 make sure you understand what it does.
 
+\index{scatter}
+\index{argument scatter}
+
 The complement of gather is {\bf scatter}.  If you have a
 sequence of values and you want to pass it to a function
 as multiple arguments, you can use the {\tt *} operator.
 For example, {\tt divmod} takes exactly two arguments; it
 doesn't work with a tuple:
+
+\index{TypeError}
+\index{exception!TypeError}
 
 \beforeverb
 \begin{verbatim}
@@ -10474,6 +10626,11 @@ Many of the built-in functions use
 variable-length argument tuples.  For example, {\tt max}
 and {\tt min} can take any number of arguments:
 
+\index{max function}
+\index{function!max}
+\index{min function}
+\index{function!min}
+
 \beforeverb
 \begin{verbatim}
 >>> max(1,2,3)
@@ -10482,6 +10639,9 @@ and {\tt min} can take any number of arguments:
 \afterverb
 %
 But {\tt sum} does not.
+
+\index{sum function}
+\index{function!sum}
 
 \beforeverb
 \begin{verbatim}
@@ -10497,13 +10657,17 @@ of arguments and returns their sum.
 
 
 \section{Lists and tuples}
-\index{list}
+
+\index{zip function}
+\index{function!zip}
 
 {\tt zip} is a built-in function that takes two or more sequences and
 ``zips'' them into a list\footnote{In Python 3.0, {\tt zip} returns an
   iterator of tuples, but for most purposes, an iterator behaves like
   a list} of tuples where each tuple contains one element from each
 sequence.
+
+\index{Python 3.0}
 
 This example zips a string and a list:
 
@@ -10520,6 +10684,8 @@ The result is a list of tuples where each tuple contains
 a character from the string and the corresponding element from
 the list.
 
+\index{list of tuples}
+
 If the sequences are not the same length, the result has the
 length of the shorter one.
 
@@ -10533,6 +10699,9 @@ length of the shorter one.
 You can use tuple assignment in a {\tt for} loop to traverse a list of
 tuples:
 
+\index{tuple assignment}
+\index{assignment!tuple}
+
 \beforeverb
 \begin{verbatim}
 t = [('a', 0), ('b', 1), ('c', 2)]
@@ -10544,6 +10713,8 @@ for letter, number in t:
 Each time through the loop, Python selects the next tuple in
 the list and assigns the elements to {\tt letter} and 
 {\tt number}.  The output of this loop is:
+
+\index{loop}
 
 \beforeverb
 \begin{verbatim}
@@ -10559,6 +10730,8 @@ time.  For example, \verb"has_match" takes two sequences, {\tt t1} and
 {\tt t2}, and returns {\tt True} if there is an index {\tt i}
 such that {\tt t1[i] == t2[i]}:
 
+\index{for loop}
+
 \beforeverb
 \begin{verbatim}
 def has_match(t1, t2):
@@ -10571,6 +10744,10 @@ def has_match(t1, t2):
 %
 If you need to traverse the elements of a sequence and their
 indices, you can use the built-in function {\tt enumerate}:
+
+\index{traverse}
+\index{enumerate function}
+\index{function!enumerate}
 
 \beforeverb
 \begin{verbatim}
@@ -10593,7 +10770,11 @@ Again.
 
 
 \section{Dictionaries and tuples}
+
 \index{dictionary}
+\index{items method}
+\index{method!items}
+\index{key-value pair}
 
 Dictionaries have a method called {\tt items} that returns
 a list of tuples, where each tuple is a key-value pair.
@@ -10610,6 +10791,8 @@ a list of tuples, where each tuple is a key-value pair.
 As you should expect from a dictionary, the items are in no
 particular order.
 
+\index{dictionary!initialize}
+
 Conversely, you can use a list of tuples to initialize
 a new dictionary:
 
@@ -10625,6 +10808,8 @@ a new dictionary:
 Combining {\tt dict} with {\tt zip} yields a concise way
 to create a dictionary:
 
+\index{zip!use with dict}
+
 \beforeverb
 \begin{verbatim}
 >>> d = dict(zip('abc', range(3)))
@@ -10635,6 +10820,9 @@ to create a dictionary:
 %
 The dictionary method {\tt update} also takes a list of tuples
 and adds them, as key-value pairs, to an existing dictionary.
+
+\index{traverse!dictionary}
+\index{dictionary!traverse}
 
 Combining {\tt items}, tuple assignment and {\tt for}, you
 get the idiom for traversing the keys and values of a dictionary:
@@ -10658,6 +10846,9 @@ The output of this loop is:
 %
 Again.
 
+\index{tuple!as key in dictionary}
+\index{hashable}
+
 It is common to use tuples as keys in dictionaries (primarily because
 you can't use lists).  For example, a telephone directory might map
 from last-name, first-name pairs to telephone numbers.  Assuming
@@ -10672,6 +10863,8 @@ directory[last,first] = number
 %
 The expression in brackets is a tuple.  We could use tuple
 assignment to traverse this dictionary.
+
+\index{tuple!in brackets}
 
 \beforeverb
 \begin{verbatim}
@@ -10711,7 +10904,12 @@ BBC, so please don't call it.
 
 
 
-\section{Sorting tuples}
+\section{Comparing tuples}
+
+\index{comparing tuples}
+\index{tuple!comparing}
+\index{sort method}
+\index{method!sort}
 
 The comparison operators work with tuples and other sequences;
 Python starts by comparing the first element from each
@@ -10746,7 +10944,10 @@ with one or more sort keys preceding the elements from the sequence,
 \end{description}
 
 \label{DSU}
-\index{DSU}
+\index{DSU pattern}
+\index{pattern!DSU}
+\index{decorate-sort-undecorate pattern}
+\index{pattern!decorate-sort-undecorate}
 
 For example, suppose you have a list of words and you want to
 sort them from longest to shortest:
@@ -10787,6 +10988,12 @@ applications you might want to break ties at random.  Modify
 this example so that words with the same length appear in
 random order.  Hint: see the {\tt random} function in the
 {\tt random} module.
+
+\index{random module}
+\index{module!random}
+\index{random function}
+\index{function!random}
+
 \end{ex}
 
 
@@ -10801,6 +11008,12 @@ is sometimes easier to talk about sequences of sequences.
 In many contexts, the different kinds of sequences (strings, lists and
 tuples) can be used interchangeably.  So how and why do you choose one
 over the others?
+
+\index{string}
+\index{list}
+\index{tuple}
+\index{mutable}
+\index{immutable}
 
 To start with the obvious, strings are more limited than other
 sequences because the elements have to be characters.  They are
@@ -10833,8 +11046,18 @@ and {\tt reversed}, which take any sequence as a parameter
 and return a new list with the same elements in a different
 order.
 
+\index{sorted function}
+\index{function!sorted}
+\index{reversed function}
+\index{function!reversed}
+
 
 \section{Debugging}
+
+\index{debugging}
+\index{data structure}
+\index{shape error}
+\index{error!shape}
 
 Lists, dictionaries and tuples are known generically as {\bf data
   structures}; in this chapter we are starting to see compound data
@@ -10844,6 +11067,9 @@ they are prone to what I call {\bf shape errors}; that is, errors
 caused when a data structure has the wrong type, size or composition.
 For example, if you are expecting a list with one integer, an
 integer (that is not in a list) won't work.
+
+\index{structshape module}
+\index{module!structshape}
 
 To help debug these kinds of errors, I have written a module
 called {\tt structshape} that provides a function, also called
@@ -10955,11 +11181,18 @@ prints the letters in decreasing order of frequency.  Find text
 samples from several different languages and see how letter frequency
 varies between languages.  Compare your results with the tables at
 \url{wikipedia.org/wiki/Letter_frequencies}.
+
+\index{letter frequency}
+\index{frequency!letter}
+
 \end{ex}
 
 
 \begin{ex}
 \label{anagrams}
+
+\index{anagram set}
+\index{set!anagram}
 
 More anagrams!
 
@@ -10988,6 +11221,9 @@ letters in a way that can be used as a key?
 \item Modify the previous program so that it prints the largest set
 of anagrams first, followed by the second largest set, and so on.
 
+\index{Scrabble}
+\index{bingo}
+
 \item In Scrabble a ``bingo'' is when you play all seven tiles in
 your rack, along with a letter on the board, to form an eight-letter
 word.  What set of 8 letters forms the most possible bingos?
@@ -10995,6 +11231,8 @@ Hint: there are seven.
 
 % (7, ['angriest', 'astringe', 'ganister', 'gantries', 'granites',
 % 'ingrates', 'rangiest'])
+
+\index{metathesis}
 
 \item Two words form a ``metathesis pair'' if you can transform one
   into the other by swapping two letters\footnote{This exercise is
@@ -11011,6 +11249,9 @@ You can download a solution from \url{thinkpython.com/code/anagram_sets.py}.
 
 
 \begin{ex}
+
+\index{Car Talk}
+\index{Puzzler}
 
 Here's another Car Talk Puzzler\footnote{
 \url{www.cartalk.com/content/puzzler/transcripts/200651}}:
@@ -11034,6 +11275,9 @@ take the e off the end, we're left with spit, we take the s off, we're
 left with pit, it, and I.
 \end{quote}
 
+\index{reducible word}
+\index{word!reducible}
+
 Write a program to find all words that can be reduced in this way,
 and then find the longest one.
 
@@ -11045,6 +11289,9 @@ some suggestions:
 \item You might want to write a function that takes a word and
   computes a list of all the words that can be formed by removing one
   letter.  These are the ``children'' of the word.
+
+\index{recursive definition}
+\index{definition!recursive}
 
 \item Recursively, a word is reducible if any of its children
 are reducible.  As a base case, you can consider the empty
@@ -11086,6 +11333,9 @@ Write a program that reads a file, breaks each line into
 words, strips whitespace and punctuation from the words, and
 converts them to lowercase.
 
+\index{string module}
+\index{module!string}
+
 Hint: The {\tt string} module provides strings named {\tt whitespace},
 which contains space, tab, newline, etc., and {\tt
   punctuation} which contains the punctuation characters.  Let's see
@@ -11101,10 +11351,21 @@ if we can make Python swear:
 %
 Also, you might consider using the string methods {\tt strip},
 {\tt replace} and {\tt translate}.
+
+\index{strip method}
+\index{method!strip}
+\index{replace method}
+\index{method!replace}
+\index{translate method}
+\index{method!translate}
+
 \end{ex}
 
 
 \begin{ex}
+
+\index{Project Gutenberg}
+
 Go to Project Gutenberg (\url{gutenberg.net}) and download 
 your favorite out-of-copyright book in plain text format.
 
@@ -11114,6 +11375,9 @@ of the file, and process the rest of the words as before.
 
 Then modify the program to count the total number of words in
 the book, and the number of times each word is used.
+
+\index{word frequency}
+\index{frequency!word}
 
 Print the number of different words used in the book.  Compare
 different books by different authors, written in different eras.
@@ -11137,8 +11401,11 @@ many of them are really obscure?
 
 
 \section{Random numbers}
+
 \index{random number}
 \index{number!random}
+\index{deterministic}
+\index{pseudorandom}
 
 Given the same inputs, most computer programs generate the same
 outputs every time, so they are said to be {\bf deterministic}.
@@ -11154,9 +11421,15 @@ Pseudorandom numbers are not truly random because they are generated
 by a deterministic computation, but just by looking at the numbers it
 is all but impossible to distinguish them from random.
 
+\index{random module}
+\index{module!random}
+
 The {\tt random} module provides functions that generate
 pseudorandom numbers (which I will simply call ``random'' from
 here on).
+
+\index{random function}
+\index{function!random}
 
 The function {\tt random} returns a random float
 between 0.0 and 1.0 (including 0.0 but not 1.0).  Each time you
@@ -11177,6 +11450,9 @@ The function {\tt randint} takes parameters {\tt low} and
 {\tt high} and returns an integer between {\tt low} and
 {\tt high} (including both).
 
+\index{randint function}
+\index{function!randint}
+
 \beforeverb
 \begin{verbatim}
 >>> random.randint(5, 10)
@@ -11188,6 +11464,9 @@ The function {\tt randint} takes parameters {\tt low} and
 %
 To choose an element from a sequence at random, you can use
 {\tt choice}:
+
+\index{choice function}
+\index{function!choice}
 
 \beforeverb
 \begin{verbatim}
@@ -11204,6 +11483,9 @@ random values from continuous distributions including
 Gaussian, exponential, gamma, and a few more.
 
 \begin{ex}
+
+\index{histogram!random choice}
+
 Write a function named \verb"choose_from_hist" that takes
 a histogram as defined in Section~\ref{histogram} and returns a 
 random value from the histogram, chosen with probability
@@ -11227,6 +11509,8 @@ with probability $1/3$.
 
 Here is a program that reads a file and builds a histogram of the
 words in the file:
+
+\index{histogram!word frequencies}
 
 \beforeverb
 \begin{verbatim}
@@ -11254,6 +11538,8 @@ hist = process_file('emma.txt')
 %
 This program reads {\tt emma.txt}, which contains the text of {\em
   Emma} by Jane Austin.
+
+\index{Austin, Jane}
 
 \verb"process_file" loops through the lines of the file,
 passing them one at a time to \verb"process_line".  The histogram
@@ -11312,6 +11598,9 @@ Number of different words: 7212
 %
 
 \section{Most common words}
+
+\index{DSU pattern}
+\index{pattern!DSU}
 
 To find the most common words, we can apply the DSU pattern;
 \verb"most_common" takes a histogram and returns a list of
@@ -11382,6 +11671,9 @@ def print_most_common(hist, num=10)
 The first parameter is required; the second is optional.
 The {\bf default value} of {\tt num} is 10.
 
+\index{default value}
+\index{value!default}
+
 If you only provide one argument:
 
 \beforeverb
@@ -11401,12 +11693,17 @@ print_most_common(hist, 20)
 {\tt num} gets the value of the argument instead.  In other
 words, the optional argument {\bf overrides} the default value.
 
+\index{override}
+
 If a function has both required and optional parameters, all
 the required parameters have to come first, followed by the
 optional ones.
 
 
 \section{Dictionary subtraction}
+
+\index{dictionary!subtraction}
+\index{subtraction!dictionary}
 
 Finding the words from the book that are not in the word list
 from {\tt words.txt} is a problem you might recognize as set
@@ -11418,7 +11715,6 @@ words in the list).
 new dictionary that contains all the keys from {\tt d1} that are not
 in {\tt d2}.  Since we don't really care about the values, we
 set them all to None.
-
 
 \beforeverb
 \begin{verbatim}
@@ -11461,6 +11757,10 @@ Some of these words are names and possessives.  Others, like
 words that should really be in the list!
 
 \begin{ex}
+
+\index{set}
+\index{type!set}
+
 Python provides a data structure called {\tt set} that provides many
 common set operations.  Read the documentation at
 \url{docs.python.org/lib/types-set.html} and write a program
@@ -11471,6 +11771,8 @@ the word list.
 
 \section{Random words}
 \label{randomwords}
+
+\index{histogram!random choice}
 
 To choose a random word from the histogram, the simplest algorithm
 is to build a list with multiple copies of each word, according
@@ -11494,6 +11796,8 @@ a sequence.
 
 \begin{ex}
 \label{randhist}
+
+\index{algorithm}
 
 This algorithm works, but it is not very efficient; each time you
 choose a random word, it rebuilds the list, which is as big as
@@ -11525,6 +11829,8 @@ word from the book.
 
 
 \section{Markov analysis}
+
+\index{Markov analysis}
 
 If you choose words from the book at random, you can get a
 sense of the vocabulary, you probably won't get a sentence:
@@ -11563,9 +11869,16 @@ the phrase ``half the'' is always followed by the word ``bee,''
 but the phrase ``the bee'' might be followed by either
 ``has'' or ``is''.
 
+\index{prefix}
+\index{suffix}
+\index{mapping}
+
 The result of Markov analysis is a mapping from each prefix
 (like ``half the'' and ``the bee'') to all possible suffixes
 (like ``has'' and ``is'').
+
+\index{random text}
+\index{text!random}
 
 Given this mapping, you can generate a random text by
 starting with any prefix and choosing at random from the
@@ -11612,6 +11925,8 @@ Semantically, it almost makes sense, but not quite.
 What happens if you increase the prefix length?  Does the random
 text make more sense?
 
+\index{mash-up}
+
 \item Once your program is working, you might want to try a mash-up:
 if you analyze text from two or more books, the random
 text you generate will blend the vocabulary and phrases from
@@ -11622,6 +11937,8 @@ the sources in interesting ways.
 
 
 \section{Data structures}
+
+\index{data structure}
 
 Using Markov analysis to generate random text is fun, but there is
 also a point to this exercise: data structure selection.  In your
@@ -11645,12 +11962,16 @@ For the prefixes, the most obvious options are string,
 list of strings, or tuple of strings.  For the suffixes,
 one option is a list; another is a histogram (dictionary).
 
+\index{implementation}
+
 How should you choose?  The first step is to think about
 the operations you will need to implement for each data structure.
 For the prefixes, we need to be able to remove words from
 the beginning and add to the end.  For example, if the current
 prefix is ``Half a,'' and the next word is ``bee,'' you need
 to be able to form the next prefix, ``a bee.''
+
+\index{tuple!as key in dictionary}
 
 Your first choice might be a list, since it is easy to add
 and remove elements, but we also need to be able to use the
@@ -11708,7 +12029,7 @@ all if you run out of memory.  But for many applications, space is a
 secondary consideration after run time.
 
 One final thought: in this discussion, I have implied that
-we would use one data structure for both analysis and generation.  But
+we should use one data structure for both analysis and generation.  But
 since these are separate phases, it would also be possible to use one
 structure for analysis and then convert to another structure for
 generation.  This would be a net win if the time saved during
@@ -11716,6 +12037,7 @@ generation exceeded the time spent in conversion.
 
 
 \section{Debugging}
+\index{debugging}
 
 When you are debugging a program, and especially if you are
 working on a hard bug, there are four things to try:
@@ -11746,11 +12068,15 @@ Beginning programmers sometimes get stuck on one of these activities
 and forget the others.  Each activity comes with its own failure
 mode.
 
+\index{typographical error}
+
 For example, reading your code might help if the problem is a
 typographical error, but not if the problem is a conceptual
 misunderstanding.  If you don't understand what your program does, you
 can read it 100 times and never see the error, because the error is in
 your head.
+
+\index{experimental debugging}
 
 Running experiments can help, especially if you run small, simple
 tests.  But if you run experiments without thinking or reading your
@@ -11758,6 +12084,9 @@ code, you might fall into a pattern I call ``random walk programming,''
 which is the process of making random changes until the program
 does the right thing.  Needless to say, random walk programming
 can take a long time.
+
+\index{random walk programming}
+\index{development plan!random walk programming}
 
 You have to take time to think.  Debugging is like an
 experimental science.  You should have at least one hypothesis about
@@ -11815,6 +12144,11 @@ possible inputs.
 \section{Exercises}
 
 \begin{ex}
+
+\index{word frequency}
+\index{frequency!word}
+\index{Zipf's law}
+
 The ``rank'' of a word is its position in a list of words
 sorted by frequency: the most common word has rank 1, the
 second most common has rank 2, etc.
@@ -11829,6 +12163,8 @@ predicts that the frequency, $f$, of the word with rank $r$ is:
 where $s$ and $c$ are parameters that depend on the language and the
 text.  If you take the logarithm of both sides of this equation, you
 get:
+
+\index{logarithm}
 
 \[ \log f = \log c - s \log r \]
 %
@@ -11845,11 +12181,14 @@ a straight line.  Can you estimate the value of $s$?
 
 
 \chapter{Files}
+
 \index{file}
 \index{type!file}
 
 
 \section{Persistence}
+
+\index{persistence}
 
 Most of the programs we have seen so far are transient in the
 sense that they run for a short time and produce some output,
@@ -11875,12 +12214,20 @@ An alternative is to store the state of the program in a database.
 In this chapter I will present a simple database and a module,
 {\tt pickle}, that makes it easy to store program data.
 
+\index{pickle module}
+\index{module!pickle}
+
 
 \section{Reading and writing}
+
+\index{file!reading and writing}
 
 A text file is a sequence of characters stored on a permanent
 medium like a hard drive, flash memory, or CD-ROM.  We saw how
 to open and read a file in Section~\ref{wordlist}.
+
+\index{open function}
+\index{function!open}
 
 To write a file, you have to open it with mode
 {\tt 'w'} as a second parameter:
@@ -11925,9 +12272,13 @@ When you are done writing, you have to close the file.
 \afterverb
 %
 
+\index{close method}
+\index{method!close}
+
+
 \section{Format operator}
+
 \index{format operator}
-\index{format string}
 \index{operator!format}
 
 The argument of {\tt write} has to be a string, so if we want
@@ -11945,10 +12296,14 @@ An alternative is to use the {\bf format operator}, {\tt \%}.  When
 applied to integers, {\tt \%} is the modulus operator.  But
 when the first operand is a string, {\tt \%} is the format operator.
 
+\index{format string}
+
 The first operand is the {\bf format string}, and the second operand
 is a tuple of expressions.  The result is a string that contains
 the values of the expressions, formatted according to the format
 string.
+
+\index{format sequence}
 
 As an example, the {\bf format sequence} {\tt '\%d'} means that
 the first expression in the tuple should be formatted as an
@@ -12028,15 +12383,26 @@ read more about it at \url{docs.python.org/lib/typesseq-strings.html}.
 \section{Filenames and paths}
 \label{paths}
 
+\index{filename}
+\index{path}
+\index{directory}
+\index{folder}
+
 Files are organized into {\bf directories} (also called ``folders'').
 Every running program has a ``current directory,'' which is the
 default directory for most operations.  
 For example, when you open a file for reading, Python looks for it in the
 current directory.
 
+\index{os module}
+\index{module!os}
+
 The {\tt os} module provides functions for working with files and
 directories (``os'' stands for ``operating system'').  {\tt os.getcwd}
 returns the name of the current directory:
+
+\index{getcwd function}
+\index{function!getcwd}
 
 \beforeverb
 \begin{verbatim}
@@ -12051,10 +12417,18 @@ returns the name of the current directory:
 this example is {\tt /home/dinsdale}, which is the home directory of a
 user named {\tt dinsdale}.
 
+\index{working directory}
+\index{directory!working}
+
 A string like {\tt cwd} that identifies a file is called a {\bf path}.
 A {\bf relative path} starts from the current directory;
 an {\bf absolute path} starts from the topmost directory in the
 file system.
+
+\index{relative path}
+\index{path!relative}
+\index{absolute path}
+\index{path!absolute}
 
 The paths we have seen so far are simple filenames, so they are
 relative to the current directory.  To find the absolute path to
@@ -12069,6 +12443,9 @@ a file, you can use {\tt os.path.abspath}:
 %
 {\tt os.path.exists} checks
 whether a file or directory exists:
+
+\index{exists function}
+\index{function!exists}
 
 \beforeverb
 \begin{verbatim}
@@ -12104,6 +12481,9 @@ To demonstrate these functions, the following example
 ``walks'' through a directory, prints
 the names of all the files, and calls itself recursively on
 all the directories.
+
+\index{walk!directory}
+\index{directory!walk}
 
 \beforeverb
 \begin{verbatim}
@@ -12141,6 +12521,8 @@ A lot of things can go wrong when you try to read and write
 files.  If you try to open a file that doesn't exist, you get an
 {\tt IOError}:
 
+\index{open function}
+\index{function!open}
 \index{exception!IOError}
 \index{IOError}
 
@@ -12152,6 +12534,9 @@ IOError: [Errno 2] No such file or directory: 'bad_file'
 \afterverb
 %
 If you don't have permission to access a file:
+
+\index{file permission}
+\index{permission!file}
 
 \beforeverb
 \begin{verbatim}
@@ -12208,15 +12593,23 @@ again, or at least end the program gracefully.
 
 \section{Databases}
 
+\index{database}
+
 A {\bf database} is a file that is organized for storing data.
 Most databases are organized like a dictionary in the sense
 that they map from keys to values.  The biggest difference
 is that the database is on disk (or other permanent storage),
 so it persists after the program ends.
 
+\index{anydbm module}
+\index{module!anydbm}
+
 The module {\tt anydbm} provides an interface for creating
 and updating database files.  As an example, I'll create a database
 that contains captions for image files.
+
+\index{open function}
+\index{function!open}
 
 Opening a database is similar
 to opening other files:
@@ -12263,6 +12656,8 @@ Many dictionary methods, like {\tt keys} and {\tt items}, also
 work with database objects.  So does iteration with a {\tt for}
 statement.
 
+\index{dictionary methods!anydbm module}
+
 \beforeverb
 \begin{verbatim}
 for key in db:
@@ -12280,12 +12675,20 @@ done:
 \afterverb
 %
 
+\index{close function}
+\index{function!close}
+
 
 \section{Pickling}
+
+\index{pickling}
 
 A limitation of {\tt anydbm} is that the keys and values have
 to be strings.  If you try to use any other type, you get an
 error.
+
+\index{pickle module}
+\index{module!pickle}
 
 The {\tt pickle} module can help.  It translates
 almost any type of object into a string suitable for storage in a
@@ -12336,7 +12739,15 @@ You can use {\tt pickle} to store non-strings in a database.
 In fact, this combination is so common that it has been
 encapsulated in a module called {\tt shelve}.  
 
+\index{shelve module}
+\index{module!shelve}
+
+
 \begin{ex}
+
+\index{anagram set}
+\index{set!anagram}
+
 If you did Exercise~\ref{anagrams}, modify your solution so that
 it creates a database that maps from each word in the list to
 a list of words that use the same set of letters.
@@ -12348,12 +12759,18 @@ the contents in a human-readable format.
 
 \section{Pipes}
 
+\index{shell}
+\index{pipe}
+
 Most operating systems provide a command-line interface,
 also known as a {\bf shell}.  Shells usually provide commands
 to navigate the file system and launch applications.  For
 example, in Unix, you can change directories with {\tt cd},
 display the contents of a directory with {\tt ls}, and launch
 a web browser by typing (for example) {\tt firefox}.
+
+\index{ls Unix command}
+\index{Unix command!ls}
 
 Any program that you can launch from the shell can also be
 launched from Python using a {\bf pipe}.  A pipe is an object
@@ -12362,6 +12779,9 @@ that represents a running process.
 For example, the Unix command {\tt ls -l} normally displays the
 contents of the current directory (in long format).  You can
 launch {\tt ls} with {\tt os.popen}:
+
+\index{popen function}
+\index{function!popen}
 
 \beforeverb
 \begin{verbatim}
@@ -12376,6 +12796,11 @@ file.  You can read the output from the {\tt ls} process one
 line at a time with {\tt readline} or get the whole thing at
 once with {\tt read}:
 
+\index{readline method}
+\index{method!readline}
+\index{read method}
+\index{method!read}
+
 \beforeverb
 \begin{verbatim}
 >>> res = fp.read()
@@ -12383,6 +12808,9 @@ once with {\tt read}:
 \afterverb
 %
 When you are done, you close the pipe like a file:
+
+\index{close method}
+\index{method!close}
 
 \beforeverb
 \begin{verbatim}
@@ -12394,6 +12822,11 @@ None
 %
 The return value is the final status of the {\tt ls} process;
 {\tt None} means that it ended normally (with no errors).
+
+\index{file compression}
+\index{compression!file}
+\index{Unix command gzip}
+\index{gzip!Unix command}
 
 A common use of pipes is to read a compressed file incrementally;
 that is, without uncompressing the whole thing at once.  The
@@ -12416,7 +12849,9 @@ to store the uncompressed file in memory or on disk.
 
 \section{Writing modules}
 \label{modules}
-\index{module}
+
+\index{module!writing}
+\index{word count}
 
 Any file that contains Python code can be imported as a module.
 For example, suppose you have a file named {\tt wc.py} with the following
@@ -12447,6 +12882,9 @@ You can also import it like this:
 %
 Now you have a module object {\tt wc}:
 
+\index{module object}
+\index{object!module}
+
 \beforeverb
 \begin{verbatim}
 >>> print wc
@@ -12469,6 +12907,9 @@ The only problem with this example is that when you import
 the module it executes the test code at the bottom.  Normally
 when you import a module, it defines new functions but it
 doesn't execute them.
+
+\index{import statement}
+\index{statement!import}
 
 Programs that will be imported as modules often
 use the following idiom:
@@ -12496,6 +12937,10 @@ Warning: If you import a module that has already been imported,
 Python does nothing.  It does not re-read the file, even if it has
 changed.
 
+\index{module!reload}
+\index{reload function}
+\index{function!reload}
+
 If you want to reload a module, you can use the built-in function 
 {\tt reload}, but it can be tricky, so the safest thing to do is
 restart the interpreter and then import the module again.
@@ -12504,6 +12949,9 @@ restart the interpreter and then import the module again.
 
 
 \section{Debugging}
+
+\index{debugging}
+\index{whitespace}
 
 When you are reading and writing files, you might run into problems
 with whitespace.  These errors can be hard to debug because spaces,
@@ -12517,6 +12965,10 @@ tabs and newlines are normally invisible:
  4
 \end{verbatim}
 \afterverb
+
+\index{repr function}
+\index{function repr}
+\index{string representation}
 
 The built-in function {\tt repr} can help.  It takes any object as an
 argument and returns a string representation of the object.  For
@@ -12538,6 +12990,8 @@ systems use a newline, represented \verb"\n".  Others use
 a return character, represented \verb"\r".  Some use both.
 If you move files between different systems, these inconsistencies
 might cause problems.
+
+\index{end of line character}
 
 For most systems, there are applications to convert from one
 format to another.  You can find them (and read more about this
@@ -12600,6 +13054,10 @@ with keys that correspond to values.
 \begin{ex}
 \label{urllib}
 
+\index{urllib module}
+\index{module!urllib}
+\index{URL}
+
 The {\tt urllib} module provides methods for manipulating URLs
 and downloading information from the web.  The following example
 downloads and prints a secret message from {\tt thinkpython.com}:
@@ -12616,10 +13074,15 @@ for line in conn.fp:
 
 Run this code and follow the instructions you see there.
 
+\index{secret exercise}
+\index{exercise!secret}
+
 \end{ex}
 
 \begin{ex}
 \label{checksum}
+
+\index{MP3}
 
 In a large collection of MP3 files, there may be more than one
 copy of the same song, stored in different directories or with
@@ -12634,6 +13097,11 @@ for all files with a given suffix like {\tt .mp3}.
 Hint: {\tt os.path} provides several useful functions for
 manipulating file and path names.
 
+\index{duplicate}
+\index{MD5 algorithm}
+\index{algorithm!MD5}
+\index{checksum}
+
 \item To recognize duplicates, you can use a hash function that
 reads the file and generates a short summary
 of the contents.  For example,
@@ -12646,18 +13114,27 @@ You can read about MD5 at \url{wikipedia.org/wiki/Md5}.  On
 a Unix system you can use the program {\tt md5sum} and a pipe to
 compute checksums from Python.
 
+\index{pipe}
+
 \end{enumerate}
 
 \end{ex}
 
 
 \begin{ex}
+
+\index{Internet Movie Database (IMDb)}
+\index{IMDb (Internet Movie Database)}
+\index{database}
+
 The Internet Movie Database (IMDb) is an online collection of
 information about movies.  Their database is available
 in plain text format, so it is reasonably easy to read from
 Python.  For this exercise, the files you need
 are {\tt actors.list.gz} and {\tt actresses.list.gz}; you
 can download them from \url{www.imdb.com/interfaces#plain}.
+
+\index{parse}
 
 I have written a program that parses these files and
 splits them into actor names, movie titles, etc.  You can
@@ -12692,10 +13169,16 @@ arguments and prints them.
   actresses.list.gz} and uses {\tt shelve} to build a database
 that maps from each actor to a list of his or her films.
 
+\index{shelve module}
+\index{module!shelve}
+
 \item Two actors are ``costars'' if they have been in at least one
   movie together.  Process the database you built in the previous step
   and build a second database that maps from each actor to a list of
   his or her costars.
+
+\index{Bacon, Kevin}
+\index{Kevin Bacon Game}
 
 \item Write a program that can play the ``Six Degrees of Kevin
   Bacon,'' which you can read about at
@@ -12710,12 +13193,11 @@ at \url{wikipedia.org/wiki/Shortest_path_problem}.
 
 
 \chapter{Classes and objects}
-\index{class}
-\index{object}
 
 
 \section{User-defined types}
 \label{point}
+
 \index{user-defined type}
 \index{type!user-defined}
 
@@ -12723,6 +13205,8 @@ We have used many of Python's built-in types; now we are going
 to define a new type.  As an example, we will create a type
 called {\tt Point} that represents a point in two-dimensional
 space.
+
+\index{point!mathematical}
 
 In mathematical notation, points are often written in
 parentheses with a comma separating the coordinates. For example,
@@ -12744,12 +13228,19 @@ objects.
 
 \end{itemize}
 
+\index{representation}
+
 Creating a new type
 is (a little) more complicated than the other options, but
 it has advantages that will be apparent soon.
 
 A user-defined type is also called a {\bf class}.
 A class definition looks like this:
+
+\index{class}
+\index{object}
+\index{class definition}
+\index{definition!class}
 
 \beforeverb
 \begin{verbatim}
@@ -12761,6 +13252,9 @@ class Point(object):
 This header indicates that the new class is a {\tt Point},
 which is a kind of {\tt object}, which is a built-in
 type.
+
+\index{Point class}
+\index{class Point}
 
 The body is a docstring that explains what the class is for.
 You can define variables and functions inside a class definition,
@@ -12807,9 +13301,14 @@ When you print an instance, Python tells you what class it
 belongs to and where it is stored in memory (the prefix
 {\tt 0x} means that the following number is in hexadecimal).
 
+\index{hexadecimal}
+
 
 \section{Attributes}
-\index{attribute}
+
+\index{instance attribute}
+\index{attribute!instance}
+\index{dot notation}
 
 You can assign values to an instance using dot notation:
 
@@ -12877,6 +13376,8 @@ You can use dot notation as part of any expression.  For example:
 You can pass an instance as an argument in the usual way.
 For example:
 
+\index{instance!as argument}
+
 \beforeverb
 \begin{verbatim}
 def print_point(p):
@@ -12898,6 +13399,9 @@ an argument:
 Inside the function, {\tt p} is an alias for {\tt blank}, so if
 the function modifies {\tt p}, {\tt blank} changes.
 
+\index{aliasing}
+
+
 \begin{ex}
 Write a function called {\tt distance} that it takes two Points
 as arguments and returns the distance between them.
@@ -12906,7 +13410,6 @@ as arguments and returns the distance between them.
 
 
 \section{Rectangles}
-\index{rectangle}
 
 Sometimes it is obvious what the attributes of an object should be,
 but other times you have to make decisions.  For example, imagine you
@@ -12914,6 +13417,8 @@ are designing a class to represent rectangles.  What attributes would
 you use to specify the location and size of a rectangle?  You can
 ignore angle; to keep things simple, assume that the rectangle is
 either vertical or horizontal.
+
+\index{representation}
 
 There are at least two possibilities: 
 
@@ -12928,6 +13433,9 @@ There are at least two possibilities:
 
 At this point it is hard to say whether either is better than
 the other, so we'll implement the first one, just as an example.
+
+\index{Rectangle class}
+\index{class!Rectangle}
 
 Here is the class definition:
 
@@ -12976,9 +13484,13 @@ The figure shows the state of this object:
 
 An object that is an attribute of another object is {\bf embedded}.
 
+\index{embedded object}
+\index{object!embedded}
+
 
 \section{Instances as return values}
-\index{instance}
+
+\index{instance!as return value}
 \index{return value}
 
 Functions can return instances.  For example, \verb"find_center"
@@ -13008,6 +13520,7 @@ the resulting Point to {\tt center}:
 %
 
 \section{Objects are mutable}
+
 \index{object!mutable}
 \index{mutable!object}
 
@@ -13066,16 +13579,18 @@ to the {\tt y} coordinate of {\tt corner}.
 
 
 \section{Copying}
-\label{embedded}
+
 \index{aliasing}
-\index{copying}
-\index{copy module}
-\index{module!copy}
 
 Aliasing can make a program difficult to read because changes
 in one place might have unexpected effects in another place.
 It is hard to keep track of all the variables that might refer
 to a given object.
+
+\index{copying objects}
+\index{object!copying}
+\index{copy module}
+\index{module!copy}
 
 Copying an object is often an alternative to aliasing.
 The {\tt copy} module contains a function called {\tt copy} that
@@ -13116,8 +13631,13 @@ instances, the default behavior of the {\tt ==} operator is the same
 as the {\tt is} operator; it checks object identity, not object
 equivalence.  This behavior can be changed---we'll see how later.
 
+\index{is operator}
+\index{operator!is}
+
 If you use {\tt copy.copy} to duplicate a Rectangle, you will find
 that it copies the Rectangle object but not the embedded Point.
+
+\index{embedded object!copying}
 
 \beforeverb
 \begin{verbatim}
@@ -13145,10 +13665,16 @@ Here is what the object diagram looks like:
 This operation is called a {\bf shallow copy} because it copies the
 object and any references it contains, but not the embedded objects.
 
+\index{shallow copy}
+\index{copy!shallow}
+
 For most applications, this is not what you want.  In this example,
 invoking \verb"grow_rectangle" on one of the Rectangles would not
 affect the other, but invoking \verb"move_rectangle" on either would
 affect both!  This behavior is confusing and error-prone.
+
+\index{deep copy}
+\index{copy!deep}
 
 Fortunately, the {\tt copy} module contains a method named {\tt
 deepcopy} that copies not only the object but also 
@@ -13156,6 +13682,9 @@ the objects it refers to, and the objects {\em they} refer to,
 and so on.
 You will not be surprised to learn that this operation is
 called a {\bf deep copy}.
+
+\index{deepcopy function}
+\index{function deepcopy}
 
 \beforeverb
 \begin{verbatim}
@@ -13179,12 +13708,14 @@ returns a new Rectangle instead of modifying the old one.
 \section{Debugging}
 \label{hasattr}
 
+\index{debugging}
+
 When you start working with objects, you are likely to encounter
 some new exceptions.  If you try to access an attribute
 that doesn't exist, you get an {\tt AttributeError}:
 
-\index{exception!Attribute}
-\index{Attribute}
+\index{exception!AttributeError}
+\index{AttributeError}
 
 \beforeverb
 \begin{verbatim}
@@ -13196,6 +13727,9 @@ AttributeError: Point instance has no attribute 'z'
 %
 If you are not sure what type an object is, you can ask:
 
+\index{type function}
+\index{function!type}
+
 \beforeverb
 \begin{verbatim}
 >>> type(p)
@@ -13205,6 +13739,9 @@ If you are not sure what type an object is, you can ask:
 %
 If you are not sure whether an object has a particular attribute,
 you can use the built-in function {\tt hasattr}:
+
+\index{hasattr function}
+\index{function!hasattr}
 
 \beforeverb
 \begin{verbatim}
@@ -13236,7 +13773,8 @@ of the type.
 \index{instance}
 
 \item[attribute:] One of the named values associated with an object.
-\index{attribute}
+\index{attribute!instance}
+\index{instance attribute}
 
 \item[embedded (object):] An object that is stored as an attribute
 of another object.
@@ -13265,6 +13803,10 @@ attributes, and the values of the attributes.
 \begin{ex}
 \label{canvas}
 
+\index{Swampy}
+\index{World module}
+\index{module!World}
+
 {\tt World.py}, which is part of Swampy (see Chapter~\ref{turtlechap})
 contains a class definition for a user-defined type called 
 {\tt World}.  If you run this code:
@@ -13283,6 +13825,9 @@ Rectangles and other shapes.
 Add the following lines before
 \verb"wait_for_user" and run the program again
 
+\index{Canvas object}
+\index{object!Canvas}
+
 \beforeverb
 \begin{verbatim}
 canvas = world.ca(width=500, height=500, background='white')
@@ -13296,6 +13841,8 @@ The first line creates a Canvas, which appears in the window
 as a white square.  The Canvas object provides methods like
 {\tt rectangle} for drawing various shapes.
 
+\index{bounding box}
+
 {\tt bbox} is a list of lists that represents the ``bounding box''
 of the rectangle.  The first pair of coordinates is the lower-left
 corner of the rectangle; the second pair is the upper-right corner.
@@ -13307,6 +13854,8 @@ You can draw a circle like this:
 canvas.circle([-25,0], 70, outline=None, fill='red')
 \end{verbatim}
 \afterverb
+
+\index{Bangladesh, national flag}
 
 If you add this line to the program, 
 the result should resemble the national flag of Bangladesh
@@ -13330,6 +13879,8 @@ the result should resemble the national flag of Bangladesh
   instantiate a few Circle objects.  Write a function called
   \verb"draw_circle" that draws circles on the canvas.
 
+\index{Czech Republic, national flag}
+
 \item Write a program that draws the national flag of of the Czech Republic.
 Hint: you can draw a polygon like this:
 
@@ -13342,6 +13893,9 @@ canvas.polygon(points, fill='blue')
 
 \end{enumerate}
 
+\index{color list}
+\index{available colors}
+
 I have written a small program that lists the available colors;
 you can download it from \url{thinkpython.com/code/color_list.py}.
 
@@ -13351,8 +13905,6 @@ you can download it from \url{thinkpython.com/code/color_list.py}.
 
 \chapter{Classes and functions}
 \label{time}
-\index{function}
-\index{method}
 
 
 \section{Time}
@@ -13360,6 +13912,11 @@ you can download it from \url{thinkpython.com/code/color_list.py}.
 As another example of a user-defined type, we'll define a class called
 {\tt Time} that records the time of day.  The class definition looks
 like this:
+
+\index{user-defined type}
+\index{type!user-defined}
+\index{Time class}
+\index{class!Time}
 
 \beforeverb
 \begin{verbatim}
@@ -13402,6 +13959,10 @@ at least two digits, including a leading zero if necessary.
 
 \begin{ex}
 \label{is_after}
+
+\index{boolean function}
+\index{function!boolean}
+
 Write a boolean function called \verb"is_after" that
 takes two Time objects, {\tt t1} and {\tt t2}, and
 returns {\tt True} if {\tt t1} follows {\tt t2} chronologically and
@@ -13410,8 +13971,9 @@ returns {\tt True} if {\tt t1} follows {\tt t2} chronologically and
 
 
 \section{Pure functions}
-\index{pure function}
-\index{function type!pure}
+
+\index{prototype and patch}
+\index{development plan!prototype and patch}
 
 In the next few sections, we'll write two functions that add time
 values.  They demonstrate two kinds of functions: pure functions and
@@ -13440,10 +14002,15 @@ passed to it as arguments and it has no effect,
 like displaying a value or getting user input, 
 other than returning a value.
 
+\index{pure function}
+\index{function type!pure}
+
 To test this function, I'll create two Time objects: {\tt start}
 contains the start time of a movie, like {\em Monty Python and the
 Holy Grail}, and {\tt duration} contains the run time of the movie,
 which is one hour 35 minutes.
+
+\index{Monty Python and the Holy Grail}
 
 \verb"add_time" figures out when the movie will be done.
 
@@ -13501,12 +14068,15 @@ We will see a shorter alternative later.
 
 \section{Modifiers}
 \label{increment}
+
 \index{modifier}
 \index{function type!modifier}
 
 Sometimes it is useful for a function to modify the objects it gets as
 parameters.  In that case, the changes are visible to the caller.
 Functions that work this way are called {\bf modifiers}.
+
+\index{increment}
 
 {\tt increment}, which adds a given number of seconds to a {\tt Time}
 object, can be written naturally as a
@@ -13529,6 +14099,8 @@ def increment(time, seconds):
 %
 The first line performs the basic operation; the remainder deals
 with the special cases we saw before.
+
+\index{special case}
 
 Is this function correct?  What happens if the parameter {\tt seconds}
 is much greater than sixty?  
@@ -13567,7 +14139,11 @@ a new Time object rather than modifying the parameter.
 
 \section{Prototyping versus planning}
 \label{prototype}
-\index{prototype development}
+
+\index{prototype and patch}
+\index{development plan!prototype and patch}
+\index{planned development}
+\index{development plan!planned development}
 
 The development plan I am demonstrating is called ``prototype and
 patch.''  For each function, I wrote a prototype that performed the
@@ -13588,9 +14164,13 @@ number in base 60 (see \url{wikipedia.org/wiki/Sexagesimal})!  The
 attribute is the ``sixties column,'' and the {\tt hour} attribute is
 the ``thirty-six hundreds column.''
 
+\index{sexagesimal}
+
 When we wrote \verb"add_time" and {\tt increment}, we were effectively
 doing addition in base 60, which is why we had to carry from one
 column to the next.
+
+\index{carrying!addition with}
 
 This observation suggests another approach to the whole problem---we
 can convert Time objects to integers and take advantage of the fact
@@ -13626,7 +14206,9 @@ def int_to_time(seconds):
 You might have to think a bit, and run some tests, to convince
 yourself that these functions are correct.  One way to test them is to
 check that \verb"time_to_int(int_to_time(x)) == x" for many values of
-{\tt x}.
+{\tt x}.  This is an example of a consistency check.
+
+\index{consistency check}
 
 Once you are convinced they are correct, you can use them to 
 rewrite \verb"add_time":
@@ -13669,12 +14251,15 @@ for error).
 
 
 \section{Debugging}
+\index{debugging}
 
 A Time object is well-formed if the values of {\tt minutes} and {\tt
 seconds} are between 0 and 60 (including 0 but not 60) and if 
 {\tt hours} is positive.  {\tt hours} and {\tt minutes} should be
 integral values, but we might allow {\tt seconds} to have a
 fraction part.
+
+\index{invariant}
 
 These kind of requirements are called {\bf invariants} because
 they should always be true.  To put it a different way, if they
@@ -13714,6 +14299,9 @@ def add_time(t1, t2):
 Or you could use an {\tt assert} statement, which checks a given invariant
 and raises an exception if it fails:
 
+\index{assert statement}
+\index{statement!assert}
+
 \beforeverb
 \begin{verbatim}
 def add_time(t1, t2):
@@ -13726,9 +14314,6 @@ def add_time(t1, t2):
 {\tt assert} statements are useful because they distinguish
 code that deals with normal conditions from code
 that checks for errors.
-
-\index{assert statement}
-\index{statement!assert}
 
 
 \section{Glossary}
@@ -13775,9 +14360,16 @@ Then use \verb"mul_time" to write a function that takes a Time
 object that represents the finishing time in a race, and a number
 that represents the distance, and returns a Time object that represents
 the average pace (time per mile).
+
+\index{race pace}
+
 \end{ex}
 
 \begin{ex}
+
+\index{Date class}
+\index{class Date}
+
 Write a class definition for a Date object that has attributes {\tt
   day}, {\tt month} and {\tt year}.  Write a function called
 \verb"increment_date" that takes a Date object, {\tt date} and an
@@ -13790,6 +14382,10 @@ deal with leap years correctly?  See \url{wikipedia.org/wiki/Leap_year}
 
 
 \begin{ex}
+
+\index{datetime module}
+\index{module!datetime}
+
 The {\tt datetime} module provides {\tt date} and {\tt time} objects
 that are similar to the Date and Time objects in this chapter, but
 they provide a rich set of methods and operators.  Read the
@@ -13799,6 +14395,8 @@ documentation at \url{docs.python.org/lib/datetime-date.html}.
 
 \item Use the {\tt datetime} module to write a program that
 gets the current date and prints the day of the week.
+
+\index{birthday}
 
 \item Write a program that takes a birthday as input
 prints the user's age and the number of days, hours,
@@ -13812,7 +14410,7 @@ minutes and seconds until their next birthday.
 
 
 \section{Object-oriented features}
-\index{object-oriented programming language}
+
 \index{object-oriented programming}
 
 Python is an {\bf object-oriented programming language}, which means
@@ -13841,9 +14439,9 @@ times.  Similarly, the {\tt Point} and {\tt Rectangle} classes
 correspond to the mathematical concepts of a point and a rectangle.
 
 So far, we have not taken advantage of the features Python provides to
-support object-oriented programming.  Strictly speaking, these
-features are not necessary.  For the most part, they provide an
-alternative syntax for things we have already done, but in many cases,
+support object-oriented programming.  These
+features are not strictly necessary; most of them provide
+alternative syntax for things we have already done.  But in many cases,
 the alternative is more concise and more accurately conveys the
 structure of the program.
 
@@ -13852,13 +14450,16 @@ connection between the class definition and the function definitions
 that follow.  With some examination, it is apparent that every function
 takes at least one {\tt Time} object as an argument.
 
+\index{method}
+\index{function}
+
 This observation is the motivation for {\bf methods}; a method is
 a function that is associated with a particular class.
 We have seen methods for strings, lists, dictionaries and tuples.
 In this chapter, we will define methods for user-defined types.
 
-\index{method}
-\index{function}
+\index{syntax}
+\index{semantics}
 
 Methods are semantically the same as functions, but there are
 two syntactic differences:
@@ -13882,7 +14483,9 @@ you will be able to choose the best form for whatever you are doing.
 
 \section{Printing objects}
 \label{print_time}
+
 \index{printing!object}
+\index{object!printing}
 
 In Chapter~\ref{time}, we defined a class named
 {\tt Time} and in Exercise~\ref{printtime}, you 
@@ -13917,6 +14520,8 @@ To make \verb"print_time" a method, all we have to do is
 move the function definition inside the class definition.  Notice
 the change in indentation.
 
+\index{indentation}
+
 \beforeverb
 \begin{verbatim}
 class Time(object):
@@ -13927,6 +14532,10 @@ class Time(object):
 %
 Now there are two ways to call \verb"print_time".  The first
 (and less common) way is to use function syntax:
+
+\index{function syntax}
+\index{dot notation}
+
 
 \beforeverb
 \begin{verbatim}
@@ -13941,6 +14550,8 @@ passed as a parameter.
 
 The second (and more concise) way is to use method syntax:
 
+\index{method syntax}
+
 \beforeverb
 \begin{verbatim}
 >>> start.print_time()
@@ -13954,9 +14565,14 @@ invoked on, which is called the {\bf subject}.  Just as the
 subject of a sentence is what the sentence is about, the subject
 of a method invocation is what the method is about.
 
+\index{subject}
+
 Inside the method, the subject is assigned to the first
 parameter, so in this case {\tt start} is assigned
 to {\tt time}.
+
+\index{self (parameter name)}
+\index{parameter!self}
 
 By convention, the first parameter of a method is
 called {\tt self}, so it would be more common to write
@@ -13971,6 +14587,8 @@ class Time(object):
 \afterverb
 %
 The reason for this convention is an implicit metaphor:
+
+\index{metaphor!method invocation}
 
 \begin{itemize}
 
@@ -14000,6 +14618,8 @@ clear what object you would invoke it on!
 
 
 \section{Another example}
+
+\index{increment}
 
 Here's a version of {\tt increment} (from Section~\ref{increment})
 rewritten as a method:
@@ -14060,6 +14680,9 @@ because it takes two Time objects as parameters.  In this case it is
 conventional to name the first parameter {\tt self} and the second
 parameter {\tt other}:
 
+\index{other (parameter name)}
+\index{parameter!other}
+
 \beforeverb
 \begin{verbatim}
 # inside class Time:
@@ -14080,10 +14703,11 @@ True
 \afterverb
 %
 One nice thing about this syntax is that it almost reads
-like English: ``end is after start.''
+like English: ``end is after start?''
 
 
 \section{The init method}
+
 \index{init method}
 \index{method!init}
 
@@ -14115,6 +14739,11 @@ to have the same names as the attributes.  The statement
 %
 stores the value of the parameter {\tt hour} as an attribute
 of {\tt self}.
+
+\index{optional parameter}
+\index{parameter!optional}
+\index{default value}
+\index{override}
 
 The parameters are optional, so if you call {\tt Time} with
 no arguments, you get the default values.
@@ -14153,6 +14782,9 @@ default values.
 
 
 \begin{ex}
+\index{Point class}
+\index{class!Point}
+
 Write an init method for the {\tt Point} class that takes
 {\tt x} and {\tt y} as optional parameters and assigns
 them to the corresponding attributes.
@@ -14160,11 +14792,14 @@ them to the corresponding attributes.
 
 
 \section{The {\tt str} method}
-\index{Point class}
-\index{class!Point}
+
+\index{str method}
+\index{method!str}
 
 \verb"__str__" is a special method, like \verb"__init__",
 that is supposed to return a string representation of an object.
+
+\index{string representation}
 
 For example, here is a {\tt str} method for Time objects:
 
@@ -14178,6 +14813,9 @@ For example, here is a {\tt str} method for Time objects:
 \afterverb
 %
 When you {\tt print} an object, Python invokes the {\tt str} method:
+
+\index{print statement}
+\index{statement!print}
 
 \beforeverb
 \begin{verbatim}
@@ -14200,7 +14838,6 @@ a Point object and print it.
 
 \section{Operator overloading}
 \label{operator overloading}
-\index{operator overloading}
 
 By defining other special methods, you can specify the behavior
 of operators on user-defined types.  For example, if you define
@@ -14208,6 +14845,9 @@ an {\tt add} method for the {\tt Time} class, you can use the
 {\tt +} operator on Time objects.
 
 Here is what the definition might look like:
+
+\index{add method}
+\index{method!add}
 
 \beforeverb
 \begin{verbatim}
@@ -14233,6 +14873,8 @@ And here is how you could use it:
 When you apply the {\tt +} operator to Time objects, Python invokes
 \verb"__add__".  When you print the result, Python invokes 
 \verb"__str__".  So there is quite a lot happening behind the scenes!
+
+\index{operator overloading}
 
 Changing the behavior of an operator so that it works with
 user-defined types is called {\bf operator overloading}.  For every
@@ -14277,6 +14919,9 @@ The built-in function {\tt isinstance} takes a value and a
 class object, and returns {\tt True} if the value is an instance
 of the class.
 
+\index{isinstance function}
+\index{function isinstance}
+
 If {\tt other} is a Time object, \verb"__add__" invokes
 \verb"add_time".  Otherwise it assumes that the parameter
 is a number and invokes {\tt increment}.  This operation is
@@ -14285,6 +14930,7 @@ computation to different methods based on the type of the
 arguments.
 
 \index{type-based dispatch}
+\index{dispatch!type-based}
 
 Here are examples that use the {\tt +} operator with different
 types:
@@ -14303,6 +14949,8 @@ types:
 Unfortunately, this implementation of addition is not commutative.
 If the integer is the first operand, you get
 
+\index{commutativity}
+
 \beforeverb
 \begin{verbatim}
 >>> print 1337 + start
@@ -14316,6 +14964,9 @@ how to do that.  But there is a clever solution for this problem,
 the {\tt radd} method, which stands for ``right-side add.''  This
 method is invoked when a Time object appears on the right side of
 the {\tt +} operator.  Here's the definition:
+
+\index{radd method}
+\index{method!radd}
 
 \beforeverb
 \begin{verbatim}
@@ -14355,11 +15006,13 @@ element to the $y$ coordinate, and return a new Point with the result.
 \end{ex}
 
 \section{Polymorphism}
-\index{polymorphism}
 
 Type-based dispatch is useful when it is necessary, but (fortunately)
 it is not always necessary.  Often you can avoid it by writing functions
 that work correctly for arguments with different types.
+
+\index{type-based dispatch}
+\index{dispatch!type-based}
 
 Many of the functions we wrote for strings will actually
 work for any kind of sequence.
@@ -14397,6 +15050,8 @@ Polymorphism can facilitate code reuse.  For example, the built-in
 function {\tt sum}, which adds the elements of a sequence, works
 as long as the elements of the sequence support addition.
 
+\index{polymorphism}
+
 Since Time objects provide an {\tt add} method, they work
 with {\tt sum}:
 
@@ -14420,6 +15075,7 @@ applied to a type you never planned for.
 
 
 \section{Debugging}
+\index{debugging}
 
 It is legal to add attributes to objects at any point in the execution
 of a program, but if you are a stickler for type theory, it is a
@@ -14427,8 +15083,15 @@ dubious practice to have objects of the same type with different
 attribute sets.  It is usually a good idea to
 initialize all of an objects attributes in the init method.
 
+\index{init method}
+\index{attribute!initializing}
+
 If you are not sure whether an object has a particular attribute, you
 can use the built-in function {\tt hasattr} (see Section~\ref{hasattr}).
+
+\index{hasattr function}
+\index{function!hasattr}
+\index{\_\_dict\_\_}
 
 Another way to access the attributes of an object is through the
 special attribute \verb"__dict__", which is a dictionary that maps
@@ -14456,9 +15119,14 @@ def print_attributes(obj):
 \verb"print_attributes" traverses the items in the object's dictionary
 and prints each attribute name and its corresponding value.
 
+\index{traverse!dictionary}
+\index{dictionary!traverse}
+
 The built-in function {\tt getattr} takes an object and an attribute
 name (as a string) and returns the attribute's value.
 
+\index{getattr function}
+\index{function!getattr}
 
 
 \section{Glossary}
@@ -14501,10 +15169,17 @@ type.
 
 \begin{ex}
 
+\index{default value!avoiding mutable}
+\index{mutable type!as default value}
+\index{worst bug ever}
+
 This exercise is a cautionary tale about one of the most
 common, and difficult to find, errors in Python.
 
 \begin{enumerate}
+
+\index{Kangaroo class}
+\index{class!Kangaroo}
 
 \item Write a definition for a class named {\tt Kangaroo} with the following
 methods:
@@ -14535,6 +15210,10 @@ If you get stuck, you can download
 \url{thinkpython.com/code/GoodKangaroo.py}, which explains the
 problem and demonstrates a solution.
 
+\index{alias}
+\index{embedded object}
+\index{object!embedded}
+
 \end{enumerate}
 
 
@@ -14544,6 +15223,12 @@ problem and demonstrates a solution.
 
 
 \begin{ex}
+
+\index{Visual module}
+\index{module Visual}
+\index{vpython module}
+\index{module vpython}
+
 Visual is a Python module that provides 3-D graphics.  It is
 not always included in a Python installation, so you might have
 to install it from your software repository or, if it's not there,
@@ -14598,11 +15283,16 @@ has the color that corresponds to its position in RGB space.
 Notice that the coordinates are in the range 0--255, but
 the RGB tuples are in the range 0.0--1.0.
 
+\index{color list}
+\index{available colors}
+
 \item Download \url{thinkpython.com/code/color_list.py}
 and use the function \verb"read_colors" to generate a list
 of the available colors on your system, their names and
 RGB values.  For each named color draw a sphere in the
 position that corresponds to its RGB values.
+
+
 
 \end{enumerate}
 
@@ -14617,6 +15307,9 @@ In this chapter we will develop classes to represent playing cards,
 decks of cards, and poker hands.  If you don't play poker, you can
 read about it at \url{wikipedia.org/wiki/Poker}, but you don't have
 to; I'll tell you what you need to know for the exercises.
+
+\index{playing card, Anglo-American}
+\index{poker}
 
 If you are not familiar with Anglo-American playing cards,
 you can read about them at \url{wikipedia.org/wiki/Playing_cards}.
@@ -14647,6 +15340,7 @@ see which had a higher rank or suit.
 \index{encode}
 \index{encrypt}
 \index{map to}
+\index{representation}
 
 An alternative is to use integers to {\bf encode} the ranks and suits.
 In this context, ``encode'' means that we are going to define a mapping
@@ -14684,6 +15378,9 @@ I am using the $\mapsto$ symbol to make is clear that these mappings
 are not part of the Python program.  They are part of the program
 design, but they don't appear explicitly in the code.
 
+\index{Card class}
+\index{class!Card}
+
 The class definition for {\tt Card} looks like this:
 
 \beforeverb
@@ -14701,6 +15398,9 @@ As usual, the init method takes an optional
 parameter for each attribute.  The default card is
 the 2 of Clubs.
 
+\index{init method}
+\index{method!init}
+
 To create a Card, you call {\tt Card} with the
 suit and rank of the card you want.
 
@@ -14713,6 +15413,7 @@ queen_of_diamonds = Card(1, 12)
 
 
 \section{Class attributes}
+
 \index{class attribute}
 \index{attribute!class}
 
@@ -14741,9 +15442,14 @@ defined inside a class but outside of any method, are called
 class attributes because they are associated with the class object 
 {\tt Card}.
 
+\index{instance attribute}
+\index{attribute!instance}
+
 This term distinguished them from variables like {\tt suit} and {\tt
   rank}, which are called {\bf instance attributes} because they are
 associated with a particular instance.
+
+\index{dot notation}
 
 Both kinds of attribute are accessed using dot notation.  For
 example, in \verb"__str__", {\tt self} is a Card object,
@@ -14794,6 +15500,7 @@ contents of \verb"suit_names" and \verb"rank_names").
 
 \section{Comparing cards}
 \label{comparecard}
+
 \index{operator!conditional}
 \index{conditional operator}
 
@@ -14824,6 +15531,9 @@ things simple, we'll make the arbitrary choice that suit is more
 important, so all of the Spades outrank all of the Diamonds,
 and so on.
 
+\index{cmp method}
+\index{method!cmp}
+
 With that decided, we can write \verb"__cmp__":
 
 \beforeverb
@@ -14846,6 +15556,9 @@ With that decided, we can write \verb"__cmp__":
 %
 You can write this more concisely using tuple comparison:
 
+\index{tuple comparison}
+\index{comparison!tuple}
+
 \beforeverb
 \begin{verbatim}
 # inside class Card:
@@ -14862,6 +15575,8 @@ the method \verb"__cmp__": it takes two values and returns
 a positive number if the first is larger, a negative number
 of the second is larger, and 0 if they are equal.
 
+\index{cmp function}
+\index{function!cmp}
 
 
 \begin{ex}
@@ -14900,6 +15615,9 @@ the standard set of fifty-two cards:
 \index{composition}
 \index{loop!nested}
 
+\index{Deck class}
+\index{class!Deck}
+
 \beforeverb
 \begin{verbatim}
 class Deck:
@@ -14919,12 +15637,15 @@ ranks from 1 to 13.  Each iteration
 creates a new Card with the current suit and rank,
 and appends it to {\tt self.cards}.
 
-\index{{\tt append}}
+\index{append method}
+\index{method!append}
 
 
 \section{Printing the deck}
 \label{printdeck}
-\index{printing!deck object}
+
+\index{str method}
+\index{method!str}
 
 Here is a \verb"__str__" method for {\tt Deck}:
 
@@ -14944,6 +15665,12 @@ This method demonstrates an efficient way to accumulate a large
 string: building a list of strings and then using {\tt join}.
 The built-in function {\tt str} invokes the \verb"__str__"
 method on each card and returns the string representation.
+
+\index{accumulate!string}
+\index{string!accumulate}
+\index{join method}
+\index{method!join}
+\index{newline}
 
 Since we invoke {\tt join} on a newline character, the cards
 are separated by newlines.  Here's what the result looks like:
@@ -14973,6 +15700,9 @@ To deal cards, we would like a method that
 removes a card from the deck and returns it.
 The list method {\tt pop} provides a convenient way to do that:
 
+\index{pop method}
+\index{method!pop}
+
 \beforeverb
 \begin{verbatim}
 #inside class Deck:
@@ -14986,6 +15716,9 @@ Since {\tt pop} removes the {\em last} card in the list, we are
 dealing from the bottom of the deck.  In real life bottom dealing is
 frowned upon\footnote{See \url{wikipedia.org/wiki/Bottom_dealing}.},
 but in this context it's ok.
+
+\index{append method}
+\index{method!append}
 
 To add a card, we can use the list method {\tt append}:
 
@@ -15012,7 +15745,10 @@ a list operation in terms that are appropriate for decks.
 As another example, we can write a Deck method named {\tt shuffle}
 using the function {\tt shuffle} from the {\tt random} module:
 
-\index{shuffle}
+\index{random module}
+\index{module!random}
+\index{shuffle function}
+\index{function!shuffle}
 
 \beforeverb
 \begin{verbatim}
@@ -15028,6 +15764,9 @@ Don't forget to import {\tt random}.
 \index{sort}
 
 \begin{ex}
+\index{sort method}
+\index{method!sort}
+
 Write a Deck method named {\tt sort} that uses the list method
 {\tt sort} to sort the cards in a {\tt Deck}.  {\tt sort} uses
 the \verb"__cmp__" method we defined to determine sort order.
@@ -15036,16 +15775,19 @@ the \verb"__cmp__" method we defined to determine sort order.
 
 
 \section{Inheritance}
+
 \index{inheritance}
 \index{object-oriented programming}
-\index{parent class}
-\index{child class}
-\index{subclass}
 
 The language feature most often associated with object-oriented
 programming is {\bf inheritance}.  Inheritance is the ability to
 define a new class that is a modified version of an existing
 class.
+
+\index{parent class}
+\index{child class}
+\index{subclass}
+\index{superclass}
 
 It is called ``inheritance'' because the new class inherits the
 methods of the existing class.  Extending this metaphor, the existing
@@ -15068,8 +15810,11 @@ itself to inheritance.
 The definition of a child class is like other class definitions,
 but the name of the parent class appears in parentheses:
 
+\index{parentheses!parent class in}
 \index{parent class}
 \index{class!parent}
+\index{Hand class}
+\index{class!Hand}
 
 \beforeverb
 \begin{verbatim}
@@ -15088,6 +15833,8 @@ with 52 new cards, the init method for Hands should initialize
 {\tt cards} with an empty list.
 
 \index{override}
+\index{init method}
+\index{method!init}
 
 If we provide an init method in the {\tt Hand} class, it overrides the
 one in the {\tt Deck} class:
@@ -15129,6 +15876,8 @@ King of Spades
 %
 A natural next step is to encapsulate this code in a method
 called \verb"move_cards":
+
+\index{encapsulation}
 
 \beforeverb
 \begin{verbatim}
@@ -15202,6 +15951,12 @@ in one class would require changes in the other.
 
 \end{itemize}
 
+\index{IS-A relationship}
+\index{HAS-A relationship}
+\index{class diagram}
+\index{diagram!class}
+\index{UML}
+
 A {\bf class diagram} is a graphical representation of these
 relationships\footnote{The diagrams I am using here are similar to UML
   (see \url{wikipedia.org/wiki/Unified_Modeling_Language}), with a few
@@ -15219,6 +15974,8 @@ from Deck.
 The standard arrow head represents a HAS-A
 relationship; in this case a Deck has references to Card
 objects.
+
+\index{multiplicity (in class diagram)}
 
 The star ({\tt *}) near the arrow head is a 
 {\bf multiplicity}; it indicates how many Cards a Deck has.
@@ -15238,10 +15995,13 @@ the classes defined there.
 
 
 \section{Debugging}
+\index{debugging}
 
 Inheritance can make debugging a challenge because when you
 invoke a method on an object, you might not know which method
 will be invoked.
+
+\index{polymorphism}
 
 Suppose you are writing a function that works with Hand objects.
 You would like it to work with all kinds of Hands, like
@@ -15249,6 +16009,8 @@ PokerHands, BridgeHands, etc.  If you invoke a method like
 {\tt shuffle}, you might get the one defined in {\tt Deck},
 but if any of the subclasses override this method, you'll
 get that version instead.  
+
+\index{flow of execution}
 
 Any time you are unsure about the flow of execution through your
 program, the simplest solution is to add print statements at the
@@ -15281,9 +16043,16 @@ Here's an example:
 %
 So the {\tt shuffle} method for this Hand is the one in {\tt Deck}.
 
+\index{mro method}
+\index{method!mro}
+\index{method resolution order}
+
 \verb"find_defining_class" uses the {\tt mro} method to get the list
 of class objects (types) that will be searched for methods.  ``MRO''
 stands for ``method resolution order.''
+
+\index{override}
+\index{interface design}
 
 Here's a program design suggestion: whenever you override a method,
 the interface of the new method should be the same as the old.  It
@@ -15356,6 +16125,9 @@ of another class.
 \section{Exercises}
 
 \begin{ex}
+\index{poker}
+
+
 The following are the possible hands in poker, in increasing order
 of value (and decreasing order of probability):
 
@@ -15438,6 +16210,9 @@ output values converge to a reasonable degree of accuracy.
 
 \begin{ex}
 
+\index{Swampy}
+\index{TurtleWorld}
+
 This exercise uses TurtleWorld from Chapter~\ref{turtlechap}.
 You will write code that makes Turtles play tag.  If you
 are not familiar with the rules of tag, see
@@ -15454,11 +16229,15 @@ The {\tt Wobbler} class inherits from {\tt Turtle}, which means
 that the {\tt Turtle} methods {\tt lt}, {\tt rt}, {\tt fd}
 and {\tt bk} work on Wobblers.
 
+\index{Wobbler}
+
 The {\tt step} method gets invoked by TurtleWorld.  It invokes 
 {\tt steer}, which turns the Turtle in the desired direction,
 {\tt wobble}, which makes a random turn in proportion to the Turtle's
 clumsiness, and {\tt move}, which moves forward a few pixels,
 depending on the Turtle's speed.
+
+\index{Tagger}
 
 \item Create a file named {\tt Tagger.py}.  Import everything from
   {\tt Wobbler}, then define a class named {\tt Tagger} that inherits
@@ -15499,13 +16278,16 @@ You can get my solution from \url{thinkpython/code/Wobbler.py}.
 
 
 \chapter{Case study: Tkinter}
-\index{Tkinter}
 
 \section{GUI}
 
 Most of the programs we have seen so far are text-based, but
 many programs use {\bf graphical user interfaces}, also
 known as {\bf GUIs}.
+
+\index{GUI}
+\index{graphical user interface}
+\index{Tkinter}
 
 Python provides several choices for writing GUI-based programs,
 including wxPython, Tkinter, and Qt.  Each has pros and cons, which
@@ -15518,6 +16300,10 @@ in this chapter apply to the other GUI modules, too.
 There are several books and web pages about Tkinter.  One of
 the best online resources is {\em An Introduction to Tkinter}
 by Fredrik Lundh.
+
+\index{Gui module}
+\index{module!Gui}
+\index{Swampy}
 
 I have written a module called {\tt Gui.py} that comes with
 Swampy.  It provides a simplified interface to the functions
@@ -15547,10 +16333,15 @@ the window, or presses Control-C, or does something that causes the
 program to quit.
 
 \index{event loop}
+\index{loop!event}
+\index{infinite loop}
+\index{loop!infinite}
 
 This Gui doesn't do much because it doesn't have any
 {\bf widgets}.  Widgets are the elements that make up a
 GUI; they include:
+
+\index{widget}
 
 \begin{description}
 
@@ -15577,6 +16368,9 @@ a Frame.  When you create a new widget, it is added to this Frame.
 
 \section{Buttons and callbacks}
 
+\index{Button widget}
+\index{widget!button}
+
 The method {\tt bu} creates a Button widget:
 
 \beforeverb
@@ -15588,6 +16382,8 @@ button = g.bu(text='Press me.')
 The return value from {\tt bu} is a Button object.  The button
 that appears in the Frame is a graphical representation of this
 object; you can control the button by invoking methods on it.
+
+\index{option}
 
 {\tt bu} takes up to 32 parameters that control the appearance
 and function of the button.  These parameters are called
@@ -15602,6 +16398,9 @@ values for the rest.
 When you add a widget to the Frame, it gets ``shrink-wrapped;''
 that is, the Frame shrinks to the size of the Button.  If you
 add more widgets, the Frame grows to accommodate them.
+
+\index{Label widget}
+\index{widget!Label}
 
 The method {\tt la} creates a Label widget:
 
@@ -15641,10 +16440,14 @@ button2 = g.bu(text='No, press me!', command=make_label)
 When you press this button, it should execute \verb"make_label"
 and a new label should appear.
 
+\index{callback}
+
 The value of the {\tt command} option
 is a function object, which is known as a {\bf callback} because
 after you call {\tt bu} to create the button, the flow of execution
 ``calls back'' when the user presses the button.
+
+\index{event-driven programming}
 
 This kind of flow is characteristic of {\bf event-driven programming}.
 User actions, like button presses and key strokes, are called {\bf
@@ -15669,6 +16472,9 @@ You can see my solution at \url{thinkpython.com/code/button_demo.py}
 
 \section{Canvas widgets}
 
+\index{Canvas widget}
+\index{widget!Canvas}
+
 One of the most versatile widgets is the Canvas, which creates
 a region for drawing lines, circles and other shapes.  If you
 did Exercise~\ref{canvas} you are already familiar with canvases.
@@ -15683,6 +16489,9 @@ canvas = g.ca(width=500, height=500)
 %
 {\tt width} and {\tt height} are the dimensions of the canvas
 in pixels.  
+
+\index{config method}
+\index{method!config}
 
 After you create a widget, you can still change the values of
 the options with the
@@ -15711,6 +16520,9 @@ cyan    yellow   magenta
 Shapes on a Canvas are called {\bf items}.  For example,
 the Canvas method {\tt circle} draws (you guessed it) a circle:
 
+\index{Canvas item}
+\index{item!Canvas}
+
 \beforeverb
 \begin{verbatim}
 item = canvas.circle([0,0], 100, fill='red')
@@ -15719,6 +16531,9 @@ item = canvas.circle([0,0], 100, fill='red')
 %
 The first argument is a coordinate pair that specifies the
 center of the circle; the second is the radius.
+
+\index{Canvas coordinate}
+\index{coordinate!Canvas}
 
 {\tt Gui.py} provides a standard Cartesian coordinate system with
 the origin at the center of the Canvas and the positive $y$ axis
@@ -15752,6 +16567,9 @@ user presses the Button, it should draw a circle on the canvas.
 
 \section{Coordinate sequences}
 
+\index{coordinate sequence}
+\index{sequence!coordinate}
+
 The {\tt rectangle} method takes a sequence of coordinates that
 specify opposite corners of the rectangle.  This example
 draws a green rectangle with the lower left corner at the origin
@@ -15767,6 +16585,8 @@ canvas.rectangle([[0, 0], [200, 100]],
 This way of specifying corners is called
 a {\bf bounding box} because the two points
 bound the rectangle.
+
+\index{bounding box}
 
 {\tt oval} takes a bounding box and draws an oval
 within the specified rectangle:
@@ -15801,9 +16621,15 @@ canvas.polygon([[0, 100], [100, 200], [200, 100]],
 
 \section{More widgets}
 
+\index{Text widget}
+\index{widget!Text}
+
 Tkinter provides two widgets that let users type text: an
 Entry, which is a single line, and a Text widget, which has
 multiple lines.
+
+\index{Entry widget}
+\index{widget!Entry}
 
 {\tt en} creates a new Entry:
 
@@ -15918,6 +16744,9 @@ from \url{thinkpython.com/code/SimpleTurtleWorld.py}.
 At the top level, this GUI contains two widgets---a Canvas and a
 Frame---arranged in a row.  So the first step is to create the row.
 
+\index{SimpleTurtleWorld class}
+\index{class!SimpleTurtleWorld}
+
 \beforeverb
 \begin{verbatim}
 class SimpleTurtleWorld(TurtleWorld):
@@ -15932,6 +16761,11 @@ class SimpleTurtleWorld(TurtleWorld):
 %
 {\tt setup} is the function that creates and arranges the widgets.
 Arranging widgets in a GUI is called {\bf packing}.
+
+\index{packing widgets}
+\index{widget!packing}
+\index{Frame widget}
+\index{widget!Frame}
 
 {\tt row} creates a row Frame and makes it the ``current Frame.''
 Until this Frame is closed or another Frame is created, all
@@ -15965,12 +16799,15 @@ four buttons arranged two-by-two:
 columns.  Widgets in the grid are
 layed out left-to-right, top-to-bottom.
 
+\index{callback}
+\index{bound method}
+\index{method!bound}
+\index{subject}
+
 The first button uses {\tt self.canvas.dump} as a callback; the second
 uses {\tt self.quit}.  These are {\bf bound methods}, which means they
 are associated with a particular object.  When they are invoked, they
-are invoked on that object.  {\tt self} is the TurtleWorld that is the
-subject of this method and {\tt self.canvas} is the Canvas we created
-in the previous block of code.
+are invoked on the object.
 
 The next widget in the column is a row Frame that contains
 a Button and an Entry:
@@ -16054,11 +16891,16 @@ widgets.  These mechanisms are called {\bf geometry managers}.
 The one I demonstrated in this section is the ``grid'' geometry
 manager; the others are called ``pack'' and ``place''.
 
+\index{geometry manager}
+
 Fortunately, most of the concepts in this section apply to
 other GUI modules and other languages.
 
 
 \section{Menus and Callables}
+
+\index{Menubutton widget}
+\index{widget!Menubutton}
 
 A Menubutton is a widget that looks like a button, but when pressed
 it pops up a menu.  After the user selects an item, the menu
@@ -16092,6 +16934,10 @@ for color in colors:
 The first argument of {\tt mi} is the Menubutton these items are
 associated with.
 
+\index{callback}
+\index{Callable object}
+\index{object!Callable}
+
 The {\tt command} option is a Callable object, which is something new.
 So far we have seen functions and bound methods used as callbacks,
 which works fine if you don't have to pass any arguments to
@@ -16123,6 +16969,9 @@ called when you create the Callable object).
 
 \section{Binding}
 
+\index{binding}
+\index{callback}
+
 A {\bf binding} is an association between a widget, an event and a
 callback: when an event (like a button press) happens on a widget, the
 callback is invoked.
@@ -16149,7 +16998,10 @@ when the user presses the left mouse button.  Other mouse
 events include {\tt ButtonMotion}, {\tt ButtonRelease} and
 {\tt Double-Button}.
 
-The second argument is an event-handler.  An event-handler
+\index{event string}
+\index{event handler}
+
+The second argument is an event handler.  An event handler
 is a function or bound method, like a callback, but an important
 difference is that an event handler takes an Event object as a
 parameter.  Here is an example:
@@ -16170,6 +17022,9 @@ values are in ``pixel coordinates,'' which are defined by the
 underlying graphical system.  The method \verb"canvas_coords"
 translates them to ``Canvas coordinates,'' which are compatible with
 Canvas methods like {\tt circle}.
+
+\index{Event object}
+\index{object!Event}
 
 For Entry widgets, it is common to bind the \verb"<Return>" event,
 which is triggered when the use presses the {\sf Return} or
@@ -16205,6 +17060,8 @@ It is also possible to create bindings for Canvas items.
 The following is a class definition for {\tt Draggable},
 which is a child class of {\tt Item} that provides bindings
 that implement drag-and-drop capability.
+
+\index{drag-and-drop}
 
 \beforeverb
 \begin{verbatim}
@@ -16261,6 +17118,11 @@ item.
 This computation is done in pixel coordinates; there is no need to
 convert to Canvas coordinates.
 
+\index{Canvas coordinate}
+\index{coordinate!canvas}
+\index{pixel coordinate}
+\index{coordinate!pixel}
+
 Finally, {\tt drop} restores the original color of the item:
 
 \beforeverb
@@ -16291,10 +17153,13 @@ behavior defined in a module you did not write.
 
 
 \section{Debugging}
+\index{debugging}
 
 One of the challenges of GUI programming is keeping track of
 which things happen while the GUI is being built and which
 things happen later in response to user events.
+
+\index{callback}
 
 For example, when you are setting up a callback, it is a common error
 to call the function rather than passing a reference to it:
@@ -16315,6 +17180,9 @@ button, it does nothing because the return value from
 Usually you do not want to invoke a callback while you are
 setting up the GUI; it should only be invoked later in response to
 a user event.
+
+\index{flow of execution}
+\index{event-driven programming}
 
 Another challenge of GUI programming is that you don't have control
 of the flow of execution.  Which parts of the program execute,
@@ -16424,6 +17292,7 @@ occurs in the widget.
 \section{Exercises}
 
 \begin{ex}
+\index{image viewer}
 
 For this exercise, you will write an image viewer.  Here is
 a simple example:
@@ -16453,6 +17322,11 @@ g.bu(image=photo)
 PhotoImage can only handle a few image formats, like GIF and PPM, 
 but we can use the Python Imaging Library (PIL) to read other
 files.
+
+\index{Python Imaging Library (PIL)}
+\index{PIL (Python Imaging Library)}
+\index{Image module}
+\index{module!Image}
 
 The name of the PIL module is {\tt Image}, but Tkinter defines an
 object with the same name.  To avoid the conflict, you can use {\tt
@@ -16504,6 +17378,8 @@ an object.
 This behavior can be frustrating, which is why I am warning
 you (and why the example image says ``Danger!'').
 
+\index{worst bug ever!another}
+
 \item Starting with this example, write a program that takes
 the name of a directory and loops through all the files, displaying
 any files that PIL recognizes as images.  You can use a {\tt try}
@@ -16525,6 +17401,9 @@ You can download a simple solution from
 
 
 \begin{ex}
+
+\index{vector graphics}
+\index{SVG}
 
 A vector graphics editor is a program that allows users to draw and
 edit shapes on the screen and generate output files in vector graphics
@@ -16548,6 +17427,12 @@ items on the Canvas.
 Use Tkinter to write a basic web browser.  It
 should have a Text widget where the user can enter a URL
 and a Canvas to display the contents of the page.
+
+\index{urllib module}
+\index{module!urllib}
+\index{URL}
+\index{HTMLParser module}
+\index{module HTMLParser}
 
 You can use the {\tt urllib} module to download files
 (see Exercise~\ref{urllib}) and
@@ -16707,6 +17592,10 @@ incorrectly.
 \item If you are writing a module and using {\tt import},
 make sure you don't give your module the same name as one
 of the standard Python modules.
+
+\index{module!reload}
+\index{reload function}
+\index{function!reload}
 
 \item If you are using {\tt import} to read a module, remember
 that you have to restart the interpreter or use {\tt reload}
