@@ -1228,6 +1228,7 @@ Hello, World!
 The quotation marks in the program mark the beginning and end
 of the text to be displayed; they don't appear in the result.
 
+\index{quotation mark}
 \index{print statement}
 \index{statement!print}
 
@@ -1266,7 +1267,8 @@ of them as teammates, and when they are obstinate or rude, we
 respond to them the same way we respond to rude,
 obstinate people.
 
-\index{debugging!emotions}
+\index{debugging!emotional response}
+\index{emotional debugging}
 
 Preparing for these reactions might help you deal with them.
 One approach is to think of the computer as an employee with
@@ -1468,6 +1470,8 @@ so-called because it contains a ``string'' of letters.
 You (and the interpreter) can identify
 strings because they are enclosed in quotation marks.
 
+\index{quotation mark}
+
 The print statement also works for integers.
 
 \beforeverb
@@ -1512,6 +1516,8 @@ format called {\bf floating-point}.
 What about values like \verb"'17'" and \verb"'3.2'"?
 They look like numbers, but they are in quotation marks like
 strings.
+
+\index{quotation mark}
 
 \beforeverb
 \begin{verbatim}
@@ -2199,7 +2205,6 @@ Practice using the Python interpreter as a calculator:
 \section{Function calls}
 \label{functionchap}
 \index{function call}
-\index{call!function}
 
 In the context of programming, a {\bf function} is a named sequence of
 statements that performs a computation.  When you define a function,
@@ -2344,10 +2349,11 @@ The first example computes the logarithm base 10 of the
 signal-to-noise ratio.  The math module also provides a
 function called {\tt log} that computes logarithms base {\tt e}.
 
-\index{log}
-\index{sine}
+\index{log function}
+\index{function!log}
+\index{sine function}
 \index{radians}
-\index{trigonometric functions}
+\index{trigonometric function}
 \index{function!trigonometric}
 
 The second example finds the sine of {\tt radians}.  The name of the
@@ -3539,8 +3545,8 @@ These are called {\bf keyword arguments} because they include
 the parameter names as ``keywords'' (not to be confused with
 Python keywords like {\tt while} and {\tt def}).
 
-\index{keyword arguments}
-\index{arguments!keyword}
+\index{keyword argument}
+\index{argument!keyword}
 
 This syntax makes the program more readable.  It is also a reminder
 about how arguments and parameters work: when you call a function, the
@@ -3748,8 +3754,14 @@ def polyline(t, length, n, angle):
 \afterverb
 %
 This docstring is a triple-quoted string, also known
-as a multi-line string because the triple quotes allow the string
+as a multiline string because the triple quotes allow the string
 to span more than one line.
+
+\index{quotation mark}
+\index{triple-quoted string}
+\index{string!triple-quoted}
+\index{multiline string}
+\index{string!multiline}
 
 It is terse, but it contains the essential information
 someone would need to use this function.  It explains concisely what
@@ -3906,7 +3918,7 @@ You can download a solution from \url{thinkpython.com/code/pie.py}.
 \begin{ex}
 \index{alphabet}
 \index{turtle typewriter}
-\index{typewriter!turtle}
+\index{typewriter, turtle}
 
 The letters of the alphabet can be constructed from a moderate
 number of basic elements, like vertical and horizontal lines
@@ -6267,13 +6279,13 @@ not in the form of an algorithm.
 
 
 \section{Debugging}
-\index{debugging!by bisection}
 
 As you start writing bigger programs, you might find yourself
 spending more time debugging.  More code means more chances to
 make an error and more place for bugs to hide.
 
-\index{bisection!debugging by}
+\index{debugging!by bisection}
+\index{bisection, debugging by}
 
 One way to cut your debugging time is ``debugging by bisection.''
 For example, if there are 100 lines in your program and you
@@ -6695,6 +6707,8 @@ goes to the end of the string:
 %
 If the first index is greater than or equal to the second the result
 is an {\bf empty string}, represented by two quotation marks:
+
+\index{quotation mark}
 
 \beforeverb
 \begin{verbatim}
@@ -8154,7 +8168,6 @@ four:
 
 \section{List operations}
 \index{list operation}
-\index{operation!list}
 
 The {\tt +} operator concatenates lists:
 
@@ -8995,7 +9008,7 @@ do the wrong thing.
 \item Make copies to avoid aliasing.
 
 \index{aliasing!copying to avoid}
-\index{copying!to avoid aliasing}
+\index{copy!to avoid aliasing}
 
 If you want to use a method like {\tt sort} that modifies
 the argument, but you need to keep the original list as
@@ -10246,7 +10259,7 @@ the word?
 
 \index{homophone}
 \index{reducible word}
-\index{word!reducible}
+\index{word, reducible}
 
 You can use the dictionary from Exercise~\ref{wordlist2} to check
 whether a string is in the word list.
@@ -10808,7 +10821,7 @@ a new dictionary:
 Combining {\tt dict} with {\tt zip} yields a concise way
 to create a dictionary:
 
-\index{zip!use with dict}
+\index{zip function!use with dict}
 
 \beforeverb
 \begin{verbatim}
@@ -11160,7 +11173,7 @@ arguments.
 \item[DSU:] Abbreviation of ``decorate-sort-undecorate,'' a
 pattern that involves building a list of tuples, sorting, and
 extracting part of the result.
-\index{DSU}
+\index{DSU pattern}
 
 \item[data structure:] A collection of related values, often
 organized in lists, dictionaries, tuples, etc.
@@ -11703,7 +11716,7 @@ optional ones.
 \section{Dictionary subtraction}
 
 \index{dictionary!subtraction}
-\index{subtraction!dictionary}
+\index{subtraction, dictionary}
 
 Finding the words from the book that are not in the word list
 from {\tt words.txt} is a problem you might recognize as set
@@ -12482,7 +12495,7 @@ To demonstrate these functions, the following example
 the names of all the files, and calls itself recursively on
 all the directories.
 
-\index{walk!directory}
+\index{walk, directory}
 \index{directory!walk}
 
 \beforeverb
@@ -12825,7 +12838,7 @@ The return value is the final status of the {\tt ls} process;
 
 \index{file compression}
 \index{compression!file}
-\index{Unix command gzip}
+\index{Unix command!gzip}
 \index{gzip!Unix command}
 
 A common use of pipes is to read a compressed file incrementally;
@@ -13522,7 +13535,7 @@ the resulting Point to {\tt center}:
 \section{Objects are mutable}
 
 \index{object!mutable}
-\index{mutable!object}
+\index{mutable}
 
 You can change the state of an object by making an assignment to one of
 its attributes.  For example, to change the size of a rectangle
@@ -14143,7 +14156,7 @@ a new Time object rather than modifying the parameter.
 \index{prototype and patch}
 \index{development plan!prototype and patch}
 \index{planned development}
-\index{development plan!planned development}
+\index{development plan!planned}
 
 The development plan I am demonstrating is called ``prototype and
 patch.''  For each function, I wrote a prototype that performed the
@@ -14170,7 +14183,7 @@ When we wrote \verb"add_time" and {\tt increment}, we were effectively
 doing addition in base 60, which is why we had to carry from one
 column to the next.
 
-\index{carrying!addition with}
+\index{carrying, addition with}
 
 This observation suggests another approach to the whole problem---we
 can convert Time objects to integers and take advantage of the fact
@@ -15170,7 +15183,7 @@ type.
 \begin{ex}
 
 \index{default value!avoiding mutable}
-\index{mutable type!as default value}
+\index{mutable object!as default value}
 \index{worst bug ever}
 
 This exercise is a cautionary tale about one of the most
@@ -15210,7 +15223,7 @@ If you get stuck, you can download
 \url{thinkpython.com/code/GoodKangaroo.py}, which explains the
 problem and demonstrates a solution.
 
-\index{alias}
+\index{aliasing}
 \index{embedded object}
 \index{object!embedded}
 
@@ -15598,7 +15611,6 @@ integer subtraction.
 
 \section{Decks}
 \index{list!of objects}
-\index{object!list of}
 \index{deck}
 
 Now that we have Cards, the next step is to define Decks.  Since a
@@ -15666,8 +15678,8 @@ string: building a list of strings and then using {\tt join}.
 The built-in function {\tt str} invokes the \verb"__str__"
 method on each card and returns the string representation.
 
-\index{accumulate!string}
-\index{string!accumulate}
+\index{accumulator!string}
+\index{string!accumulator}
 \index{join method}
 \index{method!join}
 \index{newline}
@@ -16102,12 +16114,12 @@ existing class; also called a ``subclass.''
 
 \item[IS-A relationship:] The relationship between a child class
 and its parent class.
-\index{IS-A}
+\index{IS-A relationship}
 
 \item[HAS-A relationship:] The relationship between two classes
 where instances of one class contain references to instances of
 the other.
-\index{HAS-A}
+\index{HAS-A relationship}
 
 \item[class diagram:] A diagram that shows the classes in a program
 and the relationships between them.
@@ -17432,7 +17444,7 @@ and a Canvas to display the contents of the page.
 \index{module!urllib}
 \index{URL}
 \index{HTMLParser module}
-\index{module HTMLParser}
+\index{module!HTMLParser}
 
 You can use the {\tt urllib} module to download files
 (see Exercise~\ref{urllib}) and
@@ -17508,7 +17520,8 @@ noticed a problem, which is not necessarily where the error
 is.  Sometimes the error is prior to the location of the error
 message, often on the preceding line.
 
-\index{incremental program development}
+\index{incremental development}
+\index{development plan!incremental}
 
 If you are building the program incrementally, you should have
 a good idea about where the error is.  It will be in the last
@@ -17527,16 +17540,19 @@ Here are some ways to avoid the most common syntax errors:
 
 \item Make sure you are not using a Python keyword for a variable name.
 
+\index{keyword}
+
 \item Check that you have a colon at the end of the header of every
 compound statement, including {\tt for}, {\tt while},
 {\tt if}, and {\tt def} statements.
 
-\item Check that indentation is consistent.  You may indent with either
-spaces or tabs but it's best not to mix them.  Each level should be
-nested the same amount.
+\index{header}
+\index{colon}
 
 \item Make sure that any strings in the code have matching
 quotation marks.
+
+\index{quotation mark}
 
 \item If you have multiline strings with triple quotes (single or double), make
 sure you have terminated the string properly.  An unterminated string
@@ -17545,18 +17561,28 @@ or it may treat the following part of the program as a string until it
 comes to the next string.  In the second case, it might not produce an error
 message at all!
 
+\index{multiline string}
+\index{string!multiline}
+
 \item An unclosed bracket---\verb+(+, \verb+{+, or \verb+[+---makes
 Python continue with the next line as part of the current statement.
 Generally, an error occurs almost immediately in the next line.
 
+\index{bracket}
+
 \item Check for the classic {\tt =} instead of {\tt ==} inside
 a conditional.
+
+\index{conditional}
 
 \item Check the indentation to make sure it lines up the way it
 is supposed to.  Python can handle space and tabs, but if you mix
 them it can cause problems.  The best way to avoid this problem
 is to use a text editor that knows about Python and generates
 consistent indentation.
+
+\index{indentation}
+\index{whitespace}
 
 \end{enumerate}
 
@@ -17619,10 +17645,10 @@ possibly go wrong?
 
 \subsection{My program does absolutely nothing.}
 
-This problem is most common when your file consists of functions and classes
-but does not actually invoke anything to start execution.  This may be
-intentional if you only plan to import this module to supply classes
-and functions.
+This problem is most common when your file consists of functions and
+classes but does not actually invoke anything to start execution.
+This may be intentional if you only plan to import this module to
+supply classes and functions.
 
 If it is not intentional, make sure that you
 are invoking a function to start execution, or execute one from
@@ -17726,7 +17752,6 @@ toward the base case, you will get some ideas about why not.
 
 \subsubsection{Flow of Execution}
 \index{flow of execution}
-\index{execution!flow}
 
 If you are not sure how the flow of execution is moving through
 your program, add {\tt print} statements to the beginning of each
@@ -17768,6 +17793,8 @@ cannot refer to them from outside the function where they are defined.
 
 \index{NameError}
 \index{TypeError}
+\index{exception!NameError}
+\index{exception!TypeError}
 
 \item[TypeError:] There are several possible causes:
 
@@ -17798,6 +17825,7 @@ correctly.
 using a key that the dictionary does not contain.
 
 \index{KeyError}
+\index{exception!KeyError}
 \index{dictionary}
 
 \item[AttributeError:] You are trying to access an attribute or method
@@ -17812,6 +17840,7 @@ a function without hitting a {\tt return} statement, it returns
 a list method, like {\tt sort}, that returns {\tt None}.
 
 \index{AttributeError}
+\index{exception!AttributeError}
 
 \item[IndexError:] The index you are using
 to access a list, string, or tuple is greater than
@@ -17821,12 +17850,13 @@ the value of the index and the length of the array.
 Is the array the right size?  Is the index the right value?
 
 \index{IndexError}
-
-\item
+\index{exception!IndexError}
 
 \end{description}
 
-\index{debugger}
+\index{debugger (pdb)}
+\index{Python debugger (pdb)}
+\index{pdb (Python debugger)}
 
 The Python debugger ({\tt pdb}) is useful for tracking down
 Exceptions because it allows you to examine the state of the
@@ -17836,6 +17866,7 @@ about {\tt pdb} at \url{docs.python.org/lib/module-pdb.html}.
 
 \subsection{I added so many {\tt print} statements I get inundated with
 output.}
+
 \index{print statement}
 \index{statement!print}
 
@@ -17853,12 +17884,16 @@ are searching a list, search a {\em small} list.  If the program takes
 input from the user, give it the simplest input that causes the
 problem.
 
+\index{dead code}
+
 Second, clean up the program.  Remove dead code and reorganize the
 program to make it as easy to read as possible.  For example, if you
 suspect that the problem is in a deeply nested part of the program,
 try rewriting that part with simpler structure.  If you suspect a
 large function, try splitting it into smaller functions and testing them
 separately.
+
+\index{test case, minimal}
 
 Often the process of finding the minimal test case leads you to the
 bug.  If you find that a program works in one situation but not in
@@ -17933,7 +17968,9 @@ that is not known to be correct.
 
 \subsection{I've got a big hairy expression and it doesn't
 do what I expect.}
+
 \index{expression!big and hairy}
+\index{big, hairy expression}
 
 Writing complex expressions is fine as long as they are readable,
 but they can be hard to debug.  It is often a good idea to
@@ -18037,13 +18074,24 @@ symptoms:
 
 \item Frustration and rage.
 
+\index{frustration}
+\index{rage}
+\index{debugging!emotional response}
+\index{emotional debugging}
+
 \item Superstitious beliefs (``the computer hates me'') and
 magical thinking (``the program only works when I wear my
 hat backward'').
 
-\item Random-walk programming (the attempt to program by writing
+\index{debugging!superstition}
+\index{superstitious debugging}
+
+\item Random walk programming (the attempt to program by writing
 every possible program and choosing the one that does the right
 thing).
+
+\index{random walk programming}
+\index{development plan!random walk programming}
 
 \end{itemize}
 
