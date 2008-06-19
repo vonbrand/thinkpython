@@ -25,7 +25,7 @@
 \usepackage{upquote}
 
 \newcommand{\thetitle}{Think Python: An Introduction to Software Design}
-\newcommand{\theversion}{1.1.4}
+\newcommand{\theversion}{1.1.5}
 
 \makeindex
 
@@ -42,8 +42,9 @@
 \begin{latexonly}
 
 \renewcommand{\blankpage}{\thispagestyle{empty} \quad \newpage}
-\blankpage
-\blankpage
+
+%\blankpage
+%\blankpage
 
 % TITLE PAGES FOR LATEX VERSION
 
@@ -1435,20 +1436,21 @@ the Python documentation.
 For example, if you enter {\tt print} in the search window, the
 first link that appears is the documentation of the {\tt print}
 statement.  At this point, not all of it will make sense to you,
-but it is good to know where it is!
+but it is good to know where it is.
 
 \index{documentation}
 \index{python.org}
 \end{ex}
 
 \begin{ex}
-Start the Python interpreter and type {\tt help()} to
-start the online help utility.  Alternatively, you can type
-{\tt help('print')} to get information about a particular
-topic, in this case the {\tt print} statement.  If this example
-doesn't work, you may need to install additional Python documentation
-or set an environment variable; the details depend
-on your operating system and version of Python.
+Start the Python interpreter and type {\tt help()} to start the online
+help utility.  Or you can type {\tt help('print')} to get information
+about the {\tt print} statement.
+
+If this example doesn't work, you
+may need to install additional Python documentation or set an
+environment variable; the details depend on your operating system and
+version of Python.
 
 \index{help utility}
 \end{ex}
@@ -1461,8 +1463,8 @@ standard mathematical notation.  For example they symbols
 and division, as you would expect.  The symbol for
 multiplication is {\tt *}.
 
-If you run a 10 kilometer race in 42 minutes 30 seconds, what is your
-average pace per mile?  What is your average speed in miles per hour?
+If you run a 10 kilometer race in 43 minutes 30 seconds, what is your
+average time per mile?  What is your average speed in miles per hour?
 (Hint: there are 1.61 kilometers in a mile).
 
 \index{calculator}
@@ -1920,8 +1922,8 @@ have the same precedence.  So {\tt 2*3-1} is 5, not 4, and
 
 \item Operators with the same precedence are evaluated from left to 
 right.  So in the expression {\tt degrees / 2 * pi}, the division
-happens first and the result is multiplied by {\tt pi}.  If you meant
-to divide by $2 \pi$, you should have used parentheses.
+happens first and the result is multiplied by {\tt pi}.  
+To divide by $2 \pi$, you can reorder the operands or use parentheses.
 
 \end{itemize}
 
@@ -2030,8 +2032,8 @@ a tradeoff.
 \index{debugging}
 
 At this point the syntax error you are most likely to make is
-an illegal variable name, like {\tt class} and {\tt yield} (which
-are keywords) or \verb"odd~job" and \verb"US$" which contain
+an illegal variable name, like {\tt class} and {\tt yield}, which
+are keywords, or \verb"odd~job" and \verb"US$", which contain
 illegal characters.
 
 \index{syntax error}
@@ -2210,7 +2212,7 @@ Practice using the Python interpreter as a calculator:
 \item The volume of a sphere with radius $r$ is $\frac{4}{3} \pi r^3$.
   What is the volume of a sphere with radius 5?  Hint: 392.6 is wrong!
 
-\item The cover price of this book is \$24.95, but bookstores get a
+\item Suppose the cover price of a book is \$24.95, but bookstores get a
   40\% discount.  Shipping costs \$3 for the first copy and 75 cents
   for each additional copy.  What is the total wholesale cost for
   60 copies?
@@ -3123,7 +3125,7 @@ Python provides a built-in function called {\tt len} that
 returns the length of a string, so the value of \verb"len('allen')" is 5.
 
 Write a function named \verb"right_justify" that takes a string
-named {\tt s} as a parameter and that prints the string with enough
+named {\tt s} as a parameter and prints the string with enough
 leading spaces so that the last letter of the string is in column 70
 of the display.
 
@@ -3181,27 +3183,26 @@ passing the value as an argument.
 and calls the function four times.  There should be only
 two statements in the body of this function, not four.
 
-You can see my solution at \url{thinkpython.com/code/do_four.py}.
-
-% Solution in do_four.py
-
 \end{enumerate}
+
+You can see my solution at \url{thinkpython.com/code/do_four.py}.
 
 \end{ex}
 
 
 
 \begin{ex}
-This exercise can be done using only the statements
-and other features we have learned so far.
+This exercise\footnote{Based on an exercise in Oualline, {\em
+    Practical C Programming, Third Edition}, O'Reilly (1997)} can be
+done using only the statements and other features we have learned so
+far.  
 
 \index{grid}
 
 \begin{enumerate}
 
 \item Write a function that draws a grid like the
-  following\footnote{Based on an exercise in Oualline, {\em Practical
-      C Programming, Third Edition}, O'Reilly (1997)}:
+  following:
 
 \beforeverb
 \begin{verbatim}
@@ -3906,31 +3907,33 @@ the function before it ends.
 
 \section{Exercises}
 
-You can download the code in this chapter from
+\begin{ex}
+
+Download the code in this chapter from
 \url{thinkpython.com/code/polygon.py}.
 
-\begin{ex}
-Write appropriate docstrings for {\tt polygon} and
-{\tt circle}.
-\end{ex}
+\begin{enumerate}
 
-\begin{ex}
+\item Write appropriate docstrings for {\tt polygon}, {\tt arc} and
+{\tt circle}.
+
 \index{stack diagram}
 
-Draw a stack diagram that shows the state of the program
-while executing {\tt circle(bob, 100)}.  You can do the
+\item Draw a stack diagram that shows the state of the program
+while executing {\tt circle(bob, radius)}.  You can do the
 arithmetic by hand or add {\tt print} statements to the code.
-\end{ex}
 
-\begin{ex}
-The version of {\tt arc} in Section~\ref{refactoring} is not
+
+\item The version of {\tt arc} in Section~\ref{refactoring} is not
 very accurate because the linear approximation of the
 circle is always outside the true circle.  As a result,
 the turtle ends up a few units away from the correct
-destination.  See if you can think of a way to reduce
-the effect of this error.
+destination. My solution shows a way to reduce
+the effect of this error.  Read the code and see if it makes
+sense to you.  If you draw a diagram, you might see how it works.
 
-You can see my solution at \url{thinkpython.com/code/polygon.py}.
+\end{enumerate}
+
 \end{ex}
 
 
@@ -3979,8 +3982,6 @@ to help you test your code.
 You can download a solution from \url{thinkpython.com/code/letters.py}.
 
 \end{ex}
-
-
 
 
 
@@ -4593,7 +4594,7 @@ We will see how to handle this kind of error later.
 The traceback Python displays when an error occurs contains
 a lot of information, but it can be overwhelming, especially
 when there are many frames on the stack.  The most
-useful pieces are usually:
+useful parts are usually:
 
 \begin{itemize}
 
@@ -4622,7 +4623,7 @@ SyntaxError: invalid syntax
 %
 In this example, the problem is that the second line is indented by
 one space.  But the error message points to {\tt y}, which is
-misleading.  In general, error messages indicate where the error was
+misleading.  In general, error messages indicate where the problem was
 discovered, but the actual error might be earlier in the code,
 sometimes on a previous line.
 
@@ -4631,7 +4632,7 @@ sometimes on a previous line.
 
 The same is true of runtime errors.  Suppose you are trying
 to compute a signal-to-noise ratio in decibels.  The formula
-is $SNR_{db} = 10 \log10(P_{signal} / P_{noise})$.  In Python,
+is $SNR_{db} = 10 \log_{10} (P_{signal} / P_{noise})$.  In Python,
 you might write something like this:
 
 \beforeverb
@@ -4979,7 +4980,7 @@ def absolute_value(x):
 \end{verbatim}
 \afterverb
 %
-This program is not correct because if {\tt x} happens to be 0,
+This function is incorrect because if {\tt x} happens to be 0,
 neither condition is true, and the function ends without hitting a
 {\tt return} statement.  If the flow of execution gets to the end
 of a function, the return value is {\tt None}, which is not
@@ -4995,6 +4996,11 @@ None
 \end{verbatim}
 \afterverb
 %
+By the way, Python provides a built-in function called 
+{\tt abs} that computes absolute values.
+
+\index{abs function}
+\index{function!abs}
 
 \begin{ex}
 
@@ -5539,6 +5545,8 @@ the right result by adding them together.
 
 
 \section{Checking types}
+\label{guardian}
+
 \index{type checking}
 \index{error checking}
 \index{factorial function}
@@ -7161,8 +7169,11 @@ def is_reverse(word1, word2):
 The first {\tt if} statement checks whether the words are the
 same length.  If not, we can return {\tt False} immediately
 and then, for the rest of the function, we can assume that the words
-are the same length.  This is another example of a guardian.
+are the same length.  This is an example of the guardian pattern
+in Section~\ref{guardian}.
 
+\index{guardian pattern}
+\index{pattern!guardian}
 \index{index}
 
 {\tt i} and {\tt j} are indices: {\tt i} traverses {\tt word1}
@@ -7353,7 +7364,7 @@ might want to experiment with some of them to make sure
 you understand how they work.  {\tt strip} and
 {\tt replace} are particularly useful.
 
-The documentations uses a syntax that might be confusing.
+The documentation uses a syntax that might be confusing.
 For example, in \verb"find(sub[, start[, end]])", the brackets
 indicate optional arguments.  So {\tt sub} is required, but
 {\tt start} is optional, and if you include {\tt start},
@@ -7919,17 +7930,16 @@ program {\em Car
 \begin{quote}
 Give me a word with three consecutive double letters. I'll give you a
 couple of words that almost qualify, but don't. For example, the word
-committee, c-o-m-m-i-t-t-e-e. It would be great except for the i that
-sneaks in there. Or Mississippi -- M-i-s-s-i-s-s-i-p-p-i. If you could
+committee, c-o-m-m-i-t-t-e-e. It would be great except for the `i' that
+sneaks in there. Or Mississippi: M-i-s-s-i-s-s-i-p-p-i. If you could
 take out those i's it would work. But there is a word that has three
 consecutive pairs of letters and to the best of my knowledge this may
 be the only word. Of course there are probably 500 more but I can only
 think of one. What is the word?
 \end{quote}
 
-Write a program to find it.
-
-You can see my solution at \url{thinkpython.com/code/cartalk.py}.
+Write a program to find it.  You can see my solution at
+\url{thinkpython.com/code/cartalk.py}.
 
 \end{ex}
 
@@ -7963,9 +7973,8 @@ all 6 were palindromic!
 \end{quote}
 
 Write a Python program that tests all the 6 digit numbers and prints
-any numbers that satisfy these requirements.
-
-You can see my solution at \url{thinkpython.com/code/cartalk.py}.
+any numbers that satisfy these requirements.  You can see my solution
+at \url{thinkpython.com/code/cartalk.py}.
 
 \end{ex}
 
@@ -9034,18 +9043,18 @@ t = t.sort()           # WRONG!
 \end{verbatim}
 \afterverb
 
-Because {\tt sort} returns {\tt None}, the
-next operation you perform with {\tt t} is likely to fail.
-
 \index{sort method}
 \index{method!sort}
+
+Because {\tt sort} returns {\tt None}, the
+next operation you perform with {\tt t} is likely to fail.
 
 Before using list methods and operators, you should read the
 documentation carefully and then test them in interactive mode.  The
 methods and operators that lists share with other sequences (like
 strings) are documented at
-\url{docs.python.org/lib/typesseq.html}.  The other
-methods and operators, which only apply to mutable sequences,
+\url{docs.python.org/lib/typesseq.html}.  The
+methods and operators that only apply to mutable sequences
 are documented at \url{docs.python.org/lib/typesseq-mutable.html}.
 
 
@@ -9200,12 +9209,14 @@ and \verb"is_sorted(['b','a'])" should return {\tt False}.
 \index{anagram}
 
 Two words are anagrams if you can rearrange the letters from one
-to spell the other.  Write a function called \verb"is_anagram".
-that takes two strings and returns True if they are anagrams.
+to spell the other.  Write a function called \verb"is_anagram"
+that takes two strings and returns {\tt True} if they are anagrams.
 \end{ex}
 
 
 \begin{ex}
+
+The (so-called) Birthday Paradox:
 
 \begin{enumerate}
 
@@ -9213,7 +9224,7 @@ that takes two strings and returns True if they are anagrams.
 \index{duplicate}
 
 \item Write a function called \verb"has_duplicates" that takes
-a list an returns {\tt True} if there is any element that
+a list and returns {\tt True} if there is any element that
 appears more than once.  It should not modify the original
 list.
 
@@ -9289,7 +9300,7 @@ word list has 113,809 words, it will take about 17 steps to
 find the word or conclude that it's not there.
 
 Write a function called {\tt bisect} that takes a sorted list
-and a target value and either returns the index of the value
+and a target value and returns the index of the value
 in the list, if it's there, or {\tt None} if it's not.
 
 \index{bisect module}
@@ -9953,8 +9964,10 @@ If the result is already there, it can return
 immediately.  Otherwise it has to 
 compute the new value, add it to the dictionary, and return it.
 
-Using this version of {\tt fibonacci}, you can compute
-{\tt fibonacci(40)} in an eyeblink.
+\begin{ex}
+Run this version of {\tt fibonacci} and the original with
+a range of parameters and compare their run times.
+\end{ex}
 
 
 \section{Global variables}
@@ -10295,9 +10308,9 @@ interpreter something about a variable.
 \begin{ex}
 \index{duplicate}
 
-If you did Exercise~\ref{duplicates}, you already have a
+If you did Exercise~\ref{duplicates}, you already have
 a function named \verb"has_duplicates" that takes a list
-as a parameter and that returns {\tt True} if there is any object
+as a parameter and returns {\tt True} if there is any object
 that appears more than once in the list.
 
 Use a dictionary to write a faster, simpler version of
@@ -10336,12 +10349,12 @@ the second letter and the result is yet another homophone of the
 original word. And the question is, what's the word?
 
 Now I'm going to give you an example that doesn't work. Let's look at
-the five-letter word, 'wrack.' W-R-A-C-K, you know like to 'wrack with
+the five-letter word, `wrack.' W-R-A-C-K, you know like to `wrack with
 pain.' If I remove the first letter, I am left with a four-letter
-word, 'R-A-C-K.' As in, 'Holy cow, did you see the rack on that buck!
+word, 'R-A-C-K.' As in, `Holy cow, did you see the rack on that buck!
 It must have been a nine-pointer!' It's a perfect homophone. If you
-put the 'w' back, and remove the 'r,' instead, you're left with the
-word, 'wack,' which is a real word, it's just not a homophone of the
+put the `w' back, and remove the `r,' instead, you're left with the
+word, `wack,' which is a real word, it's just not a homophone of the
 other two words.
 
 But there is, however, at least one word that Dan and we know of,
@@ -10367,7 +10380,6 @@ returns a Python dictionary that maps from each word to a string that
 describes its primary pronunciation.
 
 Write a program that lists all the words that solve the Puzzler.
-
 You can see my solution at \url{thinkpython.com/code/homophone.py}.
 
 \end{ex}
@@ -11172,12 +11184,12 @@ order.
 
 Lists, dictionaries and tuples are known generically as {\bf data
   structures}; in this chapter we are starting to see compound data
-structures, like lists of tuples and dictionaries that contain tuples
+structures, like lists of tuples, and dictionaries that contain tuples
 as keys and lists as values.  Compound data structures are useful, but
 they are prone to what I call {\bf shape errors}; that is, errors
 caused when a data structure has the wrong type, size or composition.
-For example, if you are expecting a list with one integer, an
-integer (that is not in a list) won't work.
+For example, if you are expecting a list with one integer and I
+give you a plain old integer (not in a list), it won't work.
 
 \index{structshape module}
 \index{module!structshape}
@@ -11970,17 +11982,17 @@ the probability of the word that comes next.  For example,
 the song {\em Eric, the Half a Bee} begins:
 
 \begin{quote}
-Half a bee, philosophically,
-Must, ipso facto, half not be.
-But half the bee has got to be
-Vis a vis, its entity. D'you see?
-
-But can a bee be said to be
-Or not to be an entire bee
-When half the bee is not a bee
-Due to some ancient injury?
+Half a bee, philosophically, \\
+Must, ipso facto, half not be. \\
+But half the bee has got to be \\
+Vis a vis, its entity. D'you see? \\
+\\
+But can a bee be said to be \\
+Or not to be an entire bee \\
+When half the bee is not a bee \\
+Due to some ancient injury? \\
 \end{quote}
-
+%
 In this text,
 the phrase ``half the'' is always followed by the word ``bee,''
 but the phrase ``the bee'' might be followed by either
@@ -12217,10 +12229,10 @@ will sometimes find the answer before you finish asking the question.
 But even the best debugging techniques will fail if there are too many
 errors, or if the code you are trying to fix is too big and
 complicated.  Sometimes the best option is to retreat, simplifying the
-program until you get to something that you understand, and that
-works.
+program until you get to something that works and that you
+understand.
 
-Beginning programmers are often reluctant to retreat, because
+Beginning programmers are often reluctant to retreat because
 they can't stand to delete a line of code (even if it's wrong).
 If it makes you feel better, copy your program into another file
 before you start stripping it down.  Then you can paste the pieces
@@ -13115,7 +13127,8 @@ might cause problems.
 
 For most systems, there are applications to convert from one
 format to another.  You can find them (and read more about this
-issue) at \url{wikipedia.org/wiki/Newline}.
+issue) at \url{wikipedia.org/wiki/Newline}.  Or, of course, you
+could write one yourself.
 
 
 \section{Glossary}
@@ -13213,7 +13226,7 @@ these duplicates.
 
 \item Write a program that searches a directory and all of its
 subdirectories, recursively, and returns a list of complete paths
-for all files with a given suffix like {\tt .mp3}.
+for all files with a given suffix (like {\tt .mp3}).
 Hint: {\tt os.path} provides several useful functions for
 manipulating file and path names.
 
@@ -13930,7 +13943,7 @@ attributes, and the values of the attributes.
 \index{World module}
 \index{module!World}
 
-{\tt World.py}, which is part of Swampy (see Chapter~\ref{turtlechap})
+{\tt World.py}, which is part of Swampy (see Chapter~\ref{turtlechap}),
 contains a class definition for a user-defined type called 
 {\tt World}.  If you run this code:
 
@@ -13979,6 +13992,9 @@ canvas.circle([-25,0], 70, outline=None, fill='red')
 \afterverb
 
 \index{Bangladesh, national flag}
+
+The first parameter is the coordinate pair for the center of the
+circle; the second parameter is the radius.
 
 If you add this line to the program, 
 the result should resemble the national flag of Bangladesh
@@ -14386,7 +14402,7 @@ fraction part.
 
 These kind of requirements are called {\bf invariants} because
 they should always be true.  To put it a different way, if they
-are no true, the something has gone wrong.
+are not true, then something has gone wrong.
 
 Writing code to check your invariants can help you detect errors
 and find their causes.  For example, you might have a function
@@ -14398,7 +14414,7 @@ like \verb"valid_time" that takes a Time object and returns
 def valid_time(time):
     if time.hours < 0 or time.minutes < 0 or time.seconds < 0:
         return False
-    if time.minutes > 59 or time.seconds > 59:
+    if time.minutes >= 60 or time.seconds >= 60:
         return False
     return True
 \end{verbatim}
@@ -14523,7 +14539,7 @@ gets the current date and prints the day of the week.
 \index{birthday}
 
 \item Write a program that takes a birthday as input
-prints the user's age and the number of days, hours,
+and prints the user's age and the number of days, hours,
 minutes and seconds until their next birthday.
 \end{enumerate}
 
@@ -16325,7 +16341,8 @@ number of times various classifications appear.
 
 \item Print a table of the classifications and their probabilities.
 Run your program with larger and larger numbers of hands until the
-output values converge to a reasonable degree of accuracy.
+output values converge to a reasonable degree of accuracy.  Compare
+your results to the values at \url{wikipedia.org/wiki/Hand_rankings}.
 
 \end{enumerate}
 \end{ex}
@@ -16377,8 +16394,8 @@ depending on the Turtle's speed.
 
 \item Modify {\tt steer} so that each Turtle points toward its nearest
   neighbor.  Hint: Turtles have an attribute, {\tt world}, that is a
-  reference to the TurtleWorld they live in, and TurtleWorld has an
-  attribute, {\tt animals}, that is a list of all Turtles in the
+  reference to the TurtleWorld they live in, and the TurtleWorld has
+  an attribute, {\tt animals}, that is a list of all Turtles in the
   world.
 
 \item Modify {\tt steer} so the Turtles play tag.  You can add methods
@@ -17308,8 +17325,8 @@ a user event.
 \index{event-driven programming}
 
 Another challenge of GUI programming is that you don't have control
-of the flow of execution.  Which parts of the program execute,
-and in what order, is determined by user actions.
+of the flow of execution.  Which parts of the program execute
+and their order are determined by user actions.
 That means that you have to design your program to work correctly
 for any possible sequence of events.
 
@@ -17463,7 +17480,7 @@ import ImageTk
 \afterverb
 %
 The first line imports {\tt Image} and
-gives it the name {\tt PIL}.  The second
+gives it the local name {\tt PIL}.  The second
 line imports {\tt ImageTk}, which can translate a PIL
 image into a Tkinter PhotoImage.  Here's an example:
 
@@ -17480,8 +17497,8 @@ g.la(image=photo2)
 
 \item Download \verb"image_demo.py", \verb"danger.gif" and \verb"allen.png"
 from \url{thinkpython.com/code}.  Run \verb"image_demo.py".  You
-might have to install {\tt PIL} and {\tt ImageTk}.  If you are
-using Linux, they are probably in your repository, but if not
+might have to install {\tt PIL} and {\tt ImageTk}.  
+They are probably in your software repository,  but if not
 you can get them from \url{pythonware.com/products/pil/}.
 
 \item In \verb"image_demo.py" change the name of the second
@@ -17489,7 +17506,7 @@ PhotoImage from {\tt photo2} to {\tt photo} and run the program
 again.  You should see the second PhotoImage but not the first.
 
 The problem is that when you reassign {\tt photo} it overwrites
-the reference to the first PhotoImage, so it disappears.  The
+the reference to the first PhotoImage, which then disappears.  The
 same thing happens if you assign a PhotoImage to a local
 variable; it disappears when the function ends.
 
