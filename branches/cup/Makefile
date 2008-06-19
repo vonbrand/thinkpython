@@ -26,28 +26,17 @@ all:	book.tex
 	dvips -T 7in,10in -Ppdf -o thinkpython.ps book
 	gv thinkpython.ps
 
-html:	book.tex
-	rm -rf html
-	mkdir html
-	hevea -e latexonly htmlonly book
-	# the following line is a kludge to prevent imagen from seeing
-	# the definitions in latexonly
-	grep -v latexonly book.image.tex > a; mv a book.image.tex
-	imagen -png book
-	hacha book.html
-	mv index.html book*.html book*.png *motif.gif html
 
-DEST = /home/downey/public_html/greent/thinkpython
+DEST = /home/downey/public_html/cup
 
 distrib:
 	ps2pdf $(PDFFLAGS) thinkpython.ps
 	rm -rf dist
 	mkdir dist dist/tex dist/tex/figs
-	rsync -a thinkpython.pdf thinkpython.ps html dist
-	rsync -a Makefile book.tex latexonly htmlonly dist/tex
-	rsync -a figs/*.fig figs/*.eps dist/figs
+	rsync -a thinkpython.pdf thinkpython.ps dist
+	rsync -a Makefile book.tex cupbook.cls dist/tex
+	rsync -a figs/*.fig figs/*.eps dist/tex/figs
 	cd dist; zip -r thinkpython.tex.zip tex
-	cd dist; zip -r thinkpython.html.zip html
 	rsync -a dist/* $(DEST)
 	chmod -R o+r $(DEST)/*
 
