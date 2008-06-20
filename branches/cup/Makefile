@@ -33,7 +33,7 @@ distrib:
 	ps2pdf $(PDFFLAGS) thinkpython.ps
 	rm -rf dist
 	mkdir dist dist/tex dist/tex/figs
-	rsync -a thinkpython.pdf thinkpython.ps dist
+	rsync -a thinkpython.pdf dist
 	rsync -a Makefile book.tex cupbook.cls dist/tex
 	rsync -a figs/*.fig figs/*.eps dist/tex/figs
 	cd dist; zip -r thinkpython.tex.zip tex
