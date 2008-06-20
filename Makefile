@@ -21,9 +21,9 @@ all:	book.tex
 	makeindex book
 	latex book
 #	dvips -T 6.75in,9.25in -Ppdf -o thinkpython.ps book
-#	dvips -t letter -Ppdf -o thinkpython.ps book
+	dvips -t letter -Ppdf -o thinkpython.ps book
 #	dvips -t b5 -Ppdf -o thinkpython.ps book
-	dvips -T 7in,10in -Ppdf -o thinkpython.ps book
+#	dvips -T 7in,10in -Ppdf -o thinkpython.ps book
 	gv thinkpython.ps
 
 html:	book.tex

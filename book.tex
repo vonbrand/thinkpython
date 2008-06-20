@@ -1,4 +1,4 @@
-% LaTeX source for textbook ``How to think like a (Python) Programmer''
+% LaTeX source for ``Think Python: An Introduction to Software Design''
 % Copyright (c)  2008  Allen B. Downey.
 
 % Permission is granted to copy, distribute and/or modify this
@@ -12,7 +12,12 @@
 % it from www.gnu.org or by writing to the Free Software Foundation,
 % Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 %
-\documentclass[10pt,b5paper]{book}
+
+%\documentclass[10pt,b5paper]{book}
+\documentclass[10pt]{book}
+\usepackage[width=5.5in,height=8.5in,
+  hmarginratio=3:2,vmarginratio=1:1]{geometry}
+
 \usepackage{pslatex}
 \usepackage{url}
 \usepackage{fancyhdr}
@@ -25,7 +30,7 @@
 \usepackage{upquote}
 
 \newcommand{\thetitle}{Think Python: An Introduction to Software Design}
-\newcommand{\theversion}{1.1.5}
+\newcommand{\theversion}{1.1.7}
 
 \makeindex
 
@@ -192,8 +197,7 @@ class in Java.  I had taught it three times and I was getting
 frustrated.  The failure rate in the class was too high and, even for
 students who succeeded, the overall level of achievement was too low.
 
-One of the problems I saw was the books.  I had tried three different
-books (and read a dozen more), and they all had the same problems.
+One of the problems I saw was the books.  
 They were too big, with too much unnecessary detail about Java, and
 not enough high-level guidance about how to program.  And they all
 suffered from the trap door effect: they would start out easy,
@@ -202,9 +206,7 @@ fall out.  The students would get too much new material, too fast,
 and I would spend the rest of the semester picking up the pieces.
 
 Two weeks before the first day of classes, I decided to write my
-own book.  I wrote one 10-page chapter a day for 13 days.  I made
-some revisions on Day 14 and then sent it out to be photocopied.
-
+own book.  
 My goals were:
 
 \begin{itemize}
@@ -231,18 +233,7 @@ and they understood enough that I could spend class time on the hard
 topics, the interesting topics and (most important) letting the
 students practice.
 
-As a user and advocate of free software, I believe in the idea
-Benjamin Franklin expressed:
-
-\begin{quote}
-``As we enjoy great Advantages from the Inventions of others,
-we should be glad of an Opportunity to serve others by any
-Invention of ours, and this we should do freely and generously.''
-\end{quote}
-
-\index{Franklin, Benjamin}
-
-So I released the book under the GNU Free Documentation License,
+I released the book under the GNU Free Documentation License,
 which allows users to copy, modify, and distribute the book.
 
 \index{GNU Free Documentation License}
@@ -254,42 +245,60 @@ Python.  He sent me a copy of his translation, and I had the
 unusual experience of learning Python by reading my own book.
 
 Jeff and I revised the book, incorporated a case study by
-Chris Meyers, and released {\em How to Think Like
+Chris Meyers, and in 2001 we released {\em How to Think Like
 a Computer Scientist: Learning with Python}, also under
 the GNU Free Documentation License.
+As Green Tea Press, I published the book and started selling
+hard copies through Amazon.com and college book stores.
+Other books from Green Tea Press are available at
+\url{greenteapress.com}.
 
-At the same time, my wife and I started Green Tea Press, which
-distributes several of my books electronically, and sells 
-{\em How to Think} in hard copy.
+In 2003 I started teaching at Olin College and I got to teach
+Python for the first time.  The contrast with Java was striking.
+Students struggled less, learned more, worked on more interesting
+projects, and generally had a lot more fun.
 
-I have been teaching with this book for more than five years
-now, and I have done a lot more Python programming.  I still like
-the structure of the book, but for some time I have felt the
-need to make changes:
+Over the last five years I have continued to develop the book,
+correcting errors, improving some of the examples and
+adding material, especially exercises.  In 2008 I started work
+on a major revision---at the same time, I was
+contacted by an editor at Cambridge University Press who
+was interested in publishing the next edition.  Good timing!
+
+The result is this book, now with the less grandiose title
+{\em Think Python}.  Some of the changes are:
 
 \begin{itemize}
 
-\item Some of the examples in the first edition work better
-than others.  In my classes I have discarded the less
-effective ones and developed improvements.
+\item I added a section about debugging at the end of each chapter.
+  These sections present general techniques for finding and avoiding
+  bugs, and warnings about Python pitfalls.
 
-\item There are only a few exercises in the first edition.
-Now I have five years of quizzes, exams and homeworks to choose
-from.
+\item I removed the material in the last few chapters about the
+  implementation of lists and trees.  I still love those topics, but I
+  thought they were incongruent with the rest of the book.
 
-\item I have been programming in Python for a while now and have a
-better appreciation of idiomatic Python.  The book is still about
-programming, not Python, but now I think the book gets more
-leverage from the language.
+\item I added more exercises, ranging from short tests of
+  understanding to a few substantial projects.
+
+\item I added a series of case studies---longer examples with
+  exercises, solutions, and discussion.  Some of them are based on
+  Swampy, a suite of Python programs wrote for use in my classes.
+  Swampy, code examples, and some solutions are available from
+  \url{thinkpython.com}.
+  
+\item I expanded the discussion of programming development plans
+  and basic design patterns.
+
+\item The use of Python is more idiomatic.  The book is still about
+  programming, not Python, but now I think the book gets more leverage
+  from the language.
 
 \end{itemize}
 
-At the same time, Jeff has been working on his own second
-edition, customized for his classes.  Rather than cram everything
-into one book (which may be how other books got so big),
-we decided to work on different versions.  They are both under
-the Free Documentation License, so users can choose one or
-combine material from both.
+I hope you enjoy working with this book, and that it helps
+you learn to program and think, at least a little bit, like
+a computer scientist.
 
 
 Allen B. Downey \\
@@ -317,7 +326,7 @@ the Franklin W. Olin College of Engineering.
 
 First and most importantly, I thank Jeff Elkner, who
 translated my Java book into Python, which got this project
-started, and introduced me to what has turned out to be my
+started and introduced me to what has turned out to be my
 favorite language.
 
 I also thank Chris Meyers, who contributed several sections
@@ -333,9 +342,9 @@ my collaboration with Jeff and Chris possible.
 I also thank the editors at Lulu who worked on
 {\em How to Think Like a Computer Scientist}.
 
-I thank all the students who have worked with earlier
-version of this book.  I hope their suffering was not in
-vain.
+I thank all the students who worked with earlier
+versions of this book and all the contributors (listed
+below) who sent in corrections and suggestions.
 
 And I thank my wife, Lisa, for her work on this book, and Green
 Tea Press, and everything else, too.
