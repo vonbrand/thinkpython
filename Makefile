@@ -45,7 +45,7 @@ distrib:
 	mkdir dist dist/tex dist/tex/figs
 	rsync -a thinkpython.pdf thinkpython.ps html dist
 	rsync -a Makefile book.tex latexonly htmlonly dist/tex
-	rsync -a figs/*.fig figs/*.eps dist/figs
+	rsync -a figs/*.fig figs/*.eps dist/tex/figs
 	cd dist; zip -r thinkpython.tex.zip tex
 	cd dist; zip -r thinkpython.html.zip html
 	rsync -a dist/* $(DEST)
