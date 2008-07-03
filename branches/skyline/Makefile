@@ -41,15 +41,6 @@ DEST = /home/downey/public_html/greent/thinkpython
 
 distrib:
 	ps2pdf $(PDFFLAGS) thinkpython.ps
-	rm -rf dist
-	mkdir dist dist/tex dist/tex/figs
-	rsync -a thinkpython.pdf thinkpython.ps html dist
-	rsync -a Makefile book.tex latexonly htmlonly dist/tex
-	rsync -a figs/*.fig figs/*.eps dist/tex/figs
-	cd dist; zip -r thinkpython.tex.zip tex
-	cd dist; zip -r thinkpython.html.zip html
-	rsync -a dist/* $(DEST)
-	chmod -R o+r $(DEST)/*
 
 clean:
 	rm -f *~ *.aux *.log *.dvi *.idx *.ilg *.ind *.toc
