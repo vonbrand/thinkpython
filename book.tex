@@ -30,7 +30,7 @@
 \usepackage{upquote}
 
 \newcommand{\thetitle}{Think Python: An Introduction to Software Design}
-\newcommand{\theversion}{1.1.9}
+\newcommand{\theversion}{1.1.10}
 
 \makeindex
 
@@ -783,6 +783,14 @@ which you might want to read when you are done with this book.
 \item Jianhua Liu sent in a long list of corrections.
 
 %<liu620@erau.edu>
+
+\item Nick King found a missing word.
+
+% <nicnik92@gmail.com>
+
+\item Martin Zuther sent a long list of corrections.
+
+% <mzuther@mzuther.de>
 
 % ENDCONTRIB
 
@@ -2521,10 +2529,10 @@ doesn't take any arguments.
 \index{colon}
 
 The first line of the function definition is called the {\bf header};
-the rest is called the {\bf body}.
-The header has to end with a colon and the
-body has to be indented.  By convention, the indentation is always
-four spaces.  The body can contain any number of statements.
+the rest is called the {\bf body}.  The header has to end with a colon
+and the body has to be indented.  By convention, the indentation is
+always four spaces (see Section~\ref{editor}).  The body can contain
+any number of statements.
 
 The strings in the print statements are enclosed in double
 quotes.  Single quotes and double quotes do the same thing;
@@ -2999,6 +3007,7 @@ Once you write and debug one, you can reuse it.
 
 
 \section{Debugging}
+\label{editor}
 \index{debugging}
 
 If you are using a text editor to write your scripts, you might
@@ -4597,6 +4606,7 @@ We will see how to handle this kind of error later.
 
 
 \section{Debugging}
+\label{whitespace}
 \index{debugging}
 \index{traceback}
 
@@ -9016,7 +9026,7 @@ Here's how it is used:
 Write a function called {\tt chop} that takes a list and modifies
 it, removing the first and last elements, and returns {\tt None}.
 
-Then write function called {\tt middle} that takes a list and
+Then write a function called {\tt middle} that takes a list and
 returns a new list that contains all but the first and last
 elements.
 
@@ -15308,8 +15318,9 @@ is invoked on instances of that class.
 of an operand and invokes different functions for different types.
 \index{type-based dispatch}
 
-\item[polymorphic:] Pertaining to a function that can work with more than one
-type.
+\item[polymorphic:] Pertaining to a function that can work with more
+  than one type.  
+
 \index{polymorphism}
 
 \end{description}
