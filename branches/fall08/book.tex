@@ -15,7 +15,7 @@
 
 %\documentclass[10pt,b5paper]{book}
 \documentclass[10pt]{book}
-\usepackage[width=5.5in,height=8.5in,
+\usepackage[width=5.0in,height=8.5in,
   hmarginratio=3:2,vmarginratio=1:1]{geometry}
 
 \usepackage{pslatex}
@@ -56,21 +56,63 @@
 %-half title--------------------------------------------------
 \thispagestyle{empty}
 
-\begin{flushright}
-\vspace*{2.0in}
+{\huge Think Python}
 
-\begin{spacing}{3}
-{\huge Think Python}\\
-{\Large An Introduction to Software Design}
-\end{spacing}
+{\Large Draft Edition}
 
-\vspace{0.25in}
+This book is a draft of a forthcoming book that will be
+published by Cambridge University Press in early 2009,
+under the title {\em Python for Software Design: How to Think
+Like a Computer Scientist}.
 
-Version \theversion
+This is a Free Book, which means that readers are free to
+copy, modify and distribute the text.  For more information,
+you can read the GNU Free Documentation License at
+\url{www.gnu.org/copyleft/fdl.html}.  And you can download the
+book in several formats from \url{thinkpython.com}.
 
-\vfill
+I welcome your feedback.  If you find an error or want to make a
+suggestion, please send an email to \url{feedback@thinkpython.com}.
+If I make a change based on your
+comments, I will add you to the contributor list
+(unless you ask me not to).
 
-\end{flushright}
+Also, at the end of your class, I would be grateful if you
+would take a minute to send me your overall impressions of
+the book.  Here are some of the things I would like to know:
+
+\begin{itemize}
+
+\item How much of the book were you supposed to read?  How
+much did you actually read?
+
+\item Did you generally understand the reading the first time,
+or did you need to ask questions in class?
+
+\item Were the debugging sections helpful?
+
+\item Were the glossaries helpful?
+
+\item How many of the exercises did you do, and did you find
+them useful?
+
+\item Did you do any of the exercises involving Swampy?  Did
+that work well?
+
+\item Did you download exercise solutions from \url{thinkpython.com},
+and did you find them useful?
+
+\item What is your favorite thing about the book?
+
+\item What would you like to see improved in the next edition?
+
+\end{itemize}
+
+Again, please send your answers to any of these (or any other)
+questions to \url{feedback@thinkpython.com}.  Thank you!
+
+Allen B. Downey
+
 
 %--verso------------------------------------------------------
 
@@ -9234,6 +9276,7 @@ that takes two strings and returns {\tt True} if they are anagrams.
 
 
 \begin{ex}
+\label{duplicate}
 
 The (so-called) Birthday Paradox:
 
@@ -9268,7 +9311,6 @@ at \url{thinkpython.com/code/birthday.py}.
 
 
 \begin{ex}
-\label{duplicates}
 
 \index{duplicate}
 \index{uniqueness}
@@ -10327,7 +10369,7 @@ interpreter something about a variable.
 \begin{ex}
 \index{duplicate}
 
-If you did Exercise~\ref{duplicates}, you already have
+If you did Exercise~\ref{duplicate}, you already have
 a function named \verb"has_duplicates" that takes a list
 as a parameter and returns {\tt True} if there is any object
 that appears more than once in the list.
