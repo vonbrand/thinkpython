@@ -39,6 +39,10 @@ html:	book.tex
 
 DEST = /home/downey/public_html/greent/thinkpython
 
+pdf:
+	ps2pdf $(PDFFLAGS) thinkpython.ps
+
+
 distrib:
 	ps2pdf $(PDFFLAGS) thinkpython.ps
 	rm -rf dist
