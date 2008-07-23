@@ -1,4 +1,5 @@
-% LaTeX source for ``Think Python: An Introduction to Software Design''
+% LaTeX source for 
+% ``Software Design in Python: How to Think Like a Computer Scientist''
 % Copyright 2008  Allen B. Downey.
 
 \documentclass{cupbook}
@@ -12,8 +13,9 @@
 \usepackage{hevea}
 \usepackage{upquote}
 
-\newcommand{\thetitle}{Think Python: An Introduction to Software Design}
-\newcommand{\theversion}{CUP 0.9.2}
+\newcommand{\thetitle}{Software Design in Python:\\
+How to Think Like a Computer Scientist}
+\newcommand{\theversion}{CUP 0.9.3}
 
 \makeindex
 
@@ -62,8 +64,8 @@
 \vspace*{2.0in}
 
 \begin{spacing}{3}
-{\huge Think Python}\\
-{\Large An Introduction to Software Design}
+{\huge Software Design in Python}\\
+{\Large How to Think Like a Computer Scientist}
 \end{spacing}
 
 \vspace{0.25in}
@@ -91,8 +93,8 @@ Version \theversion
 \vspace*{2.0in}
 
 \begin{spacing}{3}
-{\huge Think Python}\\
-{\Large An Introduction to Software Design}
+{\huge Software Design in Python}\\
+{\Large How to Think Like a Computer Scientist}
 \end{spacing}
 
 \vspace{0.25in}
@@ -715,7 +717,7 @@ which you might want to read when you are done with this book.
 
 %<Stanislaw.Antol@students.olin.edu>
 
-\item Eric Pashman sent a number of corrections for Chapters 4--9.
+\item Eric Pashman sent a number of corrections for Chapters 4--11.
 
 %<eric.pashman@gmail.com>
 
@@ -726,6 +728,32 @@ which you might want to read when you are done with this book.
 \item Jianhua Liu sent in a long list of corrections.
 
 %<liu620@erau.edu>
+
+\item Nick King found a missing word.
+
+% <nicnik92@gmail.com>
+
+\item Martin Zuther sent a long list of suggestions.
+
+% <mzuther@mzuther.de>
+
+\item Adam Zimmerman found an inconsistency in my instance
+of an ``instance'' and several other errors.
+
+%<adam_zimmerman@sfu.ca>
+
+\item Nick King found a missing word.
+
+% <nicnik92@gmail.com>
+
+\item Martin Zuther sent a long list of suggestions.
+
+% <mzuther@mzuther.de>
+
+\item Adam Zimmerman found an inconsistency in my instance
+of an ``instance'' and several other errors.
+
+%<adam_zimmerman@sfu.ca>
 
 % ENDCONTRIB
 
@@ -1396,7 +1424,7 @@ but it is good to know where it is.
 
 \begin{ex}
 Start the Python interpreter and type {\tt help()} to start the online
-help utility.  Or you can type {\tt help('print')} to get information
+help utility.  Or you can type \verb"help('print')" to get information
 about the {\tt print} statement.
 
 If this example doesn't work, you
@@ -1911,13 +1939,13 @@ print first + second
 The output of this program is {\tt throatwarbler}.
 
 The {\tt *} operator also works on strings; it performs repetition.
-For example, {\tt 'Spam'*3} is {\tt 'SpamSpamSpam'}.  If one of the operands
+For example, {\tt 'Spam'*3} is \verb"'SpamSpamSpam'".  If one of the operands
 is a string, the other has to be an integer.
 
 This use of {\tt +} and {\tt *} makes sense by
 analogy with addition and multiplication.  Just as {\tt 4*3} is
-equivalent to {\tt 4+4+4}, we expect {\tt 'Spam'*3} to be the same as
-{\tt 'Spam'+'Spam'+'Spam'}, and it is.  On the other hand, there is a
+equivalent to {\tt 4+4+4}, we expect \verb"'Spam'*3" to be the same as
+\verb"'Spam'+'Spam'+'Spam'", and it is.  On the other hand, there is a
 significant way in which string concatenation and repetition are
 different from integer addition and multiplication.
 Can you think of a property that addition has
@@ -2464,10 +2492,10 @@ doesn't take any arguments.
 \index{colon}
 
 The first line of the function definition is called the {\bf header};
-the rest is called the {\bf body}.
-The header has to end with a colon and the
-body has to be indented.  By convention, the indentation is always
-four spaces.  The body can contain any number of statements.
+the rest is called the {\bf body}.  The header has to end with a colon
+and the body has to be indented.  By convention, the indentation is
+always four spaces (see Section~\ref{editor}).  The body can contain
+any number of statements.
 
 The strings in the print statements are enclosed in double
 quotes.  Single quotes and double quotes do the same thing;
@@ -2692,7 +2720,7 @@ Spam Spam Spam Spam
 \afterverb
 %
 The argument is evaluated before the function is called, so
-in the examples the expressions {\tt 'Spam '*4} and
+in the examples the expressions \verb"'Spam '*4" and
 {\tt math.cos(math.pi)} are only evaluated once.
 
 \index{argument}
@@ -2903,7 +2931,7 @@ None
 \end{verbatim}
 \afterverb
 %
-The value {\tt None} is not the same as the string {\tt 'None'}. 
+The value {\tt None} is not the same as the string \verb"'None'". 
 It is a special value that has its own type:
 
 \beforeverb
@@ -2942,6 +2970,7 @@ Once you write and debug one, you can reuse it.
 
 
 \section{Debugging}
+\label{editor}
 \index{debugging}
 
 If you are using a text editor to write your scripts, you might
@@ -3262,7 +3291,7 @@ This means that {\tt bob} refers to
 an {\bf instance} of a Turtle
 as defined in module {\tt TurtleWorld}.  In this context,
 ``instance'' means a member of a set;
-this TurtleWorld is one of the set of possible TurtleWorlds.
+this Turtle is one of the set of possible Turtles.
 
 \index{instance}
 
@@ -4540,6 +4569,7 @@ We will see how to handle this kind of error later.
 
 
 \section{Debugging}
+\label{whitespace}
 \index{debugging}
 \index{traceback}
 
@@ -8959,7 +8989,7 @@ Here's how it is used:
 Write a function called {\tt chop} that takes a list and modifies
 it, removing the first and last elements, and returns {\tt None}.
 
-Then write function called {\tt middle} that takes a list and
+Then write a function called {\tt middle} that takes a list and
 returns a new list that contains all but the first and last
 elements.
 
@@ -9167,6 +9197,7 @@ that takes two strings and returns {\tt True} if they are anagrams.
 
 
 \begin{ex}
+\label{duplicate}
 
 The (so-called) Birthday Paradox:
 
@@ -9201,7 +9232,6 @@ at \url{thinkpython.com/code/birthday.py}.
 
 
 \begin{ex}
-\label{duplicates}
 
 \index{duplicate}
 \index{uniqueness}
@@ -10260,7 +10290,7 @@ interpreter something about a variable.
 \begin{ex}
 \index{duplicate}
 
-If you did Exercise~\ref{duplicates}, you already have
+If you did Exercise~\ref{duplicate}, you already have
 a function named \verb"has_duplicates" that takes a list
 as a parameter and returns {\tt True} if there is any object
 that appears more than once in the list.
@@ -10734,7 +10764,7 @@ of arguments and returns their sum.
 {\tt zip} is a built-in function that takes two or more sequences and
 ``zips'' them into a list\footnote{In Python 3.0, {\tt zip} returns an
   iterator of tuples, but for most purposes, an iterator behaves like
-  a list} of tuples where each tuple contains one element from each
+  a list.} of tuples where each tuple contains one element from each
 sequence.
 
 \index{Python 3.0}
@@ -14932,7 +14962,7 @@ a Point object and print it.
 
 By defining other special methods, you can specify the behavior
 of operators on user-defined types.  For example, if you define
-an {\tt add} method for the {\tt Time} class, you can use the
+a method named \verb"__add__" for the {\tt Time} class, you can use the
 {\tt +} operator on Time objects.
 
 Here is what the definition might look like:
@@ -15051,9 +15081,9 @@ TypeError: unsupported operand type(s) for +: 'int' and 'instance'
 %
 The problem is, instead of asking the Time object to add an integer,
 Python is asking an integer to add a Time object, and it doesn't know
-how to do that.  But there is a clever solution for this problem,
-the {\tt radd} method, which stands for ``right-side add.''  This
-method is invoked when a Time object appears on the right side of
+how to do that.  But there is a clever solution for this problem: the
+special method \verb"__radd__", which stands for ``right-side add.''
+This method is invoked when a Time object appears on the right side of
 the {\tt +} operator.  Here's the definition:
 
 \index{radd method}
@@ -15251,8 +15281,9 @@ is invoked on instances of that class.
 of an operand and invokes different functions for different types.
 \index{type-based dispatch}
 
-\item[polymorphic:] Pertaining to a function that can work with more than one
-type.
+\item[polymorphic:] Pertaining to a function that can work with more
+  than one type.  
+
 \index{polymorphism}
 
 \end{description}
@@ -15560,7 +15591,7 @@ from the class {\tt Card}, and select the appropriate string.''
 The first element of \verb"rank_names" is {\tt None} because there
 is no card with rank zero.  By including {\tt None} as a place-keeper,
 we get a mapping with the nice property that the index 2 maps to the
-string {\tt '2'}, and so on.  To avoid this tweak, we could have
+string \verb"'2'", and so on.  To avoid this tweak, we could have
 used a dictionary instead of a list.
 
 With the methods we have so far, we can create and print cards:
@@ -16072,8 +16103,8 @@ A multiplicity can be a simple number, like {\tt 52}, a range,
 like {\tt 5..7} or a star, which indicates that a Deck can
 have any number of Cards.
 
-A more detailed diagram might showed that a Deck actually
-contains a list, which contains Card, but built-in types
+A more detailed diagram might show that a Deck actually
+contains a {\em list} of Cards, but built-in types
 like list and dict are usually not included in class diagrams.
 
 \begin{ex}
@@ -16312,7 +16343,7 @@ are not familiar with the rules of tag, see
 
 \begin{enumerate}
 
-\item Download \url{thinkpython/code/Wobbler.py} and run it.  You
+\item Download \url{thinkpython.com/code/Wobbler.py} and run it.  You
 should see a TurtleWorld with three Turtles.  If you press the
 {\sf Run} button, the Turtles wander at random.
 
@@ -16362,7 +16393,7 @@ faster Turtles eventually.
 
 \end{enumerate}
 
-You can get my solution from \url{thinkpython/code/Wobbler.py}.
+You can get my solution from \url{thinkpython.com/code/Tagger.py}.
 \end{ex}
 
 
@@ -16478,7 +16509,7 @@ object; you can control the button by invoking methods on it.
 {\tt bu} takes up to 32 parameters that control the appearance
 and function of the button.  These parameters are called
 {\bf options}.  Instead of providing values for all 32 options,
-you can use keyword arguments, like {\tt text='Press me.'},
+you can use keyword arguments, like \verb"text='Press me.'",
 to specify only the options you need and use the default
 values for the rest.
 
@@ -16764,7 +16795,7 @@ Text widget.
 
 You can also specify a character using a dotted index, like {\tt 1.1},
 which has the line number before the dot and the column number after.
-The following example adds the letters {\tt 'nother'} after the first
+The following example adds the letters \verb"'nother'" after the first
 character of the first line.
 
 \beforeverb
@@ -16881,7 +16912,7 @@ four buttons arranged two-by-two:
         self.bu(text='Quit', command=self.quit)
         self.bu(text='Make Turtle', command=self.make_turtle)
         self.bu(text='Clear', command=self.clear)
-        self.endfr()
+        self.endgr()
 \end{verbatim}
 \afterverb
 %
