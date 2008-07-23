@@ -30,7 +30,7 @@
 \usepackage{upquote}
 
 \newcommand{\thetitle}{Think Python: An Introduction to Software Design}
-\newcommand{\theversion}{1.1.9}
+\newcommand{\theversion}{1.1.13}
 
 \makeindex
 
@@ -772,7 +772,7 @@ which you might want to read when you are done with this book.
 
 %<Stanislaw.Antol@students.olin.edu>
 
-\item Eric Pashman sent a number of corrections for Chapters 4--10.
+\item Eric Pashman sent a number of corrections for Chapters 4--11.
 
 %<eric.pashman@gmail.com>
 
@@ -783,6 +783,19 @@ which you might want to read when you are done with this book.
 \item Jianhua Liu sent in a long list of corrections.
 
 %<liu620@erau.edu>
+
+\item Nick King found a missing word.
+
+% <nicnik92@gmail.com>
+
+\item Martin Zuther sent a long list of suggestions.
+
+% <mzuther@mzuther.de>
+
+\item Adam Zimmerman found an inconsistency in my instance
+of an ``instance'' and several other errors.
+
+%<adam_zimmerman@sfu.ca>
 
 % ENDCONTRIB
 
@@ -2521,10 +2534,10 @@ doesn't take any arguments.
 \index{colon}
 
 The first line of the function definition is called the {\bf header};
-the rest is called the {\bf body}.
-The header has to end with a colon and the
-body has to be indented.  By convention, the indentation is always
-four spaces.  The body can contain any number of statements.
+the rest is called the {\bf body}.  The header has to end with a colon
+and the body has to be indented.  By convention, the indentation is
+always four spaces (see Section~\ref{editor}).  The body can contain
+any number of statements.
 
 The strings in the print statements are enclosed in double
 quotes.  Single quotes and double quotes do the same thing;
@@ -2999,6 +3012,7 @@ Once you write and debug one, you can reuse it.
 
 
 \section{Debugging}
+\label{editor}
 \index{debugging}
 
 If you are using a text editor to write your scripts, you might
@@ -3319,7 +3333,7 @@ This means that {\tt bob} refers to
 an {\bf instance} of a Turtle
 as defined in module {\tt TurtleWorld}.  In this context,
 ``instance'' means a member of a set;
-this TurtleWorld is one of the set of possible TurtleWorlds.
+this Turtle is one of the set of possible Turtles.
 
 \index{instance}
 
@@ -4597,6 +4611,7 @@ We will see how to handle this kind of error later.
 
 
 \section{Debugging}
+\label{whitespace}
 \index{debugging}
 \index{traceback}
 
@@ -9016,7 +9031,7 @@ Here's how it is used:
 Write a function called {\tt chop} that takes a list and modifies
 it, removing the first and last elements, and returns {\tt None}.
 
-Then write function called {\tt middle} that takes a list and
+Then write a function called {\tt middle} that takes a list and
 returns a new list that contains all but the first and last
 elements.
 
@@ -9224,6 +9239,7 @@ that takes two strings and returns {\tt True} if they are anagrams.
 
 
 \begin{ex}
+\label{duplicate}
 
 The (so-called) Birthday Paradox:
 
@@ -9258,7 +9274,6 @@ at \url{thinkpython.com/code/birthday.py}.
 
 
 \begin{ex}
-\label{duplicates}
 
 \index{duplicate}
 \index{uniqueness}
@@ -10317,7 +10332,7 @@ interpreter something about a variable.
 \begin{ex}
 \index{duplicate}
 
-If you did Exercise~\ref{duplicates}, you already have
+If you did Exercise~\ref{duplicate}, you already have
 a function named \verb"has_duplicates" that takes a list
 as a parameter and returns {\tt True} if there is any object
 that appears more than once in the list.
@@ -10791,7 +10806,7 @@ of arguments and returns their sum.
 {\tt zip} is a built-in function that takes two or more sequences and
 ``zips'' them into a list\footnote{In Python 3.0, {\tt zip} returns an
   iterator of tuples, but for most purposes, an iterator behaves like
-  a list} of tuples where each tuple contains one element from each
+  a list.} of tuples where each tuple contains one element from each
 sequence.
 
 \index{Python 3.0}
@@ -12443,7 +12458,7 @@ string.
 
 \index{format sequence}
 
-As an example, the {\bf format sequence} \verb"'\%d'" means that
+As an example, the {\bf format sequence} \verb"'%d'" means that
 the first expression in the tuple should be formatted as an
 integer ({\tt d} stands for ``decimal''):
 
@@ -12469,8 +12484,8 @@ so you can embed a value in a sentence:
 \end{verbatim}
 \afterverb
 %
-The format sequence \verb"'\%g'" formats the next element in the tuple
-as a floating-point number (don't ask why), and \verb"'\%s'" formats
+The format sequence \verb"'%g'" formats the next element in the tuple
+as a floating-point number (don't ask why), and \verb"'%s'" formats
 the next item as a string:
 
 \beforeverb
@@ -12503,7 +12518,7 @@ The format operator is powerful but difficult to use.  You can
 read more about it at \url{docs.python.org/lib/typesseq-strings.html}.
 
 % You can specify the number of digits as part of the format sequence.
-% For example, the sequence \verb"'\%8.2f'"
+% For example, the sequence \verb"'%8.2f'"
 % formats a floating-point number to be 8 characters long, with
 % 2 digits after the decimal point:
 
@@ -14989,7 +15004,7 @@ a Point object and print it.
 
 By defining other special methods, you can specify the behavior
 of operators on user-defined types.  For example, if you define
-an {\tt add} method for the {\tt Time} class, you can use the
+a method named \verb"__add__" for the {\tt Time} class, you can use the
 {\tt +} operator on Time objects.
 
 Here is what the definition might look like:
@@ -15108,9 +15123,9 @@ TypeError: unsupported operand type(s) for +: 'int' and 'instance'
 %
 The problem is, instead of asking the Time object to add an integer,
 Python is asking an integer to add a Time object, and it doesn't know
-how to do that.  But there is a clever solution for this problem,
-the {\tt radd} method, which stands for ``right-side add.''  This
-method is invoked when a Time object appears on the right side of
+how to do that.  But there is a clever solution for this problem: the
+special method \verb"__radd__", which stands for ``right-side add.''
+This method is invoked when a Time object appears on the right side of
 the {\tt +} operator.  Here's the definition:
 
 \index{radd method}
@@ -15308,8 +15323,9 @@ is invoked on instances of that class.
 of an operand and invokes different functions for different types.
 \index{type-based dispatch}
 
-\item[polymorphic:] Pertaining to a function that can work with more than one
-type.
+\item[polymorphic:] Pertaining to a function that can work with more
+  than one type.  
+
 \index{polymorphism}
 
 \end{description}
@@ -16129,8 +16145,8 @@ A multiplicity can be a simple number, like {\tt 52}, a range,
 like {\tt 5..7} or a star, which indicates that a Deck can
 have any number of Cards.
 
-A more detailed diagram might showed that a Deck actually
-contains a list, which contains Card, but built-in types
+A more detailed diagram might show that a Deck actually
+contains a {\em list} of Cards, but built-in types
 like list and dict are usually not included in class diagrams.
 
 \begin{ex}
@@ -16369,7 +16385,7 @@ are not familiar with the rules of tag, see
 
 \begin{enumerate}
 
-\item Download \url{thinkpython/code/Wobbler.py} and run it.  You
+\item Download \url{thinkpython.com/code/Wobbler.py} and run it.  You
 should see a TurtleWorld with three Turtles.  If you press the
 {\sf Run} button, the Turtles wander at random.
 
@@ -16419,7 +16435,7 @@ faster Turtles eventually.
 
 \end{enumerate}
 
-You can get my solution from \url{thinkpython/code/Wobbler.py}.
+You can get my solution from \url{thinkpython.com/code/Tagger.py}.
 \end{ex}
 
 
@@ -16938,7 +16954,7 @@ four buttons arranged two-by-two:
         self.bu(text='Quit', command=self.quit)
         self.bu(text='Make Turtle', command=self.make_turtle)
         self.bu(text='Clear', command=self.clear)
-        self.endfr()
+        self.endgr()
 \end{verbatim}
 \afterverb
 %
