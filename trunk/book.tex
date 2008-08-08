@@ -802,6 +802,10 @@ triangles.
 
 % Ratnakar.Tiwari@barclayscapital.com
 
+\item Anurag Goel suggested another solution for \verb"is_abecedarian".
+
+% <anurag@anuraggoel.com>
+
 % ENDCONTRIB
 
 \end{itemize}
@@ -4895,7 +4899,7 @@ To draw a Koch curve with length $x$, all you have to do is
 
 \end{enumerate}
 
-The only exception is if $x$ is less than 2.  In that case,
+The only exception is if $x$ is less than 3.  In that case,
 you can just draw a straight line with length $x$.
 
 \begin{enumerate}
@@ -6519,7 +6523,7 @@ return the value of the last expression it evaluated.
 
 \index{Ramanujan, Srinivasa}
 
-The Indian mathematician Srinivasa Ramanujan found an
+The brilliant mathematician Srinivasa Ramanujan found an
 infinite series\footnote{See \url{wikipedia.org/wiki/Pi}.}
 that can be used to generate a numerical
 approximation of $\pi$:
@@ -7793,7 +7797,22 @@ loops because I only needed the characters in the strings; I didn't
 have to do anything with the indices.
 
 For \verb"is_abecedarian" we have to compare adjacent letters,
-which is hard to do with a {\tt for} loop.  One option is to
+which is a little tricky with a {\tt for} loop:
+
+\beforeverb
+\begin{verbatim}
+def is_abecedarian(word):
+    previous = word[0]
+    for c in word:
+        if c < previous:
+            return False
+        previous = c
+    return True
+\end{verbatim}
+\afterverb
+
+
+An alternative is to
 use recursion:
 
 \beforeverb
