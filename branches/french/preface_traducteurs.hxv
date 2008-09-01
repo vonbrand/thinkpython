@@ -1,0 +1,102 @@
+% ==========================================
+% fichier: preface_traducteurs.hxv
+% derniere mise a jour : 31 août juin 2008
+% ==========================================
+
+\FR
+
+\begin{itemize}
+
+\item[$\bullet$] Le 19 octobre 2007, j'ai proposé à Allen DOWNEY, l'auteur du livre {\em 
+How to Think Like a ({\sc Python}) Programmer} de faire une traduction de son livre en
+français afin d'aider mes étudiants et d'autres personnes francophones intéressées par 
+la programmation de mieux profiter de ce language.  Le même jour, Allen m'a répondu
+avec enthusiasme en me disant qu'à sa connaissance ce sera la première traduction 
+de son livre en français.
+
+\item[$\bullet$] Le 9 juin 2008, j'avais completé la traduction du premier chapître
+de {\em How to Think Like a ({\sc Python}) Programmer}.
+
+\item[$\bullet$] Le 14 juillet 2008, Michel D'HOOGE s'est joint au projet de traduction.
+
+\item[$\bullet$] Le 23 juillet 2008, Vincent FAVRE-NICOLIN s'est joint au projet de traduction, faisant
+un équipe de quatre (comptant toujours Allen). 
+
+\item[$\bullet$] Le 24 juillet 2008, Allen Downey a créé une repertoire {\sc Subversion}
+pour aider à Michel, Vincent et moi de mieux coordoner notre projet.
+
+\end{itemize}
+
+Nous travaillons sur la la traduction en utilisant une convention (venant de mes expériences 
+canadiennes) que la partie traduite est en bleu (couleur du Qu\'ebec) et la partie pas encore 
+traduite est en rouge (couleur du Canada).  Biensûr si ça vous chante vous pouvez également
+identifier le rouge à l'Angleterre et le bleu à la France ({\em Allez les bleux!})
+
+% --------------------------------------
+\section*{Contributeurs}
+% ---------------------------------------
+
+Il y a d'abord Alain DOWNEY qui a écrit la version originale en américain.
+
+Après il y a les traducteurs~:
+
+% \begin{dictionary}
+
+% \entry{Mark E. CASIDA}
+\paragraph{Mark E.\ CASIDA}
+% \definition{ 
+Je suis Professeur des Universités à l'Université de Grenoble mais j'avais fait
+mon équivalence de Maître de Conférences à l'Université de Montréal.
+Ma premi\`ere rencontre avec la langue {\sc Python} \'etait d'enseigner 
+commen\c{c}ant en 2007-2008, le cours d'Analyse Num\'erique pour
+les \'etudiants dans la formation L3 Physique Chimie \`a l'Universit\'e 
+Joseph Fourier \`a Grenoble.  Auparavant j'avais programm\'e en {\sc FORTRAN},
+langue toujours de pr\'ef\'erence pour les calculs \`a haute performance.
+(Dans ce cadre je suis un des co-auteurs des programmes dans la suite {\sc deMon}
+des programmes de la chimie quantique.  Aussi une parti de mon travail à Montréal
+était payé en tant qu'analyste de systèmes dans le cadre du Réseau Canadien des
+Calculs à Hautes Performances.)  Puis j'avais enseign\'e la programmation
+en {\sc VBA} ({\em Visual Basic for Applications}) aux \'etudiants de la formation
+M1 Chimie pendant plusieures ann\'ee.  Donc la programmation ne m'\'etait pas
+\'etranger mais l'enseignement de la programmation a pos\'ee toujours des difficult\'es
+et la plus grosse difficult\'e est justement le probl\`eme d'expliquer comment
+penser comme un programmeur et surtout comment d\'ev\'elopper et d\'eboguer 
+des programmes de mani\`ere efficace.  J'\'etais ravi de d\'ecouvrir le livre
+d'Allen Downey.  Le seul hic est que la langue de pr\'ef\'erence de mes \'etudiants
+est le fran\c{c}ais et non l'anglais.  Donc une traduction s'imposait et la voil\`a!
+%}
+
+%\end{dictionary}
+
+\paragraph{Michel D'HOOGE}
+Il se caractérise comme un informaticien ''pur'' qui profite des ordinateurs pour le plaisir qu'il donne et pas forcément pour faire
+quelque chose d'utile (au quel il ajoute un petit rire que je ne peux pas mettre correctement en texte).  Il a gradué d'un grand
+école (Supélec) en 1993 en faisant l'informatique seulement dans les 3ème et 4ème années.  En 2008 il est nouveau à {\sc Python}
+mais il pense que c'est le meilleur des languages pour faire le développement informatique.  Il aimera enseigner {\sc Python}
+à ses propres enfants avant qu'ils sont subverti par {\sc Java} ou {\sc Pascal} (un autre rire de plus).
+
+\paragraph{Vincent FAVRE--NICOLIN}
+Il est Maître de Conférences à l'Université de Grenoble et sa recherche est le développement des outils pour décrire la diffraction
+des rayons X (surtout dans le cas des synchrotrons) pour l'études des structures crystalins -- surtout des nanostructures.
+Il a beaucoup programmé en {\sc C++} et il utilise actuellement {\sc Python} pour l'analyse et simulation des patternes de
+diffractions en 3D des objets simples (telque des nanofils).
+
+% --------------------------------------
+\section*{Que Faire Si Vous Trouvez des Erreurs}
+% ---------------------------------------
+
+Aucun livre n'est sans erreurs et le mieux est de les corriger au fur et mesure que
+nous ({\em vous} et moi) les trouvent.  Il me semble bon de suivre l'approche d'Allen Downey
+en faisant une liste des noms en guise de remerciements de ceux qui ont trouv\'e et corrig\'e
+des erreurs.  Si vous trouvez des erreurs, merci de
+verifier d'abord la version en ligne du livre \`a {\tt ... },
+qui est la version la plus \`a jour. Si l'erreur n'est pas encore corrig\'e,
+prennez bien une minute pour nous envoyer un courriel \`a {\tt mark.casida@ujf-grenoble.fr}.
+Si je fais un changement \`a cause de votre suggestion, votre nom appa\^itra dans la prochaine 
+version de la liste des contributeurs (sauf si vous demandez que votre nom sera omis).
+Merci~!
+
+
+%%%%%%
+% EOF
+%%%%%%
