@@ -1,27 +1,53 @@
+% ==================================================
+% Fichier : debug.hxv
+% Dernière mise-à-jour : 31 août 2008
+% ==================================================
 \index{debugging}
 
-Different kinds of errors can occur
-in a program, and it is useful to distinguish among them
-in order to track them down more quickly:
+% Different kinds of errors can occur
+% in a program, and it is useful to distinguish among them
+% in order to track them down more quickly:
+
+Des erreurs de types diff\'erentes peuvent appara\^{\i}tre dans un programme.
+Pour les d\'epister il est utile de les distinguer:
 
 \begin{itemize}
 
-\item Syntax errors are produced by Python when it is translating the
-  source code into byte code.  They usually indicate that there is
-  something wrong with the syntax of the program.  Example: Omitting
-  the colon at the end of a {\tt def} statement yields the somewhat
-  redundant message {\tt SyntaxError: invalid syntax}.
+% \item Syntax errors are produced by Python when it is translating the
+%   source code into byte code.  They usually indicate that there is
+%   something wrong with the syntax of the program.  Example: Omitting
+%   the colon at the end of a {\tt def} statement yields the somewhat
+%   redundant message {\tt SyntaxError: invalid syntax}.
 
-\item Runtime errors are produced by the interpreter if something goes
-  wrong while the program is running.  Most runtime error messages
-  include information about where the error occurred and what
-  functions were executing.  Example: An infinite recursion eventually
-  causes the runtime error ``maximum recursion depth exceeded.''
+\item Un erreur de syntaxe est produit par {\sc Python} quand le code source
+est traduit au code machine.  Des tels erreurs indique normalement qu'il y a quelque chose
+avec le syntaxe de votre programme.  Exemple: L'omision d'un point-virgule (;) \`a la fin
+d'une d\'eclaration {\tt def} a comme r\'esultat le m\'essage un peu redondant
+{\tt SyntaxError: invalid syntax}.
 
-\item Semantic errors are problems with a program that runs without
-  producing error messages but doesn't do the right thing.  Example:
-  An expression may not be evaluated in the order you expect, yielding
-  an incorrect result.
+% \item Runtime errors are produced by the interpreter if something goes
+%   wrong while the program is running.  Most runtime error messages
+%   include information about where the error occurred and what
+%   functions were executing.  Example: An infinite recursion eventually
+%   causes the runtime error ``maximum recursion depth exceeded.''
+
+\item  Un erreur d'exc\'ecution est produit par le syst\`eme au moment
+d'ex\'ecution du programme s'il y a quelque chose qui se passe pendant
+que le programme se tourne.  La plus part des erreurs d'exc\'ecution
+comprend des informations sur la location de l'erreur qui vient de
+se passer et quelles fonctions \'etaient utilis\'ees \`a ce moment.
+Exemple: Une recursion infinie produira apr\`es un certain temps
+l'erreur d'exc\'ecution {\tt maximum recursion depth exceeded}.
+
+% \item Semantic errors are problems with a program that runs without
+%   producing error messages but doesn't do the right thing.  Example:
+%   An expression may not be evaluated in the order you expect, yielding
+%   an incorrect result.
+
+\item  Un erreur semantique est un probl\`eme avec un programme
+qui compile et qui tourne mais ne fait pas ce qu'on veut.
+Exemple: Une expression qui n'est pas \'evalu\'ee dans l'ordre
+attendue, donnant ainsi un r\'esultat non attendu.
 
 \end{itemize}
 
@@ -34,160 +60,285 @@ in order to track them down more quickly:
 \index{error!semantic}
 \index{exception}
 
-The first step in debugging is to figure out which kind of
-error you are dealing with.  Although the following sections are
-organized by error type, some techniques are
-applicable in more than one situation.
+% The first step in debugging is to figure out which kind of
+% error you are dealing with.  Although the following sections are
+% organized by error type, some techniques are
+% applicable in more than one situation.
 
+La premi\`ere \'etape en faisant le d\'eboguage est d'identifier le type
+d'erreur avec le quel vous avez \`a faire.  Les sections suivantes sont
+organis\'ees par type d'erreur, mais certaines des techniques sont applicables
+dans plus qu'un seul contexte.
 
-\section{Syntax errors}
+% --------------------------------------
+% \section{Syntax errors}
+\section{Erreur de syntaxe}
+% -------------------------------
 
 \index{error message}
 
-Syntax errors are usually easy to fix once you figure out what they
-are.  Unfortunately, the error messages are often not helpful.
-The most common messages are {\tt SyntaxError: invalid syntax} and
-{\tt SyntaxError: invalid token}, neither of which is very informative.
+% Syntax errors are usually easy to fix once you figure out what they
+% are.  Unfortunately, the error messages are often not helpful.
+% The most common messages are {\tt SyntaxError: invalid syntax} and
+% {\tt SyntaxError: invalid token}, neither of which is very informative.
 
-On the other hand, the message does tell you where in the program the
-problem occurred.  Actually, it tells you where Python
-noticed a problem, which is not necessarily where the error
-is.  Sometimes the error is prior to the location of the error
-message, often on the preceding line.
+Les erreurs de syntaxe sont normalement facile \`a \'eliminer d\`es que vous
+les avez identifi\'es.  Malheureusement souvent les messages d'erreur ne sont pas
+souvent tr\`es utiles.  Les messages les plus courants sont {\tt SyntaxError: invalid syntax}
+et {\tt SyntaxError: invalid token}.  Ni l'un ni l'autre n'est tr\`es parlant.
+
+% On the other hand, the message does tell you where in the program the
+% problem occurred.  Actually, it tells you where Python
+% noticed a problem, which is not necessarily where the error
+% is.  Sometimes the error is prior to the location of the error
+% message, often on the preceding line.
+
+Par contre, le message vous dit normalement o\`u s'est pass\'e l'erreur.  Plus
+exactement il vous dit o\`u {\sc Python} a remarqu\'e le probl\`eme, ce qui
+n'est pas forc\'ement o\`u se trouve l'erreur.  Par fois l'erreur se trouve
+\`a un endroit du code ant\'erieur du memssage d'erreur, souvant dans la ligne
+juste avant.
 
 \index{incremental development}
 \index{development plan!incremental}
 
-If you are building the program incrementally, you should have
-a good idea about where the error is.  It will be in the last
-line you added.
+% If you are building the program incrementally, you should have
+% a good idea about where the error is.  It will be in the last
+% line you added.
 
-If you are copying code from a book, start by comparing
-your code to the book's code very carefully.  Check every character.
-At the same time, remember that the book might be wrong, so
-if you see something that looks like a syntax error, it might be.
+Si vous construisez votre programme peu \`a peu en v\'erifiant \`a chaque
+\'etape que \c{c}a marche, vous devez avoir une bonne id\'ee d'o\`u se
+trouve l'erreur.  Il sera dans la derni\`ere ligne que vous venez d'ajouter.
 
-Here are some ways to avoid the most common syntax errors:
+% If you are copying code from a book, start by comparing
+% your code to the book's code very carefully.  Check every character.
+% At the same time, remember that the book might be wrong, so
+% if you see something that looks like a syntax error, it might be.
+
+Si vous copiez un code d'un bouquin, commencez par une comparaison ligne par ligne
+entre votre code et ce du bouquin.  V\'erfiez chaque charact\`ere.  Au m\^eme
+temps, rappelez-vous que le code du bouquin peut aussi comprendre des erreurs.
+Donc si vous voyez dans le code du bouquin quelque chose qui vous semble un erreur
+de syntaxe, il est bien possible qu'il s'ag\^{\i}t r\'eelement d'un erreur de syntaxe.
+
+% Here are some ways to avoid the most common syntax errors:
+
+Voici des strat\'egies pour \'eviter les erreurs les plus courants~:
 
 \index{syntax}
 
 \begin{enumerate}
 
-\item Make sure you are not using a Python keyword for a variable name.
+% \item Make sure you are not using a Python keyword for a variable name.
+
+\item V\'erifiez que vous n'utilisez pas un mot clef de {\sc Python} comme
+nom d'une variable.
 
 \index{keyword}
 
-\item Check that you have a colon at the end of the header of every
-compound statement, including {\tt for}, {\tt while},
-{\tt if}, and {\tt def} statements.
+% \item Check that you have a colon at the end of the header of every
+% compound statement, including {\tt for}, {\tt while},
+% {\tt if}, and {\tt def} statements.
+
+\item  V\'erifiez que vous avec un point-virgule \`a la fin de l'ent\^ete
+de chaque commande compos\'ee comme les {\tt for}, les {\tt while}, les
+{\tt if} et les {\tt def}.
 
 \index{header}
 \index{colon}
 
-\item Make sure that any strings in the code have matching
-quotation marks.
+% \item Make sure that any strings in the code have matching
+% quotation marks.
+
+\item  V\'erifiez que tous les strings dans le code ont des guimets correspondants.
 
 \index{quotation mark}
 
-\item If you have multiline strings with triple quotes (single or double), make
-sure you have terminated the string properly.  An unterminated string
-may cause an {\tt invalid token} error at the end of your program,
-or it may treat the following part of the program as a string until it
-comes to the next string.  In the second case, it might not produce an error
-message at all!
+% \item If you have multiline strings with triple quotes (single or double), make
+% sure you have terminated the string properly.  An unterminated string
+% may cause an {\tt invalid token} error at the end of your program,
+% or it may treat the following part of the program as a string until it
+% comes to the next string.  In the second case, it might not produce an error
+% message at all!
+
+\item  Si vous avez des strings multiligne avec des guimets triples (simple ou double),
+v\'erifiez que vous avez correctement termin\'e le string.  Un string sans termination
+peut donner un erreur de {\tt invalid token} \`a la fin de votre programme
+ou \c{c}a pourrait traiter la suite du programmme comme un string jusqu'\`a ce qu'il
+trouve un autre string.  Dans ce deuxi\`eme cas, il ne pourrait pas produire
+un message d'erreur du tout!
 
 \index{multiline string}
 \index{string!multiline}
 
-\item An unclosed opening operator---\verb+(+, \verb+{+, or
-  \verb+[+---makes Python continue with the next line as part of the
-  current statement.  Generally, an error occurs almost immediately in
-  the next line.
+% \item An unclosed opening operator---\verb+(+, \verb+{+, or
+%   \verb+[+---makes Python continue with the next line as part of the
+%   current statement.  Generally, an error occurs almost immediately in
+%   the next line.
 
-\item Check for the classic {\tt =} instead of {\tt ==} inside
-a conditional.
+\item  Un \verb+(+, \verb+{+ ou \verb+[+ non ferm\'e a comme
+r\'esultat que {\sc Python} cocntinue avec la ligne suivante comme
+partie de la commande actuelle.  En g\'en\'erale l'erreur se passe
+tout de suite dans la ligne qui suit.
+
+% \item Check for the classic {\tt =} instead of {\tt ==} inside
+% a conditional.
+
+\item  V\'erifiez la classique {\tt =} au lieu de {\tt ==}
+dans une comparaison.
 
 \index{conditional}
 
-\item Check the indentation to make sure it lines up the way it
-is supposed to.  Python can handle space and tabs, but if you mix
-them it can cause problems.  The best way to avoid this problem
-is to use a text editor that knows about Python and generates
-consistent indentation.
+% \item Check the indentation to make sure it lines up the way it
+% is supposed to.  Python can handle space and tabs, but if you mix
+% them it can cause problems.  The best way to avoid this problem
+% is to use a text editor that knows about Python and generates
+% consistent indentation.
+
+\item V\'erifiez que l'indentation est coh\'erente.  {\sc Python} peut utiliser
+soit des espaces soit des tabulations, mais le mélange des deux peuvent causer 
+des problèmes.  
+% Vous pouvez indenter
+% soit avec des espaces ou avec des tabulations mais c'est mieux de ne pas
+% les m\'elanger.  
+Chaque niveau doit \^etre d\'eplac\'e par la m\^eme quantit\'e
+d'espace \`a gauche.
+La meilleure façon d'éviter ce type de problème est d'utiliser un éditeur
+de texte qui connaît {\em Python} et donc peut faire l'indentation de manière
+automatique.
 
 \index{indentation}
 \index{whitespace}
 
 \end{enumerate}
 
-If nothing works, move on to the next section...
+% If nothing works, move on to the next section...
+Si rien ne marche, procedez \`a la section suivante...
 
+% ---------------------------------------------------------------------
+% \subsection{I keep making changes and it makes no difference.}
+\subsection{Mon programme ne tourne pas malgr\'e tous mes efforts.}
+% --------------------------------------------------------------
 
-\subsection{I keep making changes and it makes no difference.}
+% If the interpreter says there is an error and you don't see it, that
+% might be because you and the interpreter are not looking at the same
+% code.  Check your programming environment to make sure that the
+% program you are editing is the one Python is trying to run.
 
-If the interpreter says there is an error and you don't see it, that
-might be because you and the interpreter are not looking at the same
-code.  Check your programming environment to make sure that the
-program you are editing is the one Python is trying to run.
+Si l'interpréteur vous indique un erreur et vous ne le voyez pas,
+il est possible que vous et votre interpréteur ne regardent pas
+le m\^eme code.  V\'erifiez votre environnement de programmation
+pour \^etre vraiment s\^ur que vous modifiez le programme que
+{\sc Python} tente \`a ex\'ecuter.  Si vous n'\^etes pas s\^ur,
+mettez expr\`es un erreur de syntaxe \'evident au debut de votre
+programme.  Maintenant le fa\^{\i}tes tourner (ou l'importer) de
+nouveau.  Si l'interpretteur ne trouve pas le nouveau erreur, il
+y a probablement quelque chose qui ne va pas avec votre environnement
+informatique.
 
-If you are not sure, try putting an obvious and deliberate syntax
-error at the beginning of the program.  Now run it again.  If the
-interpreter doesn't find the new error, you are not running the
-new code.
+% If you are not sure, try putting an obvious and deliberate syntax
+% error at the beginning of the program.  Now run it again.  If the
+% interpreter doesn't find the new error, you are not running the
+% new code.
 
-There are a few likely culprits:
+% There are a few likely culprits:
+
+Voici une liste des problèmes probables~:
 
 \begin{itemize}
 
-\item You edited the file and forgot to save the changes before
-running it again.  Some programming environments do this
-for you, but some don't.
+% \item You edited the file and forgot to save the changes before
+% running it again.  Some programming environments do this
+% for you, but some don't.
 
-\item You changed the name of the file, but you are still running
-the old name.
+\item Vous avez édité le fichier mais vous avez oublié de sauvegarder
+avant de faire tourner le programme de nouveau.  Certains environnements
+de programmation font ceci pour vous mais d'autres ne le font pas.
 
-\item Something in your development environment is configured
-incorrectly.
+% \item You changed the name of the file, but you are still running
+% the old name.
 
-\item If you are writing a module and using {\tt import},
-make sure you don't give your module the same name as one
-of the standard Python modules.
+\item Vous avez changé le nom du fichier, mais vous tournez toujours
+le programme avec son ancien nom.
+
+% \item Something in your development environment is configured
+% incorrectly.
+
+\item Il y a quelque chose malconfigurée dans votre environnement de développement.
+
+% \item If you are writing a module and using {\tt import},
+% make sure you don't give your module the same name as one
+% of the standard Python modules.
+
+\item Si vous écrivez un module et vous utilisez {\tt import}
+vérifiez bien que vous n'avez pas donné le module le même nom
+qu'un des modules standards de {\sc Python}.
 
 \index{module!reload}
 \index{reload function}
 \index{function!reload}
 
-\item If you are using {\tt import} to read a module, remember
-that you have to restart the interpreter or use {\tt reload}
-to read a modified file.  If you import the module again, it
-doesn't do anything.
+% \item If you are using {\tt import} to read a module, remember
+% that you have to restart the interpreter or use {\tt reload}
+% to read a modified file.  If you import the module again, it
+% doesn't do anything.
+
+\item Si vous utilisez {\tt import} pour lire un module, souvenez-vous
+que vous devez redemarrer l'interpretteur ou utiliser {\tt reload}
+pour lire le fichier modifié.  Si vous importez le module de nouveau,
+il ne fera rien.
 
 \end{itemize}
 
-If you get stuck and you can't figure out what is going on, one
-approach is to start again with a new program like ``Hello, World!,''
-and make sure you can get a known program to run.  Then gradually add
-the pieces of the original program to the new one.
+% If you get stuck and you can't figure out what is going on, one
+% approach is to start again with a new program like ``Hello, World!,''
+% and make sure you can get a known program to run.  Then gradually add
+% the pieces of the original program to the new one.
+
+Si rien ne marche plus, une approache est de commencer de nouveau avec
+un programme comme {\em Hello, World!} et de v\'erifiez de nouveau
+que le programmee marche.  Puis d'ajouter graduellement le reste
+du programme sur le quel vous travaillez.
+
+% -------------------------------------------------
+% \section{Runtime errors}
+\section{Erreur d'ex\'ecution}
+% -----------------------------------------------
 
 
-\section{Runtime errors}
+% Once your program is syntactically correct,
+% Python can compile it and at least start running it.  What could
+% possibly go wrong?
 
-Once your program is syntactically correct,
-Python can compile it and at least start running it.  What could
-possibly go wrong?
+Si le syntaxe de votre programme est correcte, {\sc Python} peut
+l'importer et au moins peut commencer \`a le faire tourner.  Comment
+ne peut-il pas marcher maintenant?
 
 
-\subsection{My program does absolutely nothing.}
+% -------------------------------------------------------
+% \subsection{My program does absolutely nothing.}
+\subsection{Mon programme ne fait strictement rien.}
+% ----------------------------------------------------
 
-This problem is most common when your file consists of functions and
-classes but does not actually invoke anything to start execution.
-This may be intentional if you only plan to import this module to
-supply classes and functions.
+% This problem is most common when your file consists of functions and
+% classes but does not actually invoke anything to start execution.
+% This may be intentional if you only plan to import this module to
+% supply classes and functions.
 
-If it is not intentional, make sure that you
-are invoking a function to start execution, or execute one from
-the interactive prompt.  Also see the ``Flow of Execution'' section
-below.
+La cause la plus courante de ce probl\`eme est que votre fichier comprend
+des fonctions et des classes mais ne fait rien pour les appeler et donc
+de les faire ex\'ecuter.  Ce pourrait \^etre expr\`es de votre part si
+vous ne voulez qu'importer ce module pour avoir des classes et des
+fonctions.
+
+% If it is not intentional, make sure that you
+% are invoking a function to start execution, or execute one from
+% the interactive prompt.  Also see the ``Flow of Execution'' section
+% below.
+
+Si ce n'est pas fait expr\`es, v\'erifiez que vous \^etes en train d'appeler une
+fonction pour l'ex\'ecuter ou d'ex\'ecuter une \`a partir d'une incitation
+interactive.  Aussi voir la section ``S\'equence d'Ex\'ecution'' en bas.
 
 
 \subsection{My program hangs.}
@@ -195,52 +346,89 @@ below.
 \index{infinite recursion}
 \index{hanging}
 
-If a program stops and seems to be doing nothing, it is ``hanging.''
-Often that means that it is caught in an infinite loop or infinite
-recursion.
+% If a program stops and seems to be doing nothing, it is ``hanging.''
+% Often that means that it is caught in an infinite loop or infinite
+% recursion.
+
+Si un programme s'arr\^ete sans rien faire, on dit que c'est bloqu\'e.
+Souvent \c{c}a veut dire que c'est pris dans une boucle ou dans une
+recursion infinie.
 
 \begin{itemize}
 
-\item If there is a particular loop that you suspect is the
-problem, add a {\tt print} statement immediately before the loop that says
-``entering the loop'' and another immediately after that says
-``exiting the loop.''
+% \item If there is a particular loop that you suspect is the
+% problem, add a {\tt print} statement immediately before the loop that says
+% ``entering the loop'' and another immediately after that says
+% ``exiting the loop.''
 
-Run the program.  If you get the first message and not the second,
-you've got an infinite loop.  Go to the ``Infinite Loop'' section
-below.
+\item  S'il y a une boucle que vous soupconnez est le probl\`eme, ajoutez
+une commande {\tt print} imm\'ediatement avant la boucle qui dit ``\`a l'entr\'ee
+de la boucle'' et une autre juste apr\`es qui disait ``\`a la sortie de la boucle.''
 
-\item Most of the time, an infinite recursion will cause the program
-to run for a while and then produce a ``RuntimeError: Maximum
-recursion depth exceeded'' error.  If that happens, go to the
-``Infinite Recursion'' section below.
+% Run the program.  If you get the first message and not the second,
+% you've got an infinite loop.  Go to the ``Infinite Loop'' section
+% below.
 
-If you are not getting this error but you suspect there is a problem
-with a recursive method or function, you can still use the techniques
-in the ``Infinite Recursion'' section.
+Fa\^{\i}tes tourner le programme.  Si vous avez le premier message et pas le
+deuxi\`eme, alors vous avez une boucle infinie.  Allez \`a la section ``Boucle
+infinie'' en bas.
 
-\item If neither of those steps works, start testing other
-loops and other recursive functions and methods.
+% \item Most of the time, an infinite recursion will cause the program
+% to run for a while and then produce a ``RuntimeError: Maximum
+% recursion depth exceeded'' error.  If that happens, go to the
+% ``Infinite Recursion'' section below.
 
-\item If that doesn't work, then it is possible that
-you don't understand the flow of execution in your program.
-Go to the ``Flow of Execution'' section below.
+\item   La plupart du temps, une recursion infinie aura comme r\'esultat que
+le programme tourne pendant un moment et puis produit le message d'erreur
+``RuntimeError: Maximum recursion depth exceeded''.  Si \c{c}a se passe, allez
+\`a la section ``Recursion infinie'' en bas.
+
+% If you are not getting this error but you suspect there is a problem
+% with a recursive method or function, you can still use the techniques
+% in the ``Infinite Recursion'' section.
+
+Si vous n'avez pas ce message d'erreur mais vous pensez que la cause du probl\`eme
+est une m\'ethode recursive ou ne fonction, vous pouvez tout le m\`eme utiliser
+les techniques dans la section ``Recursion infinie''.
+
+% \item If neither of those steps works, start testing other
+% loops and other recursive functions and methods.
+
+\item Si ni l'un ni l'autre de ces \'etapes vous d\'epannent, commencez \`a
+tester d'autres boucles et d'autres fonctions et m\'ethodes recursives.
+
+% \item If that doesn't work, then it is possible that
+% you don't understand the flow of execution in your program.
+% Go to the ``Flow of Execution'' section below.
+
+\item  Si \c{c}a ne marche pas, alors il est possible que vous ne comprenez
+pas l'ordre d'ex\'ecution des commandes dans votre programme.  Allez \`a la
+section ``S\'equence d'Ex\'ecution'' en bas.
 
 \end{itemize}
 
 
-\subsubsection{Infinite Loop}
+% -----------------------------------------------------------------
+% \subsubsection{Infinite Loop}
+\subsubsection{Boucle infinie }
+% -----------------------------------------------------------------
 \index{infinite loop}
 \index{loop!infinite}
 \index{condition}
 \index{loop!condition}
 
-If you think you have an infinite loop and you think you know
-what loop is causing the problem, add a {\tt print} statement at
-the end of the loop that prints the values of the variables in
-the condition and the value of the condition.
+% If you think you have an infinite loop and you think you know
+% what loop is causing the problem, add a {\tt print} statement at
+% the end of the loop that prints the values of the variables in
+% the condition and the value of the condition.
 
-For example:
+Si vous pensez que vous avez affaire \`a une boucle infinie et vous pensez conna\^{\i}tre
+la boucle qui cause le probl\`eme, ajoutez \`a la fin de la boucle une commande {\tt print}
+pour imprimer toutes les variables conditionnelles et leurs valeurs.
+
+% For example:
+
+Par exemple:
 
 \beforeverb
 \begin{verbatim}
@@ -254,16 +442,27 @@ while x > 0 and y < 0 :
 \end{verbatim}
 \afterverb
 %
-Now when you run the program, you will see three lines of output
-for each time through the loop.  The last time through the
-loop, the condition should be {\tt false}.  If the loop keeps
-going, you will be able to see the values of {\tt x} and {\tt y},
-and you might figure out why they are not being updated correctly.
+% Now when you run the program, you will see three lines of output
+% for each time through the loop.  The last time through the
+% loop, the condition should be {\tt false}.  If the loop keeps
+% going, you will be able to see the values of {\tt x} and {\tt y},
+% and you might figure out why they are not being updated correctly.
+Puis fa'\^{\i}tes tourner votre programme.  Vous verez les trois
+lignes de donn\'ees pour chaque iteration de la boucle.  \`A la
+derni\`ere it\'eration la condition doit avoir la valeur {\tt false}.
+Si les int\'erations continuent, vous verez les valeurs de {\tt x}
+et de {\tt y} qui vous permettrez peut-\^etre de d\'eduire pourquoi
+elles ne sont pas mises \`a jour correctement.
 
 
-\subsubsection{Infinite Recursion}
+% --------------------------------------------------------------
+% \subsubsection{Infinite Recursion}
+\subsubsection{Recursion infinie}
+% ------------------------------------------------------
 \index{infinite recursion}
 \index{recursion!infinite}
+
+\EN
 
 Most of the time, an infinite recursion will cause the program to run
 for a while and then produce a {\tt Maximum recursion depth exceeded}

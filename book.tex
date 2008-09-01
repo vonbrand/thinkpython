@@ -1,3 +1,7 @@
+% ======================================================================
+% Fichier : 
+% Dernière mise à jour : 31 août 2008 par MEC
+% ======================================================================
 % LaTeX source for ``Think Python: An Introduction to Software Design''
 % Copyright (c)  2008  Allen B. Downey.
 
@@ -14,7 +18,9 @@
 %
 
 %\documentclass[10pt,b5paper]{book}
-\documentclass[10pt]{book}
+
+% pour avoir les entêtes de chapitres etc. en français :
+\documentclass[french,10pt]{book}
 \usepackage[width=5.5in,height=8.5in,
   hmarginratio=3:2,vmarginratio=1:1]{geometry}
 
@@ -30,8 +36,21 @@
 \usepackage{hevea}
 \usepackage{upquote}
 
-\newcommand{\thetitle}{Think Python: An Introduction to Software Design}
-\newcommand{\theversion}{1.1.14}
+% soit l'un ou l'autre de votre des deux commandes suivantes pour pouvoir taper des accents sans les backslashes
+% (sur mon linux, il s'agit de utf8)
+\usepackage[utf8]{inputenc}
+% \usepackage[latin1]{inputenc}
+
+% permet l'adaptation de LaTeX au français. En particulier, la table des matières du document est appelée "table des matières"
+% et non "table of contents". Lors de la compilation, LaTeX convertit les caractères accentués en caractères unicodes
+% (ensemble normalisé et universel de caractères).
+\usepackage[francais,english]{babel} 
+
+%MEC commencement des modifs
+% \newcommand{\thetitle}{Think Python: An Introduction to Software Design}
+\newcommand{\thetitle}{Penser {\sc Python}: Une Introduction au Design de Logiciels}
+\newcommand{\theversion}{1.1.14fr}
+%MEC terminaison des modifs
 % -----------------------------
 \newcommand{\FR}{\color{blue} \normalsize}
 \newcommand{\EN}{\color{red} \normalsize}
@@ -45,14 +64,27 @@
 \EN
 \input{title.hxv}
 % ===============================================
-\EN
-\chapter{Preface}
+%MEC
+\selectlanguage{francais}
+%MEC
+\FR
+%MEC
+% ==============================================
+\chapter{Preface de l'Auteur}
 \input{preface_downey.hxv}
+% ===============================================
+\FR
+\chapter{Preface des traducteurs}
+\input{preface_traducteurs.hxv}
 % ===============================================
 
 % TABLE OF CONTENTS
 \UN
 \begin{latexonly}
+
+%MEC
+\selectlanguage{francais}
+%MEC
 
 \tableofcontents
 
@@ -64,8 +96,12 @@
 \mainmatter
 
 % ===============================================
-\EN
-\chapter{The way of the program}
+\FR
+%MEC
+\selectlanguage{francais}
+%MEC
+% \chapter{The way of the program}
+\chapter{Le Sentier de la Programmation}
 \input{TheWay.hxv}
 % ===============================================
 \EN
@@ -149,8 +185,10 @@
 \UN
 \appendix
 % ===============================================
-\EN
-\chapter{Debugging}
+% \EN
+% \chapter{Debugging}
+\FR
+\chapter{Déboguage}
 \input{debug.hxv}
 % ===============================================
 \UN

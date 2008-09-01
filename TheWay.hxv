@@ -1,70 +1,136 @@
+% ================================================
+% Fichier : TheWay.hxv
+% Dernière mise-à-jour : 31 août 2008 par MEC
+% ================================================
 % -*-latex-*-
 % \chapter{The way of the program}
 
-The goal of this book is to teach you to think like a
-computer scientist.  This way of thinking combines some of the best features
-of mathematics, engineering, and natural science.  Like mathematicians,
-computer scientists use formal languages to denote ideas (specifically
-computations).  Like engineers, they design things, assembling components
-into systems and evaluating tradeoffs among alternatives.  Like scientists,
-they observe the behavior of complex systems, form hypotheses, and test
-predictions.
 
-\index{problem solving}
 
-The single most important skill for a computer scientist is {\bf
-problem solving}.  Problem solving means the ability to formulate
-problems, think creatively about solutions, and express a solution clearly
-and accurately.  As it turns out, the process of learning to program is an
-excellent opportunity to practice problem-solving skills.  That's why
-this chapter is called, ``The way of the program.''
+% The goal of this book is to teach you to think like a
+% computer scientist.  This way of thinking combines some of the best features
+% of mathematics, engineering, and natural science.  Like mathematicians,
+% computer scientists use formal languages to denote ideas (specifically
+% computations).  Like engineers, they design things, assembling components
+% into systems and evaluating tradeoffs among alternatives.  Like scientists,
+% they observe the behavior of complex systems, form hypotheses, and test
+% predictions.
 
-On one level, you will be learning to program, a useful
-skill by itself.  On another level, you will use programming as a means to
-an end.  As we go along, that end will become clearer.
+Le but de ce livre est d'enseigner comment penser comme un informaticien.
+Il s'agit d'une fa\c{c}on de penser comprenant ce qui est de mieux des domaines
+de la math\'ematique, de la g\'enie et des sciences naturelles.
+Comme les math\'ematiciens, les informaticiens emploient un langage formel pour
+pr\'eciser leurs id\'ees (en particulier concernant le calcul).  Comme les ing\'enieurs,
+les informaticiens font le design, font l'assemblage des composants pour faire
+des nouveaux syst\`emes et font des choix int\'elligents entre alternatives.
+Comme les scientifiques, les informaticiens observent ce qui se passent dans
+des syst\`emes complexes, font des hypoth\`eses et mettent leur pr\'edictions
+\`a l'\'epreuve.
 
-\section{The Python programming language}
+\index{problem solving}  %MEC pour l'instant je laisse l'indice en anglais
+
+% The single most important skill for a computer scientist is {\bf
+% problem solving}.  Problem solving means the ability to formulate
+% problems, think creatively about solutions, and express a solution clearly
+% and accurately.  As it turns out, the process of learning to program is an
+% excellent opportunity to practice problem-solving skills.  That's why
+% this chapter is called, ``The way of the program.''
+
+La connaissance pratique le plus important d'un informaticien est la capacit\'e de
+{\bf resoudre probl\`emes}.  Cette capacit\'e comprend les capacit\'es de bien
+poser un probl\`eme, de chercher des solutions cr\'eativement, et d'exprimer la
+solution clairement et avec pr\'ecision.  Il se passe que l'apprentissage de la
+programmation est un exc\'ellent opportunit\'e de pratiquer sa capacit\'e de
+resoudre probl\`emes.  C'est pour cette raison que ce chapitre s'app\`ele
+``Le Sentier de la Programmation.''
+
+% On one level, you will be learning to program, a useful
+% skill by itself.  On another level, you will use programming as a means to
+% an end.  As we go along, that end will become clearer.
+
+D'un point de vue, vous apprendrez la programmation ce qui est d\'ej\`a une connaissance
+utile.  D'un autre point de vue, vous utiliserez la programmation comme un moyen vers
+un but.  Au fur et mesure que vous progressez, vous comprendrez mieux ceci.
+
+% ------------------------------------------------
+% \section{The Python programming language}
+\section{Le Langage {\sc Python}}
+% ------------------------------------------------
 \index{programming language}
 \index{language!programming}
 
-The programming language you will learn is Python. Python is
-an example of a {\bf high-level language}; other high-level languages
-you might have heard of are C, C++, Perl, and Java.
+% The programming language you will learn is Python. Python is
+% an example of a {\bf high-level language}; other high-level languages
+% you might have heard of are C, C++, Perl, and Java.
 
-There are
-also {\bf low-level languages}, sometimes referred to as ``machine
-languages'' or ``assembly languages.''  Loosely speaking, computers
-can only execute programs written in low-level languages.  So
-programs written in a high-level language have to be processed before
-they can run.  This extra processing takes some time, which is a small
-disadvantage of high-level languages.
+Le langage de programmation que vous apprendrez ici est le {\sc Python}.  {\sc Python} est un
+exemple d'un {\bf langage \`a haut niveau}.  D'autres langages \`a haut niveau
+dont vous avez peut-\^etre entendu sont le {\sc C}, le {\sc C++}, le {\sc Perl} et le {\sc Java}.
 
-\index{portability}
+% There are
+% also {\bf low-level languages}, sometimes referred to as ``machine
+% languages'' or ``assembly languages.''  Loosely speaking, computers
+% can only execute programs written in low-level languages.  So
+% programs written in a high-level language have to be processed before
+% they can run.  This extra processing takes some time, which is a small
+% disadvantage of high-level languages.
+
+Comme vous avez d\'eduit du nom ``langage \`a haut niveau'', il existe \'egalement
+des {\bf langages \`a bas niveau}, aussi appel\'es ``langages de machine'' ou
+``langage d'assemblage''.  Grosso modo, les ordinateurs ne sont capable que de
+faire tourner des taches \'ecrit en langages \`a bas niveau.  Donc tout programme
+\'ecrit dans un langage \`a haut niveau doit \^etre converti dans un langage \`a
+bas niveau pour permettre un l'ordinateur de le faire tourner.  Le temps de ce
+processus suppl\'ementaire co\^ute du temps qui est un d\'esavantage des langages
+\`a haut niveau.
+
+% \index{portability}
+\index{portabilité}
 \index{high-level language}
 \index{low-level language}
 \index{language!high-level}
 \index{language!low-level}
 
-The advantages are enormous.  First, it is much easier to program
-in a high-level language.  Programs written in a high-level language
-take less time to write, they are shorter and easier to read, and they
-are more likely to be correct.  Second, high-level languages are {\bf
-portable}, meaning that they can run on different kinds of computers
-with few or no modifications.  Low-level programs can run on only one
-kind of computer and have to be rewritten to run on another.
+% The advantages are enormous.  First, it is much easier to program
+% in a high-level language.  Programs written in a high-level language
+% take less time to write, they are shorter and easier to read, and they
+% are more likely to be correct.  Second, high-level languages are {\bf
+% portable}, meaning that they can run on different kinds of computers
+% with few or no modifications.  Low-level programs can run on only one
+% kind of computer and have to be rewritten to run on another.
 
-Due to these advantages, almost all programs are written in high-level
-languages.  Low-level languages are used only for a few specialized
-applications.
+Mais les avantages sont \'enormes.  Tout d'abord, il est beaucoup plus facile \`a programmer
+dans un langage \`a haut niveau.  Programmes \'ecrit dans un langage \`a haut niveau
+prennent moins de temps pour \'ecrire, sont plus court et plus facile \`a lire et ils ont
+plus de chance d'\^etre correcte.  Puis, un langage \`a haut niveau est {\bf portable},
+ce qui veut dire que le programme fonctionne sur des diff\'erents types d'ordinateurs
+sans (ou avec peu) de modifications.  L'usage d'un programme \'ecrit dans un langage
+\`a bas niveau est limit\'e \`a un seul type d'ordinateur sauf si le programme est
+ensuite r\'ecrit pour fonctionner sur un autre type d'ordinateur.
+
+% Due to these advantages, almost all programs are written in high-level
+% languages.  Low-level languages are used only for a few specialized
+% applications.
+
+\`A cause de ces avantages, presque tous les programmes de nos jours sont \'ecrits dans
+un langage \`a haut niveau.  Les langages \`a bas niveau ne sont conservis que pour des
+utilisations tr\`es sp\'ecialis\'ees.
 
 \index{compile}
 \index{interpret}
 
-Two kinds of programs process high-level languages
-into low-level languages: {\bf interpreters} and {\bf compilers}.
-An interpreter reads a high-level program and executes it, meaning that it
-does what the program says.  It processes the program a little at a time,
-alternately reading lines and performing computations.
+% Two kinds of programs process high-level languages
+% into low-level languages: {\bf interpreters} and {\bf compilers}.
+% An interpreter reads a high-level program and executes it, meaning that it
+% does what the program says.  It processes the program a little at a time,
+% alternately reading lines and performing computations.
+
+Il existe deux types de programmes pour transformer les langages \`a haut niveau
+aux langages \`a bas niveau~: les {\bf interpr\`etes} et les {\bf compilateurs}.
+Tel qu'illustr\'e dans la Fig.~\ref{fig:TheWay.1}, un interpr\`ete lit un programme
+\`a haut niveau et l'ex\'ecute.  C'est \`a dire qu'il fait ce que le programme
+commande.  Il transforme le programme peu \`a peu, lisant les lignes et faisant
+les calculs alternativement.
 
 \beforefig
 \centerline{\includegraphics[height=0.77in]{figs/interpret.eps}}
@@ -74,21 +140,33 @@ alternately reading lines and performing computations.
 \index{object code}
 \index{executable}
 
-A compiler reads the program and translates it completely before the
-program starts running.  In this context, the high-level program is
-called the {\bf source code}, and the translated program is called the
-{\bf object code} or the {\bf executable}.  Once a program is
-compiled, you can execute it repeatedly without further translation.
+% A compiler reads the program and translates it completely before the
+% program starts running.  In this context, the high-level program is
+% called the {\bf source code}, and the translated program is called the
+% {\bf object code} or the {\bf executable}.  Once a program is
+% compiled, you can execute it repeatedly without further translation.
+
+Un compilateur lit le programme et le traduit compl\`etement avant que le programme
+commence \`a tourner.  Dans ce cas, le programme \`a haut niveau s'app\`ele un
+{\bf code source}, et le programme traduit s'app\`ele le {\bf code objet} ou
+l'{\bf ex\'ecutable}.  D\`es qu'un programme est compil\'e, vous pouvez l'ex\'ecuter
+autant que vous voulez sans besoin de le compiler de nouveau.
 
 \beforefig
 \centerline{\includegraphics[height=0.77in]{figs/compile.eps}}
 \afterfig
 
-Python is considered an interpreted language because Python programs
-are executed by an interpreter.  There are two ways to use the
-interpreter: {\bf interactive mode} and {\bf script mode}. In
-interactive mode, you type Python programs and the interpreter prints
-the result:
+% Python is considered an interpreted language because Python programs
+% are executed by an interpreter.  There are two ways to use the
+% interpreter: {\bf interactive mode} and {\bf script mode}. In
+% interactive mode, you type Python programs and the interpreter prints
+% the result:
+
+{\sc Python} est un langage interpret\'e \`a cause du faut que les programmes
+de {\sc Python} sont ex\'ecut\'e par l'interp\`ete.  Il y a deux fa\c{c}ons
+d'utiliser l'interpr\`ete~: soit en mode interactif soit en mode script.  En mode
+interactif, vous taper les programmes de {\sc Python} puis l'interpr\`ete imprime
+le r\'esultat~:
 
 \index{interactive mode}
 \index{script mode}
@@ -100,118 +178,217 @@ the result:
 \end{verbatim}
 \afterverb
 %
-The chevron, {\tt >>>}, is the
-{\bf prompt} the interpreter uses to indicate that it is ready.  If
-you type {\tt 1 + 1}, the interpreter replies {\tt 2}.
+% The chevron, {\tt >>>}, is the
+% {\bf prompt} the interpreter uses to indicate that it is ready.  If
+% you type {\tt 1 + 1}, the interpreter replies {\tt 2}.
+
+Les premiers deux lignes dans cet exemple sont \'ecrit par l'interpr\`ete
+quand il d\'emarre.  La troisi\`eme ligne commence avec {\tt >>>}, qui est
+l'{\bf incitation} utilis\'e par l'interpr\`ete pour vous indiquer qu'il est
+pr\^et.  Si vous tapez {\tt print 1 + 1}, l'interpr\`ete repond {\tt 2}.
 
 \index{prompt}
 
-Alternatively, you can store code in a file and use the interpreter to
-execute the contents of the file, which is called a {\bf script}.  By
-convention, Python scripts have names that end with {\tt .py}.
+% Alternatively, you can store code in a file and use the interpreter to
+% execute the contents of the file, which is called a {\bf script}.  By
+% convention, Python scripts have names that end with {\tt .py}.
+
+Alternativement vous pouvez stocker le code dans un fichier et puis appeler
+l'interpr\`ete \`a ex\'ecuter les commandes contenus dans le fichier.  Un tel
+fichier s'app\`ele un {\bf script}.  Par exemple, vous pouvez utiliser l'\'editeur
+de texte pour cr\'eer un fichier appel\'e {\tt dinsdale.py} avec comme contenu~:
+\begin{verbatim}
+print 1 + 1
+\end{verbatim}
+Une convention est que tout les scripts de {\sc Python} se termine avec {\tt .py}.
 
 \index{script}
 
-To execute the script, you have to tell the interpreter the name of
-the file.  In a UNIX command window, you would type {\tt python
-dinsdale.py}.  In other development environments, the details of
-executing scripts are different.  You can find instructions for
-your environment at the Python Website \url{python.org}.
+% To execute the script, you have to tell the interpreter the name of
+% the file.  In a UNIX command window, you would type {\tt python
+% dinsdale.py}.  In other development environments, the details of
+% executing scripts are different.  You can find instructions for
+% your environment at the Python Website \url{python.org}.
+
+Pour ex\'ecuter le script, il faut dire \`a l'interpr\`ete le nom du fichier.  Dans
+une fen\^etre de commande d'{\sc UNIX}, vous taperez {\tt python
+dinsdale.py}.  Dans d'autres environnement de d\'evopement, les d\'etails de
+l'ex\'ecution des scripts sont diff\'erents.  Vous pouvez trouver des instructions
+spécifiques à votre environnement à la site web de {\sc Python} \url{python.org}.
 
 \index{testing!interactive mode}
 
-Working in interactive mode is convenient for testing small pieces of
-code because you can type and execute them immediately.  But for
-anything more than a few lines, you should save your code
-as a script so you can modify and execute it in the future.
+% Working in interactive mode is convenient for testing small pieces of
+% code because you can type and execute them immediately.  But for
+% anything more than a few lines, you should save your code
+% as a script so you can modify and execute it in the future.
 
+Travaillant en mode interactif est commode pour le testing des petits morceaux de
+code \`a cause du fait que vous pouvez taper puis ex\'ecuter imm\'ediatement.  Mais
+pour tout comprenant plus que quelques lignes, vous devez sauvegarder votre code dans
+un script.  Ainsi pouvez-vous le modifier ete l'ex\'ecuter \`a un point \`a l'avenir.
 
-\section{What is a program?}
+% ---------------------------------------------------------
+% \section{What is a program?}
+\section{C'est quoi un programme~?}
+% ---------------------------------------------------------
 
-A {\bf program} is a sequence of instructions that specifies how to
-perform a computation.  The computation might be something
-mathematical, such as solving a system of equations or finding the
-roots of a polynomial, but it can also be a symbolic computation, such
-as searching and replacing text in a document or (strangely enough)
-compiling a program.
+% A {\bf program} is a sequence of instructions that specifies how to
+% perform a computation.  The computation might be something
+% mathematical, such as solving a system of equations or finding the
+% roots of a polynomial, but it can also be a symbolic computation, such
+% as searching and replacing text in a document or (strangely enough)
+% compiling a program.
+
+Un {\bf programme} est une succession de commandes qui sp\'ecifie comment faire
+un calcul.  Le calcul pourrait \^etre de nature math\'ematique, tel que la resolution
+d'un syst\`eme d'\'equations ou trouver les racines d'un polyn\^ome, mais il pourrait
+\^etre \'egalement un calcul symbolique, tel que chercher et remplacer le texte dans
+un document ou (aussi bizarre que \c{c}a peut sembler) compiler un programme.
 
 \index{program}
 
-The details look different in different languages, but a few basic
-instructions appear in just about every language:
+% The details look different in different languages, but a few basic
+% instructions appear in just about every language:
+
+Les d\'etails appara\^issent diff\'erents dans les languages diff\'erents, mais
+certaines commandes de bases restent les m\^emes dans presque tout language~:
 
 \begin{description}
 
-\item[input:] Get data from the keyboard, a file, or some
-other device.
+% \item[input:] Get data from the keyboard, a file, or some
+% other device.
 
-\item[output:] Display data on the screen or send data to a
-file or other device.
+\item[entr\'ee~:] Obtenir les donn\'ees \`a partir d'un clavier, un fichier ou
+d'un autre dispositif.
 
-\item[math:] Perform basic mathematical operations like addition and
-multiplication.
+% \item[output:] Display data on the screen or send data to a
+% file or other device.
 
-\item[conditional execution:] Check for certain conditions and
-execute the appropriate sequence of statements.
+\item[sorti~:] Afficher les donn\'ees sur un \'ecran ou les envoyer dans
+un fichier ou \`a un autre dispositif.
 
-\item[repetition:] Perform some action repeatedly, usually with
-some variation.
+% \item[math:] Perform basic mathematical operations like addition and
+% multiplication.
+
+\item[math~:] Faire des op\'erations math\'ematiques de bases telles que l'addition
+et la multiplication.
+
+% \item[conditional execution:] Check for certain conditions and
+% execute the appropriate sequence of statements.
+
+\item[ex\'ecution conditionnelle~:] Verifier certaines conditions puis ex\'ecuter
+le s\'equence de commandes appropri\'ees.
+
+% \item[repetition:] Perform some action repeatedly, usually with
+% some variation.
+
+\item[rep\'etition~:] Faire une certaine action de mani\`ere rep\'etitive, normalement
+avec un peu de variation.
 
 \end{description}
 
-Believe it or not, that's pretty much all there is to it.  Every
-program you've ever used, no matter how complicated, is made up of
-instructions that look pretty much like these.  So you can think of
-programming as the process of breaking a large, complex task
-into smaller and smaller subtasks until the subtasks are
-simple enough to be performed with one of these basic instructions.
+% Believe it or not, that's pretty much all there is to it.  Every
+% program you've ever used, no matter how complicated, is made up of
+% instructions that look pretty much like these.  So you can think of
+% programming as the process of breaking a large, complex task
+% into smaller and smaller subtasks until the subtasks are
+% simple enough to be performed with one of these basic instructions.
+
+Croyez-le ou non, c'est \`a peu pr\`es tout ce qu'il y a.  Tout programme que vous
+avez utilis\'e, m\^eme si compliqu\'e, n'est compos\'e que des commandes qui resemble
+essentiellement \`a celle dans cette liste.  Donc vous pouvez pensez de la programmation
+comme un processus de r\'eduction d'une grande t\^ache complexe dans des parties plus
+petites et de r\'eduire ses sous t\^aches dans des sous sous t\^aches encore plus petites jusqu'\`a
+ce que les t\^aches sont suffisament simple pour faire avec une des commandes de base.
 
 \index{algorithm}
 
-That may be a little vague, but we will come back to this topic
-when we talk about {\bf algorithms}.
+% That may be a little vague, but we will come back to this topic
+% when we talk about {\bf algorithms}.
 
-\section{What is debugging?}
+\c{C}a pourrait sembler un peu vague, mais nous reviendrons \`a ce sujet quand nous parlons
+des {\bf algorithmes}.
+
+% ------------------------------------------------
+% \section{What is debugging?}
+\section{Qu'est-ce que c'est le d\'eboguage~?}
+% --------------------------------------------------
 \index{debugging}
 \index{bug}
 
-Programming is error-prone.  For whimsical reasons, programming errors
-are called {\bf bugs} and the process of tracking them down is called
-{\bf debugging}.
+% Programming is error-prone.  For whimsical reasons, programming errors
+% are called {\bf bugs} and the process of tracking them down is called
+% {\bf debugging}.
+
+Toute programmation est susceptible aux erreurs.  Pour des reasons amusantes,
+les erreurs de programmation s'app\`elent des {\bf bogues} (parfois {\bf bug} --
+un mot anglais qui traduit comme b\'eb\^ette) et la fa\c{c}on des les trouver
+est appel\'ee par le nom {\bf d\'eboguage}.
 
 \index{debugging}
 \index{bug}
 
-Three kinds of errors can occur in a program: syntax errors, runtime 
-errors, and semantic errors. It is useful
-to distinguish between them in order to track them down more quickly.
+% Three kinds of errors can occur in a program: syntax errors, runtime 
+% errors, and semantic errors. It is useful
+% to distinguish between them in order to track them down more quickly.
 
-\subsection{Syntax errors}
+De mani\`ere g\'en\'erale, il y a trois types d'erreurs~: erreurs de syntaxe,
+erreurs d'ex\'ecution et erreurs symantiques.  Il est util de les distinguer
+afin de les trouver plus rapidement.
+
+% ---------------------------------------------------
+% \subsection{Syntax errors}
+\subsection{Erreurs de syntaxe}
+% ---------------------------------------------------
 \index{syntax error}
 \index{error!syntax}
 \index{error message}
 
-Python can only execute a program if the syntax is
-correct; otherwise, the interpreter displays an error message.
-{\bf Syntax} refers to the structure of a program and the rules about
-that structure. \index{syntax} 
-For example, parentheses have to come in matching pairs, so
-{\tt (1 + 2)} is legal, but {\tt 8)} is a {\bf syntax error}.
+% Python can only execute a program if the syntax is
+% correct; otherwise, the interpreter displays an error message.
+% {\bf Syntax} refers to the structure of a program and the rules about
+% that structure. \index{syntax} 
+% For example, parentheses have to come in matching pairs, so
+% {\tt (1 + 2)} is legal, but {\tt 8)} is a {\bf syntax error}.
+
+{\sc Python} est uniquement capable d'ex\'ecuter un programme si le syntaxe est
+correcte.  Sinon, l'interpr\`ete affichera un message d'erreur.  Par le mot {\bf syntaxe}
+nous comprenons la structure du programme et les r\`egles gouvernantes cette structure.
+\index{syntaxe}  Par exemple, en fran\c{c}ais une phrase doit commencer avec une lettre
+en majuscule et finir avec un point.  il y a un {\bf erreur de syntaxe} dans cette phrase .
+Il y a \'egalement un erreur de syntaxe dans cette autre phrase
+En {\sc Python} il faut que les parenthèses viennent en paires~: {\tt (1 + 2)} est 
+permis, mais {\tt 8)} a un erreur de syntaxe.
 
 \index{parentheses!matching}
 \index{syntax}
 \index{cummings, e. e.}
 
-In English readers can tolerate most syntax errors, which is why we
-can read the poetry of e. e. cummings without spewing error messages.
-Python is not so forgiving.  If there is a single syntax error
-anywhere in your program, Python will display an error message and quit,
-and you will not be able to run your program. During the first few
-weeks of your programming career, you will probably spend a lot of
-time tracking down syntax errors.  As you gain experience, you will
-make fewer errors and find them faster.
+% In English readers can tolerate most syntax errors, which is why we
+% can read the poetry of e. e. cummings without spewing error messages.
+% Python is not so forgiving.  If there is a single syntax error
+% anywhere in your program, Python will display an error message and quit,
+% and you will not be able to run your program. During the first few
+% weeks of your programming career, you will probably spend a lot of
+% time tracking down syntax errors.  As you gain experience, you will
+% make fewer errors and find them faster.
 
-\subsection{Runtime errors}
+Pour la majorit\'e des lecteurs, la pr\'esence de quelques erreurs de syntaxe
+ne pose pas un probl\`eme signifiant.  C'est la raison que nous pouvons lire
+la poesie de e.\ e.\ cummings (poet am\'ericain renomm\'e pour son \'ecriture
+de toute en miniscule) sans \'emetre beaucoup de message d'erreurs.  Par contre,
+{\sc Python} ne pardonne pas aussi facilement.  S'il n'y a qu'un seule erreur de
+syntaxe quelque part dans votre programme {\sc Python} \'ecrirait un message
+d'erreur puis arr\^eter.  Vous ne serez pas capable de faire tourner votre programme.
+Pendant les premi\`eres semainnes de votre carri\`ere de programmateur, vous passerez
+beaucoup de temps \`a chasser des erreurs de syntaxe. En gagnant plus d'exp\'erience
+vous ferez moins d'erreurs et vous les trouverez plus rapidement.
+
+% ---------------------------------------------
+% \subsection{Runtime errors}
+\subsection{Erreurs d'ex\'ecution}
+% ----------------------------------------------
 \label{runtime}
 \index{runtime error}
 \index{error!runtime}
@@ -219,145 +396,283 @@ make fewer errors and find them faster.
 \index{safe language}
 \index{language!safe}
 
-The second type of error is a runtime error, so called because the
-error does not appear until after the program has started running.
-These errors are also called {\bf exceptions} because they usually
-indicate that something exceptional (and bad) has happened.
+% The second type of error is a runtime error, so called because the
+% error does not appear until after the program has started running.
+% These errors are also called {\bf exceptions} because they usually
+% indicate that something exceptional (and bad) has happened.
 
-Runtime errors are rare in the simple programs you will see in the
-first few chapters, so it might be a while before you encounter one.
+Le deuxi\`eme type d'erreur est un erreur d'ex\'ecution, ainsi appel\'e
+parce que l'erreur n'appara\^{\i}t que quand vous fa\^{\i}tes tourner le
+programme.  Ces erreurs s'app\`elent des {\bf exceptions} parce qu'ils
+indiquent que quelque chose d'exceptionnel (et mauvais) vient de se
+passer.
+
+% Runtime errors are rare in the simple programs you will see in the
+% first few chapters, so it might be a while before you encounter one.
+
+Les erreurs d'ex\'ecution sont rares dans les programmes simples que vous
+verrez dans les premiers chapitres.  Ainsi vous attendrez peut-\^etre longtemps
+avant d'en rencontrer.
 
 
-\subsection{Semantic errors}
+% ----------------------------------------------------------
+% \subsection{Semantic errors}
+\subsection{Erreurs de semantique}
+% ---------------------------------------------------------
 \index{semantics}
 \index{semantic error}
 \index{error!semantic}
 \index{error message}
 
-The third type of error is the {\bf semantic error}.  If there is a
-semantic error in your program, it will run successfully in the sense
-that the computer will not generate any error messages, but it will
-not do the right thing.  It will do something else.  Specifically, it
-will do what you told it to do.
+% The third type of error is the {\bf semantic error}.  If there is a
+% semantic error in your program, it will run successfully in the sense
+% that the computer will not generate any error messages, but it will
+% not do the right thing.  It will do something else.  Specifically, it
+% will do what you told it to do.
 
-The problem is that the program you wrote is not the program you
-wanted to write.  The meaning of the program (its semantics) is wrong.
-Identifying semantic errors can be tricky because it requires you to work
-backward by looking at the output of the program and trying to figure
-out what it is doing.
+La troisi\`eme type d'erreur est l'{\bf erreur de semantique}.
+S'il y a un erreur de semantique dans votre programme, le programme
+ne tournera pas correctement dans le sens que l'ordinateur ne produira
+des messages d'erreurs, mais il ne fera pas la bonne chose non plus.
+Le programme fera quelque chose de diff\'erente.  En particulier, il
+ne fera pas ce que vous l'avez dit \`a faire.
 
-\subsection{Experimental debugging}
+% The problem is that the program you wrote is not the program you
+% wanted to write.  The meaning of the program (its semantics) is wrong.
+% Identifying semantic errors can be tricky because it requires you to work
+% backward by looking at the output of the program and trying to figure
+% out what it is doing.
 
-One of the most important skills you will acquire is debugging.
-Although it can be frustrating, debugging is one of the most
-intellectually rich, challenging, and interesting parts of
-programming.
+Le probl\`eme est que le programme que vous avez \'ecrit n'est pas
+le programme que vous voulez \'ecrire.  Le sens du programme (sa
+semantique) est incorrecte.  L'identification des erreurs symantique
+peuvent \^etre difficile parce qu'il exigent que vous raisonner \`a
+l'inverse en commen\c{c}ant avec le sorti du programme et en essayant
+de trouver ce que fait r\'eellement votre programme.
+
+% -------------------------------------------------
+% \subsection{Experimental debugging}
+\subsection{Déboguage par expérimentation}
+% ------------------------------------------------
+
+% One of the most important skills you will acquire is debugging.
+% Although it can be frustrating, debugging is one of the most
+% intellectually rich, challenging, and interesting parts of
+% programming.
+
+Une des connaisssances pratiques que vous pouvez apprendre est
+le d\'eboguage.  Malgr\'e le fait que le d\'eboguage peut \^etre
+frustrant, le d\'eboguage est une des parties les plus riche
+en reflexion, en d\'efis et en int\'er\^et.
 
 \index{experimental debugging}
 \index{debugging!experimental}
 
-In some ways, debugging is like detective work.  You are confronted
-with clues, and you have to infer the processes and events that led
-to the results you see.
+% In some ways, debugging is like detective work.  You are confronted
+% with clues, and you have to infer the processes and events that led
+% to the results you see.
 
-Debugging is also like an experimental science.  Once you have an idea
-about what is going wrong, you modify your program and try again.  If
-your hypothesis was correct, then you can predict the result of the
-modification, and you take a step closer to a working program.  If
-your hypothesis was wrong, you have to come up with a new one.  As
-Sherlock Holmes pointed out, ``When you have eliminated the
-impossible, whatever remains, however improbable, must be the truth.''
-(A. Conan Doyle, {\em The Sign of Four})
+D'un point de vue, le travail de d\'eboguage est aparant\'e au travail
+de d\'etectif.  Vous \^etes confront\'e par des pistes et vous avez
+\`a inf\'erer les processus et les \'evenements qui meneront aux
+r\'esultats que vous voyez.
+
+% Debugging is also like an experimental science.  Once you have an idea
+% about what is going wrong, you modify your program and try again.  If
+% your hypothesis was correct, then you can predict the result of the
+% modification, and you take a step closer to a working program.  If
+% your hypothesis was wrong, you have to come up with a new one.  As
+% Sherlock Holmes pointed out, ``When you have eliminated the
+% impossible, whatever remains, however improbable, must be the truth.''
+% (A. Conan Doyle, {\em The Sign of Four})
+
+Le d\'eboguage resemble \'egalement \`a une science exp\'erimentale.
+D\`es que vous avez une id\'ee de ce qui pourrait \^etre la source
+du probl\`eme, modifiez votre programme et vous recommencez.  Si votre
+hypoth\`ese est correcte, alors vous pouvez pr\'edire lel r\'esultat
+de la modification et vous vous \^etes un peu approch\'e de votre
+objectif d'un programme qui marche.  Si votre hypoth\`ese est incorrecte,
+vous \^etes oblig\'e de formuler une nouvelle hypoth\`ese.  Comme
+remarqu\'e par Sherlock Holmes,
+
+\begin{quote}
+\noindent
+``Quand vous avez \'elimin\'e
+l'impossible, ce qui reste, m\^eme si \c{c}a semble improbable,
+est forc\'ement la verit\'e.''
+\\
+-- A.\ Conan Doyle, {\em La Signe de Quatre}
+\end{quote}
 
 \index{Holmes, Sherlock}
 \index{Doyle, Arthur Conan}
 
-For some people, programming and debugging are the same thing.  That
-is, programming is the process of gradually debugging a program until
-it does what you want.  The idea is that you should start with a
-program that does {\em something} and make small modifications,
-debugging them as you go, so that you always have a working program.
+% For some people, programming and debugging are the same thing.  That
+% is, programming is the process of gradually debugging a program until
+% it does what you want.  The idea is that you should start with a
+% program that does {\em something} and make small modifications,
+% debugging them as you go, so that you always have a working program.
 
-For example, Linux is an operating system that contains thousands of
-lines of code, but it started out as a simple program Linus Torvalds
-used to explore the Intel 80386 chip.  According to Larry Greenfield,
-``One of Linus's earlier projects was a program that would switch
-between printing AAAA and BBBB.  This later evolved to Linux.''
-({\em The Linux Users' Guide} Beta Version 1).
+Pour certains gens, la programmation et le d\'eboguage sont la m\^eme chose.
+Autrement dit, la programmation est le processus de d\'eboguage d'un
+programme jusqu'\`a ce que \c{c}a fait ce que vous voulez.  L'id\'ee
+est de commencer avec un programme qui fait {\em quelque chose} et de
+faire des petites modifications en d\'eboguant au m\^eme temps, pour
+toujours garder un programme qui fonctionne.
+
+% For example, Linux is an operating system that contains thousands of
+% lines of code, but it started out as a simple program Linus Torvalds
+% used to explore the Intel 80386 chip.  According to Larry Greenfield,
+% ``One of Linus's earlier projects was a program that would switch
+% between printing AAAA and BBBB.  This later evolved to Linux.''
+% ({\em The Linux Users' Guide} Beta Version 1).
+
+Par exemple, {\sc Linux} est un syst\`eme d'exploitation qui comprend
+plusieurs milles lignes de code, mais qui a commenc\'e avec un programme
+simple que Linus Torvalds utilisait pour exploer la puce Intel 80386.
+Selon Larry Greenfield,
+
+\begin{quote}
+\noindent
+``Un des premiers projets de Linus \'etait un programme qui pourrait
+commuter entre l'impression de AAAA et de BBBB.  C'est ceci qui est
+devenu {\sc Linux}.''
+\\
+-- {\em Linux Users' Guide} Beta Version 1
+\end{quote}
 
 \index{Linux}
 
-Later chapters will make more suggestions about debugging and other
-programming practices.
+% Later chapters will make more suggestions about debugging and other
+% programming practices.
 
-\section{Formal and natural languages}
+Dans les chapitres \`a venir, nous ferons plus de suggestions concernant
+d\'eboguage et d'autre techniques de programmation.
+
+% -----------------------------------------------
+% \section{Formal and natural languages}
+\section{Languages formel et naturel}
+% ----------------------------------------------
 \index{formal language}
 \index{natural language}
 \index{language!formal}
 \index{language!natural}
 
-{\bf Natural languages} are the languages people speak,
-such as English, Spanish, and French.  They were not designed
-by people (although people try to impose some order on them);
-they evolved naturally.
+% {\bf Natural languages} are the languages people speak,
+% such as English, Spanish, and French.  They were not designed
+% by people (although people try to impose some order on them);
+% they evolved naturally.
 
-{\bf Formal languages} are languages that are designed by people for
-specific applications.  For example, the notation that mathematicians
-use is a formal language that is particularly good at denoting
-relationships among numbers and symbols.  Chemists use a formal
-language to represent the chemical structure of molecules.  And
-most importantly:
+Les {\bf languages naturels} sont les langues parl\'ees, telles
+que l'anglais, l'espagnol et le fran\c{c}ais.  Ils ne sont
+pas planifi\'es (m\^eme si nous essayons d'y imposer un certain
+ordre).  Les langues parl\'ees sont le produit d'une evolution naturelle.
 
+% {\bf Formal languages} are languages that are designed by people for
+% specific applications.  For example, the notation that mathematicians
+% use is a formal language that is particularly good at denoting
+% relationships among numbers and symbols.  Chemists use a formal
+% language to represent the chemical structure of molecules.  And
+% most importantly:
+% 
+% \begin{quote}
+% {\bf Programming languages are formal languages that have been
+% designed to express computations.}
+% \end{quote}
+%
+% Formal languages tend to have strict rules about syntax.  For example,
+% $3 + = 3 \mbox{\$} 6$ is not.  $H_2O$ is a syntactically correct
+% chemical formula, but $_2Zz$ is not.
+
+Les {\bf languages formels} sont des languages planifi\'es et d\'evelop\'es
+pour des applications sp\'ecifiques.  Par exemple, la notation utilis\'ee
+par les math\'ematiciens est un language formel qui est particuli\`erement
+bien adapt\'e pour exprimer la relation entre nombres et symboles.  Aussi chimistes
+utilisent un language formel pour repr\'esenter la structure chimique des mol\'ecules.
+Et de plus haute importance~:
 \begin{quote}
-{\bf Programming languages are formal languages that have been
-designed to express computations.}
+  \noindent
+  {\bf Les languages de programmation sont des languages formels dont l'intention est d'exprimer calculs.}
 \end{quote}
+Les languages formels ont tendance d'avoir des r\`egles de syntaxe stricte.  Par
+exemple $3 + 3 = 6$ est une \'equation math\'ematique correcte mais
+$3 + = 3 \mbox{\$} 6$ n'en est pas.  H$_2$O est une formule chimique avec une
+syntaxe correcte mais $_2Zz$ n'en est pas.
 
-Formal languages tend to have strict rules about syntax.  For example,
-$3 + 3 = 6$ is a syntactically correct mathematical statement, but 
-$3 + = 3 \mbox{\$} 6$ is not.  $H_2O$ is a syntactically correct
-chemical formula, but $_2Zz$ is not.
+% Syntax rules come in two flavors, pertaining to {\bf tokens} and
+% structure.  Tokens are the basic elements of the language, such as
+% words, numbers, and chemical elements.  One of the problems with $3 +
+% = 3 \mbox{\$} 6$ is that \verb"$" is not a legal token in mathematics
+% (at least as far as I know).  Similarly, $_2Zz$ is not legal because
+% there is no element with the abbreviation $Zz$.
 
-Syntax rules come in two flavors, pertaining to {\bf tokens} and
-structure.  Tokens are the basic elements of the language, such as
-words, numbers, and chemical elements.  One of the problems with $3 +
-= 3 \mbox{\$} 6$ is that \verb"$" is not a legal token in mathematics
-(at least as far as I know).  Similarly, $_2Zz$ is not legal because
-there is no element with the abbreviation $Zz$.
+Les r\`egles de syntaxe viennent en deux parfums selon les notions de {\bf entit\'e lexical}
+et de structure.  Signes sont les \'el\'ements de base du language tels que les
+mots, les chiffres et les \'el\'ements chimiques.  Un des probl\`emes avec
+$3 + = 3 \mbox{\$} 6$ est que $\mbox{\$}$ n'est pas un entit\'e lexical l\'egitime en
+math\'ematiques (au moins que je sache).  De m\^eme $_2Zz$ n'est pas l\'egitime
+parce qu'il n'existe pas d'\'el\'ement avec l'abbr\'eviation $Zz$.
 
 \index{token}
 \index{structure}
 
-The second type of syntax error pertains to the structure of a
-statement; that is, the way the tokens are arranged.  The statement $3
-+ = 3 \mbox{\$} 6$ is illegal because even though $+$ and $=$ are
-legal tokens, you can't have one right after the other.  Similarly,
-in a chemical formula the subscript comes after the element name, not
-before.
+% The second type of syntax error pertains to the structure of a
+% statement; that is, the way the tokens are arranged.  The statement $3
+% + = 3 \mbox{\$} 6$ is illegal because even though $+$ and $=$ are
+% legal tokens, you can't have one right after the other.  Similarly,
+% in a chemical formula the subscript comes after the element name, not
+% before.
+
+Le deuxi\`eme type d'erreur de syntaxe conc\`erne la structure d'une phrase --
+c'est-\`a-dire comment sont arrang\'es les entit\'es lexicaux.  La phrase $3 + = 3 \mbox{\$} 6$
+est ill\'egitime malgr\'e le fait que $+$ et $=$ sont des entit\'es lexicaux l\'egitimes
+parce que c'est interdit de mettre l'un directement apr\`es l'autre.  De
+mani\`ere parreille l'indice d'un \'el\'ement vient toujours apr\`es le nom
+de l'\'el\'ement et jamais avant.
 
 \begin{ex}
-Write a well-structured English
-sentence with invalid tokens in it.  Then write another sentence
-with all valid tokens but with invalid structure.
+% Write a well-structured English
+% sentence with invalid tokens in it.  Then write another sentence
+% with all valid tokens but with invalid structure.
+\'Ecrire une phrase bien structur\'ee en fra\c{c}ais
+  comprenant des entit\'es lexicaux ill\'egitimes.  Puis \'ecrire une autre phrase malstructur\'ee
+  mais o\`u tous les entit\'es lexicaux sont l\'egitimes.
 \end{ex}
 
-When you read a sentence in English or a statement in a formal
-language, you have to figure out what the structure of the sentence is
-(although in a natural language you do this subconsciously).  This
-process is called {\bf parsing}.
+% When you read a sentence in English or a statement in a formal
+% language, you have to figure out what the structure of the sentence is
+% (although in a natural language you do this subconsciously).  This
+% process is called {\bf parsing}.
+
+Quand vous lisez une phrase en fran\c{c}ais ou une d\'eclaration dans un language
+formel, vous avez \`a d\'eterminer la structure de la phrase (bien que vous fa\^{\i}tes
+ceci de mani\`ere inconciente dans un language naturel).  Ce proc\'ed\'e s'app\`ele
+l'{\bf analayse de la structure}.
 
 \index{parse}
 
-For example, when you hear the sentence, ``The penny dropped,'' you
-understand that ``the penny'' is the subject and ``dropped'' is the
-predicate.  Once you have parsed a sentence, you can figure out what it
-means, or the semantics of the sentence.  Assuming that you know
-what a penny is and what it means to drop, you will understand the
-general implication of this sentence.
+% For example, when you hear the sentence, ``The penny dropped,'' you
+% understand that ``the penny'' is the subject and ``dropped'' is the
+% predicate.  Once you have parsed a sentence, you can figure out what it
+% means, or the semantics of the sentence.  Assuming that you know
+% what a penny is and what it means to drop, you will understand the
+% general implication of this sentence.
 
-Although formal and natural languages have many features in
-common---tokens, structure, syntax, and semantics---there are some
-differences:
+Par exemple, quand vous entendez la phrase, ``Le sous est tomb\'e'' (traduction
+lit\'erale de la phrase angalise {\em The penny dropped}),
+vous comprenez que ``le sous'' est le sujet et ``tomb\'e'' est le pr\'edicat.
+Une fois que vous avez analys\'e la phrase, vous comprendrez ce qu'elle veut
+dire ou la semantique de la phrase.  En supposant que vous connaissez ce que
+c'est un sous (une ancienne pi\`ece de monnaie) et que vous savez ce qu'il
+veut dire de tomber, vous comprendrez le sens g\'en\'eral de la phrase.
+
+% Although formal and natural languages have many features in
+% common---tokens, structure, syntax, and semantics---there are some
+% differences:
+
+Malgr\'e le fait que les languages formel et naturel partagent beaucoup
+d'aspects en common---entit\'es lexicaux, structure, syntaxe et symantiques---il y a
+aussi beaucoup de diff\'erences~:
 
 \index{ambiguity}
 \index{redundancy}
@@ -365,262 +680,445 @@ differences:
 
 \begin{description}
 
-\item[ambiguity:] Natural languages are full of ambiguity, which
-people deal with by using contextual clues and other information.
-Formal languages are designed to be nearly or completely unambiguous,
-which means that any statement has exactly one meaning,
-regardless of context.
+% \item[ambiguity:] Natural languages are full of ambiguity, which
+% people deal with by using contextual clues and other information.
+% Formal languages are designed to be nearly or completely unambiguous,
+% which means that any statement has exactly one meaning,
+% regardless of context.
 
-\item[redundancy:] In order to make up for ambiguity and reduce
-misunderstandings, natural languages employ lots of
-redundancy.  As a result, they are often verbose.  Formal languages
-are less redundant and more concise.
+\item[ambiguit\'e~:] Les languages naturels sont pleins d'ambituit\'e
+\`a la quelle les gens s'accomode gr\^ace aux informations suppl\'ementaires
+telles que le contexte de la phrase.  Les languages formels sont construits
+sans (ou pour \^etre presque) sans ambiguit\'e, ce qui veut dire que chaque
+phrase n'a qu'un seul sens ind\'ependant du contexte.
 
-\item[literalness:] Natural languages are full of idiom and metaphor.
-If I say, ``The penny dropped,'' there is probably no penny and
-nothing dropping\footnote{This idiom means that someone realized something
-after a period of confusion.}.  Formal languages
-mean exactly what they say.
+% \item[redundancy:] In order to make up for ambiguity and reduce
+% misunderstandings, natural languages employ lots of
+% redundancy.  As a result, they are often verbose.  Formal languages
+% are less redundant and more concise.
+
+\item[redundance~:] Afin de compenser pour l'ambiguit\'e et pour r\'eduire
+les malentendus, les languages naturels sont plein de redundances.  Le
+r\'esultat est une certaine verbosit\'e.  Les languages formels sont moins
+redundant et donc sont plus concis.
+
+% \item[literalness:] Natural languages are full of idiom and metaphor.
+% If I say, ``The penny dropped,'' there is probably no penny and
+% nothing dropping\footnote{This idiom means that someone realized something
+% after a period of confusion.}.  Formal languages
+% mean exactly what they say.
+
+\item[literale~:] Les languages naturels sont plein d'idiome et de m\'etaphore.
+Si je dis en anglais {\em The penny dropped}, il est probable qu'il n'y a pas
+de sous et qu'en fait rien n'est tomb\'e.  (Il s'agit d'une esp\`ece de proverbe
+avec le sens que quelqu'un venait seulement de comprendre apr\`es une p\'eriode
+prolong\'ee de confusion.)  Dans les languages formels le sens est exactement
+ce qu'il est dit.
 
 \end{description}
 
-People who grow up speaking a natural language---everyone---often have a
-hard time adjusting to formal languages.  In some ways, the difference
-between formal and natural language is like the difference between
-poetry and prose, but more so:
+% People who grow up speaking a natural language---everyone---often have a
+% hard time adjusting to formal languages.  In some ways, the difference
+% between formal and natural language is like the difference between
+% poetry and prose, but more so:
+
+Les gens qui ont grandi en parlant les languages naturels---tout le monde---ont
+souvent de la difficult\'e de s'accoutumer aux languages formels.  En fait,
+la diff\'erence entre les languages formels et naturels est un peu comme la
+diff\'erence entre la po\'esie et la prose, mais la diff\'erence est encore plus
+grande~:
 
 \index{poetry}
 \index{prose}
 
 \begin{description}
 
-\item[Poetry:] Words are used for their sounds as well as for
-their meaning, and the whole poem together creates an effect or
-emotional response.  Ambiguity is not only common but often
-deliberate.
+% \item[Poetry:] Words are used for their sounds as well as for
+% their meaning, and the whole poem together creates an effect or
+% emotional response.  Ambiguity is not only common but often
+% deliberate.
 
-\item[Prose:] The literal meaning of words is more important,
-and the structure contributes more meaning.  Prose is more amenable to
-analysis than poetry but still often ambiguous.
+\item[Po\'esie~:] Les mots sont utilis\'es et et pour leur sons
+et pour leur sens, et le r\'esultat du po\`eme entier est une
+r\'eponse affective.  La pr\'esence d'ambigu\"{\i}t\'e est non juste
+commun mais est souvent recherch\'ee.
 
-\item[Programs:] The meaning of a computer program is unambiguous
-and literal, and can be understood entirely by analysis of the
-tokens and structure.
+% \item[Prose:] The literal meaning of words is more important,
+% and the structure contributes more meaning.  Prose is more amenable to
+% analysis than poetry but still often ambiguous.
+
+\item[Prose~:] Le sens lit\'eral des mots est important et la structure
+contribue aussi au sens.  La prose est plus facile \`a analyser que
+la po\'esie mais est souvent toujours ambigue.
+
+% \item[Programs:] The meaning of a computer program is unambiguous
+% and literal, and can be understood entirely by analysis of the
+% tokens and structure.
+
+\item[Programmes~:] Le sens d'un programme informatique n'est pas
+ambigue.  Le sens est lit\'eral et s'analyse compl\`etement en termes
+des entit\'es lexicaux et de structure.
 
 \end{description}
 
-Here are some suggestions for reading programs (and other formal
-languages).  First, remember that formal languages are much more dense
-than natural languages, so it takes longer to read them.  Also, the
-structure is very important, so it is usually not a good idea to read
-from top to bottom, left to right.  Instead, learn to parse the
-program in your head, identifying the tokens and interpreting the
-structure.  Finally, the details matter.  Small errors in
-spelling and punctuation, which you can get away
-with in natural languages, can make a big difference in a formal
-language.
+% Here are some suggestions for reading programs (and other formal
+% languages).  First, remember that formal languages are much more dense
+% than natural languages, so it takes longer to read them.  Also, the
+% structure is very important, so it is usually not a good idea to read
+% from top to bottom, left to right.  Instead, learn to parse the
+% program in your head, identifying the tokens and interpreting the
+% structure.  Finally, the details matter.  Small errors in
+% spelling and punctuation, which you can get away
+% with in natural languages, can make a big difference in a formal
+% language.
 
-\section{The first program}
+Voici des suggestions pour la lectrue des programmes (et d'autres
+languages formels).  D'abord souvenez-vouus que les languages formels
+sont plus dense que les languages naturels, donc les languages
+formels sont plus lents \`a lire.  Puis la structure est plus
+importante.  Par exemple il est souvent une mauvaise id\'ee de lire
+d'en haut \`a en bas, de gauche \`a droite.  Au lieu de faire cela,
+apprenez-vous d'analyser le programme dans votre t\^ete en identifiant
+les entit\'es lexicaux et en interpretant la structure.  Finalement les d\'etails
+sont importants.  Des tous petits erreurs en orthographe ou ponctuation
+qui sont tol\'erable en language naturel peuvent avoir des grands
+effets dans un language formel.
+
+% -----------------------------------------------------
+% \section{The first program}
+\section{Le premier programme}
+% ----------------------------------------------------
 \label{hello}
 
 \index{Hello, World}
 
-Traditionally, the first program you write in a new language
-is called ``Hello, World!'' because all it does is display the
-words, ``Hello, World!''  In Python, it looks like this:
+% Traditionally, the first program you write in a new language
+% is called ``Hello, World!'' because all it does is display the
+% words, ``Hello, World!''  In Python, it looks like this:
 
+Par tradition, le premier programme que vous \'ecrivez dans un
+nouveau language s'app\`ele {\em Hello, World!} (``Bonjour le Monde!''
+en anglais) parce qu'il affiche les mots, ``Hello, World!''  En
+{\sc Python}, il apparait comme ceci~:
+ 
 \beforeverb
+%\begin{verbatim}
+%print 'Hello, World!'
+%\end{verbatim}
 \begin{verbatim}
 print 'Hello, World!'
 \end{verbatim}
 \afterverb
 %
-This is an example of a {\bf print statement}\footnote{In Python 3.0,
-  {\tt print} is a function, not a statement, so the syntax is {\tt
-    print('Hello, World!')}.  We will get to functions soon!}, which
-doesn't actually print anything on paper.  It displays a value on the
-screen.  In this case, the result is the words
+% This is an example of a {\bf print statement}\footnote{In Python 3.0,
+%   {\tt print} is a function, not a statement, so the syntax is {\tt
+%     print('Hello, World!')}.  We will get to functions soon!}, which
+% doesn't actually print anything on paper.  It displays a value on the
+% screen.  In this case, the result is the words
+
+Voici un exemple d'une {\bf commande d'impression}, qui n'imprime
+en fait rien sur papier.  Au lieu de r\'eelment imprimer, il affiche
+une valeur sur l'\'ecran.  Dans ce cas, le r\'esultat est les mots
 
 \index{Python 3.0}
 
 \beforeverb
+% \begin{verbatim}
+% Hello, World!
+% \end{verbatim}
 \begin{verbatim}
 Hello, World!
 \end{verbatim}
 \afterverb
 %
-The quotation marks in the program mark the beginning and end
-of the text to be displayed; they don't appear in the result.
+% The quotation marks in the program mark the beginning and end
+% of the text to be displayed; they don't appear in the result.
+Les guillements dans le programme indique le commencement et la
+fin du texte \`a afficher.  Ces guillemets n'apparaissent pas
+dans le r\'esultat.
 
 \index{quotation mark}
 \index{print statement}
 \index{statement!print}
 
-Some people judge the quality of a programming language by the
-simplicity of the ``Hello, World!'' program.  By this standard, Python
-does about as well as possible.
+% Some people judge the quality of a programming language by the
+% simplicity of the ``Hello, World!'' program.  By this standard, Python
+% does about as well as possible.
 
+Certains gens jugent la qualit\'e d'un language de programmation par
+la simplicit\'e du programme {\em Hello, World!}  En utilisant ce
+crit\`ere, {\sc Python} fait \`a peu pr\`es le mieux possible.
 
-\section{Debugging}
+% -------------------------------------------------------------------
+% \section{Debugging}
+\section{Deboguage}
+% -------------------------------------------------------------------
 \index{debugging}
 
-It is a good idea to read this book in front of a computer so you can
-try out the examples as you go.  You can run most of the examples in
-interactive mode, but if you put the code into a script, it is easier
-to try out variations.
+% It is a good idea to read this book in front of a computer so you can
+% try out the examples as you go.  You can run most of the examples in
+% interactive mode, but if you put the code into a script, it is easier
+% to try out variations.
 
-Whenever you are experimenting with a new feature, you should try
-to make mistakes.  For example, in the ``Hello, world!'' program,
-what happens if you leave out one of the quotation marks?  What
-if you leave out both?  What if you spell {\tt print} wrong?
+C'est une bonne id\'ee de lire ce livre devant un ordinateur afin d'exp\'erimenter
+les exemples au m\^eme temps que vous les lisez.  Vous pouvez faire tourner le
+plus part des exemples en mode interactif, mais si vous mettez le code dans un
+script, il sera plus facile d'essayer des variants.
+
+% Whenever you are experimenting with a new feature, you should try
+% to make mistakes.  For example, in the ``Hello, world!'' program,
+% what happens if you leave out one of the quotation marks?  What
+% if you leave out both?  What if you spell {\tt print} wrong?
+
+Toujours quand vous fa\^{\i}tes l'exp\'erience d'un nouvel aspect, vous devez
+faire expr\`es d'introduire des erreurs.  Par exemple, dans le programme {\em Hello, World!},
+qu'est-ce qui se passe si vous oubliez une des guillemets?  Qu'est-ce qui se passe
+si vous oubliez les deux guillemets?  Qu'est-ce qui se passe si {\tt print} est
+mal\'ecrit?
 
 \index{error message}
 
-This kind of experiment helps you remember what you read; it also helps
-with debugging, because you get to know what the error messages mean.
-It is better to make mistakes now and on purpose than later
-and accidentally.
+% This kind of experiment helps you remember what you read; it also helps
+% with debugging, because you get to know what the error messages mean.
+% It is better to make mistakes now and on purpose than later
+% and accidentally.
 
-Programming, and especially debugging, sometimes brings out strong
-emotions.  If you are struggling with a difficult bug, you might 
-feel angry, despondent or embarrassed.
+Ce genre d'exp\'erimentation vous aide de vous souvenir de ce que vous avez
+lu.  Il vous aidera \'egalement avec votre d\'eboguage parce que vous apprendrez
+le sens des messages d'erreur.  Et \c{c}a nous m\`ene au Premier Th\'eor\`eme
+de D\'eboguage~:
+\begin{quote}
+\noindent
+Il est mieux de faire des erreurs expr\`es maintenant que plus tard sans vouloir
+le faire.
+\end{quote}
 
-There is evidence that people naturally respond to computers as if
-they were people\footnote{See Reeves and Nass, {\it The Media
-    Equation: How People Treat Computers, Television, and New Media
-    Like Real People and Places}.}.  When they work well, we think
-of them as teammates, and when they are obstinate or rude, we
-respond to them the same way we respond to rude,
-obstinate people.
+% Programming, and especially debugging, sometimes brings out strong
+% emotions.  If you are struggling with a difficult bug, you might 
+% feel angry, despondent or embarrassed.
+
+Parfois, la programmation, et surtout le déboguage, nous évoquent des émotions
+fortes.  Si vous vous aux gripes avec un bogue dans un combat acharné, vous pouvez
+sentir en colère, déprimé ou embarassé.
+
+% There is evidence that people naturally respond to computers as if
+% they were people\footnote{See Reeves and Nass, {\it The Media
+%     Equation: How People Treat Computers, Television, and New Media
+%     Like Real People and Places}.}.  When they work well, we think
+% of them as teammates, and when they are obstinate or rude, we
+% respond to them the same way we respond to rude,
+% obstinate people.
+
+Il y a des expériences montrant que les gens répondent naturellement aux ordinateurs
+comme aux personnes\footnote{Voire Reeves and Nass, {\it The Media
+Equation: How People Treat Computers, Television, and New Media
+Like Real People and Places}.}. Quand les ordinateurs marchent bien, nous
+les considèrent comme du même équipe, mais quand ils nous contrarient ou sont impolis, eh bien,
+nous nous répondons tel que nous repondons aux personnes impolies qui nous contrarient.
 
 \index{debugging!emotional response}
 \index{emotional debugging}
 
-Preparing for these reactions might help you deal with them.
-One approach is to think of the computer as an employee with
-certain strengths, like speed and precision, and
-particular weaknesses, like lack of empathy and inability
-to grasp the big picture.
+% Preparing for these reactions might help you deal with them.
+% One approach is to think of the computer as an employee with
+% certain strengths, like speed and precision, and
+% particular weaknesses, like lack of empathy and inability
+% to grasp the big picture.
 
-Your job is to be a good manager: find ways to take advantage
-of the strengths and mitigate the weaknesses.  And find ways
-to use your emotions to engage with the problem,
-without letting your reactions interfere with your ability
-to work effectively.
+Ayant préparé pour ces réactions pourraient vous aider à dealer avec.
+Une approche est de considérer un ordinateur tel qu'un employé avec
+certaines forces, telles que rapidité et précision, et certaines faiblesses,
+telles que manque de compassion et incapacité de comprendre le problème global.
 
-Learning to debug can be frustrating, but it is a valuable skill
-that is useful for many activities beyond programming.  At the
-end of each chapter there is a debugging section, like this one,
-with my thoughts about debugging.  I hope they help!
+% Your job is to be a good manager: find ways to take advantage
+% of the strengths and mitigate the weaknesses.  And find ways
+% to use your emotions to engage with the problem,
+% without letting your reactions interfere with your ability
+% to work effectively.
+
+Votre job est d'être un bon manager~: Trouvez des façons de profiter
+des forces et des façons à minimiser les faiblesses.  Et trouver des
+façons d'utiliser vos émotions pour mieux vous lier avec le problème,
+sans laisser interférer vos émotions avec votre capacité de travailler
+de manière efficace.
+
+% Learning to debug can be frustrating, but it is a valuable skill
+% that is useful for many activities beyond programming.  At the
+% end of each chapter there is a debugging section, like this one,
+% with my thoughts about debugging.  I hope they help!
+
+L'apprentissage de d\'eboguage est souvent frustrant, mais il est aussi
+l'un des parties les plus importantes de penser comme un informaticien.
+\`A la fin de chaque chapitre, il y a une section sur d\'eboguage, comme
+celui-ci, avec mes reflexions (et th\'eor\`emes) sur l'art de d\'eboguage.
+J'esp\`ere que \c{c}a aide!
 
 
-\section{Glossary}
+% --------------------------------------------------
+% \section{Glossary}
+\section{Glossaire}
+% --------------------------------------------------
 
 \begin{description}
 
-\item[problem solving:]  The process of formulating a problem, finding
-a solution, and expressing the solution.
+% \item[problem solving:]  The process of formulating a problem, finding
+% a solution, and expressing the solution.
+\item[resolution des probl\`emes~:]  Le proc\'ed\'e comprenant la formulation
+d'un probl\`eme, la recherche de sa solution et finalement l'expression de la
+solution trouv\'ee.
 \index{problem solving}
 
-\item[high-level language:]  A programming language like Python that
-is designed to be easy for humans to read and write.
+% \item[high-level language:]  A programming language like Python that
+% is designed to be easy for humans to read and write.
+\item[language \`a haut niveau~:]  Un language de programmation tel que
+{\sc Python} dont l'intention est une facilit\'e de lecture et d'\'ecriture
+par les \^etres humains.
 \index{high-level language}
 
-\item[low-level language:]  A programming language that is designed
-to be easy for a computer to execute; also called ``machine language'' or
-``assembly language.''
+% \item[low-level language:]  A programming language that is designed
+% to be easy for a computer to execute; also called ``machine language'' or
+% ``assembly language.''
+\item[language \`a bas niveau~:]  Un language de programmation dont l'intention
+est une facilit\'e d'ex\'ecution par l'ordinateur---\'egalement appel\'e ``language
+de machine'' ou ``assembler''.
 \index{low-level language}
 
-\item[portability:]  A property of a program that can run on more
-than one kind of computer.
+% \item[portability:]  A property of a program that can run on more
+% than one kind of computer.
+\item[portabilit\'e~:]  La propri\'et\'e d'un programme le permettant de tourner
+sur plus d'un seul type d'ordinateur.
 \index{portability}
 
-\item[interpret:]  To execute a program in a high-level language
-by translating it one line at a time.
+% \item[interpret:]  To execute a program in a high-level language
+% by translating it one line at a time.
+\item[interpreter~:]  Faire tourner (ou ex\'ecuter) un programme dans un language
+\`a haut niveau en faisant une traduction ligne par ligne.
 \index{interpret}
 
-\item[compile:]  To translate a program written in a high-level language
-into a low-level language all at once, in preparation for later
-execution.
+% \item[compile:]  To translate a program written in a high-level language
+% into a low-level language all at once, in preparation for later
+% execution.
+\item[compiler~:]  Faire traduire un programme d'un language \`a haut niveau
+\`a un language \`a bas niveau tout d'un coup en anticipation de le faire tourner
+plus tard.
 \index{compile}
 
-\item[source code:]  A program in a high-level language before
-being compiled.
+% \item[source code:]  A program in a high-level language before
+% being compiled.
+\item[code source~:]  Un programme dans un language \`a haut niveau avant
+de compilation.
 \index{source code}
 
-\item[object code:]  The output of the compiler after it translates
-the program.
+% \item[object code:]  The output of the compiler after it translates
+% the program.
+\item[code objet~:]  Le r\'esultat d'un compilateur apr\`es la traduction d'un
+programme.
 \index{object code}
 
-\item[executable:]  Another name for object code that is ready
-to be executed.
+% \item[executable:]  Another name for object code that is ready
+% to be executed.
+\item[ex\'ecutable~:]  Un autre nom pour le code objet qui est tout pr\^et
+d'\^etre ex\'ecut\'e (de faire tourner).
 \index{executable}
 
-\item[prompt:] Characters displayed by the interpreter to indicate
-that it is ready to take input from the user.
+% \item[prompt:] Characters displayed by the interpreter to indicate
+% that it is ready to take input from the user.
+\item[incitation~:] Caract\`eres affich\'es par un interpr\`eteur pour
+indiqu\'e qu'il est pr\^et de prendre plus de donn\'ees fournies par
+l'utilisateur.
 \index{prompt}
 
-\item[script:] A program stored in a file (usually one that will be
-interpreted).
+% \item[script:] A program stored in a file (usually one that will be
+% interpreted).
+\item[script~:] Un programme stock\'e dans un fichier (normalement un
+qui sera interpret\'e).
 \index{script}
 
-\item[interactive mode:] A way of using the Python interpreter by
-typing commands and expressions at the prompt.
+% \item[interactive mode:] A way of using the Python interpreter by
+% typing commands and expressions at the prompt.
+\item[mode interactif~:] Une façon d'utiliser l'interpreteur de {\sc Python}
+en tapant des commandes et des expressions après l'incitation.
 \index{interactive mode}
 
-\item[script mode:] A way of using the Python interpreter to read
-and execute statements in a script.
+% \item[script mode:] A way of using the Python interpreter to read
+% and execute statements in a script.
+\item[mode script :] Une façon d'utiliser l'interpreteur de {\sc Python} pour
+lire et faire tourner les commandes dans un script.
 \index{script mode}
 
-\item[program:] A set of instructions that specifies a computation.
-\index{program}
+% \item[program:] A set of instructions that specifies a computation.
+% \index{program}
+\item[programme~:] Un ensemble d'instructions specifiant un calcul.
 
-\item[algorithm:]  A general process for solving a category of
-problems.
+% \item[algorithm:]  A general process for solving a category of
+% problems.
+\item[algorithme~:]  Un proc\'ed\'e g\'en\'eral pour la resolution d'une
+catagorie de probl\`emes.
 \index{algorithm}
 
-\item[bug:]  An error in a program.
+% \item[bug:]  An error in a program.
+\item[bogue~:]  Un erreur dans un programme.
 \index{bug}
 
-\item[debugging:]  The process of finding and removing any of the
-three kinds of programming errors.
+% \item[debugging:]  The process of finding and removing any of the
+% three kinds of programming errors.
+\item[deboguage~:]  Le proc\'ed\'e de trouver et enlever n'importe le quel des
+trois types d'erreurs de programmation.
 \index{debugging}
 
-\item[syntax:]  The structure of a program.
+% \item[syntax:]  The structure of a program.
+\item[syntaxe~:]  La structure d'un programme.
 \index{syntax}
 
-\item[syntax error:]  An error in a program that makes it impossible
-to parse (and therefore impossible to interpret).
+% \item[syntax error:]  An error in a program that makes it impossible
+% to parse (and therefore impossible to interpret).
+\item[erreur de syntaxe~:]  Un erreur dans un programme emp\^echant son
+analyse (et donc rendant impossible son interpretation).
 \index{syntax error}
 
-\item[exception:]  An error that is detected while the program is running.
+% \item[exception:]  An error that is detected while the program is running.
+\item[exception~:]  Un erreur d\'etect\'e pendant que le programme tourne.
 \index{exception}
 
-\item[semantics:]  The meaning of a program.
+% \item[semantics:]  The meaning of a program.
+\item[semantiques~:]  Le sens d'un programme.
 \index{semantics}
 
-\item[semantic error:]   An error in a program that makes it do something
-other than what the programmer intended.
+% \item[semantic error:]   An error in a program that makes it do something
+% other than what the programmer intended.
+\item[erreur de semantique~:]   Un erreur dans un programme qui a comme
+r\'esultat que le programme fait autre chose que celle voulue.
 \index{semantic error}
 
-\item[natural language:]  Any one of the languages that people speak that
-evolved naturally.
+% \item[natural language:]  Any one of the languages that people speak that
+% evolved naturally.
+\item[language naturel~:]  Tous les langues parl\'es par les gens et qui ont \'evolu\'es de
+mani\`ere naturelle.
 \index{natural language}
 
-\item[formal language:]  Any one of the languages that people have designed
-for specific purposes, such as representing mathematical ideas or
-computer programs; all programming languages are formal languages.
+% \item[formal language:]  Any one of the languages that people have designed
+% for specific purposes, such as representing mathematical ideas or
+% computer programs; all programming languages are formal languages.
+\item[language formel~:]  Tout languages que les gens ont invent\'es pour des fins
+sp\'ecifiques, tel que la repr\'esentation des id\'ees math\'ematiques ou des
+programmes informatiques.  Tous les languages de programmation sont des languages
+formels.
 \index{formal language}
 
-\item[token:]  One of the basic elements of the syntactic structure of
-a program, analogous to a word in a natural language.
+% \item[token:]  One of the basic elements of the syntactic structure of
+% a program, analogous to a word in a natural language.
+\item[entit\'es lexicaux~:]  Un des \'el\'ement de base de la structure syntactique
+d'un programme, analogue \`a un mot dans un language naturel.
 \index{token}
 
-\item[parse:]  To examine a program and analyze the syntactic structure.
+% \item[parse:]  To examine a program and analyze the syntactic structure.
+\item[analyser~:]  Lire un programme et analyser sa structure syntactique.
 \index{parse}
 
-\item[print statement:]  An instruction that causes the Python
-interpreter to display a value on the screen.
+% \item[print statement:]  An instruction that causes the Python
+% interpreter to display a value on the screen.
+\item[commande d'impression~:]  Une commande qui a comme r\'esultat que l'interpreteur de
+{\sc Python} affiche une valeur sur l'\'ecran.
 \index{print statement}
 \index{statement!print}
 
@@ -628,49 +1126,86 @@ interpreter to display a value on the screen.
 \end{description}
 
 
-\section{Exercises}
+% ---------------------------------------------
+% \section{Exercises}
+\section{Exercices}
+% ---------------------------------------------
 
 \begin{ex}
-Use a web browser to go to the Python Website \url{python.org}.
-This page contains information about Python and links
-to Python-related pages, and it gives you the ability to search
-the Python documentation.
+% Use a web browser to go to the Python Website \url{python.org}.
+% This page contains information about Python and links
+% to Python-related pages, and it gives you the ability to search
+% the Python documentation.
+Utilise un navigateur de web pour aller \`a \url{http://python.org}.
+Beaucoup d'informations sur {\sc Python} y sont comprises, avec lien
+\`a d'autres pages d'int\'er\^et {\sc Python}, et il vous donne la
+capabilit\'e de faire une recherche dans la documentation de {\sc Python}.
+(Mais c'est en anglais.)
 
-For example, if you enter {\tt print} in the search window, the
-first link that appears is the documentation of the {\tt print}
-statement.  At this point, not all of it will make sense to you,
-but it is good to know where it is.
+% For example, if you enter {\tt print} in the search window, the
+% first link that appears is the documentation of the {\tt print}
+% statement.  At this point, not all of it will make sense to you,
+% but it is good to know where it is.
+Par exemple, si vous fa\^{\i}tes entrer {\tt print} dans le fen\^etre de
+recherche, le premier lien qui appara\^{\i}t est la documenation pour
+la commande d'impression, {\tt print}.  Vous n'\^etes pas sens\'e tout
+comprendre \`a ce point (m\^eme si vous avez l'anglais comme votre
+langue maternelle), mais c'est bon de savoir que \c{c}a existe!
 
 \index{documentation}
 \index{python.org}
 \end{ex}
 
 \begin{ex}
-Start the Python interpreter and type {\tt help()} to start the online
-help utility.  Or you can type \verb"help('print')" to get information
-about the {\tt print} statement.
+% Start the Python interpreter and type {\tt help()} to start the online
+% help utility.  Or you can type \verb"help('print')" to get information
+% about the {\tt print} statement.
 
-If this example doesn't work, you
-may need to install additional Python documentation or set an
-environment variable; the details depend on your operating system and
-version of Python.
+% If this example doesn't work, you
+% may need to install additional Python documentation or set an
+% environment variable; the details depend on your operating system and
+% version of Python.
+
+D\'emarrer l'interpreteur de {\sc Python} et taper {\tt help()}
+pour d\'emarrer l'utilit\'e d'aide en ligne.  Alternativement vous pouvez
+taper {\tt help('print')} pour obtenir des informations sur un sujet
+particulier, dans l'occurance la commande {\tt print}.  Si cet exemple
+ne marche pas, il faudra peut-\^etre installer des documentations additionelles
+de {\sc Python} ou de d\'efinir un certain variable d'environnement.  Malheureusement
+ces d\'etails d\'ependent sur votre syst\`eme d'exploitation et sur votre
+version de {\sc Python}.
 
 \index{help utility}
 \end{ex}
 
 \begin{ex}
-Start the Python interpreter and use it as a calculator.
-Python's syntax for math operations is almost the same as
-standard mathematical notation.  For example they symbols
-{\tt +}, {\tt -}, and {\tt /} denote addition, subtraction
-and division, as you would expect.  The symbol for
-multiplication is {\tt *}.
+% Start the Python interpreter and use it as a calculator.
+% Python's syntax for math operations is almost the same as
+% standard mathematical notation.  For example they symbols
+% {\tt +}, {\tt -}, and {\tt /} denote addition, subtraction
+% and division, as you would expect.  The symbol for
+% multiplication is {\tt *}.
 
-If you run a 10 kilometer race in 43 minutes 30 seconds, what is your
-average time per mile?  What is your average speed in miles per hour?
-(Hint: there are 1.61 kilometers in a mile).
+Démarrez l'interpreteur de {\sc Python} et l'utilise comme calculatrice.
+Le syntaxe de {\sc Python} pour les opérations mathématiques est presque
+identique à la notation standarde en mathématiques.  Par exemple, les symboles
+{\tt +}, {\tt -} et {\tt /} représente respectivement addition, soustraction
+et division, telque vous auriez anticipé.  Le  symbole de multiplication est {\tt *}.
+
+% If you run a 10 kilometer race in 43 minutes 30 seconds, what is your
+% average time per mile?  What is your average speed in miles per hour?
+% (Hint: there are 1.61 kilometers in a mile).
+
+Si vous avez couru une course de 10 kilomères en 43 minutes et 30 sécondes et vous
+devez expliquer votre vitesse moyenne à un britannique, il faudra calculer votre
+vitesse en miles par heure.  Quelle est le résultat~?  (Une donnée importante~:
+Il y a 1,61 kilomètres par mile.)
 
 \index{calculator}
 \index{running pace}
 
 \end{ex}
+
+%%%%%%
+% EOF
+%%%%%%

@@ -1,3 +1,7 @@
+% ==============================================================
+% Fichier : title.hxv
+% Dernière mise-à-jour : 31 août 2008 par MEC
+% ==============================================================
 \frontmatter
 
 % LATEXONLY
@@ -19,14 +23,19 @@
 \begin{flushright}
 \vspace*{2.0in}
 
+\FR
 \begin{spacing}{3}
-{\huge Think Python}\\
-{\Large An Introduction to Software Design}
+% {\huge Think Python}\\
+{\huge Penser {\sc Python}}\\
+% {\Large An Introduction to Software Design}
+{\Large Une Introduction au Design des Logiciels}
 \end{spacing}
 
 \vspace{0.25in}
 
 Version \theversion
+
+\EN
 
 \vfill
 
@@ -48,9 +57,12 @@ Version \theversion
 \begin{flushright}
 \vspace*{2.0in}
 
+\FR
 \begin{spacing}{3}
-{\huge Think Python}\\
-{\Large An Introduction to Software Design}
+% {\huge Think Python}\\
+{\huge Penser {\sc Python}}\\
+% {\Large An Introduction to Software Design}
+{\Large Une Introduction au Design des Logiciels}
 \end{spacing}
 
 \vspace{0.25in}
@@ -61,7 +73,12 @@ Version \theversion
 
 
 {\Large
-Allen Downey\\
+% Allen Downey\\
+Allen DOWNEY\\
+}
+
+{\large 
+Traduction par~: Mark E. CASIDA, Michel D'HOOGE et Vincent FAVRE-NICOLIN\\
 }
 
 
@@ -75,6 +92,8 @@ Allen Downey\\
 \vfill
 
 \end{flushright}
+
+\EN
 
 
 %--copyright--------------------------------------------------
@@ -97,6 +116,8 @@ a Computer Scientist}.
 
 \item[June 2008:] Major revision, changed title to
 {\em Think Python: An Introduction to Software Design}.
+
+\item[Summer 2008:] Translation into French begins.
 
 \end{description}
 
@@ -140,7 +161,16 @@ The \LaTeX\ source for this book is available from
 
 {\Large \thetitle}
 
-{\large Allen B. Downey}
+% {\large Allen B. Downey}
+{\large Allen B. DOWNEY}
+
+\FR
+{\large 
+Traduction par~: Mark E. CASIDA, Michel D'HOOGE et Vincent FAVRE-NICOLIN\\
+}
+\EN
+
+\\
 
 Version \theversion
 
