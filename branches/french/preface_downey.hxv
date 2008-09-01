@@ -1,119 +1,242 @@
-\section*{The strange history of this book}
+% ===============================================================
+% Fichier :  preface_downey.hxv
+% Dernière mise-à-jour : 31 août 2008 par MEC
+% ===============================================================
+% \section*{The strange history of this book}
+\section*{L'histoire \'etrange de ce livre}
+% ==============================================================
 
-In January 1999 I was preparing to teach an introductory programming
-class in Java.  I had taught it three times and I was getting
-frustrated.  The failure rate in the class was too high and, even for
-students who succeeded, the overall level of achievement was too low.
+% In January 1999 I was preparing to teach an introductory programming
+% class in Java.  I had taught it three times and I was getting
+% frustrated.  The failure rate in the class was too high and, even for
+% students who succeeded, the overall level of achievement was too low.
 
-One of the problems I saw was the books.  
-They were too big, with too much unnecessary detail about Java, and
-not enough high-level guidance about how to program.  And they all
-suffered from the trap door effect: they would start out easy,
-proceed gradually, and then somewhere around Chapter 5 the bottom would
-fall out.  The students would get too much new material, too fast,
-and I would spend the rest of the semester picking up the pieces.
+En janvier 1999 je preparais mon enseignement pour un cours introductoire
+\`a la programmation en {\sc Java}.  Je l'avais d\'ej\`a enseign\'e trois
+fois et je deviendrai frustr\'e.  Le taux de faillite du cours \'etais
+trop \'el\'ev\'e et m\^eme pour les \'etudiants qui r\'eussissais le cours,
+leur niveau final \'etait toujours trop bas.
 
-Two weeks before the first day of classes, I decided to write my
-own book.  
-My goals were:
+% One of the problems I saw was the books.  
+% They were too big, with too much unnecessary detail about Java, and
+% not enough high-level guidance about how to program.  And they all
+% suffered from the trap door effect: they would start out easy,
+% proceed gradually, and then somewhere around Chapter 5 the bottom would
+% fall out.  The students would get too much new material, too fast,
+% and I would spend the rest of the semester picking up the pieces.
+
+Un des probl\`emes que j'avais rencontr\'e \'etait les livres.  J'avais
+\'essay\'e trois livres de cocurs diff\'erents (et j'avais lu une dizaine
+en plus) et ils avaient tous les m\^emes probl\`emes.  Ils \'etaient trop
+grands, avec trop de d\'etail superflu concernant {\sc Java}, et pas assez
+d'encadrement \`a haut niveau concernant comment programmer.  Et ils souffraient
+tous de l'effet ``porte pieg\'ee''~: Ils commenceraient tous graduellement
+et facilement, puis quelque part autour du chaptire 5, l'\'etudiant se trouvait
+en difficult\'e comme si un gouffre s'est ouvert sous ses pieds.
+Les \'etudiants rencontraient trop de mati\`ere trop rapidement et je
+passais le reste du semestre \`a reparer les d\'egats du desastre.
+
+% Two weeks before the first day of classes, I decided to write my
+% own book.  
+% My goals were:
+
+Deux semaines avant le premier jours du semestre, j'ai d\'ecid\'e d'\'ecrire
+mon propre livre de cours.  
+% J'\'ecrivais un chapitre de 10 pages tous les
+% 13 jours.  Au 14\`eme jour, je faisais des revisions puis je l'envoyais
+% pour \^etre photocopi\'e.
+Voilà mes buts~:
 
 \begin{itemize}
 
-\item Keep it short.  It is better for students to read 10 pages
-than not read 50 pages.
+% \item Keep it short.  It is better for students to read 10 pages
+% than not read 50 pages.
 
-\item Be careful with vocabulary.  I tried to minimize the jargon
-and define each term at first use.
+\item Garder le bouquin au plus court.  Il est mielleur pour les \'etudiants de lire
+      10 pages au lieu de ne pas lire 50 pages.
 
-\item Build gradually. To avoid trap doors, I took the most difficult
-topics and split them into a series of small steps. 
+% \item Be careful with vocabulary.  I tried to minimize the jargon
+% and define each term at first use.
 
-\item Focus on programming, not the programming language.  I included
-the minimum useful subset of Java and left out the rest.
+\item Faire attention au vocabulaire.  J'essayais \`a minimiser l'utilisation de jargon
+      puis de d\'efinir chaque terme la premi\`ere fois que c'est utilis\'ee.
+
+% \item Build gradually. To avoid trap doors, I took the most difficult
+% topics and split them into a series of small steps. 
+
+\item B\^atir graduellement.  Afin d'\'eviter les portes pieg\'ees, je prenais les
+      sujets les plus difficiles et je les divisais en \'etapes plus petites.
+
+% \item Focus on programming, not the programming language.  I included
+% the minimum useful subset of Java and left out the rest.
+
+\item Le sujet du bouquin n'est pas le language de programmation, mais l'art de programmation
+      lui m\^eme.  J'ai inclu le sousensemble minime des commandes utiles de {\em Java} et
+      tant pis pour la reste.
 
 \end{itemize}
 
-I needed a title, so on a whim I chose {\em How to Think Like
-a Computer Scientist}.
+% I needed a title, so on a whim I chose {\em How to Think Like
+% a Computer Scientist}.
 
-My first version was rough, but it worked.  Students did the reading,
-and they understood enough that I could spend class time on the hard
-topics, the interesting topics and (most important) letting the
-students practice.
+J'avais besoin d'un titre.  Sur le coup du moment, j'ai choisi {\em Comment Programmer
+Comme un Informaticien}.
 
-I released the book under the GNU Free Documentation License,
-which allows users to copy, modify, and distribute the book.
+% My first version was rough, but it worked.  Students did the reading,
+% and they understood enough that I could spend class time on the hard
+% topics, the interesting topics and (most important) letting the
+% students practice.
+
+Ma premi\`ere version \'etait un peu rude, mais marchait.  Les \'etudiants lisaient
+et ils comprennaient suffisament que je pouvais reserver le cours pour les sujets les
+plus difficiles, les plus int\'eressants et puis (le plus important de tous) en donnant
+aux \'etudiants l'opportunit\'e de pratiquer.
+
+% I released the book under the GNU Free Documentation License,
+% which allows users to copy, modify, and distribute the book.
+
+Comme un utlisateur et un fan de logiciel libre, je crois \`a l'id\'ee exprim\'ee par
+Benjamin Franklin~:
+
+\begin{quote}
+  ``Comme nous profitons \'enormement des inventions d'autres, il s'agit d'\^etre heureux
+  quand nous pouvons les servir en fournissant nos propres inventions, et ceci il faut
+  faire de mani\`ere g\'en\'ereux et libre.''
+\end{quote}
+
+Donc j'ai r\'ealis\'e le livre sous la {\em GNU Free Documentation License} (Licence GNU de Documentation Libre), 
+permettant les utilisateurs de copier, modifier et distribuer le livre.
 
 \index{GNU Free Documentation License}
 \index{Free Documentation License, GNU}
 
-What happened next is the cool part.  Jeff Elkner, a high school
-teacher in Virginia, adopted my book and translated it into
-Python.  He sent me a copy of his translation, and I had the
-unusual experience of learning Python by reading my own book.
+% What happened next is the cool part.  Jeff Elkner, a high school
+% teacher in Virginia, adopted my book and translated it into
+% Python.  He sent me a copy of his translation, and I had the
+% unusual experience of learning Python by reading my own book.
 
-Jeff and I revised the book, incorporated a case study by
-Chris Meyers, and in 2001 we released {\em How to Think Like
-a Computer Scientist: Learning with Python}, also under
-the GNU Free Documentation License.
-As Green Tea Press, I published the book and started selling
-hard copies through Amazon.com and college book stores.
-Other books from Green Tea Press are available at
-\url{greenteapress.com}.
+Ce qui se passer ensuite \'etait cool.  Jeff ELKNER, un enseignant de lyc\'ee dans
+l'\'etat de Virginia, a choisi d'utiliser mon livre dans son cours apr\`es l'avoir
+traduit en {\sc Python}.  Il m'envoyait une copie de sa traduction, et j'ai l'exp\'erience
+peu common d'apprendre {\sc Python} en lisant mon propre livre.
 
-In 2003 I started teaching at Olin College and I got to teach
-Python for the first time.  The contrast with Java was striking.
-Students struggled less, learned more, worked on more interesting
-projects, and generally had a lot more fun.
+% Jeff and I revised the book, incorporated a case study by
+% Chris Meyers, and in 2001 we released {\em How to Think Like
+% a Computer Scientist: Learning with Python}, also under
+% the GNU Free Documentation License.
+% As Green Tea Press, I published the book and started selling
+% hard copies through Amazon.com and college book stores.
+% Other books from Green Tea Press are available at
+% \url{greenteapress.com}.
 
-Over the last five years I have continued to develop the book,
-correcting errors, improving some of the examples and
-adding material, especially exercises.  In 2008 I started work
-on a major revision---at the same time, I was
-contacted by an editor at Cambridge University Press who
-was interested in publishing the next edition.  Good timing!
+Ensemble Jeff et moi revisions le livre, inclussisons une \'etude exemplaire
+de Chris MEYERS et publions en 2001 {\em Comment Penser Comme un Informaticien: Apprendre
+avec Python}, aussi sous la {\em GNU Free Documentation License}.
+En tant que {\em Green Tea Press} (Maison de publication {\em Té Vert}), je publiais
+le livre et j'ai commençé à`vendre des copies en papier à travers Amazon.com et
+librairies universitaires.  D'autres slivres de {\em Green Tea Press} sont disponibles
+à \url{greenteapress.com}.
 
-The result is this book, now with the less grandiose title
-{\em Think Python}.  Some of the changes are:
+% In 2003 I started teaching at Olin College and I got to teach
+% Python for the first time.  The contrast with Java was striking.
+% Students struggled less, learned more, worked on more interesting
+% projects, and generally had a lot more fun.
+
+J'étais nommé professeur à {\em Olin College} en 2003 et j'ai eu l'opportunité d'enseigner
+{\em Python} pour la première fois.  La différence avec {\em Java} m'a fortement frappé.
+Les étudiants avaient moins de difficulté, ont plus appris, et travaillaient sur des
+projets plus intéressants, et trouvez leur apprentissage plus plaisant.
+
+% Over the last five years I have continued to develop the book,
+% correcting errors, improving some of the examples and
+% adding material, especially exercises.  In 2008 I started work
+% on a major revision---at the same time, I was
+% contacted by an editor at Cambridge University Press who
+% was interested in publishing the next edition.  Good timing!
+
+\c{C}a fait maintenant plus que cinq ans que je continue à développer le livre, corrigeant
+des erreurs, améliorant certains exemples et ajoutant de matière, surtout des exercices.  En 2008,
+j'ai commençé à travailler sur une revision majeur---au même moment, j'étais cocntacté par
+un éditeur à {\em Cambridge Univeristy Press} qui était intérressé par la publication de
+la prochaine édition.  Un timing excéllent!  
+
+% Le résultat est ce livre, maintenant avec le titre moins grandiose {\em Penser {\sc Python}} (titre
+% en anglais~: {\em Think Python}).  Voici certains des changements~:
+
+% The result is this book, now with the less grandiose title
+% {\em Think Python}.  Some of the changes are:
+
+Le résultat est ce livre, maintenant avec le titre moins grandiose {\em Penser {\sc Python}} (titre
+en anglais~: {\em Think Python}).  Voici certains des changements~:
 
 \begin{itemize}
 
-\item I added a section about debugging at the end of each chapter.
-  These sections present general techniques for finding and avoiding
-  bugs, and warnings about Python pitfalls.
+% \item I added a section about debugging at the end of each chapter.
+%   These sections present general techniques for finding and avoiding
+%   bugs, and warnings about Python pitfalls.
 
-\item I removed the material in the last few chapters about the
-  implementation of lists and trees.  I still love those topics, but I
-  thought they were incongruent with the rest of the book.
+\item J'ajoutais une section sur le déboguage à la fin de chaque chapître.
+Ces sections présentent des techniques générales pour trouver et pour éviter
+des bogues, et des avertissement concernant les pièges typiques de {\sc Python}.
 
-\item I added more exercises, ranging from short tests of
-  understanding to a few substantial projects.
+% \item I removed the material in the last few chapters about the
+%   implementation of lists and trees.  I still love those topics, but I
+%   thought they were incongruent with the rest of the book.
 
-\item I added a series of case studies---longer examples with
-  exercises, solutions, and discussion.  Some of them are based on
-  Swampy, a suite of Python programs I wrote for use in my classes.
-  Swampy, code examples, and some solutions are available from
-  \url{thinkpython.com}.
+\item J'ai enlevé la matières des chapîtres finaux concernant l'implémentation des listes
+et des arborescences.  J'aime toujours ces sujets, mais je pense qu'ils ne vont pas trop
+bien avec l'autre matière dans le bouquin.
+
+% \item I added more exercises, ranging from short tests of
+%   understanding to a few substantial projects.
+
+\item J'ai ajouté plus d'exercices, comprenant des tests brief de compréhension jusqu'à quelques
+projets plus substantifs.
+
+% \item I added a series of case studies---longer examples with
+%   exercises, solutions, and discussion.  Some of them are based on
+%   Swampy, a suite of Python programs I wrote for use in my classes.
+%   Swampy, code examples, and some solutions are available from
+%   \url{thinkpython.com}.
+
+\item J'ai ajouté une séries d'études de cas typiques---des exemples plus longues
+avec exercices, solutions et discussion.  Certains sont basés sur {\sc Swampy},une
+suite de programmes de {\sc Python} que j'avais écris pour mes cours.
+{\sc Swampy}, des exemples de code et quelques solutions sont disponibles à
+\url{thinkpython.com}.
   
-\item I expanded the discussion of programming development plans
-  and basic design patterns.
+% \item I expanded the discussion of programming development plans
+%   and basic design patterns.
 
-\item The use of Python is more idiomatic.  The book is still about
-  programming, not Python, but now I think the book gets more leverage
-  from the language.
+\item J'ai élargi la discussion des plans de développement des programmes et des patèrnes
+fondamentaux de design.
+
+% \item The use of Python is more idiomatic.  The book is still about
+%   programming, not Python, but now I think the book gets more leverage
+%   from the language.
+
+\item L'utilisation de {\sc Python} est plus idiomatique.  Le focus du livre est toujours la
+programmation, pas {\sc Python}, mais maintenant je crois que le livre profite à cause du
+choix du language {\sc Python}.
 
 \end{itemize}
 
-I hope you enjoy working with this book, and that it helps
-you learn to program and think, at least a little bit, like
-a computer scientist.
+% I hope you enjoy working with this book, and that it helps
+% you learn to program and think, at least a little bit, like
+% a computer scientist.
+
+J'espère que vous aimer travailler avec ce livre et qu'il vous aide
+à programmer et à penser, au moins un peu, comme un informaticien.
 
 
 Allen B. Downey \\
 Needham MA\\
 
-Allen Downey is an Associate Professor of Computer Science at 
-the Franklin W. Olin College of Engineering.
+% Allen Downey is an Associate Professor of Computer Science at 
+% the Franklin W. Olin College of Engineering.
+
+Allen Downey est un {\em Associate Professor} en Informatique au
+{\em Franklin W. Olin College of Engineering}.
 
 
 
@@ -130,52 +253,98 @@ the Franklin W. Olin College of Engineering.
 
 % Where to get the code.
 
-\section*{Acknowledgements}
+% -------------------------------------------
+% \section*{Acknowledgements}
+\section*{Remerciements}
+% ---------------------------------------------
 
-First and most importantly, I thank Jeff Elkner, who
-translated my Java book into Python, which got this project
-started and introduced me to what has turned out to be my
-favorite language.
+% First and most importantly, I thank Jeff Elkner, who
+% translated my Java book into Python, which got this project
+% started and introduced me to what has turned out to be my
+% favorite language.
 
-I also thank Chris Meyers, who contributed several sections
-to {\em How to Think Like a Computer Scientist}.
+D'abord et avec plus de priorité, j'aimerai remercier Jeff ELKNER, qui
+a traduit mon livre de {\sc Java} en language {\sc Python}, qui a vraiment
+démarré ce projet et qui m'a introduit à ce qui est devenu mon language 
+préféré.
 
-And I thank the Free Software Foundation for developing
-the GNU Free Documentation License, which helped make
-my collaboration with Jeff and Chris possible.
+% I also thank Chris Meyers, who contributed several sections
+% to {\em How to Think Like a Computer Scientist}.
+
+J'aimerai aussi remercier Chris MEYERS, qui a contribué à plusieures sections de
+{\em How to Think Like a Computer Scientist}.
+
+% And I thank the Free Software Foundation for developing
+% the GNU Free Documentation License, which helped make
+% my collaboration with Jeff and Chris possible.
+
+Et je remercie le {\em Free Software Foundation} pour le développement du 
+{\em GNU Free Documentation License}, qui rendait plus facile ma collaboration
+avec Jeff et avec Chris.
 
 \index{GNU Free Documentation License}
 \index{Free Documentation License, GNU}
 
-I also thank the editors at Lulu who worked on
+% I also thank the editors at Lulu who worked on
+% {\em How to Think Like a Computer Scientist}.
+
+J'aimerai également remercier les éditeurs à Lulu qui ont travaillé sur
 {\em How to Think Like a Computer Scientist}.
 
-I thank all the students who worked with earlier
-versions of this book and all the contributors (listed
-below) who sent in corrections and suggestions.
+% I thank all the students who worked with earlier
+% versions of this book and all the contributors (listed
+% below) who sent in corrections and suggestions.
 
-And I thank my wife, Lisa, for her work on this book, and Green
-Tea Press, and everything else, too.
+Je remercie tous les étudiants qui ont travaillé avec des versions précedentes
+de ce livre et je remercie aussi tous les contributeurs (liste en bas) qui ont
+envoyé des corrections et des suggestions.
+
+% And I thank my wife, Lisa, for her work on this book, and Green
+% Tea Press, and everything else, too.
+
+Et je remercie ma femme, Lisa, pour son travail sur ce livre, et {\em Green Tea Press},
+et pour d'autres choses d'ailleurs.
 
 
-\section*{Contributor List}
+% --------------------------------------
+% \section*{Contributor List}
+\section*{Liste de Contributeurs}
+% ----------------------------------------
 
 \index{contributors}
 
-More than 100 sharp-eyed and thoughtful readers have sent in
-suggestions and corrections over the past few years.  Their
-contributions, and enthusiasm for this project, have been a
-huge help.
+% More than 100 sharp-eyed and thoughtful readers have sent in
+% suggestions and corrections over the past few years.  Their
+% contributions, and enthusiasm for this project, have been a
+% huge help.
 
-If you have a suggestion or correction, please send email to 
-{\tt feedback@thinkpython.com}.  If I make a change based on your
-feedback, I will add you to the contributor list
-(unless you ask to be omitted).
+Plus que 100 lecteurs observant et refléchissant ont envoyé des
+suggestions et des corrections pendant les dernières années.  Leurs
+contributions et leur enthusiasme pour ce projet, m'ont beaucoup 
+encouragé.
 
-If you include at least part of the sentence the
-error appears in, that makes it easy for me to search.  Page and
-section numbers are fine, too, but not quite as easy to work with.
-Thanks!
+% If you have a suggestion or correction, please send email to 
+% {\tt feedback@thinkpython.com}.  If I make a change based on your
+% feedback, I will add you to the contributor list
+% (unless you ask to be omitted).
+
+Si vous avez une suggestion ou corrections, envoyez-moi un message
+de courriel (en anglais) à {\tt feedback@thinkpython.com}.
+Si je fais un changement basé sur votre feedback, je vous ajouterai
+à la liste des contributeurs (sauf si vous tenez d'être omis).
+
+% If you include at least part of the sentence the
+% error appears in, that makes it easy for me to search.  Page and
+% section numbers are fine, too, but not quite as easy to work with.
+% Thanks!
+
+Si vous pouvez inclure au moins une partie de la phrase dans lequel
+se trouve l'erreur, vous me faciliter la tâche de retrouver l'erreur.
+Des numéros de pages et de sections sont bonnes aussi, mais pas aussi
+facile pour moi.  Merci d'avance~!
+
+(NdT~: Nous avons préservé les remerciements sans traduction~:)
+\EN
 
 \small
 
