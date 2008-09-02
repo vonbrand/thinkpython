@@ -1,6 +1,6 @@
 % ==============================================================
 % Fichier : title.hxv
-% Dernière mise-à-jour : 31 août 2008 par MEC
+% Dernière mise-à-jour : 2 septembre 2008 par MEC
 % ==============================================================
 \frontmatter
 
@@ -77,8 +77,8 @@ Version \theversion
 Allen DOWNEY\\
 }
 
-{\large 
-Traduction par~: Mark E. CASIDA, Michel D'HOOGE et Vincent FAVRE-NICOLIN\\
+{\normalsize
+Traduction par~: Mark E. CASIDA,\\ Michel D'HOOGE\\ et Vincent FAVRE-NICOLIN\\
 }
 
 

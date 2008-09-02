@@ -1,6 +1,6 @@
 % ==================================================
 % Fichier : debug.hxv
-% Dernière mise-à-jour : 31 août 2008
+% Dernière mise-à-jour : 2 septembre 2008
 % ==================================================
 \index{debugging}
 
@@ -341,7 +341,10 @@ fonction pour l'ex\'ecuter ou d'ex\'ecuter une \`a partir d'une incitation
 interactive.  Aussi voir la section ``S\'equence d'Ex\'ecution'' en bas.
 
 
-\subsection{My program hangs.}
+% ---------------------------------------------------------
+% \subsection{My program hangs.}
+\subsection{Mon programme bloque.}
+% --------------------------------------------------------
 \index{infinite loop}
 \index{infinite recursion}
 \index{hanging}
@@ -462,125 +465,212 @@ elles ne sont pas mises \`a jour correctement.
 \index{infinite recursion}
 \index{recursion!infinite}
 
-\EN
+% Most of the time, an infinite recursion will cause the program to run
+% for a while and then produce a {\tt Maximum recursion depth exceeded}
+% error.
 
-Most of the time, an infinite recursion will cause the program to run
-for a while and then produce a {\tt Maximum recursion depth exceeded}
-error.
+La plus part du temps, une recursion infinie aura comme r\'esultat que
+le programme tourne pendant un certain temp puis produit l'erreur
+{\tt Maximum recursion depth exceeded}.
 
-If you suspect that a function or method is causing an infinite
-recursion, start by checking to make sure that there is a base case.
-In other words, there should be some condition that will cause the
-function or method to return without making a recursive invocation.
-If not, then you need to rethink the algorithm and identify a base
-case.
+% If you suspect that a function or method is causing an infinite
+% recursion, start by checking to make sure that there is a base case.
+% In other words, there should be some condition that will cause the
+% function or method to return without making a recursive invocation.
+% If not, then you need to rethink the algorithm and identify a base
+% case.
 
-If there is a base case but the program doesn't seem to be reaching
-it, add a {\tt print} statement at the beginning of the function or method
-that prints the parameters.  Now when you run the program, you will see
-a few lines of output every time the function or method is invoked,
-and you will see the parameters.  If the parameters are not moving
-toward the base case, you will get some ideas about why not.
+Si vous soupçonnez qu'une fonction ou une m\'ethode est la cause
+d'une recursion infinie, commencez vote d\'eboguage en v\'erifiant qu'il
+y a bien un cas de fond.  Autrement dit, il doit exister une condition
+qui aura comme r\'esultat un retouur sans plus de recursions.
+Si ce n'est pas le cas, il faudra repenser votre algorithme afin
+d'inclure un cas de fond.
+
+% If there is a base case but the program doesn't seem to be reaching
+% it, add a {\tt print} statement at the beginning of the function or method
+% that prints the parameters.  Now when you run the program, you will see
+% a few lines of output every time the function or method is invoked,
+% and you will see the parameters.  If the parameters are not moving
+% toward the base case, you will get some ideas about why not.
+
+S'il y a un mauvais cas mais le programme ne y arrive pas, ajoutez
+une commande {\tt print} au commencement de la fonction ou m\'ethode
+pour imprimer les parametres.  Maintenant quand vous tournez le programme,
+vous verrez quelques lignes de r\'esultats chaque fois que la fonction
+est appel\'ee et vous verrez les valeurs des parametres.  Si les parametres
+ne changent pas vers le cas de fond, vous trouverez une explication de
+pourquoi.
 
 
-\subsubsection{Flow of Execution}
+% -----------------------------------------------------------------
+% \subsubsection{Flow of Execution}
+\subsubsection{S\'equence d'Ex\'ecution}
+% --------------------------------------------------------
 \index{flow of execution}
 
-If you are not sure how the flow of execution is moving through
-your program, add {\tt print} statements to the beginning of each
-function with a message like ``entering function {\tt foo},'' where
-{\tt foo} is the name of the function.
+% If you are not sure how the flow of execution is moving through
+% your program, add {\tt print} statements to the beginning of each
+% function with a message like ``entering function {\tt foo},'' where
+% {\tt foo} is the name of the function.
 
-Now when you run the program, it will print a trace of each
-function as it is invoked.
+Si vous n'êtes pas sûr d'ordre dans lequel les commandes de votre
+sont exécutées, ajoutez des commandes {\tt print} au commencement de
+chaque fonction avec un message telque ``entrée de la fonction {\tt foo},''
+où {\tt foo} est le nom de la fonction.
 
+% Now when you run the program, it will print a trace of each
+% function as it is invoked.
 
-\subsection{When I run the program I get an exception.}
+Or quand vous faîtes tourner votre programme, il imprimera la tracée de chaque
+fonction évoquée.
+
+% -------------------------------------------------------------------
+% \subsection{When I run the program I get an exception.}
+\subsection{J'ai une exception quand je fais tourner mon programme.}
+% -------------------------------------------------------------------
 \index{exception}
 \index{runtime error}
 
-If something goes wrong during runtime, Python
-prints a message that includes the name of the
-exception, the line of the program where the problem occurred,
-and a traceback.
+% If something goes wrong during runtime, Python
+% prints a message that includes the name of the
+% exception, the line of the program where the problem occurred,
+% and a traceback.
+
+Quand quelque chose va mal au moment d'exécution (ce qui s'appèle une
+exception), {\sc Python} imprime un message donnant le nom de l'exception, 
+la ligne du programme où l'erreur s'est passé, et la tracée.
 
 \index{traceback}
 
-The traceback identifies the function that is currently running,
-and then the function that invoked it, and then the function that
-invoked {\em that}, and so on.  In other words, it traces the
-sequence of function invocations that got you to where you are.  It
-also includes the line number in your file where each of these
-calls occurs.
+% The traceback identifies the function that is currently running,
+% and then the function that invoked it, and then the function that
+% invoked {\em that}, and so on.  In other words, it traces the
+% sequence of function invocations that got you to where you are.  It
+% also includes the line number in your file where each of these
+% calls occurs.
 
-The first step is to examine the place in the program where
-the error occurred and see if you can figure out what happened.
-These are some of the most common runtime errors:
+La tracée indentifie la fonction actuellement en train de tourner
+puis la fonction qui a évoquée la fonction qui tournait, et ainsi
+de suite.  En autre mots, il fait la tracée de la séquence des
+appèles aux fonctions qui vous a mené là où vous êtes.  Il comprend
+égalementn le nombre de la ligne dans votre fichier où chaque 
+appèle s'est passée.
+
+% The first step is to examine the place in the program where
+% the error occurred and see if you can figure out what happened.
+% These are some of the most common runtime errors:
+
+La première étape est l'examination de l'endroit où l'erreur s'est passé
+pour voir si vous pouvez comprendre ce que s'est passé.  Voici des sources 
+d'erreurs commons~:
 
 \begin{description}
 
-\item[NameError:]  You are trying to use a variable that doesn't
-exist in the current environment.
-Remember that local variables are local.  You
-cannot refer to them from outside the function where they are defined.
+% \item[NameError:]  You are trying to use a variable that doesn't
+% exist in the current environment.
+% Remember that local variables are local.  You
+% cannot refer to them from outside the function where they are defined.
+
+\item[NameError (erreur de nom)~:] Vous essayer d'utiliser une variable qui
+n'existe pas dans l'environnement actuel.  Souvenez-vous que les variables
+locaux sont locaux.  Vous ne pouvez pas les faire reférence de l'extérieur
+de la fonction où elles sont définies.
 
 \index{NameError}
 \index{TypeError}
 \index{exception!NameError}
 \index{exception!TypeError}
 
-\item[TypeError:] There are several possible causes:
+% \item[TypeError:] There are several possible causes:
+
+\item[TypeError (erreur de type)~:] Il y a plusieures origines possibles~:
 
 \begin{itemize}
 
-\item  You are trying to use a value improperly.  Example: indexing
-a string, list, or tuple with something other than an integer.
+% \item  You are trying to use a value improperly.  Example: indexing
+% a string, list, or tuple with something other than an integer.
+
+\item Vous essayer l'utilisation incorrecte d'une valeur.  Exemple~: l'indice
+d'un string, d'une liste ou d'un tuple avec quelque chose d'autre qu'un nombre
+entier.
 
 \index{index}
 
-\item There is a mismatch between the items in a format string and
-the items passed for conversion.  This can happen if either the number
-of items does not match or an invalid conversion is called for.
+% \item There is a mismatch between the items in a format string and
+% the items passed for conversion.  This can happen if either the number
+% of items does not match or an invalid conversion is called for.
+
+\item Il y a un décallage entre les itèmes dans un string de formatage et 
+les itèmes passées pour faire la conversion.  Ceci peut se passer si soit
+le nombre d'itèmes n'est pas correcte soit une conversion impossible est
+demandée.
 
 \index{format operator}
 \index{operator!format}
 
-\item You are passing the wrong number of arguments to a function or method.
-For methods, look at the method definition and
-check that the first parameter is {\tt self}.  Then look at the
-method invocation; make sure you are invoking the method on an
-object with the right type and providing the other arguments
-correctly.
+% \item You are passing the wrong number of arguments to a function or method.
+% For methods, look at the method definition and
+% check that the first parameter is {\tt self}.  Then look at the
+% method invocation; make sure you are invoking the method on an
+% object with the right type and providing the other arguments
+% correctly.
 
+\item Vous passez un nombre incorrecte des arguments à`une fonction ou méthodde.
+Dans le cas des méthodes, regardez la définition de la méthode pour vérifier que la
+première paramètre est {\tt self}.  Puis regardez l'évocation de la méthode---soyez
+sûr que vous évoquez la méthode sur un objet du bon type et en donnant tous les
+arguments correctement.
+  
 \end{itemize}
 
-\item[KeyError:]  You are trying to access an element of a dictionary
-using a key that the dictionary does not contain.
+% \item[KeyError:]  You are trying to access an element of a dictionary
+% using a key that the dictionary does not contain.
+
+\item[KeyError (erreur de mot clef)~] Vous tentez l'accès d'un élément d'un
+dictionnaire en utilisantn un mot clef ne se trouvant pas dans le dictionnaire.
 
 \index{KeyError}
 \index{exception!KeyError}
 \index{dictionary}
 
-\item[AttributeError:] You are trying to access an attribute or method
-that does not exist.  Check the spelling!  You can use
-{\tt dir} to list the attributes that do exist.
+% \item[AttributeError:] You are trying to access an attribute or method
+% that does not exist.  Check the spelling!  You can use
+% {\tt dir} to list the attributes that do exist.
 
-If an AttributeError indicates that an object has {\tt NoneType},
-that means that it is {\tt None}.  One common cause is forgetting
-to return a value from a function; if you get to the end of
-a function without hitting a {\tt return} statement, it returns
-{\tt None}.  Another common cause is using the result from
-a list method, like {\tt sort}, that returns {\tt None}.
+\item[AttributeError (erreur d'attribute)~:] Vous essayez d'accèder à une attribute
+ou à une méthode qui n'existe pas.  Vérifiez l'epéllation~|  Vous pouvez utilisez
+{\tt dir} pour une liste des attributes existantes.
+
+% If an AttributeError indicates that an object has {\tt NoneType},
+% that means that it is {\tt None}.  One common cause is forgetting
+% to return a value from a function; if you get to the end of
+% a function without hitting a {\tt return} statement, it returns
+% {\tt None}.  Another common cause is using the result from
+% a list method, like {\tt sort}, that returns {\tt None}.
+
+Si l'AttributeError indique qu'un objet est de type {\tt NoneType},
+alors ça veut dire qu'il est {\tt None}.  Une raison fréquente pour ceci
+est si on oublie de retourner la vlaue d'une fonction.  Si vous attenez
+la fin d'une fonction sans arriver à une commande {\tt return}, il retourne
+la valeur {\tt None}.  Une autre cause fréquente est l'utilisation du résultat
+d'une méthode de type liste, telque {\tt sort}, qui retourne {\tt None}.
 
 \index{AttributeError}
 \index{exception!AttributeError}
 
-\item[IndexError:] The index you are using
-to access a list, string, or tuple is greater than
-its length minus one.  Immediately before the site of the error,
-add a {\tt print} statement to display
-the value of the index and the length of the array.
-Is the array the right size?  Is the index the right value?
+% \item[IndexError:] The index you are using
+% to access a list, string, or tuple is greater than
+% its length minus one.  Immediately before the site of the error,
+% add a {\tt print} statement to display
+% the value of the index and the length of the array.
+% Is the array the right size?  Is the index the right value?
+
+\item[IndexError~:] L'indice que vous utilisez pour accèder à une liste, string ou tuple
+est plus grande que la longueur de la liste, string ou tuple minus un.  Juste avant l'endroit
+où se passe l'erreur, ajoutez une commande {\tt print} pour montrer la valeur de l'indice et la
+longueur du tableau.  Est-ce que le tableau est de la bonne taille~?  Est-ce que l'indice a la bonne
+valeur~?
 
 \index{IndexError}
 \index{exception!IndexError}
@@ -591,93 +681,172 @@ Is the array the right size?  Is the index the right value?
 \index{Python debugger (pdb)}
 \index{pdb (Python debugger)}
 
-The Python debugger ({\tt pdb}) is useful for tracking down
-Exceptions because it allows you to examine the state of the
-program immediately before the error.  You can read
-about {\tt pdb} at \url{docs.python.org/lib/module-pdb.html}.
+% The Python debugger ({\tt pdb}) is useful for tracking down
+% Exceptions because it allows you to examine the state of the
+% program immediately before the error.  You can read
+% about {\tt pdb} at \url{docs.python.org/lib/module-pdb.html}.
+
+Le déboggeur de {\sc Python} ({\tt pdb}) est util pour trouver
+des exceptions à cause du fait que {\tt pdb} vous permet l'état
+du programme juste avant l'erreur.  Vous pouvez lire plus sur
+{\tt pdb} (en anglais) à \url{docs.python.org/lib/module-pdb.html}.
 
 
-\subsection{I added so many {\tt print} statements I get inundated with
-output.}
+% -------------------------------------------------------------------------
+% \subsection{I added so many {\tt print} statements I get inundated with
+% output.}
+\subsection{J'ai ajouté tellement de commandes {\tt print} que je suis inondé avec trop d'informations.}
+% ------------------------------------------------------------------
 
 \index{print statement}
 \index{statement!print}
 
-One of the problems with using {\tt print} statements for debugging
-is that you can end up buried in output.  There are two ways
-to proceed: simplify the output or simplify the program.
+% One of the problems with using {\tt print} statements for debugging
+% is that you can end up buried in output.  There are two ways
+% to proceed: simplify the output or simplify the program.
 
-To simplify the output, you can remove or comment out {\tt print}
-statements that aren't helping, or combine them, or format
-the output so it is easier to understand.
+Un des problèmes en servant des commandes {\tt print} pour faire le
+déboguage est que vous pouvez vous soumergé par des quantités et des
+quantités des données.  Il y a deux solutions~: simplifier les informations sorties
+ou simplifier le programme.
 
-To simplify the program, there are several things you can do.  First,
-scale down the problem the program is working on.  For example, if you
-are searching a list, search a {\em small} list.  If the program takes
-input from the user, give it the simplest input that causes the
-problem.
+% To simplify the output, you can remove or comment out {\tt print}
+% statements that aren't helping, or combine them, or format
+% the output so it is easier to understand.
+
+Pour simplifier les informations sorties, vous pouvez soit enlevez ou mettre en
+commentaire les commandes {\tt print} qui n'aident pas soit les combiner soit
+les récrire pour les rendre plus facile à comprendre.
+
+% To simplify the program, there are several things you can do.  First,
+% scale down the problem the program is working on.  For example, if you
+% are searching a list, search a {\em small} list.  If the program takes
+% input from the user, give it the simplest input that causes the
+% problem.
+
+Pour simplifier le programme, vous pouvez faire plusieres choses.  D'abord,
+réduisez la taille du problème sur lequel vous travaillez.  Par exemple, si 
+vous faîtes une recherche dans une liste, faites la recherche dans une {\em petite}
+liste.  Si les données d'entrée sont reçu de l'utilisateur, trouvez les données
+d'entrée minimaux qui produisentt le problème.
 
 \index{dead code}
 
-Second, clean up the program.  Remove dead code and reorganize the
-program to make it as easy to read as possible.  For example, if you
-suspect that the problem is in a deeply nested part of the program,
-try rewriting that part with simpler structure.  If you suspect a
-large function, try splitting it into smaller functions and testing them
-separately.
+% Second, clean up the program.  Remove dead code and reorganize the
+% program to make it as easy to read as possible.  For example, if you
+% suspect that the problem is in a deeply nested part of the program,
+% try rewriting that part with simpler structure.  If you suspect a
+% large function, try splitting it into smaller functions and testing them
+% separately.
+
+Deuxième, nettoyez le programme.  C'est-à-dire, elevez tout code ``mort'' (ne servant
+à rien) et réorganiser le programme afin de le rendre plus lisible.  Par exemple,
+si vous soupçonnez un problème dans une partie du programme profondement enfuis
+dans des boucles encastrées en plusieurs niveaux, essayez de diviser cette partie
+du programme dans des fonctions plus petites et les tester séparément.
 
 \index{testing!minimal test case}
 \index{test case, minimal}
 
-Often the process of finding the minimal test case leads you to the
-bug.  If you find that a program works in one situation but not in
-another, that gives you a clue about what is going on.
+% Often the process of finding the minimal test case leads you to the
+% bug.  If you find that a program works in one situation but not in
+% another, that gives you a clue about what is going on.
 
-Similarly, rewriting a piece of code can help you find subtle
-bugs.  If you make a change that you think doesn't affect the
-program, and it does, that can tip you off.
+Souvent l'exercice de chercher le cas de test le plus simple produisant
+le bug vous mène à trouver le bogue.  Si vous trouver que le programme
+marche dans une situation mais pas dan un autre, alors ça vous donne
+une idée de ce que se passe.
 
+% Similarly, rewriting a piece of code can help you find subtle
+% bugs.  If you make a change that you think doesn't affect the
+% program, and it does, that can tip you off.
 
-\section{Semantic errors}
+Pareil, la récriture d'une partie du code peut vous aider de trouver
+des bogues subtiles.  Si vous faîtes un changement que vous pensez
+n'affecte pas le programme---et le comportement du programme change~!---vous
+avez appris quelque chose.
+
+% ----------------------------------------------------------
+% \section{Semantic errors}
+\section{Erreurs Semantiques}
+% ---------------------------------------------------------
 \index{semantic error}
 \index{error!semantic}
 
-In some ways, semantic errors are the hardest to debug,
-because the interpreter provides no information
-about what is wrong.  Only you know what the program is supposed to
-do.
+% In some ways, semantic errors are the hardest to debug,
+% because the interpreter provides no information
+% about what is wrong.  Only you know what the program is supposed to
+% do.
 
-The first step is to make a connection between the program
-text and the behavior you are seeing.  You need a hypothesis
-about what the program is actually doing.  One of the things
-that makes that hard is that computers run so fast.
+Quelque part, ce sont les erreurs semantiques qui sont les plus difficiles
+à déboguer parce que l'interpreteur ne vous donne aucune indication de
+ce qui ne va pas.  C'est seulement vous qui sait ce que le programme est
+sensé faire~!
 
-You will often wish that you could slow the program down to human
-speed, and with some debuggers you can.  But the time it takes to
-insert a few well-placed {\tt print} statements is often short compared to
-setting up the debugger, inserting and removing breakpoints, and
-``stepping'' the program to where the error is occurring.
+% The first step is to make a connection between the program
+% text and the behavior you are seeing.  You need a hypothesis
+% about what the program is actually doing.  One of the things
+% that makes that hard is that computers run so fast.
 
-\subsection{My program doesn't work.}
+La première étape est de faire la connection entre le texte du programme
+est ce que vous voyez se passer.  Vous avez besoin d'une hypothèse
+concernant la façon que le programme se comporte.  Une raison que
+c'est parfois difficile d'arriver à la bonne hypothèse est que les 
+ordinateurs travaillent si vite~!
 
-You should ask yourself these questions:
+% You will often wish that you could slow the program down to human
+% speed, and with some debuggers you can.  But the time it takes to
+% insert a few well-placed {\tt print} statements is often short compared to
+% setting up the debugger, inserting and removing breakpoints, and
+% ``stepping'' the program to where the error is occurring.
+
+Vous souhaiterez souvent que vous pourriez relentir le programme à une vitesse
+plus humaine---et ça peut se faire avec certains débogueurs (logiciels fournissant
+des outils pour aider le déboguage).  Mais le temps nécessaire pour mettre
+quelque commandes {\tt print} bien placées est souvent courts en comparaison
+avec le temps nécessaire de configurer le débogueur, avec tous les insertion
+et enlevement des {\em breakpoints} (points d'arrêt), et faisant aller ligne par ligne
+jusqu'où se passe l'erreur.
+
+% -----------------------------------------------------------------
+% \subsection{My program doesn't work.}
+\subsection{Mon programme ne marche pas.}
+% -----------------------------------------------------------------
+
+% You should ask yourself these questions:
+
+Demandez vous les questions suivantes~:
 
 \begin{itemize}
 
-\item Is there something the program was supposed to do but
-which doesn't seem to be happening?  Find the section of the code
-that performs that function and make sure it is executing when
-you think it should.
+% \item Is there something the program was supposed to do but
+% which doesn't seem to be happening?  Find the section of the code
+% that performs that function and make sure it is executing when
+% you think it should.
 
-\item Is something happening that shouldn't?  Find code in
-your program that performs that function and see if it is
-executing when it shouldn't.
+\item Y a-t-il quelque chose que le programme était sensé faire mais
+qui ne semble pas se passer~?  Trouvez la section du code qui
+évoque la fonction et vérifiez bien que ça marche quand vous pensez
+que ça devrait marcher.
 
-\item Is a section of code producing an effect that is not
-what you expected?  Make sure that you understand the code in
-question, especially if it involves invocations to functions or methods in
-other Python modules.  Read the documentation for the functions you invoke.
-Try them out by writing simple test cases and checking the results.
+% \item Is something happening that shouldn't?  Find code in
+% your program that performs that function and see if it is
+% executing when it shouldn't.
+
+\item Y a-t-il quelque chose qui se passe qui ne doit pas se passer~?  Trouvez le code
+dans votre programme qui évoque la fonction et voir si ça s'exécute quand ça ne devrait
+pas.
+
+% \item Is a section of code producing an effect that is not
+% what you expected?  Make sure that you understand the code in
+% question, especially if it involves invocations to functions or methods in
+% other Python modules.  Read the documentation for the functions you invoke.
+% Try them out by writing simple test cases and checking the results.
+
+\item Y a-t-il une section du code qui produit un effet qu'il n'est pas ce que 
+vous avez anticipé~?  Vérifiez que vous comprenez le code en question, surtout
+s'il comprend des appèles aux fonctions ou aux méthodes dans d'autres
+modules de {\sc Python}.
 
 \end{itemize}
 
@@ -689,29 +858,46 @@ model.
 \index{model, mental}
 \index{mental model}
 
-The best way to correct your mental model is to break the program
-into its components (usually the functions and methods) and test
-each component independently.  Once you find the discrepancy
-between your model and reality, you can solve the problem.
+% The best way to correct your mental model is to break the program
+% into its components (usually the functions and methods) and test
+% each component independently.  Once you find the discrepancy
+% between your model and reality, you can solve the problem.
 
-Of course, you should be building and testing components as you
-develop the program.  If you encounter a problem,
-there should be only a small amount of new code
-that is not known to be correct.
+La meilleure façon de corriger votre modèle mentale est de diviser le programme
+dans ces composants constitutifs (normalement les fonctions et les méthodes) et
+de les tester indépendément l'un de l'autre.  Si vous trouvez une différence
+entre votre modèle de comment le programme doit se comporter et la réalité
+de sa comportement, vous êtes en messure de resoudre votre problème.
 
+% Of course, you should be building and testing components as you
+% develop the program.  If you encounter a problem,
+% there should be only a small amount of new code
+% that is not known to be correct.
 
-\subsection{I've got a big hairy expression and it doesn't
-do what I expect.}
+Biensûr vous devez construire votre programme en étapes en testant les composants
+pendant que vous dévéloppez le programme.  Si vous rencontrez un problème, il y aura
+seulement une petite quantité de nouveau code qui n'est pas déjà testé est donc 
+connu fiable.
+
+% -------------------------------------------------------------------------------------------------------
+% \subsection{I've got a big hairy expression and it doesn't do what I expect.}
+\subsection{J'ai une expression grande et dégoulasse et il ne me donne pas du tout ce que je voulais.}
+% --------------------------------------------------------------------------------------------------------
 
 \index{expression!big and hairy}
 \index{big, hairy expression}
 
-Writing complex expressions is fine as long as they are readable,
-but they can be hard to debug.  It is often a good idea to
-break a complex expression into a series of assignments to
-temporary variables.
+% Writing complex expressions is fine as long as they are readable,
+% but they can be hard to debug.  It is often a good idea to
+% break a complex expression into a series of assignments to
+% temporary variables.
 
-For example:
+Ça va pour l'écriture des expressions complexes à condition qu'on peut les lire,
+mais ils pourrait s'avérer difficile à déboguer.  Il est une bonne idée de réduire
+des expressions complexes dans une série des assignations aux variables temporaires.
+
+% For example:
+Par exemple~:
 
 \beforeverb
 \begin{verbatim}
@@ -719,7 +905,8 @@ self.hands[i].addCard(self.hands[self.findNeighbor(i)].popCard())
 \end{verbatim}
 \afterverb
 %
-This can be rewritten as:
+% This can be rewritten as:
+Ceci peut êtré récrit comme~:
 
 \beforeverb
 \begin{verbatim}
@@ -729,20 +916,30 @@ self.hands[i].addCard(pickedCard)
 \end{verbatim}
 \afterverb
 %
-The explicit version is easier to read because the variable
-names provide additional documentation, and it is easier to debug
-because you can check the types of the intermediate variables
-and display their values.
+% The explicit version is easier to read because the variable
+% names provide additional documentation, and it is easier to debug
+% because you can check the types of the intermediate variables
+% and display their values.
+
+La version explicite est plus facile à lire à cause du fait que les noms
+des variables donnent des informations supplémentaires, et il est plus
+facile à déboguer parce que vous pouvez vérifier les types des variables
+intermédiaires et faire sortir leur valeurs.
 
 \index{temporary variable}
 \index{variable!temporary}
 \index{order of operations}
 \index{precedence}
 
-Another problem that can occur with big expressions is
-that the order of evaluation may not be what you expect.
-For example, if you are translating the expression
-$\frac{x}{2 \pi}$ into Python, you might write:
+% Another problem that can occur with big expressions is
+% that the order of evaluation may not be what you expect.
+% For example, if you are translating the expression
+% $\frac{x}{2 \pi}$ into Python, you might write:
+
+Un autre problème qui peut se passé en utilisant des grandes
+expressions est que l'ordre d'évaluation n'est pas toujours
+ce que vous avez anticipé.  Par exemple, si vous traduisez
+l'expression $\frac{x}{2 \pi}$ en {\sc Python}, que vous devez écrire~:
 
 \beforeverb
 \begin{verbatim}
@@ -750,12 +947,19 @@ y = x / 2 * math.pi
 \end{verbatim}
 \afterverb
 %
-That is not correct because multiplication and division have
-the same precedence and are evaluated from left to right.
-So this expression computes $x \pi / 2$.
+% That is not correct because multiplication and division have
+% the same precedence and are evaluated from left to right.
+% So this expression computes $x \pi / 2$.
 
-A good way to debug expressions is to add parentheses to make
-the order of evaluation explicit:
+Ceci n'est pas correcte à cause du fait que les multiplications et les
+divisions ont la même précédence et sont évaluée de gauche à droite.
+Donc le résultat de cette expression est le calcul de $x \pi / 2$.
+
+% A good way to debug expressions is to add parentheses to make
+% the order of evaluation explicit:
+
+Une bonne façon de déboguer des telles expressions est d'ajouter des parenthèses
+pour mieux expliciter l'ordre d'évaluation~:
 
 \beforeverb
 \begin{verbatim}
@@ -763,21 +967,32 @@ the order of evaluation explicit:
 \end{verbatim}
 \afterverb
 %
-Whenever you are not sure of the order of evaluation, use
-parentheses.  Not only will the program be correct (in the sense
-of doing what you intended), it will also be more readable for
-other people who haven't memorized the rules of precedence.
+% Whenever you are not sure of the order of evaluation, use
+% parentheses.  Not only will the program be correct (in the sense
+% of doing what you intended), it will also be more readable for
+% other people who haven't memorized the rules of precedence.
 
+Quand vous n'êtes pas sûr de l'ordre d'évaluation, utilisez des parenthèses.
+Non juste serait le programme correcte (dans le sense de faire ce que vous
+voulez), mais il sera également plus lisible pour d'autre personnes qui
+n'ont pas encore memorisé les règles d'ordre des opérations.
 
-\subsection{I've got a function or method that doesn't return what I
-expect.}
+% ----------------------------------------------------------------------
+% \subsection{I've got a function or method that doesn't return what I expect.} 
+\subsection{J'au une fonction ou méthode qui ne me retourne ce que j'anticipais.}
+% ----------------------------------------------------------------------
 \index{return statement}
 \index{statement!return}
 
-If you have a {\tt return} statement with a complex expression,
-you don't have a chance to print the {\tt return} value before
-returning.  Again, you can use a temporary variable.  For
-example, instead of:
+% If you have a {\tt return} statement with a complex expression,
+% you don't have a chance to print the {\tt return} value before
+% returning.  Again, you can use a temporary variable.  For
+% example, instead of:
+
+Si j'ai une commande {\tt return} avec une expression complexe,
+vous n'avez pas l'occasion d'imiprimer la valeur de {\tt return} 
+avant de retourner.  Mais, de nouveau, vous pouvez utilisez une
+variable temporaire.  Par exemple, au lieu de~:
 
 \beforeverb
 \begin{verbatim}
@@ -785,7 +1000,8 @@ return self.hands[i].removeMatches()
 \end{verbatim}
 \afterverb
 %
-you could write:
+% you could write:
+vous pouvez écrire~:
 
 \beforeverb
 \begin{verbatim}
@@ -794,86 +1010,149 @@ return count
 \end{verbatim}
 \afterverb
 %
-Now you have the opportunity to display the value of
-{\tt count} before returning.
+% Now you have the opportunity to display the value of
+% {\tt count} before returning.
 
+Maintenant vous avez l'opportunité de faire sortir la valeur
+de {\tt count} avant de faire le retour.
 
-\subsection{I'm really, really stuck and I need help.}
+% -------------------------------------------------------------
+% \subsection{I'm really, really stuck and I need help.}
+\subsection{Je sèche et j'ai vraiment besoin de l'aide.}
+% -------------------------------------------------------------
 
-First, try getting away from the computer for a few minutes.
-Computers emit waves that affect the brain, causing these
-symptoms:
+% First, try getting away from the computer for a few minutes.
+% Computers emit waves that affect the brain, causing these
+% symptoms:
+
+Tout d'abord, essayez de vous éloigner de l'ordinateur pendant
+quelques minutes.   Les ordinateurs sont des émitteurs d'ondes
+qui affectent le cerveau, donnant les symptomes suivants~:
 
 \begin{itemize}
 
-\item Frustration and rage.
+% \item Frustration and rage.
+\item Frustration et colère.
 
 \index{frustration}
 \index{rage}
 \index{debugging!emotional response}
 \index{emotional debugging}
 
-\item Superstitious beliefs (``the computer hates me'') and
-magical thinking (``the program only works when I wear my
-hat backward'').
+% \item Superstitious beliefs (``the computer hates me'') and
+% magical thinking (``the program only works when I wear my
+% hat backward'').
+
+\item Des croyances superstitieuses (``l'ordinateur me haït'') et
+même magique (``le programme ne marche que quand je porte ma casquette
+en sense arrière'').
+
 
 \index{debugging!superstition}
 \index{superstitious debugging}
 
-\item Random walk programming (the attempt to program by writing
-every possible program and choosing the one that does the right
-thing).
+% \item Random walk programming (the attempt to program by writing
+% every possible program and choosing the one that does the right
+% thing).
+
+\item La programmation au style ``marche au hasard'' (la tentative de faire
+la programmation en écrivant toute sorte de programme possible dans l'espérence
+de finalement pouvoir choisir le seul qui fonctionne comme on voudrait).
+
 
 \index{random walk programming}
 \index{development plan!random walk programming}
 
 \end{itemize}
 
-If you find yourself suffering from any of these symptoms, get
-up and go for a walk.  When you are calm, think about the program.
-What is it doing?  What are some possible causes of that
-behavior?  When was the last time you had a working program,
-and what did you do next?
+% If you find yourself suffering from any of these symptoms, get
+% up and go for a walk.  When you are calm, think about the program.
+% What is it doing?  What are some possible causes of that
+% behavior?  When was the last time you had a working program,
+% and what did you do next?
 
-Sometimes it just takes time to find a bug.  I often find bugs
-when I am away from the computer and let my mind wander.  Some
-of the best places to find bugs are trains, showers, and in bed,
-just before you fall asleep.
+Si vous trouvez que vous êtes afflicté par un de ces symptomes, levez-vous
+et allez-vous promener~!
 
+% Sometimes it just takes time to find a bug.  I often find bugs
+% when I am away from the computer and let my mind wander.  Some
+% of the best places to find bugs are trains, showers, and in bed,
+% just before you fall asleep.
 
-\subsection{No, I really need help.}
+Parfois il vous faut juste suffisament de temps pour trouver un bogue.  Souvent je
+trouve mes bogues quand je suis loin de mon ordi et je me laisse promèner mes
+pensées.  Parmi les meilleurs endroits pour trouver des bogues sont~: des trains, 
+des douches et au lit juste avant de s'endormir.
 
-It happens.  Even the best programmers occasionally get stuck.
-Sometimes you work on a program so long that you can't see the
-error.  A fresh pair of eyes is just the thing.
+% ----------------------------------------------------
+% \subsection{No, I really need help.}
+\subsection{Non, j'ai vraiment besoin d'aide.}
+% ----------------------------------------------------
 
-Before you bring someone else in, make sure you are prepared.
-Your program should be as simple
-as possible, and you should be working on the smallest input
-that causes the error.  You should have {\tt print} statements in the
-appropriate places (and the output they produce should be
-comprehensible).  You should understand the problem well enough
-to describe it concisely.
+% It happens.  Even the best programmers occasionally get stuck.
+% Sometimes you work on a program so long that you can't see the
+% error.  A fresh pair of eyes is just the thing.
 
-When you bring someone in to help, be sure to give
-them the information they need:
+Eh bien, ça se passe.  Même les meilleurs programmeurs sèchent occasionnellement.
+
+% Before you bring someone else in, make sure you are prepared.
+% Your program should be as simple
+% as possible, and you should be working on the smallest input
+% that causes the error.  You should have {\tt print} statements in the
+% appropriate places (and the output they produce should be
+% comprehensible).  You should understand the problem well enough
+% to describe it concisely.
+
+Avant de faire appèl à une autre personne, préparez-vous.  Votre programme
+doit être aussi simple que possible, et vous devez travaillez avec le plus
+petit ensemble de données d'entrée qui produit l'erreur.  Vous devez mettre
+des commandes {\tt print} dans tous les bonnes endroits (et avec des informations
+sorties qui sont compréhensibles).  Vous devez comprendre le problème suffisament
+de l'écrire avec concision.
+
+% When you bring someone in to help, be sure to give
+% them the information they need:
+Quand vous demandez de l'aide, il faut lui donner tous les informations
+qui pouvez lui aider à vous aider~:
 
 \begin{itemize}
 
-\item If there is an error message, what is it
-and what part of the program does it indicate?
+% \item If there is an error message, what is it
+% and what part of the program does it indicate?
 
-\item What was the last thing you did before this error occurred?
-What were the last lines of code that you wrote, or what is
-the new test case that fails?
+\item S'il y avait un message d'erreur, alors c'était quoi~? et 
+quelle partie du programme est indiqué par le message d'erreur~?
 
-\item What have you tried so far, and what have you learned?
+% \item What was the last thing you did before this error occurred?
+% that were the last lines of code that you wrote, or what is
+% the new test case that fails?
+
+\item Qu'est-ce que c'était la dernière chose que vous avez fait juste
+avant l'occurance de l'erreur~?  Quelles étaient les dernières lignes
+de code que vous avez écrit~?  Quel était le nouveau cas de test qui 
+n'a pas marché~?
+
+% \item What have you tried so far, and what have you learned?
+
+\item Qu'est-ce que vous avez essayé jusqu'à ce point et qu'est-ce que vous
+avez appris~?
 
 \end{itemize}
 
-When you find the bug, take a second to think about what you
-could have done to find it faster.  Next time you see something
-similar, you will be able to find the bug more quickly.
+% When you find the bug, take a second to think about what you
+% could have done to find it faster.  Next time you see something
+% similar, you will be able to find the bug more quickly.
 
-Remember, the goal is not just to make the program
-work.  The goal is to learn how to make the program work.
+Quand vous trouvez le bogue, prenez une séconde pour refléchir sur ce que vous
+auriez pu faire pour le trouver plus vite.  La prochaine fois quand vous
+verrez quelque chose de pareil, vous serez capable de le trouvez plus rapidement.
+
+% Remember, the goal is not just to make the program
+% work.  The goal is to learn how to make the program work.
+
+Souvenez-vous que le but n'est pas seulement de faire marcher votre programme.  Le
+but est d'apprendre comment faire marcher le programme.
+
+%%%%%%
+% EOF
+%%%%%%
