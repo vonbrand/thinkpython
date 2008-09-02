@@ -1,14 +1,22 @@
 \label{funcchap}
 
-\section{Function calls}
+%\section{Function calls}
+\section{Appel de fonctions}
 \label{functionchap}
-\index{function call}
+%\index{function call}
+\index{fonction (appel de)}
 
-In the context of programming, a {\bf function} is a named sequence of
-statements that performs a computation.  When you define a function,
-you specify the name and the sequence of statements.  Later, you can
-``call'' the function by name.  
-We have already seen one example of a {\bf function call}:
+%In the context of programming, a {\bf function} is a named sequence of
+%statements that performs a computation.  When you define a function,
+%you specify the name and the sequence of statements.  Later, you can
+%``call'' the function by name.  
+%We have already seen one example of a {\bf function call}:
+
+En programmation, une {\bf fonction} est une suite d'expressions qui r\'ealisent
+un calcul, et \`a laquelle on donne un nom. Lorsque vous d\'efinissez une
+fonction vous devez indiquer son nom et la suite de d'expressions. Ensuite,
+il est possible d'``appeler'' la fonction par son nom.
+Nous avons d\'ej\`a vu un exemple d'appel de fonction:
 
 \beforeverb
 \begin{verbatim}
@@ -17,17 +25,26 @@ We have already seen one example of a {\bf function call}:
 \end{verbatim}
 \afterverb
 %
-The name of the function is {\tt type}.  The expression in parentheses
-is called the {\bf argument} of the function.  The result, for this
-function, is the type of the argument.
+%The name of the function is {\tt type}.  The expression in parentheses
+%is called the {\bf argument} of the function.  The result, for this
+%function, is the type of the argument.
+
+Le nom de la fonction est {\tt type}. L'expression entre parenth\`eses
+est appel\'e l'{\bf argument} de la fonction. Le r\'esultat, pour cette
+fonction, est le type de l'argment. 
 
 \index{parentheses!argument in}
 
-It is common to say that a function ``takes'' an argument and ``returns''
-a result.  The result is called the {\bf return value}.
+%It is common to say that a function ``takes'' an argument and ``returns''
+%a result.  The result is called the {\bf return value}.
 
+On dit commun`ement qu'une fonction ``prend'' un argument et ``renvoie''
+un r\'esultat. Ce r\'esultat est appel\'e \textbf{valeur de renvoi}.
+
+%\index{argument}
+%\index{return value}
 \index{argument}
-\index{return value}
+\index{valeur de renvoi}
 
 
 \section{Type conversion functions}
@@ -42,24 +59,34 @@ a result.  The result is called the {\bf return value}.
 % they are on the list of ``built-in functions'' so I am
 % willing to call them functions.
 
-Python provides built-in functions that convert values
-from one type to another.  The {\tt int} function takes any value and
-converts it to an integer, if it can, or complains otherwise:
+%Python provides built-in functions that convert values
+%from one type to another.  The {\tt int} function takes any value and
+%converts it to an integer, if it can, or complains otherwise:
 
-\index{int function}
-\index{function!int}
+Python fournit des fonctions intrins\`eques qui pemettent de
+convertir des valeurs d'un type vers un autre. Par exemple la
+fonction {\tt int} prend n'importe quelle valeur et la convertit
+en entier, lorsque c'est possible, et proteste dans le cas contraire :
+
+%\index{int function}
+%\index{function!int}
+\index{int (fonction)}
+\index{fonction!int}
 
 \beforeverb
 \begin{verbatim}
 >>> int('32')
 32
->>> int('Hello')
-ValueError: invalid literal for int(): Hello
-\end{verbatim}
+>>> int('Bonjour')
+ValueError: invalid literal for int(): Bonjour\end{verbatim}
 \afterverb
 %
-{\tt int} can convert floating-point values to integers, but it
-doesn't round off; it chops off the fraction part:
+%{\tt int} can convert floating-point values to integers, but it
+%doesn't round off; it chops off the fraction part:
+
+{\tt int} peut convertir des nombres r\'eels (en virgule flottante) 
+en entier, mais sans faire d'arrondi ; la partie fractionnaire est
+supprim\'ee.
 
 \beforeverb
 \begin{verbatim}
@@ -70,11 +97,16 @@ doesn't round off; it chops off the fraction part:
 \end{verbatim}
 \afterverb
 %
-{\tt float} converts integers and strings to floating-point
-numbers:
+%{\tt float} converts integers and strings to floating-point
+%numbers:
 
-\index{float function}
-\index{function!float}
+{\tt float} converti des entier ainsi que des cha\^ines de caract\`eres
+en nombres en virgule flottante.
+
+%\index{float function}
+%\index{function!float}
+\index{float (fonction)}
+\index{fonction!float}
 
 \beforeverb
 \begin{verbatim}
@@ -85,10 +117,14 @@ numbers:
 \end{verbatim}
 \afterverb
 %
-Finally, {\tt str} converts its argument to a string:
+%Finally, {\tt str} converts its argument to a string:
 
-\index{str function}
-\index{function!str}
+Enfin, {\tt str} converti son argument en une cha\^ine de caract\`eres :
+
+%\index{str function}
+%\index{function!str}
+\index{str (fonction)}
+\index{fonction!str}
 
 \beforeverb
 \begin{verbatim}
@@ -100,20 +136,29 @@ Finally, {\tt str} converts its argument to a string:
 \afterverb
 %
 
+%\section{Math functions}
+%\index{math function}
+%\index{function, math}
+\section{Fonctions math\'ematiques}
+\index{fonctions math\'ematiques}
+\index{fonctions, math}
 
+%Python has a math module that provides most of the familiar
+%mathematical functions.  A {\bf module} is a file that contains a
+%collection of related functions.
 
-\section{Math functions}
-\index{math function}
-\index{function, math}
+Python inclut un module qui fournit la plupart
+des fonctions math\'ematiques usuelles. Un \textbf{module} est
+un fichier qui comprends un ensemble de fonctions ayant
+un lien entre elles.
 
-Python has a math module that provides most of the familiar
-mathematical functions.  A {\bf module} is a file that contains a
-collection of related functions.
-
+%\index{module}
+%\index{module object}
 \index{module}
-\index{module object}
+\index{objet module}
 
-Before we can use the module, we have to import it:
+%Before we can use the module, we have to import it:
+Avant d'utiliser un module, il faut l'importer :
 
 \beforeverb
 \begin{verbatim}
@@ -121,8 +166,12 @@ Before we can use the module, we have to import it:
 \end{verbatim}
 \afterverb
 %
-This statement creates a {\bf module object} named math.  If
-you print the module object, you get some information about it:
+%This statement creates a {\bf module object} named math.  If
+%you print the module object, you get some information about it:
+
+Cette expression cr\'ee un \textbf{objet module} appel\'e {\tt math}.
+Si vous imprimez  (\`a l'aide de la fonction {\tt print}) cet objet module,
+vous pouvez obtenir des informations à son sujet:
 
 \beforeverb
 \begin{verbatim}
@@ -131,39 +180,63 @@ you print the module object, you get some information about it:
 \end{verbatim}
 \afterverb
 %
-The module object contains the functions and variables defined in the
-module.  To access one of the functions, you have to specify the name
-of the module and the name of the function, separated by a dot (also
-known as a period).  This format is called {\bf dot notation}.
+%The module object contains the functions and variables defined in the
+%module.  To access one of the functions, you have to specify the name
+%of the module and the name of the function, separated by a dot (also
+%known as a period).  This format is called {\bf dot notation}.
 
-\index{dot notation}
+L'objet module contient les fonctions et variables d\'efinies dans
+le module. Pour y acc\'eder il faut sp\'ecifier le nom du module
+et le nom de la fonction, s\'epar\'es par un point.
+% NDT - Vincent : je ne sais pas comment transcrire 'dot notation'
+% de maniere utile ?
+
+%\index{dot notation}
 
 \beforeverb
 \begin{verbatim}
->>> ratio = signal_power / noise_power
->>> decibels = 10 * math.log10(ratio)
+>>> rapport = signal / bruit
+>>> decibels = 10 * math.log10(rapport)
 
 >>> radians = 0.7
->>> height = math.sin(radians)
+>>> hauteur = math.sin(radians)
 \end{verbatim}
 \afterverb
 %
-The first example computes the logarithm base 10 of the
-signal-to-noise ratio.  The math module also provides a
-function called {\tt log} that computes logarithms base {\tt e}.
+%The first example computes the logarithm base 10 of the
+%signal-to-noise ratio.  The math module also provides a
+%function called {\tt log} that computes logarithms base {\tt e}.
 
-\index{log function}
-\index{function!log}
-\index{sine function}
+Le premier exemple calcule le logarithme en base 10
+d'un rapport signal sur bruit. Le module math fournit
+\'egalement une fonction appel\'ee {\tt log} qui calcule
+le logarithme naturel (en base {\tt e}).
+
+%\index{log function}
+%\index{function!log}
+%\index{sine function}
+%\index{radian}
+%\index{trigonometric function}
+%\index{function, trigonometric}
+
+\index{log (fonction)}
+\index{fonction!log}
+\index{sinus (fonction)}
 \index{radian}
-\index{trigonometric function}
-\index{function, trigonometric}
+\index{fonction trignom\'etrique}
+\index{fonction, trignom\'etrie}
 
-The second example finds the sine of {\tt radians}.  The name of the
-variable is a hint that {\tt sin} and the other trigonometric
-functions ({\tt cos}, {\tt tan}, etc.)  take arguments in radians. To
-convert from degrees to radians, divide by 360 and multiply by $2
-\pi$:
+%The second example finds the sine of {\tt radians}.  The name of the
+%variable is a hint that {\tt sin} and the other trigonometric
+%functions ({\tt cos}, {\tt tan}, etc.)  take arguments in radians. To
+%convert from degrees to radians, divide by 360 and multiply by $2
+%\pi$:
+
+Le second exemple calcule le sinus de la variable {\tt radians}. Le nom
+de cette variable est choisi de mani\`ere \`a rappeler que {\tt sin}
+ainsi que les autres fonctions trigonom\'etriques ({\tt cos}, {\tt tan}, etc.)
+prennent des radians comme argument. Pour convertir de degr\'es en radians,
+il suffit de diviser par 360 et de multiplier par $2\pi$:
 
 \beforeverb
 \begin{verbatim}
@@ -173,19 +246,30 @@ convert from degrees to radians, divide by 360 and multiply by $2
 0.707106781187
 \end{verbatim}
 \afterverb
-%
-The expression {\tt math.pi} gets the variable {\tt pi} from the math
-module.  The value of this variable is an approximation
-of $\pi$, accurate to about 15 digits.
+
+%The expression {\tt math.pi} gets the variable {\tt pi} from the math
+%module.  The value of this variable is an approximation
+%of $\pi$, accurate to about 15 digits.
+
+L'expression {\tt math.pi} extrait la variable {\tt pi} du module math.
+La valeur de cette variable est une approximation de $\pi$, avec
+environ 15 chiffre significatifs.
 
 \index{pi}
 
-If you know
-your trigonometry, you can check the previous result by comparing it to
-the square root of two divided by two:
+%If you know
+%your trigonometry, you can check the previous result by comparing it to
+%the square root of two divided by two:
 
-\index{sqrt function}
-\index{function!sqrt}
+Si vous connaissez bien vos formules trigonom\'etriques, vous pouvez
+v\'erifier le r\'esultat pr\'ec\`edent en le comparant \'a
+$\frac{\sqrt(2)}{2}$:
+
+%\index{sqrt function}
+%\index{function!sqrt}
+\index{sqrt (fonction)}
+\index{racine carr\'ee (fonction)}
+\index{fonction!sqrt}
 
 \beforeverb
 \begin{verbatim}
