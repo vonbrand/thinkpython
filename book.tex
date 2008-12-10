@@ -30,7 +30,7 @@
 \usepackage{upquote}
 
 \newcommand{\thetitle}{Think Python: An Introduction to Software Design}
-\newcommand{\theversion}{1.1.16}
+\newcommand{\theversion}{1.1.17}
 
 \makeindex
 
@@ -287,7 +287,7 @@ The result is this book, now with the less grandiose title
   Swampy, code examples, and some solutions are available from
   \url{thinkpython.com}.
   
-\item I expanded the discussion of programming development plans
+\item I expanded the discussion of program development plans
   and basic design patterns.
 
 \item The use of Python is more idiomatic.  The book is still about
@@ -639,6 +639,8 @@ spell Jane Austen.
 \item Mark Griffiths pointed out a confusing example in Chapter 3.
 
 \item Roydan Ongie found an error in my Newton's method.
+
+\item Patryk Wolowiec helped me with a problem in the HTML version.
 
 % ENDCONTRIB
 
@@ -1517,7 +1519,7 @@ SyntaxError: invalid token
 \end{verbatim}
 \afterverb
 
-Other number seem to work, but the results are bizarre:
+Other numbers seem to work, but the results are bizarre:
 
 \beforeverb
 \begin{verbatim}
@@ -1578,7 +1580,8 @@ and they cannot be used as variable names.
 
 \index{keyword}
 
-Python has 31 keywords:
+Python has 31 keywords\footnote{In Python 3.0, {\tt exec} is no
+longer a keyword.}:
 
 \beforeverb
 \begin{verbatim}
@@ -3214,10 +3217,10 @@ forward.  The second line tells him to turn right.
 When you run this program, you should see {\tt bob} move east and then
 south, leaving two line segments behind.
 
-Now modify the program to draw a square.  Don't turn the page until
+Now modify the program to draw a square.  Don't go on until
 you've got it working!
 
-\newpage
+%\newpage
 
 \section{Simple repetition}
 \label{repetition}
@@ -3266,9 +3269,9 @@ Hello!
 %
 This is the simplest use of the {\tt for} statement; we will see
 more later.  But that should be enough to let you rewrite your
-square-drawing program.  Don't turn the page until you do.
+square-drawing program.  Don't go on until you do.
 
-\newpage
+%\newpage
 
 Here is a {\tt for} statement that draws a square:
 
@@ -5668,7 +5671,7 @@ print c(x, y+3, x+y)
 \index{Ackerman function}
 \index{function!ack}
 
-The Ackermann function, $A(m, n)$ is defined\footnote{See
+The Ackermann function, $A(m, n)$, is defined\footnote{See
   \url{wikipedia.org/wiki/Ackermann_function}}:
 
 \begin{eqnarray}
@@ -13846,28 +13849,29 @@ contains a class definition for a user-defined type called
 
 \beforeverb
 \begin{verbatim}
-from World import World, wait_for_user
+from World import World
 \end{verbatim}
 \afterverb
 
-This version of the {\tt import} statement lists the objects
-that should be imported:
-the {\tt World} class and the function \verb"wait_for_user".
-The following code creates a World object and waits for
+This version of the {\tt import} statement imports the {\tt World}
+class from the {\tt World} module.
+The following code creates a World object and calls
+the {\tt mainloop} method, which
+waits for
 the user.
 
 \beforeverb
 \begin{verbatim}
 world = World()
-wait_for_user()
+world.mainloop()
 \end{verbatim}
 \afterverb
 
 A window should appear with a title bar and an empty square.
 We will use this window to draw Points,
 Rectangles and other shapes.  
-Add the following lines before
-\verb"wait_for_user" and run the program again
+Add the following lines before calling
+\verb"calling" and run the program again
 
 \index{Canvas object}
 \index{object!Canvas}
@@ -15434,7 +15438,7 @@ The class definition for {\tt Card} looks like this:
 
 \beforeverb
 \begin{verbatim}
-class Card:
+class Card(object):
     """represents a standard playing card."""
 
     def __init__(self, suit=0, rank=2):
@@ -15668,7 +15672,7 @@ the standard set of fifty-two cards:
 
 \beforeverb
 \begin{verbatim}
-class Deck:
+class Deck(object):
 
     def __init__(self):
         self.cards = []
@@ -17941,7 +17945,7 @@ bug.  If you find that a program works in one situation but not in
 another, that gives you a clue about what is going on.
 
 Similarly, rewriting a piece of code can help you find subtle
-bugs.  If you make a change that you think doesn't affect the
+bugs.  If you make a change that you think shouldn't affect the
 program, and it does, that can tip you off.
 
 
