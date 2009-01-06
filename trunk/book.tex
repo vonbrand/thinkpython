@@ -1,4 +1,4 @@
-% LaTeX source for ``Think Python: An Introduction to Software Design''
+% LaTeX source for ``Think Python: How to Think Like a Computer Scientist''
 % Copyright (c)  2008  Allen B. Downey.
 
 % Permission is granted to copy, distribute and/or modify this
@@ -29,8 +29,8 @@
 \usepackage{hevea}
 \usepackage{upquote}
 
-\newcommand{\thetitle}{Think Python: An Introduction to Software Design}
-\newcommand{\theversion}{1.1.17}
+\newcommand{\thetitle}{Think Python: How to Think Like a Computer Scientist}
+\newcommand{\theversion}{1.1.18}
 
 \makeindex
 
@@ -61,7 +61,7 @@
 
 \begin{spacing}{3}
 {\huge Think Python}\\
-{\Large An Introduction to Software Design}
+{\Large How to Think Like a Computer Scientist}
 \end{spacing}
 
 \vspace{0.25in}
@@ -90,7 +90,7 @@ Version \theversion
 
 \begin{spacing}{3}
 {\huge Think Python}\\
-{\Large An Introduction to Software Design}
+{\Large How to Think Like a Computer Scientist}
 \end{spacing}
 
 \vspace{0.25in}
@@ -136,7 +136,8 @@ a Computer Scientist}.
 {\em How to Think Like a (Python) Programmer}.
 
 \item[June 2008:] Major revision, changed title to
-{\em Think Python: An Introduction to Software Design}.
+{\em Think Python: How to Think Like
+a Computer Scientist}.
 
 \end{description}
 
@@ -641,6 +642,8 @@ spell Jane Austen.
 \item Roydan Ongie found an error in my Newton's method.
 
 \item Patryk Wolowiec helped me with a problem in the HTML version.
+
+\item Mark Chonofsky told me about a new keyword in Python 3.0.
 
 % ENDCONTRIB
 
@@ -1581,7 +1584,7 @@ and they cannot be used as variable names.
 \index{keyword}
 
 Python has 31 keywords\footnote{In Python 3.0, {\tt exec} is no
-longer a keyword.}:
+longer a keyword, but {\tt nonlocal} is.}:
 
 \beforeverb
 \begin{verbatim}
@@ -11871,9 +11874,11 @@ be followed by an adjective or a noun, and probably not a verb
 or adverb.
 
 One way to measure these kinds of relationships is Markov
-analysis, which characterizes, for a given sequence of words,
-the probability of the word that comes next.  For example,
-the song {\em Eric, the Half a Bee} begins:
+analysis\footnote{This case study is based on an example from
+  Kernighan and Pike, {\em The Practice of Programming}, 1999.}, which
+characterizes, for a given sequence of words, the probability of the
+word that comes next.  For example, the song {\em Eric, the Half a
+  Bee} begins:
 
 \begin{quote}
 Half a bee, philosophically, \\
