@@ -30,7 +30,7 @@
 \usepackage{upquote}
 
 \newcommand{\thetitle}{Think Python: How to Think Like a Computer Scientist}
-\newcommand{\theversion}{1.1.18}
+\newcommand{\theversion}{1.1.19}
 
 \makeindex
 
@@ -635,7 +635,7 @@ triangles.
 and sent some additional corrections.  And he knows how to
 spell Jane Austen.
 
-\item Kelli Kratzer spotted one of they typos.
+\item Kelli Kratzer spotted one of the typos.
 
 \item Mark Griffiths pointed out a confusing example in Chapter 3.
 
@@ -644,6 +644,10 @@ spell Jane Austen.
 \item Patryk Wolowiec helped me with a problem in the HTML version.
 
 \item Mark Chonofsky told me about a new keyword in Python 3.0.
+
+\item Russell Coleman helped me with my geometry.
+
+\item Wei Huang spotted several typographical errors.
 
 % ENDCONTRIB
 
@@ -988,7 +992,7 @@ chemical formula, but $_2Zz$ is not.
 Syntax rules come in two flavors, pertaining to {\bf tokens} and
 structure.  Tokens are the basic elements of the language, such as
 words, numbers, and chemical elements.  One of the problems with $3 +
-= 3 \mbox{\$} 6$ is that \verb"$" is not a legal token in mathematics
+= 3 \mbox{\$} 6$ is that $\$$ is not a legal token in mathematics
 (at least as far as I know).  Similarly, $_2Zz$ is not legal because
 there is no element with the abbreviation $Zz$.
 
@@ -1830,7 +1834,7 @@ print first + second
 The output of this program is {\tt throatwarbler}.
 
 The {\tt *} operator also works on strings; it performs repetition.
-For example, {\tt 'Spam'*3} is \verb"'SpamSpamSpam'".  If one of the operands
+For example, \verb"'Spam'*3" is \verb"'SpamSpamSpam'".  If one of the operands
 is a string, the other has to be an integer.
 
 This use of {\tt +} and {\tt *} makes sense by
@@ -3335,7 +3339,7 @@ degrees to the left.
 
 Make a copy of {\tt square} and change the name to {\tt polygon}.  Add
 another parameter named {\tt n} and modify the body so it draws an
-n-sided regular polygon.  Hint: The angles of an n-sided regular
+n-sided regular polygon.  Hint: The exterior angles of an n-sided regular
 polygon are $360.0 / n$ degrees.
 
 \index{polygon function}
@@ -4391,7 +4395,7 @@ time.
 
 Python provides a built-in function called \verb"raw_input" that gets
 input from the keyboard\footnote{In Python 3.0, this function is named
-  {\tt input}}.  When this function is called, the program stops and
+  {\tt input}.}.  When this function is called, the program stops and
 waits for the user to type something.  When the user presses {\sf
   Return} or {\sf Enter}, the program resumes and \verb"raw_input"
 returns what the user typed as a string.
@@ -4524,7 +4528,9 @@ print decibels
 \end{verbatim}
 \afterverb
 %
-But when you run it, you get an error message:
+But when you run it, you get an error message\footnote{In Python 3.0,
+  you no longer get an error message; the division operator performs
+  floating-point division even with integer operands.}:
 
 \index{exception!OverflowError}
 \index{OverflowError}
