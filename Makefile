@@ -1,4 +1,4 @@
-py	LATEX = latex
+LATEX = latex
 
 DVIPS = dvips
 
@@ -20,18 +20,18 @@ all:	book.tex
 	latex book
 	makeindex book
 	latex book
-#	dvips -T 6.75in,9.25in -Ppdf -o thinkpython.ps book
 	dvips -t letter -Ppdf -o thinkpython.ps book
+#	dvips -T 6.75in,9.25in -Ppdf -o thinkpython.ps book
 #	dvips -t b5 -Ppdf -o thinkpython.ps book
 #	dvips -T 7in,10in -Ppdf -o thinkpython.ps book
 	gv thinkpython.ps
 
-html:	book.tex
+html:	book.tex header.html footer.html
 	rm -rf html
 	mkdir html
-	hevea -e latexonly htmlonly book
-	# the following line is a kludge to prevent imagen from seeing
-	# the definitions in latexonly
+	hevea -O -e latexonly htmlonly book
+# the following line is a kludge to prevent imagen from seeing
+# the definitions in latexonly
 	grep -v latexonly book.image.tex > a; mv a book.image.tex
 	imagen -png book
 	hacha book.html
