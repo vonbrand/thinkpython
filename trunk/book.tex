@@ -30,7 +30,7 @@
 \usepackage{upquote}
 
 \newcommand{\thetitle}{Think Python: How to Think Like a Computer Scientist}
-\newcommand{\theversion}{1.1.19}
+\newcommand{\theversion}{1.1.20}
 
 \makeindex
 
@@ -650,6 +650,11 @@ spell Jane Austen.
 \item Wei Huang spotted several typographical errors.
 
 \item Karen Barber spotted the the oldest typo in the book.
+
+\item Nam Nguyen found a typo and pointed out that I used the Decorator
+pattern but didn't mention it by name.
+
+\item St\'{e}phane Morin sent in several corrections and suggestions.
 
 % ENDCONTRIB
 
@@ -9080,7 +9085,7 @@ has a type and a value.
 \item[reference:] The association between a variable and its value.
 \index{reference}
 
-\item[aliasing:] A circumstance where two variables refer to the same
+\item[aliasing:] A circumstance where two or more variables refer to the same
 object.
 \index{aliasing}
 
@@ -12770,9 +12775,9 @@ not (in general) the same object:
 
 \beforeverb
 \begin{verbatim}
->>> t == t2
+>>> t1 == t2
 True
->>> t is t2
+>>> t1 is t2
 False
 \end{verbatim}
 \afterverb
@@ -13451,7 +13456,7 @@ the function modifies {\tt p}, {\tt blank} changes.
 
 
 \begin{ex}
-Write a function called {\tt distance} that it takes two Points
+Write a function called {\tt distance} that takes two Points
 as arguments and returns the distance between them.
 \end{ex}
 
@@ -15639,7 +15644,7 @@ You can write this more concisely using tuple comparison:
 The built-in function {\tt cmp} has the same interface as
 the method \verb"__cmp__": it takes two values and returns
 a positive number if the first is larger, a negative number
-of the second is larger, and 0 if they are equal.
+if the second is larger, and 0 if they are equal.
 
 \index{cmp function}
 \index{function!cmp}
@@ -16246,7 +16251,7 @@ that represents a poker hand, and some code that tests it.
 
 \end{description}
 %
-\item If you run {\tt PokerHand.py}, it deals six 7-card poker hands
+\item If you run {\tt PokerHand.py}, it deals seven 7-card poker hands
 and checks to see if any of them contains a flush.  Read this
 code carefully before you go on.
 
@@ -17093,7 +17098,7 @@ Canvas methods like {\tt circle}.
 \index{object!Event}
 
 For Entry widgets, it is common to bind the \verb"<Return>" event,
-which is triggered when the use presses the {\sf Return} or
+which is triggered when the user presses the {\sf Return} or
 {\sf Enter} key.  For example, the following code creates a Button
 and an Entry.
 
