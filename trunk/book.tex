@@ -18,19 +18,22 @@
 \usepackage[width=5.5in,height=8.5in,
   hmarginratio=3:2,vmarginratio=1:1]{geometry}
 
+% for some of these packages, you might have to install
+% texlive-latex-extra (in Ubuntu)
+
 \usepackage{pslatex}
 \usepackage{url}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{amsmath, amsthm, amssymb}
-\usepackage{exercise}
+\usepackage{exercise}                        % texlive-latex-extra
 \usepackage{makeidx}
 \usepackage{setspace}
-\usepackage{hevea}
+\usepackage{hevea}                           
 \usepackage{upquote}
 
 \newcommand{\thetitle}{Think Python: How to Think Like a Computer Scientist}
-\newcommand{\theversion}{1.1.20}
+\newcommand{\theversion}{1.1.22}
 
 \makeindex
 
@@ -491,8 +494,8 @@ in Chapter 2.
 \item Kalin Harvey suggested a clarification in Chapter 7 and
 caught some typos.
 
-\item Christopher P. Smith caught several typos and is helping us
-prepare to update the book for Python 2.2.
+\item Christopher P. Smith caught several typos and helped us
+update the book for Python 2.2.
 
 \item David Hutchins caught a typo in the Foreword.
 
@@ -656,6 +659,14 @@ pattern but didn't mention it by name.
 
 \item St\'{e}phane Morin sent in several corrections and suggestions.
 
+\item Paul Stoop corrected a typo in \verb+uses_only+.
+
+\item Eric Bronner pointed out a confusion in the discussion of the
+order of operations.
+
+\item Alexandros Gezerlis set a new standard for the number and
+quality of suggestions he submitted.  We are deeply grateful!
+
 % ENDCONTRIB
 
 \end{itemize}
@@ -794,7 +805,7 @@ To execute the script, you have to tell the interpreter the name of
 the file.  In a UNIX command window, you would type {\tt python
 dinsdale.py}.  In other development environments, the details of
 executing scripts are different.  You can find instructions for
-your environment at the Python Website \url{python.org}.
+your environment at the Python website \url{python.org}.
 
 \index{testing!interactive mode}
 
@@ -1309,7 +1320,7 @@ interpreter to display a value on the screen.
 \section{Exercises}
 
 \begin{ex}
-Use a web browser to go to the Python Website \url{python.org}.
+Use a web browser to go to the Python website \url{python.org}.
 This page contains information about Python and links
 to Python-related pages, and it gives you the ability to search
 the Python documentation.
@@ -1805,7 +1816,7 @@ have the same precedence.  So {\tt 2*3-1} is 5, not 4, and
 \item Operators with the same precedence are evaluated from left to 
 right.  So in the expression {\tt degrees / 2 * pi}, the division
 happens first and the result is multiplied by {\tt pi}.  
-To divide by $2 \pi$, you can reorder the operands or use parentheses.
+To divide by $2 \pi$, you can use parentheses or write {\tt degrees / 2 / pi}.
 
 \end{itemize}
 
@@ -3220,13 +3231,13 @@ To draw a right angle, add these lines to the program
 \beforeverb
 \begin{verbatim}
 fd(bob, 100)
-rt(bob)
+lt(bob)
 fd(bob, 100)
 \end{verbatim}
 \afterverb
 %
 The first line tells {\tt bob} to take 100 steps
-forward.  The second line tells him to turn right.
+forward.  The second line tells him to turn left.
 
 When you run this program, you should see {\tt bob} move east and then
 south, leaving two line segments behind.
@@ -3308,7 +3319,7 @@ the flow of execution runs through the body and then loops back
 to the top.  In this case, it runs the body four times.
 
 This version is actually a little different from the previous
-square-drawing code because it makes another left turn after
+square-drawing code because it makes another turn after
 drawing the last side of the square.  The extra turn takes a little
 more time, but it simplifies the code if we do the same thing
 every time through the loop.  This version also has the effect
@@ -3718,8 +3729,7 @@ The caller agrees to provide certain parameters and the function
 agrees to do certain work.
 
 For example, {\tt polyline} requires four arguments.  The first
-has to be a Turtle (or some other object that works with {\tt fd}
-and {\tt lt}).  The second has to be a number, and it should
+has to be a Turtle.  The second has to be a number, and it should
 probably be positive, although it turns out that the function
 works even if it isn't.  The third argument should be an integer;
 {\tt range} complains otherwise (depending on which version
@@ -3740,10 +3750,12 @@ in the World).
 Preconditions are the responsibility of the caller.  If the caller
 violates a (properly documented!) precondition and the function
 doesn't work correctly, the bug is in the caller, not the function.
-However, for purposes of debugging it is often a good idea for
-functions to check their preconditions rather than assume they are
-true.  If every function checks its preconditions before starting,
-then if something goes wrong, you will know which function to blame.
+
+% Removing this because we haven't seen conditionals yet!
+%However, for purposes of debugging it is often a good idea for
+%functions to check their preconditions rather than assume they are
+%true.  If every function checks its preconditions before starting,
+%then if something goes wrong, you will know which function to blame.
 
 
 \section{Glossary}
@@ -3949,7 +3961,7 @@ values that belong to the type {\tt bool}; they are not strings:
 \end{verbatim}
 \afterverb
 %
-The {\tt ==} operator is one of the {\bf comparison operators}; the
+The {\tt ==} operator is one of the {\bf relational operators}; the
 others are:
 
 \beforeverb
@@ -3966,11 +3978,11 @@ Although these operations are probably familiar to you, the Python
 symbols are different from the mathematical symbols.  A common error
 is to use a single equal sign ({\tt =}) instead of a double equal sign
 ({\tt ==}).  Remember that {\tt =} is an assignment operator and
-{\tt ==} is a comparison operator.   There is no such thing as
+{\tt ==} is a relational operator.   There is no such thing as
 {\tt =<} or {\tt =>}.
 
-\index{comparison operator}
-\index{operator!comparison}
+\index{relational operator}
+\index{operator!relational}
 
 
 \section {Logical operators}
@@ -4580,7 +4592,7 @@ number is divided by another.
 \index{boolean expression}
 \index{expression!boolean}
 
-\item[comparison operator:] One of the operators that compares
+\item[relational operator:] One of the operators that compares
 its operands: {\tt ==}, {\tt !=}, {\tt >}, {\tt <}, {\tt >=}, and {\tt <=}.
 
 \item[logical operator:] One of the operators that combines boolean
@@ -4625,8 +4637,8 @@ currently executing.
 recursive function that does not make a recursive call.
 \index{base case}
 
-\item[infinite recursion:]  A function that calls itself recursively
-without ever reaching the base case.  Eventually, an infinite recursion
+\item[infinite recursion:]  A recursion that doesn't have a
+base case, or never reaches it.  Eventually, an infinite recursion
 causes a runtime error.
 \index{infinite recursion}
 
@@ -5688,7 +5700,7 @@ print c(x, y+3, x+y)
 \index{function!ack}
 
 The Ackermann function, $A(m, n)$, is defined\footnote{See
-  \url{wikipedia.org/wiki/Ackermann_function}}:
+  \url{wikipedia.org/wiki/Ackermann_function}.}:
 
 \begin{eqnarray}
 A(m, n) = \begin{cases} 
@@ -6259,14 +6271,13 @@ of the program, or near it, for an intermediate value you
 can check.  Add a {\tt print} statement (or something else
 that has a verifiable effect) and run the program.
 
-If the mid-point check is incorrect, the problem must be in the
+If the mid-point check is incorrect, there must be a problem in the
 first half of the program.  If it is correct, the problem is
 in the second half.
 
-Every time you perform a check like this, you halve the number
-of lines you have to search.  After six steps (which is much
-less than 100), you would be down to one or two lines of code,
-at least in theory.
+Every time you perform a check like this, you halve the number of
+lines you have to search.  After six steps (which is fewer than 100),
+you would be down to one or two lines of code, at least in theory.
 
 In practice it is not always clear what
 the ``middle of the program'' is and not always possible to
@@ -6293,8 +6304,9 @@ variable during the execution of a program.
 depends on the old.
 \index{update}
 
-\item[initialize:] An assignment that gives an initial value to
+\item[initialization:] An assignment that gives an initial value to
 a variable that will be updated.
+\index{initialization!variable}
 
 \item[increment:] An update that increases the value of a variable
 (often by one).
@@ -6639,7 +6651,7 @@ similar to selecting a character:
 >>> s = 'Monty Python'
 >>> print s[0:5]
 Monty
->>> print s[6:13]
+>>> print s[6:12]
 Python
 \end{verbatim}
 \afterverb
@@ -6990,7 +7002,7 @@ s
 \index{string!comparison}
 \index{comparison!string}
 
-The comparison operators work on strings.  To see if two strings are equal:
+The relational operators work on strings.  To see if two strings are equal:
 
 \beforeverb
 \begin{verbatim}
@@ -6999,7 +7011,7 @@ if word == 'banana':
 \end{verbatim}
 \afterverb
 %
-Other comparison operations are useful for putting words in alphabetical
+Other relational operations are useful for putting words in alphabetical
 order:
 
 \beforeverb
@@ -7315,7 +7327,7 @@ def any_lowercase5(s):
 \label{exrotate}
 ROT13 is a weak form of encryption that involves ``rotating'' each
 letter in a word by 13 places\footnote{See
-  \url{wikipedia.org/wiki/ROT13}}.  To rotate a letter means
+  \url{wikipedia.org/wiki/ROT13}.}.  To rotate a letter means
 to shift it through the alphabet, wrapping around to the beginning if
 necessary, so 'A' shifted by 3 is 'D' and 'Z' shifted by 1 is 'A'.
 
@@ -7349,7 +7361,7 @@ For the exercises in this chapter we need a list of English words.
 There are lots of word lists available on the Web, but the one most
 suitable for our purpose is one of the word lists collected and
 contributed to the public domain by Grady Ward as part of the Moby
-lexicon project\footnote{\url{wikipedia.org/wiki/Moby_Project}}.  It
+lexicon project\footnote{\url{wikipedia.org/wiki/Moby_Project}.}.  It
 is a list of 113,809 official crosswords; that is, words that are
 considered valid in crossword puzzles and other word games.  In the
 Moby collection, the filename is {\tt 113809of.fic}; I include a copy
@@ -7565,12 +7577,14 @@ have to go to the next letter.  If we exit the loop normally, that
 means we didn't find an ``e'', so we return {\tt True}.
 
 \index{traversal}
-\index{in operator}
-\index{operator!in}
 
-You can write this function more concisely using the {\tt in}
-operator, but I started with this version because it 
-demonstrates the logic of the search pattern.
+% Removing this because we haven't seen the in operator yet.
+%\index{in operator}
+%\index{operator!in}
+
+%You could write this function more concisely using the {\tt in}
+%operator, but I started with this version because it 
+%demonstrates the logic of the search pattern.
 
 \index{generalization}
 
@@ -7603,8 +7617,8 @@ def uses_only(word, available):
 \end{verbatim}
 \afterverb
 %
-Instead of a list of forbidden words, we have a list of available
-words.  If we find a letter in {\tt word} that is not in
+Instead of a list of forbidden letters, we have a list of available
+letters.  If we find a letter in {\tt word} that is not in
 {\tt available}, we can return {\tt False}.
 
 \verb"uses_all" is similar except that we reverse the role
@@ -7834,7 +7848,7 @@ expressing it as an instance of a previously-solved problem.
 
 This question is based on a Puzzler that was broadcast on the radio
 program {\em Car
-  Talk}\footnote{\url{www.cartalk.com/content/puzzler/transcripts/200725}}:
+  Talk}\footnote{\url{www.cartalk.com/content/puzzler/transcripts/200725}.}:
 
 \begin{quote}
 Give me a word with three consecutive double letters. I'll give you a
@@ -7855,7 +7869,7 @@ Write a program to find it.  You can see my solution at
 
 \begin{ex}
 Here's another {\em Car Talk}
-Puzzler\footnote{\url{www.cartalk.com/content/puzzler/transcripts/200803}}:
+Puzzler\footnote{\url{www.cartalk.com/content/puzzler/transcripts/200803}.}:
 
 \index{Car Talk}
 \index{Puzzler}
@@ -7930,7 +7944,7 @@ You can see my solution at \url{thinkpython.com/code/cartalk.py}.
 
 Like a string, a {\bf list} is a sequence of values.  In a string, the
 values are characters; in a list, they can be any type.  The values in
-list are called {\bf elements} or sometimes {\bf items}.
+a list are called {\bf elements} or sometimes {\bf items}.
 
 \index{element}
 \index{sequence}
@@ -8359,10 +8373,14 @@ def add_all(t):
 %
 {\tt total} is initialized to 0.  Each time through the loop,
 {\tt x} gets one element from the list.  The {\tt +=} operator
-provides a short way to update a variable:
+provides a short way to update a variable.  This 
+{\bf augmented assignment statement}:
 
 \index{update operator}
 \index{operator!update}
+
+\index{assignment!augmented}
+\index{augmented assignment}
 
 \beforeverb
 \begin{verbatim}
@@ -8719,9 +8737,10 @@ identical.
 
 Until now, we have been using ``object'' and ``value''
 interchangeably, but it is more precise to say that an object has a
-value.  If you execute {\tt a = [1,2,3]}, {\tt a} refers to a list
-object whose value is a particular sequence of elements.  If another
-list has the same elements, we would say it has the same value.
+value.  If you execute {\tt [1,2,3]}, you get a list
+object whose value is a sequence of integers.  If another
+list has the same elements, we say it has the same value, but
+it is not the same object.
 
 \index{object}
 \index{value}
@@ -9055,6 +9074,11 @@ a mapping from indices to elements.
 accumulate a result.
 \index{accumulator}
 
+\item[augmented assignment:] A statement that updates the value
+of a variable using an operator like \verb"+=".
+\index{assignment!augmented}
+\index{augmented assignment}
+
 \index{traversal}
 
 \item[reduce:] A processing pattern that traverses a sequence 
@@ -9102,7 +9126,7 @@ string should be split.
 Write a function called \verb"is_sorted" that takes a list as a
 parameter and returns {\tt True} if the list is sorted in ascending
 order and {\tt False} otherwise.  You can assume (as a precondition)
-that the elements of the list can be compared with the comparison
+that the elements of the list can be compared with the relational
 operators {\tt <}, {\tt >}, etc.
 
 \index{precondition}
@@ -9193,16 +9217,21 @@ You can see my solution at \url{thinkpython.com/code/wordlist.py}.
 \index{bisection search}
 \index{search, bisection}
 
+\index{membership!binary search}
+\index{binary search}
+\index{search, binary}
+
 To check whether a word is in the word list, you could use
 the {\tt in} operator, but it would be slow because it searches
 through the words in order.
 
 Because the words are in alphabetical order, we can speed things up
-with a bisection search, which is similar to what you do when you look
-a word up in the dictionary.  You start in the middle and check to see
-whether the word you are looking for comes before the word in the
-middle of the list.  If so, then you search the first half of the list
-the same way.  Otherwise you search the second half.
+with a bisection search (also known as binary search), which is
+similar to what you do when you look a word up in the dictionary.  You
+start in the middle and check to see whether the word you are looking
+for comes before the word in the middle of the list.  If so, then you
+search the first half of the list the same way.  Otherwise you search
+the second half.
 
 Either way, you cut the remaining search space in half.  If the
 word list has 113,809 words, it will take about 17 steps to
@@ -9847,7 +9876,7 @@ worse as the argument gets bigger.
 One solution is to keep track of values that have already been
 computed by storing them in a dictionary.  A previously computed value
 that is stored for later use is called a {\bf memo}\footnote{See
-  \url{wikipedia.org/wiki/Memoization}}.  Here is an
+  \url{wikipedia.org/wiki/Memoization}.}.  Here is an
 implementation of {\tt fibonacci} using memos:
 
 \beforeverb
@@ -10069,7 +10098,7 @@ second case it is {\tt long}.
 
 Exponentiation of large integers is the basis of common
 algorithms for public-key encryption.  Read the Wikipedia
-page on the RSA algorithm\footnote{\url{wikipedia.org/wiki/RSA}}
+page on the RSA algorithm\footnote{\url{wikipedia.org/wiki/RSA}.}
 and write functions to encode and decode messages.
 
 \end{ex}
@@ -10246,7 +10275,7 @@ pairs.
 \index{Puzzler}
 
 Here's another Puzzler from {\em Car
-Talk}\footnote{\url{www.cartalk.com/content/puzzler/transcripts/200717}}:
+Talk}\footnote{\url{www.cartalk.com/content/puzzler/transcripts/200717}.}:
 
 \begin{quote}
 This was sent in by a fellow named Dan O'Leary. He came upon a common
@@ -10330,7 +10359,7 @@ parentheses:
 \end{verbatim}
 \afterverb
 %
-To create a tuple with a single element, you have to include the final
+To create a tuple with a single element, you have to include a final
 comma:
 
 \index{singleton}
@@ -10338,14 +10367,13 @@ comma:
 
 \beforeverb
 \begin{verbatim}
->>> t1 = ('a',)
+>>> t1 = 'a',
 >>> type(t1)
 <type 'tuple'>
 \end{verbatim}
 \afterverb
 %
-Without the comma, Python treats \verb"('a')" as a string in
-parentheses:
+A value in parentheses is not a tuple:
 
 \beforeverb
 \begin{verbatim}
@@ -10605,27 +10633,28 @@ conventional.  Here's how the function works:
 \end{verbatim}
 \afterverb
 %
-You can combine the gather operator with required and positional
-arguments:
-
-\beforeverb
-\begin{verbatim}
-def pointless(required, optional=0, *args):
-    print required, optional, args
-\end{verbatim}
-\afterverb
-%
-Run this function with 1, 2, 3 and 4 or more arguments and
-make sure you understand what it does.
-
-\index{scatter}
-\index{argument scatter}
-
 The complement of gather is {\bf scatter}.  If you have a
 sequence of values and you want to pass it to a function
 as multiple arguments, you can use the {\tt *} operator.
 For example, {\tt divmod} takes exactly two arguments; it
 doesn't work with a tuple:
+
+% removing this because we haven't seen optional parameters yet
+%You can combine the gather operator with required and positional
+%arguments:
+
+%\beforeverb
+%\begin{verbatim}
+%def pointless(required, optional=0, *args):
+%    print required, optional, args
+%\end{verbatim}
+%\afterverb
+%
+%Run this function with 1, 2, 3 and 4 or more arguments and
+%make sure you understand what it does.
+
+\index{scatter}
+\index{argument scatter}
 
 \index{TypeError}
 \index{exception!TypeError}
@@ -10647,7 +10676,6 @@ But if you scatter the tuple, it works:
 \end{verbatim}
 \afterverb
 %
-
 \begin{ex}
 Many of the built-in functions use
 variable-length argument tuples.  For example, {\tt max}
@@ -10943,7 +10971,7 @@ BBC, so please don't call it.
 \index{sort method}
 \index{method!sort}
 
-The comparison operators work with tuples and other sequences;
+The relational operators work with tuples and other sequences;
 Python starts by comparing the first element from each
 sequence.  If they are equal, it goes on to the next elements,
 and so on, until it finds elements that differ.  Subsequent
@@ -11287,7 +11315,7 @@ You can download a solution from \url{thinkpython.com/code/anagram_sets.py}.
 \index{Puzzler}
 
 Here's another Car Talk Puzzler\footnote{
-\url{www.cartalk.com/content/puzzler/transcripts/200651}}:
+\url{www.cartalk.com/content/puzzler/transcripts/200651}.}:
 
 \begin{quote}
 What is the longest English word, that remains a valid English word,
@@ -12196,7 +12224,7 @@ second most common has rank 2, etc.
 
 Zipf's law describes a relationship between the ranks and frequencies
 of words in natural languages\footnote{See
-  \url{wikipedia.org/wiki/Zipf's_law}}.  Specifically, it
+  \url{wikipedia.org/wiki/Zipf's_law}.}.  Specifically, it
 predicts that the frequency, $f$, of the word with rank $r$ is:
 
 \[ f = c r^{-s} \]
@@ -12248,7 +12276,7 @@ the network.
 
 One of the simplest ways for programs to maintain their data
 is by reading and writing text files.  We have already seen
-programs that read text files; in this chapters we will see programs
+programs that read text files; in this chapter we will see programs
 that write them.
 
 An alternative is to store the state of the program in a database.
@@ -12711,7 +12739,7 @@ statement.
 \beforeverb
 \begin{verbatim}
 for key in db:
-     print key
+    print key
 \end{verbatim}
 \afterverb
 %
@@ -12841,7 +12869,7 @@ launch {\tt ls} with {\tt os.popen}:
 \afterverb
 %
 The argument is a string that contains a shell command.  The
-return value is a file pointer that behaves just like an open
+return value is an object that behaves just like an open
 file.  You can read the output from the {\tt ls} process one
 line at a time with {\tt readline} or get the whole thing at
 once with {\tt read}:
@@ -13950,7 +13978,7 @@ the result should resemble the national flag of Bangladesh
 
 \index{Czech Republic, national flag}
 
-\item Write a program that draws the national flag of of the Czech Republic.
+\item Write a program that draws the national flag of the Czech Republic.
 Hint: you can draw a polygon like this:
 
 \beforeverb
@@ -14227,7 +14255,7 @@ have found all the errors.
 An alternative is {\bf planned development}, in which high-level
 insight into the problem can make the programming much easier.  In
 this case, the insight is that a Time object is really a three-digit
-number in base 60 (see \url{wikipedia.org/wiki/Sexagesimal})!  The
+number in base 60 (see \url{wikipedia.org/wiki/Sexagesimal}.)!  The
 {\tt second} attribute is the ``ones column,'' the {\tt minute}
 attribute is the ``sixties column,'' and the {\tt hour} attribute is
 the ``thirty-six hundreds column.''
@@ -14330,7 +14358,7 @@ fraction part.
 
 \index{invariant}
 
-These kind of requirements are called {\bf invariants} because
+Requirements like these are called {\bf invariants} because
 they should always be true.  To put it a different way, if they
 are not true, then something has gone wrong.
 
@@ -14446,7 +14474,7 @@ Write a class definition for a Date object that has attributes {\tt
 integer, {\tt n}, and returns a new Date object that
 represents the day {\tt n} days after {\tt date}.  Hint:
 ``Thirty days hath September...''  Challenge: does your function
-deal with leap years correctly?  See \url{wikipedia.org/wiki/Leap_year}
+deal with leap years correctly?  See \url{wikipedia.org/wiki/Leap_year}.
 
 \end{ex}
 
@@ -15445,7 +15473,7 @@ King & $\mapsto$ & 13 \\
 \end{tabular}
 \afterfig
 
-I am using the $\mapsto$ symbol to make is clear that these mappings
+I am using the $\mapsto$ symbol to make it clear that these mappings
 are not part of the Python program.  They are part of the program
 design, but they don't appear explicitly in the code.
 
@@ -15516,7 +15544,7 @@ class attributes because they are associated with the class object
 \index{instance attribute}
 \index{attribute!instance}
 
-This term distinguished them from variables like {\tt suit} and {\tt
+This term distinguishes them from variables like {\tt suit} and {\tt
   rank}, which are called {\bf instance attributes} because they are
 associated with a particular instance.
 
@@ -15572,10 +15600,10 @@ contents of \verb"suit_names" and \verb"rank_names").
 \section{Comparing cards}
 \label{comparecard}
 
-\index{operator!conditional}
-\index{conditional operator}
+\index{operator!relational}
+\index{relational operator}
 
-For built-in types, there are conditional operators
+For built-in types, there are relational operators
 ({\tt <}, {\tt >}, {\tt ==}, etc.)
 that compare
 values and determine when one is greater than, less than, or equal to
@@ -15784,7 +15812,7 @@ The list method {\tt pop} provides a convenient way to do that:
 %
 Since {\tt pop} removes the {\em last} card in the list, we are
 dealing from the bottom of the deck.  In real life bottom dealing is
-frowned upon\footnote{See \url{wikipedia.org/wiki/Bottom_dealing}.},
+frowned upon\footnote{See \url{wikipedia.org/wiki/Bottom_dealing}},
 but in this context it's ok.
 
 \index{append method}
@@ -15998,7 +16026,7 @@ in the execution of a program, so they change as the program
 runs.
 
 They are also highly detailed; for some purposes, too
-detailed.  A class diagrams is a more abstract representation
+detailed.  A class diagram is a more abstract representation
 of the structure of a program.  Instead of showing individual
 objects, it shows classes and the relationships between them.
 
@@ -16609,7 +16637,7 @@ center of the circle; the second is the radius.
 {\tt Gui.py} provides a standard Cartesian coordinate system with
 the origin at the center of the Canvas and the positive $y$ axis
 pointing up.  This is different from some other graphics systems
-where the the origin is in the upper left with the $y$ axis
+where the origin is in the upper left corner, with the $y$ axis
 pointing down.
 
 The {\tt fill} option specifies that the circle should be filled
@@ -16868,7 +16896,7 @@ four buttons arranged two-by-two:
 %
 {\tt gr} creates the grid; the argument is the number of
 columns.  Widgets in the grid are
-layed out left-to-right, top-to-bottom.
+laid out left-to-right, top-to-bottom.
 
 \index{callback}
 \index{bound method}
