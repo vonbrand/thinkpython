@@ -35,6 +35,7 @@ html:	book.tex header.html footer.html
 	grep -v latexonly book.image.tex > a; mv a book.image.tex
 	imagen -png book
 	hacha book.html
+	cp up.png next.png back.png html
 	mv index.html book.css book*.html book*.png *motif.gif html
 
 DEST = /home/downey/public_html/greent/thinkpython
