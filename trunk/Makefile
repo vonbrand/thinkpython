@@ -40,6 +40,9 @@ html:	book.tex header.html footer.html
 
 DEST = /home/downey/public_html/greent/thinkpython
 
+epub:
+	cd html; ebook-convert index.html thinkpython.epub
+
 distrib:
 	ps2pdf $(PDFFLAGS) thinkpython.ps
 	rm -rf dist
