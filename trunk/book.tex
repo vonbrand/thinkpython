@@ -3392,6 +3392,8 @@ Another hint: if {\tt bob} is too slow for you, you can speed
 him up by changing {\tt bob.delay}, which is the time between moves,
 in seconds.  {\tt bob.delay = 0.01} ought to get him moving.
 
+% change this to world.delay
+
 \item Make a more general version of {\tt circle} called {\tt arc}
 that takes an additional parameter {\tt angle}, which determines
 what fraction of a circle to draw.  {\tt angle} is in units of
@@ -4069,7 +4071,7 @@ statement gets executed.  If not, nothing happens.
 \index{statement!compound}
 
 {\tt if} statements have the same structure as function definitions:
-a header followed by an indented block.  Statements like this are
+a header followed by an indented body.  Statements like this are
 called {\bf compound statements}.
 
 There is no limit on the number of statements that can appear in
@@ -9008,7 +9010,8 @@ a list, you can use {\tt pop}, {\tt remove}, {\tt del},
 or even a slice assignment.
 
 To add an element, you can use the {\tt append} method or
-the {\tt +} operator.  But don't forget that these are right: 
+the {\tt +} operator.  Assuming that {\tt t} is a list and
+{\tt x} is a list element, these are right: 
 
 \beforeverb
 \begin{verbatim}
