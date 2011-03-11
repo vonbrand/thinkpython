@@ -34,7 +34,7 @@
 
 \title{Think Python}
 \newcommand{\thetitle}{Think Python: How to Think Like a Computer Scientist}
-\newcommand{\theversion}{1.1.23}
+\newcommand{\theversion}{1.1.24}
 
 % these styles get translated in CSS for the HTML version
 \newstyle{a:link}{color:black;}
@@ -680,6 +680,9 @@ order of operations.
 quality of suggestions he submitted.  We are deeply grateful!
 
 \item Gray Thomas knows his right from his left.
+
+\item Giovanni Escobar Sosa sent a long list of corrections and
+suggestions.
 
 % ENDCONTRIB
 
@@ -3803,6 +3806,10 @@ the parameter as a ``keyword.''
 the name and descriptions of the arguments and return value.
 \index{interface}
 
+\item[refactoring:] The process of modifying a working program to
+  improve function interfaces and other qualities of the code.
+\index{refactoring}
+
 \item[development plan:] A process for writing programs.
 \index{development plan}
 
@@ -3899,6 +3906,7 @@ You can download a solution from \url{thinkpython.com/code/letters.py}.
 
 \end{ex}
 
+%TODO: add a spiral question based on spiral.py
 
 
 \chapter{Conditionals and recursion}
@@ -4627,9 +4635,6 @@ that determines which branch is executed.
 and a body.  The header ends with a colon (:).  The body is indented
 relative to the header.
 \index{compound statement}
-
-\item[body:] The sequence of statements within a compound statement.
-\index{body}
 
 \item[branch:] One of the alternative sequences of statements in
 a conditional statement.
@@ -5517,7 +5522,7 @@ def factorial (n):
         print 'Factorial is only defined for integers.'
         return None
     elif n < 0:
-        print 'Factorial is only defined for positive integers.'
+        print 'Factorial is not defined for negative integers.'
         return None
     elif n == 0:
         return 1
@@ -5537,13 +5542,13 @@ went wrong:
 Factorial is only defined for integers.
 None
 >>> factorial(-2)
-Factorial is only defined for positive integers.
+Factorial is not defined for negative integers.
 None
 \end{verbatim}
 \afterverb
-%
-If we get past both checks, then we know that $n$ is a positive
-integer, and we can prove that the recursion terminates.
+% 
+If we get past both checks, then we know that $n$ is positive or
+zero, so we can prove that the recursion terminates.
 
 \index{guardian pattern}
 \index{pattern!guardian}
@@ -6808,7 +6813,7 @@ If the character doesn't appear in the string, the program
 exits the loop normally and  returns {\tt -1}.
 
 This pattern of computation---traversing a sequence and returning
-when we find what we are looking for---is a called a {\bf search}.
+when we find what we are looking for---is called a {\bf search}.
 
 \index{traversal}
 \index{search pattern}
@@ -8166,7 +8171,7 @@ A {\tt for} loop over an empty list never executes the body:
 
 \beforeverb
 \begin{verbatim}
-for x in empty:
+for x in []:
     print 'This never happens.'
 \end{verbatim}
 \afterverb
@@ -9095,7 +9100,6 @@ accumulate a result.
 of a variable using an operator like \verb"+=".
 \index{assignment!augmented}
 \index{augmented assignment}
-
 \index{traversal}
 
 \item[reduce:] A processing pattern that traverses a sequence 
@@ -11061,7 +11065,7 @@ words in descending order of length.
 
 \begin{ex}
 In this example, ties are broken by comparing words, so words
-with the same length appear in alphabetical order.  For other
+with the same length appear in reverse alphabetical order.  For other
 applications you might want to break ties at random.  Modify
 this example so that words with the same length appear in
 random order.  Hint: see the {\tt random} function in the
